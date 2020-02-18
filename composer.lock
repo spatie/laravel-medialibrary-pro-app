@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5d64537867fb473185312dc2ebc336b5",
+    "content-hash": "163eafe347ba1ca69a68c57701a1bbe8",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -224,16 +224,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.16",
+            "version": "2.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "5065fafc8c29d229ff207f2a89b02175f479a909"
+                "reference": "ade6887fd9bd74177769645ab5c474824f8a418a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5065fafc8c29d229ff207f2a89b02175f479a909",
-                "reference": "5065fafc8c29d229ff207f2a89b02175f479a909",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ade6887fd9bd74177769645ab5c474824f8a418a",
+                "reference": "ade6887fd9bd74177769645ab5c474824f8a418a",
                 "shasum": ""
             },
             "require": {
@@ -278,7 +278,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-02-12T22:28:28+00:00"
+            "time": "2020-02-13T22:36:52+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -1136,16 +1136,16 @@
         },
         {
             "name": "myclabs/php-enum",
-            "version": "1.7.5",
+            "version": "1.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/php-enum.git",
-                "reference": "aef7b9f343a677744d7410485a60fe16c46ca1ed"
+                "reference": "5f36467c7a87e20fbdc51e524fd8f9d1de80187c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/aef7b9f343a677744d7410485a60fe16c46ca1ed",
-                "reference": "aef7b9f343a677744d7410485a60fe16c46ca1ed",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/5f36467c7a87e20fbdc51e524fd8f9d1de80187c",
+                "reference": "5f36467c7a87e20fbdc51e524fd8f9d1de80187c",
                 "shasum": ""
             },
             "require": {
@@ -1178,7 +1178,7 @@
             "keywords": [
                 "enum"
             ],
-            "time": "2020-02-13T09:43:36+00:00"
+            "time": "2020-02-14T08:15:52+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -1964,17 +1964,11 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "v8.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "e9393303f7c4b1b15e15c8019e4de5e5506ae108"
-            },
+            "version": "dev-v8-pro",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/e9393303f7c4b1b15e15c8019e4de5e5506ae108",
-                "reference": "e9393303f7c4b1b15e15c8019e4de5e5506ae108",
-                "shasum": ""
+                "type": "path",
+                "url": "../laravel-medialibrary",
+                "reference": "4e6a4453c9701cffa0aa5f71c020281c08825f28"
             },
             "require": {
                 "ext-fileinfo": "*",
@@ -2005,6 +1999,7 @@
                 "orchestra/testbench": "^4.0|^5.0",
                 "php-ffmpeg/php-ffmpeg": "^0.14.0",
                 "phpunit/phpunit": "^9.0",
+                "spatie/laravel-medialibrary-pro": "dev-master",
                 "spatie/pdf-to-image": "^2.0",
                 "spatie/phpunit-snapshot-assertions": "^4.0"
             },
@@ -2026,7 +2021,11 @@
                     "Spatie\\Medialibrary\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\Medialibrary\\Tests\\": "tests"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -2049,8 +2048,7 @@
                 "laravel-medialibrary",
                 "media",
                 "spatie"
-            ],
-            "time": "2020-02-13T14:16:34+00:00"
+            ]
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
@@ -2058,11 +2056,11 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-medialibrary-pro",
-                "reference": "ca87387e30863119555b5f4d9b34be464cd4ed3d"
+                "reference": "71a16f555fddd2f09819bf42a2475c222e575dab"
             },
             "require": {
                 "php": "^7.4",
-                "spatie/laravel-medialibrary": "v8.x-dev"
+                "spatie/laravel-medialibrary": "dev-v8-pro"
             },
             "require-dev": {
                 "illuminate/support": "^6.3",
@@ -5636,16 +5634,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "573381c0a64f155a0d9a23f4b0c797194805b925"
+                "reference": "aed98a490f9a8f78468232db345ab9cf606cf598"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/573381c0a64f155a0d9a23f4b0c797194805b925",
-                "reference": "573381c0a64f155a0d9a23f4b0c797194805b925",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/aed98a490f9a8f78468232db345ab9cf606cf598",
+                "reference": "aed98a490f9a8f78468232db345ab9cf606cf598",
                 "shasum": ""
             },
             "require": {
@@ -5680,7 +5678,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2019-11-24T13:36:37+00:00"
+            "time": "2020-02-14T12:15:55+00:00"
         }
     ],
     "aliases": [],

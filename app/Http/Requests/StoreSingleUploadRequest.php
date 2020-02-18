@@ -10,7 +10,7 @@ class StoreSingleUploadRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'avatar' => UploadRule::create()->singleFile(),
+            'avatar' => '',
         ];
     }
 }
