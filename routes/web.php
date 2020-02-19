@@ -7,7 +7,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('upload', UploadController::class);
+
 
 Route::get('single-upload', [FormSubmissionController::class, 'showForm']);
+
+Route::post('temp-upload', UploadController::class);
+
 Route::post('single-upload', [FormSubmissionController::class, 'store']);

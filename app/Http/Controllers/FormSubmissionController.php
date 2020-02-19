@@ -19,7 +19,7 @@ class FormSubmissionController extends Controller
         $formSubmission = FormSubmission::create(['name' => $request->name]);
 
         $formSubmission
-            ->addMediaFromTemporaryUpload($request->avatar)
+            ->addMediaFromTemporaryUpload($request->image)
             ->toMediaCollection();
     }
 }
