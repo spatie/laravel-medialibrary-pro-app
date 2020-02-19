@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+        <script defer src="js/app.js"></script>
+
 
         <!-- Styles -->
         <style>
@@ -65,7 +67,9 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            Single file upload
+            <div id="app">
+                <index />
+            </div>
         </div>
     </body>
 </html>

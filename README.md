@@ -7,6 +7,16 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+## JS Setup:
+
+- In a separate folder, run `git clone git@github.com:spatie/medialibrary-pro-js.git`
+
+- In that project, run `yarn && yarn link-all`
+
+- When that command has finished successfully, run the following command **in this project**: `yarn && yarn link-js`
+
+- Go to http://laravel-medialibrary-pro-app.test/single-upload to try it out
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
