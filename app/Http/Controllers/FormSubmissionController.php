@@ -6,7 +6,7 @@ use App\Http\Requests\StoreSingleUploadRequest;
 use App\Models\FormSubmission;
 use Spatie\MedialibraryPro\Tests\Http\Controllers\UploadControllerTest;
 
-class FormSubmissionController extends Controller
+class FormSubmissionController
 {
     public function showForm()
     {
