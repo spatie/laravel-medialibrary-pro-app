@@ -68,7 +68,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div id="app">
-                <index />
+                <single-upload />
             </div>
         </div>
     </body>

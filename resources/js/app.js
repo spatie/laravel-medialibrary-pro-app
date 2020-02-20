@@ -1,10 +1,11 @@
 require("./bootstrap");
 
 import Vue from "vue";
-import Index from "./vue/Index.vue";
+
+import SingleUpload from "./vue/SingleUpload.vue";
 
 var app = new Vue({
-    components: { Index },
+    components: { SingleUpload },
 
     el: "#app"
 });
