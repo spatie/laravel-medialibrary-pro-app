@@ -72,13 +72,21 @@
 
     <div class="flex-center position-ref full-height">
         <div id="app">
-            {{ $errors }}
+            <p>errors: {{ $errors }}</p>
             <form action="single-upload" method="POST">
                 @csrf
 
-                <single-upload name="media" old="@json(old('media'))" temp-endpoint="temp-upload"></single-upload>
+                <p>
+                    <input name="name" type="text" placeholder="name" />
+                </p>
 
-                <button>Submit</button>
+                <p>
+                    <single-upload name="media" :old="{{ old('media', '[]') }}" temp-endpoint="temp-upload"></single-upload>
+                </p>
+
+                <p>
+                    <button>Submit</button>
+                </p>
             </form>
 
         </div>
