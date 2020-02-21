@@ -11,16 +11,14 @@
                         :multiple="multiple"
                         @change="e => handleUpload(e, mediaLibrary)"
                     />
+
+                    <input
+                        type="hidden"
+                        name="media"
+                        :value="JSON.stringify(mediaLibrary.state.media)"
+                    />
                 </template>
             </media-library>
-
-            <div>
-                <input
-                    type="hidden"
-                    name="media"
-                    :value="JSON.stringify(value)"
-                />
-            </div>
 
             <button>Submit</button>
         </form>

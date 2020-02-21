@@ -23295,8 +23295,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -40964,19 +40962,19 @@ var render = function() {
                         return _vm.handleUpload(e, mediaLibrary)
                       }
                     }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    attrs: { type: "hidden", name: "media" },
+                    domProps: {
+                      value: JSON.stringify(mediaLibrary.state.media)
+                    }
                   })
                 ]
               }
             }
           ])
         }),
-        _vm._v(" "),
-        _c("div", [
-          _c("input", {
-            attrs: { type: "hidden", name: "media" },
-            domProps: { value: JSON.stringify(_vm.value) }
-          })
-        ]),
         _vm._v(" "),
         _c("button", [_vm._v("Submit")])
       ],
