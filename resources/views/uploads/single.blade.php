@@ -52,7 +52,7 @@
             font-size: 84px;
         }
 
-        .links>a {
+        .links > a {
             color: #636b6f;
             padding: 0 25px;
             font-size: 13px;
@@ -69,13 +69,14 @@
 </head>
 
 <body>
-    <div class="flex-center position-ref full-height">
-        <div id="app">
-            <single-upload temp-endpoint="temp-upload" endpoint="single-upload">
-                @csrf
-            </single-upload>
-        </div>
+{{ $errors }}
+<div class="flex-center position-ref full-height">
+    <div id="app">
+        <single-upload name="media" temp-endpoint="temp-upload" endpoint="single-upload" old="@json(old('media'))">
+            @csrf
+        </single-upload>
     </div>
+</div>
 </body>
 
 </html>

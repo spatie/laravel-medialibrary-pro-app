@@ -16,10 +16,11 @@ class FormSubmissionController
     public function store(StoreSingleUploadRequest $request)
     {
         /** @var FormSubmission $formSubmission */
-        $formSubmission = FormSubmission::create(['name' => $request->name]);
+        $formSubmission = FormSubmission::create(['name' => $request->name ?? 'nothing']);
 
         $formSubmission
-            ->addMediaFromTemporaryUpload($request->image)
-            ->toMediaCollection();
+            ->addMediaFromTemporaryUploads($request->media)->each->toMediaCollection();
+
+        return back();
     }
 }

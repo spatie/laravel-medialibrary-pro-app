@@ -9,8 +9,8 @@ class StoreSingleUploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'avatar' => '',
+           // 'name' => 'required',
+            'media' => 'required',
         ];
     }
 }
