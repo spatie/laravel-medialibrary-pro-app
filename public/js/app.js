@@ -35286,10 +35286,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -52915,7 +52911,7 @@ var render = function() {
     "div",
     [
       _c("medialibrary", {
-        attrs: { endpoint: "temp_upload" },
+        attrs: { endpoint: "temp-upload" },
         scopedSlots: _vm._u([
           {
             key: "default",
@@ -52933,11 +52929,7 @@ var render = function() {
                       return _vm.handleUpload(e, mediaLibrary)
                     }
                   }
-                }),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("br")
+                })
               ]
             }
           }
@@ -65255,8 +65247,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/adriaanmarain/projects/laravel-medialibrary-pro-app/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/adriaanmarain/projects/laravel-medialibrary-pro-app/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/freek/dev/code/laravel-medialibrary-pro-app/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/freek/dev/code/laravel-medialibrary-pro-app/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <medialibrary endpoint="temp_upload">
+        <medialibrary endpoint="temp-upload">
             <template slot-scope="{ mediaLibrary }">
                 <input
                     type="file"
