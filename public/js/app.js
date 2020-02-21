@@ -23287,22 +23287,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     tempEndpoint: {
-      required: true,
-      type: String
-    },
-    endpoint: {
       required: true,
       type: String
     }
@@ -40935,52 +40923,37 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c(
-      "form",
-      { attrs: { action: _vm.endpoint, method: "POST" } },
-      [
-        _vm._t("default"),
-        _vm._v(" "),
-        _c("media-library", {
-          attrs: { endpoint: _vm.tempEndpoint },
-          on: { loaded: _vm.setMediaLibrary },
-          scopedSlots: _vm._u([
-            {
-              key: "default",
-              fn: function(ref) {
-                var mediaLibrary = ref.mediaLibrary
-                return [
-                  _c("input", {
-                    attrs: {
-                      type: "file",
-                      accept: _vm.accept,
-                      multiple: _vm.multiple
-                    },
-                    on: {
-                      change: function(e) {
-                        return _vm.handleUpload(e, mediaLibrary)
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c("input", {
-                    attrs: { type: "hidden", name: "media" },
-                    domProps: {
-                      value: JSON.stringify(mediaLibrary.state.media)
-                    }
-                  })
-                ]
+  return _c("media-library", {
+    attrs: { endpoint: _vm.tempEndpoint },
+    on: { loaded: _vm.setMediaLibrary },
+    scopedSlots: _vm._u([
+      {
+        key: "default",
+        fn: function(ref) {
+          var mediaLibrary = ref.mediaLibrary
+          return [
+            _c("input", {
+              attrs: {
+                type: "file",
+                accept: _vm.accept,
+                multiple: _vm.multiple
+              },
+              on: {
+                change: function(e) {
+                  return _vm.handleUpload(e, mediaLibrary)
+                }
               }
-            }
-          ])
-        }),
-        _vm._v(" "),
-        _c("button", [_vm._v("Submit")])
-      ],
-      2
-    )
-  ])
+            }),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "hidden", name: "media" },
+              domProps: { value: JSON.stringify(mediaLibrary.state.media) }
+            })
+          ]
+        }
+      }
+    ])
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
