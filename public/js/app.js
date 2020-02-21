@@ -35286,10 +35286,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -52933,11 +52929,7 @@ var render = function() {
                       return _vm.handleUpload(e, mediaLibrary)
                     }
                   }
-                }),
-                _vm._v(" "),
-                _c("br"),
-                _vm._v(" "),
-                _c("br")
+                })
               ]
             }
           }

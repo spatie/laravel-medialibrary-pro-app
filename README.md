@@ -13,7 +13,7 @@
 
 - In that project, run `yarn setup`
 
-- When that command has finished successfully, run the following command **in this project**: `yarn && yarn link-js`
+- When that command has finished successfully, `yarn setup` in this project
 
 - Go to http://laravel-medialibrary-pro-app.test/single-upload to try it out
 
