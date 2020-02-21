@@ -86,16 +86,16 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "../medialibrary-pro-js/packages/medialibrary-pro-core/dist/Medialibrary.js":
+/***/ "../medialibrary-pro-js/packages/medialibrary-pro-core/dist/MediaLibrary.js":
 /*!**********************************************************************************!*\
-  !*** ../medialibrary-pro-js/packages/medialibrary-pro-core/dist/Medialibrary.js ***!
+  !*** ../medialibrary-pro-js/packages/medialibrary-pro-core/dist/MediaLibrary.js ***!
   \**********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MedialibraryClass; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return MediaLibraryClass; });
 /* harmony import */ var immer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! immer */ "../medialibrary-pro-js/packages/medialibrary-pro-core/node_modules/immer/dist/immer.module.js");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "../medialibrary-pro-js/packages/medialibrary-pro-core/node_modules/uuid/index.js");
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_1__);
@@ -115,14 +115,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-var MedialibraryClass =
+var MediaLibraryClass =
 /*#__PURE__*/
 function () {
-  function MedialibraryClass(_ref) {
+  function MediaLibraryClass(_ref) {
     var immutable = _ref.immutable,
         endpoint = _ref.endpoint;
 
-    _classCallCheck(this, MedialibraryClass);
+    _classCallCheck(this, MediaLibraryClass);
 
     this.state = {
       media: []
@@ -134,7 +134,7 @@ function () {
     };
   }
 
-  _createClass(MedialibraryClass, [{
+  _createClass(MediaLibraryClass, [{
     key: "changeState",
     value: function changeState(callback) {
       var _this = this;
@@ -181,7 +181,11 @@ function () {
       };
       this.addMediaObject(newMediaObject);
       Object(_api__WEBPACK_IMPORTED_MODULE_4__["uploadFile"])(this.config.endpoint, file, uuid, function (progress) {
+        console.log(progress.total, progress.loaded);
+
         _this2.setMediaObjectUploadProgress(newMediaObject.uuid, progress.total / progress.loaded);
+      })["catch"](function () {
+        console.log('failed uploading', uuid); // TODO: set "hadErrorWhileUploading" for this upload
       });
     }
   }, {
@@ -248,7 +252,7 @@ function () {
     }
   }]);
 
-  return MedialibraryClass;
+  return MediaLibraryClass;
 }();
 
 
@@ -272,7 +276,7 @@ function uploadFile(endpoint, file, uuid, onUploadProgress) {
   var formData = new FormData();
   formData.append('file', file);
   formData.append('uuid', uuid);
-  axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(endpoint, formData, {
+  return axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(endpoint, formData, {
     headers: {
       'Content-Type': 'multipart/form-data'
     },
@@ -291,8 +295,8 @@ function uploadFile(endpoint, file, uuid, onUploadProgress) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Medialibrary__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Medialibrary */ "../medialibrary-pro-js/packages/medialibrary-pro-core/dist/Medialibrary.js");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Medialibrary__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+/* harmony import */ var _MediaLibrary__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MediaLibrary */ "../medialibrary-pro-js/packages/medialibrary-pro-core/dist/MediaLibrary.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _MediaLibrary__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -21418,10 +21422,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     var data = {
-      state: {
-        media: []
-      },
-      medialibrary: new _spatie_medialibrary_pro_core__WEBPACK_IMPORTED_MODULE_0__["default"]({
+      mediaLibrary: new _spatie_medialibrary_pro_core__WEBPACK_IMPORTED_MODULE_0__["default"]({
         immutable: false,
         endpoint: this.endpoint
       })
@@ -21429,25 +21430,13 @@ __webpack_require__.r(__webpack_exports__);
     return data;
   },
   created: function created() {
-    var _this = this;
-
-    this.state = this.medialibrary.state;
-    this.medialibrary.subscribe(function (newState) {
-      _this.state = newState;
-    });
+    this.$emit('loaded', this.mediaLibrary);
   },
   render: function render(createElement) {
     if (this.$scopedSlots["default"]) {
-      /* {
-          addFile,
-          subscribe,
-          setMediaObjectOrder,
-          removeMediaObject,
-          setMediaObjectName,
-          setMediaObjectProperty,
-      } */
+      /* const { addFile, subscribe, setMediaObjectOrder, removeMediaObject, setMediaObjectName, setMediaObjectProperty } = this.mediaLibrary */
       return createElement('div', this.$scopedSlots["default"]({
-        mediaLibrary: this.medialibrary
+        mediaLibrary: this.mediaLibrary
       }));
       /* TODO: I would rather do this, but doesn't work when using Vue.extend,
           and we lose type inference when we don't use Vue.extend :(
@@ -35286,18 +35275,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    tempEndpoint: {
+      required: true,
+      type: String
+    },
+    endpoint: {
+      required: true,
+      type: String
+    }
+  },
   components: {
-    Medialibrary: _spatie_medialibrary_pro_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    MediaLibrary: _spatie_medialibrary_pro_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
       accept: "",
-      multiple: true
+      multiple: true,
+      mediaLibrary: null
     };
   },
+  computed: {
+    value: function value() {
+      return this.mediaLibrary ? this.mediaLibrary.state.media : [];
+    }
+  },
   methods: {
+    setMediaLibrary: function setMediaLibrary(mediaLibrary) {
+      this.mediaLibrary = mediaLibrary;
+    },
     handleUpload: function handleUpload(changeEvent, mediaLibrary) {
       Array.from(changeEvent.target.files).forEach(function (file) {
         return mediaLibrary.addFile(file);
@@ -52907,37 +52929,52 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("medialibrary", {
-        attrs: { endpoint: "temp-upload" },
-        scopedSlots: _vm._u([
-          {
-            key: "default",
-            fn: function(ref) {
-              var mediaLibrary = ref.mediaLibrary
-              return [
-                _c("input", {
-                  attrs: {
-                    type: "file",
-                    accept: _vm.accept,
-                    multiple: _vm.multiple
-                  },
-                  on: {
-                    change: function(e) {
-                      return _vm.handleUpload(e, mediaLibrary)
+  return _c("div", [
+    _c(
+      "form",
+      { attrs: { action: _vm.endpoint, method: "POST" } },
+      [
+        _vm._t("default"),
+        _vm._v(" "),
+        _c("media-library", {
+          attrs: { endpoint: _vm.tempEndpoint },
+          on: { loaded: _vm.setMediaLibrary },
+          scopedSlots: _vm._u([
+            {
+              key: "default",
+              fn: function(ref) {
+                var mediaLibrary = ref.mediaLibrary
+                return [
+                  _c("input", {
+                    attrs: {
+                      type: "file",
+                      accept: _vm.accept,
+                      multiple: _vm.multiple
+                    },
+                    on: {
+                      change: function(e) {
+                        return _vm.handleUpload(e, mediaLibrary)
+                      }
                     }
-                  }
-                })
-              ]
+                  })
+                ]
+              }
             }
-          }
-        ])
-      })
-    ],
-    1
-  )
+          ])
+        }),
+        _vm._v(" "),
+        _c("div", [
+          _c("input", {
+            attrs: { type: "hidden", name: "media" },
+            domProps: { value: JSON.stringify(_vm.value) }
+          })
+        ]),
+        _vm._v(" "),
+        _c("button", [_vm._v("Submit")])
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

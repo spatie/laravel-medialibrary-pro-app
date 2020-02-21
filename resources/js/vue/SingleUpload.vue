@@ -1,32 +1,60 @@
 <template>
     <div>
-        <medialibrary endpoint="temp-upload">
-            <template slot-scope="{ mediaLibrary }">
+        <form :action="endpoint" method="POST">
+            <slot />
+
+            <media-library :endpoint="tempEndpoint" @loaded="setMediaLibrary">
+                <template slot-scope="{ mediaLibrary }">
+                    <input
+                        type="file"
+                        :accept="accept"
+                        :multiple="multiple"
+                        @change="e => handleUpload(e, mediaLibrary)"
+                    />
+                </template>
+            </media-library>
+
+            <div>
                 <input
-                    type="file"
-                    :accept="accept"
-                    :multiple="multiple"
-                    @change="e => handleUpload(e, mediaLibrary)"
+                    type="hidden"
+                    name="media"
+                    :value="JSON.stringify(value)"
                 />
-            </template>
-        </medialibrary>
+            </div>
+
+            <button>Submit</button>
+        </form>
     </div>
 </template>
 
 <script>
-import Medialibrary from "@spatie/medialibrary-pro-vue";
+import MediaLibrary from "@spatie/medialibrary-pro-vue";
 
 export default {
-    components: { Medialibrary },
+    props: {
+        tempEndpoint: { required: true, type: String },
+        endpoint: { required: true, type: String }
+    },
 
-    data() {
-        return {
-            accept: "",
-            multiple: true
-        };
+    components: { MediaLibrary },
+
+    data: () => ({
+        accept: "",
+        multiple: true,
+        mediaLibrary: null
+    }),
+
+    computed: {
+        value() {
+            return this.mediaLibrary ? this.mediaLibrary.state.media : [];
+        }
     },
 
     methods: {
+        setMediaLibrary(mediaLibrary) {
+            this.mediaLibrary = mediaLibrary;
+        },
+
         handleUpload(changeEvent, mediaLibrary) {
             Array.from(changeEvent.target.files).forEach(file =>
                 mediaLibrary.addFile(file)

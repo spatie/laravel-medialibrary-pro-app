@@ -11,9 +11,9 @@
 
 - In a separate folder, run `git clone git@github.com:spatie/medialibrary-pro-js.git`
 
-- In that project, run `yarn && yarn link-all`
+- In that project, run `yarn setup`
 
-- When that command has finished successfully, run the following command **in this project**: `yarn && yarn link-js`
+- When that command has finished successfully, `yarn setup` in this project
 
 - Go to http://laravel-medialibrary-pro-app.test/single-upload to try it out
 
