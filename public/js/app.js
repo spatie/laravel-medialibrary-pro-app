@@ -52965,7 +52965,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", [
           _c("input", {
-            attrs: { type: "hidden", name: "file_name" },
+            attrs: { type: "hidden", name: "media" },
             domProps: { value: JSON.stringify(_vm.value) }
           })
         ]),

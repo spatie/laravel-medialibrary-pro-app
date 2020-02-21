@@ -17,7 +17,7 @@
             <div>
                 <input
                     type="hidden"
-                    name="file_name"
+                    name="media"
                     :value="JSON.stringify(value)"
                 />
             </div>
