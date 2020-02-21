@@ -11,7 +11,7 @@
 
 - In a separate folder, run `git clone git@github.com:spatie/medialibrary-pro-js.git`
 
-- In that project, run `yarn && yarn link-all && yarn build`
+- In that project, run `yarn setup`
 
 - When that command has finished successfully, run the following command **in this project**: `yarn && yarn link-js`
 
