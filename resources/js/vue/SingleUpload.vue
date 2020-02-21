@@ -1,6 +1,6 @@
 <template>
     <div>
-        <medialibrary endpoint="temp_upload">
+        <medialibrary :endpoint="endpoint">
             <template slot-scope="{ mediaLibrary }">
                 <input
                     type="file"
@@ -17,6 +17,10 @@
 import Medialibrary from "@spatie/medialibrary-pro-vue";
 
 export default {
+    props: {
+        endpoint: { required: true, type: String }
+    },
+
     components: { Medialibrary },
 
     data() {

@@ -68,7 +68,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             <div id="app">
-                <single-upload />
+                <single-upload endpoint="temp_upload" />
             </div>
         </div>
     </body>
