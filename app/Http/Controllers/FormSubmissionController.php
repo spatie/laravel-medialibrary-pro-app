@@ -8,9 +8,14 @@ use Spatie\MedialibraryPro\Tests\Http\Controllers\UploadControllerTest;
 
 class FormSubmissionController
 {
-    public function showForm()
+    public function showVue()
     {
-        return view('uploads.single-vue');
+        return view('uploads.multi-vue');
+    }
+
+    public function showReact()
+    {
+        return view('uploads.multi-react');
     }
 
     public function store(StoreSingleUploadRequest $request)

@@ -9,7 +9,8 @@ Route::get('/', function () {
 
 
 
-Route::get('single-upload', [FormSubmissionController::class, 'showForm']);
+Route::get('single-vue', [FormSubmissionController::class, 'showVue']);
+Route::get('single-react', [FormSubmissionController::class, 'showReact']);
 
 Route::post('temp-upload', UploadController::class);
 

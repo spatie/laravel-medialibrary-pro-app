@@ -81,14 +81,13 @@
                 </p>
 
                 <p>
-                    <single-upload name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></single-upload>
+                    <upload-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></upload-component>
                 </p>
 
                 <p>
                     <button>Submit</button>
                 </p>
             </form>
-
         </div>
     </div>
 </body>

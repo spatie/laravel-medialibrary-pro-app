@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <script defer src="js/app.js"></script>
+    <script defer src="js/react/app.js"></script>
 
 
     <!-- Styles -->
@@ -71,25 +71,7 @@
 <body>
 
     <div class="flex-center position-ref full-height">
-        <div id="app">
-            <p>errors: {{ $errors }}</p>
-            <form action="single-upload" method="POST">
-                @csrf
-
-                <p>
-                    <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
-                </p>
-
-                <p>
-                    <single-upload name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></single-upload>
-                </p>
-
-                <p>
-                    <button>Submit</button>
-                </p>
-            </form>
-
-        </div>
+        <div id="app"></div>
     </div>
 </body>
 
