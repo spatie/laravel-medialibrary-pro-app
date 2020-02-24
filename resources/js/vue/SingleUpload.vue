@@ -58,8 +58,18 @@
 
                     <input
                         placeholder="last name (custom property)"
-                        v-bind="mediaHelpers.getInputProps(media, 'custom_properties.lastname')"
-                        v-on="mediaHelpers.getInputListeners(media, 'custom_properties.lastname')"
+                        v-bind="
+                            mediaHelpers.getInputProps(
+                                media,
+                                'custom_properties.lastname'
+                            )
+                        "
+                        v-on="
+                            mediaHelpers.getInputListeners(
+                                media,
+                                'custom_properties.lastname'
+                            )
+                        "
                     />
 
                     <!-- Figure out a good way to get an object's error (below code depends on the index, which changes when changing the order of the objects) -->
