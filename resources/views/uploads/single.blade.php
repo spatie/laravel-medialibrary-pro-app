@@ -81,7 +81,7 @@
                 </p>
 
                 <p>
-                    <single-upload name="media" :old="{{ old('media', '[]') }}" temp-endpoint="temp-upload"></single-upload>
+                    <single-upload name="media" :old="{{ json_encode(old('media') ?? []) }}" temp-endpoint="temp-upload"></single-upload>
                 </p>
 
                 <p>

@@ -2,24 +2,32 @@
     <media-library :initial-media="old" :endpoint="tempEndpoint">
         <template slot-scope="{ mediaLibrary }">
             <input
-                placeholder="Add files"
                 type="file"
                 :accept="accept"
                 :multiple="multiple"
                 @change="e => handleUpload(e, mediaLibrary)"
             />
 
-            <input
-                type="hidden"
-                name="media"
-                :value="JSON.stringify(mediaLibrary.value)"
-            />
-
             <div
-                v-for="media in mediaLibrary.state.media"
+                v-for="(media, i) in mediaLibrary.state.media"
                 :key="media.uuid"
                 style="border: 1px solid black; margin: 5px; padding: 3px;"
             >
+                <template v-for="key in Object.keys(mediaLibrary.value[i])">
+                    <input
+                        :key="key"
+                        :name="`media[${i}][${key}]`"
+                        type="hidden"
+                        :value="
+                            ['string', 'number'].includes(
+                                typeof mediaLibrary.value[i][key]
+                            )
+                                ? mediaLibrary.value[i][key]
+                                : JSON.stringify(mediaLibrary.value[i][key])
+                        "
+                    />
+                </template>
+
                 <img
                     :src="media.preview || media.thumbnail"
                     style="height: 50px; width: 50px;"

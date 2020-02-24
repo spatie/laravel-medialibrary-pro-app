@@ -17,7 +17,7 @@ class FormSubmissionController
     {
         /** @var FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create(['name' => $request->name ?? 'nothing'])
-            ->addMediaFromTemporaryUpload($request->media)->toMediaCollection('images');
+            ->addMultipleMediaFromTemporaryUploads($request->media)->each->toMediaCollection('images');
 
         return back();
     }

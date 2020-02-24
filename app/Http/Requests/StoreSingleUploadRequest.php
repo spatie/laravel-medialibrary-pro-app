@@ -10,7 +10,12 @@ class StoreSingleUploadRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'media' => 'required',
+            'media' => 'required|array',
+            'media.*.uuid' => 'required|uuid',
+            'media.*.order' => 'required|numeric',
+            'media.*.name' => 'required|string',
+            'media.*.thumbnail' => 'required|string',
+            'media.*.custom_properties' => 'required|string',
         ];
     }
 }
