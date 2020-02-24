@@ -77,7 +77,7 @@
                 @csrf
 
                 <p>
-                    <input name="name" type="text" placeholder="name" />
+                    <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
                 </p>
 
                 <p>
