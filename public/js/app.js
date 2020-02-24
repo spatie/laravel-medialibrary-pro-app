@@ -40580,41 +40580,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -40642,7 +40607,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
-      accept: "",
+      accept: '',
       multiple: true
     };
   },
@@ -77580,7 +77545,7 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   components: {
     SingleUpload: _vue_SingleUpload_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
-  el: "#app"
+  el: '#app'
 });
 
 /***/ }),
