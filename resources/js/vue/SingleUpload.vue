@@ -1,11 +1,15 @@
 <template>
-    <media-library :initial-media="old" :endpoint="tempEndpoint">
-        <div slot-scope="{ mediaLibrary }">
+    <media-library
+        :initial-media="initialValue"
+        :endpoint="tempEndpoint"
+        :resource-name="name"
+    >
+        <div slot-scope="{ mediaLibrary, mediaHelpers }">
             <input
                 type="file"
                 :accept="accept"
                 :multiple="multiple"
-                @change="e => handleUpload(e, mediaLibrary)"
+                v-on="mediaHelpers.getFileInputListeners()"
             />
 
             <draggable
@@ -17,34 +21,49 @@
                     :key="media.uuid"
                     style="border: 1px solid black; margin: 5px; padding: 3px;"
                 >
+                    <!-- {{ mediaLibrary.getFormInputs(media) }} ? -->
                     <input
                         v-for="key in Object.keys(mediaLibrary.value[i])"
                         :key="key"
-                        :name="`media[${i}][${key}]`"
                         type="hidden"
-                        :value="getValue(mediaLibrary.value[i][key])"
+                        v-bind="mediaHelpers.getInputProps(media, key)"
                     />
 
                     <img
-                        :src="media.preview || media.thumbnail"
+                        v-bind="mediaHelpers.getImgProps(media)"
                         style="height: 50px; width: 50px;"
                     />
 
-                    <p>uuid: {{ media.uuid }}</p>
+                    <input
+                        placeholder="image name"
+                        v-bind="mediaHelpers.getInputProps(media, 'name')"
+                        v-on="mediaHelpers.getInputListeners(media, 'name')"
+                    />
 
-                    <p>
-                        name:
-                        <input
-                            type="text"
-                            :value="media.name"
-                            @change="
-                                mediaLibrary.setMediaObjectName(
-                                    media.uuid,
-                                    $event.target.value
-                                )
-                            "
-                        />
-                    </p>
+                    <input
+                        placeholder="username (custom property)"
+                        v-bind="
+                            mediaHelpers.getInputProps(
+                                media,
+                                'custom_properties.username'
+                            )
+                        "
+                        v-on="
+                            mediaHelpers.getInputListeners(
+                                media,
+                                'custom_properties.username'
+                            )
+                        "
+                    />
+
+                    <input
+                        placeholder="last name (custom property)"
+                        v-bind="mediaHelpers.getInputProps(media, 'custom_properties.lastname')"
+                        v-on="mediaHelpers.getInputListeners(media, 'custom_properties.lastname')"
+                    />
+
+                    <!-- Figure out a good way to get an object's error (below code depends on the index, which changes when changing the order of the objects) -->
+                    <!-- <p style="color: red;">{{ errors[`${name}.${i}.name`] }}</p> -->
                 </div>
             </draggable>
         </div>
@@ -57,7 +76,9 @@ import Draggable from "vuedraggable";
 
 export default {
     props: {
-        old: { required: true, type: Array },
+        name: { required: true, type: String },
+        initialValue: { required: true, type: Array },
+        errors: { default: [], type: Object | Array },
         tempEndpoint: { required: true, type: String }
     },
 
@@ -69,27 +90,13 @@ export default {
     }),
 
     methods: {
-        handleUpload(changeEvent, mediaLibrary) {
-            Array.from(changeEvent.target.files).forEach(file =>
-                mediaLibrary.addFile(file)
-            );
-        },
-
-        getValue(value) {
-            if (value === undefined || value === null) {
-                return null;
-            }
-
-            return ["string", "number"].includes(typeof value)
-                ? value
-                : JSON.stringify(value);
-        },
-
         handleOrderChange(mediaLibrary) {
-            mediaLibrary.state.media = mediaLibrary.state.media.map((object, i) => ({
-                ...object,
-                order: i
-            }));
+            mediaLibrary.state.media = mediaLibrary.state.media.map(
+                (object, i) => ({
+                    ...object,
+                    order: i
+                })
+            );
         }
     }
 };

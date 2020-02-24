@@ -10,7 +10,7 @@ class FormSubmissionController
 {
     public function showForm()
     {
-        return view('uploads.single');
+        return view('uploads.single-vue');
     }
 
     public function store(StoreSingleUploadRequest $request)
