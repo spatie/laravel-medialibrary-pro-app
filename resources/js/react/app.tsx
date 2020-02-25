@@ -1,6 +1,5 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-window.React = React;
 import MediaLibraryClass from '@spatie/medialibrary-pro-core';
 import UploadComponent from './UploadComponent';
 

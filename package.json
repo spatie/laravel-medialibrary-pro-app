@@ -8,7 +8,7 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "link-js": "yarn link @spatie/medialibrary-pro-vue @spatie/medialibrary-pro-react",
+        "link-js": "yarn link @spatie/medialibrary-pro-core @spatie/medialibrary-pro-vue @spatie/medialibrary-pro-react",
         "setup": "yarn && yarn link-js && yarn dev"
     },
     "devDependencies": {

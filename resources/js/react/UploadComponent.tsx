@@ -26,7 +26,7 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
         <div>
             <input type="file" multiple {...mediaHelpers.getFileInputProps()} />
             <ul>
-                {mediaState.media.map((media: MediaLibrary.MediaObject, i) => (
+                {mediaState.media.map((media: MediaLibrary.MediaObject, i: number) => (
                     <div style={{ border: '1px solid black' }} key={media.uuid}>
                         {Object.keys(mediaLibrary.value[i]).map(key => (
                             <input key={key} {...mediaHelpers.getInputProps(media, key)} type="hidden" />
