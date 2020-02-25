@@ -1,27 +1,23 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
+window.React = React;
+import MediaLibraryClass from '@spatie/medialibrary-pro-core';
 import UploadComponent from './UploadComponent';
+
+declare const window: {
+    oldValues: { name: string; media: MediaLibraryClass['state']['media'] };
+    errors: { [key: string]: string };
+    tempEndpoint: string;
+};
 
 ReactDOM.render(
     <div>
-        <form action="single-upload" method="POST">
-            <p>
-                <input name="name" type="text" placeholder="name" value="" />
-            </p>
-
-            <p>
-                <UploadComponent
-                    name="media"
-                    initialValue={{}}
-                    errors={{}}
-                    tempEndpoint="temp-upload" /* Get from blade */
-                ></UploadComponent>
-            </p>
-
-            <p>
-                <button>Submit</button>
-            </p>
-        </form>
+        <UploadComponent
+            name="media"
+            initialValue={window.oldValues.media}
+            errors={window.errors}
+            tempEndpoint={window.tempEndpoint} /* Get from blade */
+        ></UploadComponent>
     </div>,
     document.getElementById('app')
 );
