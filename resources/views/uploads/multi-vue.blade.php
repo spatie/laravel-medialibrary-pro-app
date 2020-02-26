@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <script defer src="js/app.js"></script>
+    <script defer src="js/vue/app.js"></script>
 
 
     <!-- Styles -->
