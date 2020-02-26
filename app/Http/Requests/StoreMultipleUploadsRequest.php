@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSingleUploadRequest extends FormRequest
+class StoreMultipleUploadsRequest extends FormRequest
 {
     public function rules()
     {

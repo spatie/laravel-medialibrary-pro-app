@@ -15,7 +15,7 @@
 
 - When that command has finished successfully, `yarn setup` in this project
 
-- Go to http://laravel-medialibrary-pro-app.test/single-upload to try it out
+- Go to http://laravel-medialibrary-pro-app.test/multi-react or http://laravel-medialibrary-pro-app.test/multi-vue to try it out
 
 ## About Laravel
 

@@ -73,7 +73,7 @@
     <div class="flex-center position-ref full-height">
         <div id="app">
             <p>errors: {{ $errors }}</p>
-            <form action="single-upload" method="POST">
+            <form action="multi-upload" method="POST">
                 @csrf
 
                 <p>

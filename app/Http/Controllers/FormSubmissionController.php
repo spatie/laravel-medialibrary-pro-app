@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSingleUploadRequest;
+use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 use Spatie\MedialibraryPro\Tests\Http\Controllers\UploadControllerTest;
 
@@ -18,7 +18,7 @@ class FormSubmissionController
         return view('uploads.multi-react');
     }
 
-    public function store(StoreSingleUploadRequest $request)
+    public function store(StoreMultipleUploadsRequest $request)
     {
         /** @var FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create(['name' => $request->name ?? 'nothing'])

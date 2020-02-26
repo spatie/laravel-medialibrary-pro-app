@@ -81,7 +81,7 @@
             <p>errors: {{ $errors }}</p>
             <p>old values: {{ json_encode(Session::getOldInput()) }}</p>
 
-            <form action="single-upload" method="POST">
+            <form action="multi-upload" method="POST">
                 @csrf
 
                 <p>
