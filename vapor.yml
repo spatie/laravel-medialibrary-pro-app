@@ -9,4 +9,4 @@ environments:
         build:
             - 'composer install --no-dev'
             - 'php artisan event:cache'
-            - 'yarn setup'
+            - 'yarn setup && rm -rf node_modules'
