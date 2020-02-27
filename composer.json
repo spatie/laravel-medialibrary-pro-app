@@ -31,7 +31,8 @@
         "laravel/vapor-cli": "^1.6",
         "laravel/vapor-core": "^2.5",
         "spatie/laravel-medialibrary-pro": "dev-master",
-        "spatie/laravel-tail": "^4.0"
+        "spatie/laravel-tail": "^4.0",
+      "ext-json": "*"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
