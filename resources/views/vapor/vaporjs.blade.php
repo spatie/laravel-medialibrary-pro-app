@@ -23,5 +23,7 @@ Welcome to Vapor JS
                 content_type: this.$refs.file.files[0].type,
             });
         }).catch(error => console.error(error));
+
+        return false;
     }
 </script>
