@@ -15,3 +15,5 @@ Route::get('multi-react', [FormSubmissionController::class, 'showReact']);
 Route::post('temp-upload', UploadController::class);
 
 Route::post('multi-upload', [FormSubmissionController::class, 'store']);
+
+Route::view('vapor-js', 'vapor.vaporjs');

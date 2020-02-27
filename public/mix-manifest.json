@@ -1,5 +1,6 @@
 {
     "/js/react/app.js": "/js/react/app.js",
+    "/js/vapor/app.js": "/js/vapor/app.js",
     "/js/vue/app.js": "/js/vue/app.js",
     "/css/app.css": "/css/app.css"
 }
