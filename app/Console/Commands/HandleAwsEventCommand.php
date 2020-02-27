@@ -12,6 +12,8 @@ class HandleAwsEventCommand extends Command
 
     public function handle()
     {
+        info('vapor:handle executing!');
+
         $payload = json_decode(
             base64_decode($this->argument('payload'))
         );
