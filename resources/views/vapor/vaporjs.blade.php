@@ -3,10 +3,9 @@
 Welcome to Vapor JS
 
 
-<form id="uploadForm" onsubmit="uploadToS3()">
+
     <input type="file" id="file" ref="file">
-    <button type="submit">Upload</button>
-</form>
+    <button onclick="uploadToS3()" type="button">Upload</button>
 
 <script>
     function uploadToS3() {
@@ -23,7 +22,5 @@ Welcome to Vapor JS
                 content_type: this.$refs.file.files[0].type,
             });
         }).catch(error => console.error(error));
-
-        return false;
     }
 </script>
