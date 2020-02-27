@@ -1,6 +1,5 @@
 id: 7523
 name: laravel-medialibrary-pro-app
-separate-vendor: true
 environments:
     production:
         memory: 1024

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "190a6b1ce4b7274bf0cd6dbb015e9429",
+    "content-hash": "5fcce7b33e01d247484d5c2cf74dca01",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2651,7 +2651,10 @@
                 "laravel-medialibrary",
                 "media",
                 "spatie"
-            ]
+            ],
+            "transport-options": {
+                "symlink": false
+            }
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
@@ -2714,7 +2717,10 @@
             "keywords": [
                 "laravel-medialibrary-pro",
                 "spatie"
-            ]
+            ],
+            "transport-options": {
+                "symlink": false
+            }
         },
         {
             "name": "spatie/laravel-tail",
