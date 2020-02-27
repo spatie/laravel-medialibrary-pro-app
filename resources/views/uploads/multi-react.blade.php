@@ -9,7 +9,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <script defer src="js/app.js"></script>
+    <script defer src="js/react/app.js"></script>
 
 
     <!-- Styles -->
@@ -70,17 +70,34 @@
 
 <body>
 
+    <script>
+        window.oldValues = {!! json_encode(Session::getOldInput()) !!};
+        window.errors = {!! $errors !!};
+        window.tempEndpoint = 'temp-upload';
+    </script>
+
     <div class="flex-center position-ref full-height">
-        <div id="app">
-            {{ $errors }}
-            <form action="single-upload" method="POST">
+        <div>
+            <p>errors: {{ $errors }}</p>
+            <p>old values: {{ json_encode(Session::getOldInput()) }}</p>
+
+            <form action="multi-upload" method="POST">
                 @csrf
 
-                <single-upload name="media" old="@json(old('media'))" temp-endpoint="temp-upload"></single-upload>
+                <p>
+                    <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
+                </p>
 
-                <button>Submit</button>
+                <!--  <p>
+                    <upload-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></upload-component>
+                </p> -->
+
+                <div id="app"></div>
+
+                <p>
+                    <button>Submit</button>
+                </p>
             </form>
-
         </div>
     </div>
 </body>

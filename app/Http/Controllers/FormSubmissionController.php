@@ -2,22 +2,27 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreSingleUploadRequest;
+use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 use Spatie\MedialibraryPro\Tests\Http\Controllers\UploadControllerTest;
 
 class FormSubmissionController
 {
-    public function showForm()
+    public function showVue()
     {
-        return view('uploads.single');
+        return view('uploads.multi-vue');
     }
 
-    public function store(StoreSingleUploadRequest $request)
+    public function showReact()
+    {
+        return view('uploads.multi-react');
+    }
+
+    public function store(StoreMultipleUploadsRequest $request)
     {
         /** @var FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create(['name' => $request->name ?? 'nothing'])
-            ->addMediaFromTemporaryUpload($request->media)->toMediaCollection('images');
+            ->addMultipleMediaFromTemporaryUploads($request->media)->each->toMediaCollection('images');
 
         return back();
     }
