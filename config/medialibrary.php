@@ -6,7 +6,7 @@ return [
      * The disk on which to store added files and derived images by default. Choose
      * one or more of the disks you've configured in config/filesystems.php.
      */
-    'disk_name' => env('MEDIA_DISK', 'public'),
+    'disk_name' => env('MEDIA_DISK', 'medialibrary-pro'),
 
     /*
      * The maximum file size of an item in bytes.
@@ -79,7 +79,7 @@ return [
      * it will use the filename of the original and concatenate the conversion name to it.
      */
     'conversion_file_namer' => \Spatie\Medialibrary\Conversion\DefaultConversionFileNamer::class,
-    
+
     /*
      * The class that contains the strategy for determining a media file's path.
      */

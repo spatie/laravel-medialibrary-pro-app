@@ -3,6 +3,7 @@ name: laravel-medialibrary-pro-app
 environments:
     production:
         storage: medialibrary-pro
+        database: laravel-medialibrary-pro-app
         memory: 512
         cli-memory: 512
         runtime: php-7.4
