@@ -11,11 +11,10 @@ type Props = {
 };
 
 export default function UploadComponent({ name, initialValue, errors, tempEndpoint }: Props) {
-    /* const { state, fileInputProps } = useMediaLibrary({ initialMedia: initialValue, endpoint: tempEndpoint }); */
     const { mediaLibrary, mediaHelpers, mediaState } = useMediaLibrary({
         initialMedia: initialValue,
         endpoint: tempEndpoint,
-        resourceName: 'media',
+        resourceName: name,
     });
 
     if (!mediaLibrary) {
@@ -28,10 +27,14 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
             <ul>
                 {mediaState.media.map((media: MediaLibrary.MediaObject, i: number) => (
                     <div style={{ border: '1px solid black' }} key={media.uuid}>
+                        <span style={{ position: 'absolute', top: '5px', right: '5px' }}>x</span>
+
                         {Object.keys(mediaLibrary.value[i]).map(key => (
                             <input key={key} {...mediaHelpers.getInputProps(media, key)} type="hidden" />
                         ))}
+
                         <input placeholder="image name" {...mediaHelpers.getInputProps(media, 'name')} />
+
                         <img {...mediaHelpers.getImgProps(media)} style={{ height: '50px', width: '50px' }} />
                     </div>
                 ))}
