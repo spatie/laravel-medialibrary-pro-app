@@ -41,6 +41,8 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
 
                         <img {...mediaHelpers.getImgProps(object)} style={{ height: '50px', width: '50px' }} />
 
+                        <progress max="100" value={object.upload.uploadProgress} />
+
                         <input placeholder="image name" {...mediaHelpers.getInputProps(object, 'name')} />
 
                         <input

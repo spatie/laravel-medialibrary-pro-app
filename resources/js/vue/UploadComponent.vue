@@ -26,6 +26,8 @@
 
                     <img v-bind="mediaHelpers.getImgProps(object)" style="height: 50px; width: 50px;" />
 
+                    <progress max="100" :value="object.upload.uploadProgress" />
+
                     <input
                         placeholder="image name"
                         v-bind="mediaHelpers.getInputProps(object, 'name')"
