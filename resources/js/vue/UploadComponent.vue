@@ -5,36 +5,43 @@
 
             <draggable v-model="mediaLibrary.state.media" @update="handleOrderChange(mediaLibrary)">
                 <div
-                    v-for="(media, i) in mediaLibrary.state.media"
-                    :key="media.uuid"
-                    style="border: 1px solid black; margin: 5px; padding: 3px;"
+                    v-for="(object, i) in mediaLibrary.state.media"
+                    :key="object.uuid"
+                    style="border: 1px solid black; margin: 5px; padding: 3px; position: relative;"
                 >
+                    <span
+                        style="position: absolute; top: 5px; right: 5px; cursor: pointer;"
+                        @click="mediaLibrary.removeMediaObject(object.uuid)"
+                    >
+                        x
+                    </span>
+
                     <!-- {{ mediaLibrary.getFormInputs(media) }} ? -->
                     <input
                         v-for="key in Object.keys(mediaLibrary.value[i])"
                         :key="key"
                         type="hidden"
-                        v-bind="mediaHelpers.getInputProps(media, key)"
+                        v-bind="mediaHelpers.getInputProps(object, key)"
                     />
 
-                    <img v-bind="mediaHelpers.getImgProps(media)" style="height: 50px; width: 50px;" />
+                    <img v-bind="mediaHelpers.getImgProps(object)" style="height: 50px; width: 50px;" />
 
                     <input
                         placeholder="image name"
-                        v-bind="mediaHelpers.getInputProps(media, 'name')"
-                        v-on="mediaHelpers.getInputListeners(media, 'name')"
+                        v-bind="mediaHelpers.getInputProps(object, 'name')"
+                        v-on="mediaHelpers.getInputListeners(object, 'name')"
                     />
 
                     <input
                         placeholder="username (custom property)"
-                        v-bind="mediaHelpers.getInputProps(media, 'custom_properties.username')"
-                        v-on="mediaHelpers.getInputListeners(media, 'custom_properties.username')"
+                        v-bind="mediaHelpers.getInputProps(object, 'custom_properties.username')"
+                        v-on="mediaHelpers.getInputListeners(object, 'custom_properties.username')"
                     />
 
                     <input
                         placeholder="last name (custom property)"
-                        v-bind="mediaHelpers.getInputProps(media, 'custom_properties.lastname')"
-                        v-on="mediaHelpers.getInputListeners(media, 'custom_properties.lastname')"
+                        v-bind="mediaHelpers.getInputProps(object, 'custom_properties.lastname')"
+                        v-on="mediaHelpers.getInputListeners(object, 'custom_properties.lastname')"
                     />
 
                     <!-- Figure out a good way to get an object's error (below code depends on the index, which changes when changing the order of the objects) -->
