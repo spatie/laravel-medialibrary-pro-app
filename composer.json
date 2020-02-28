@@ -10,14 +10,14 @@
     "repositories": [
         {
             "type": "path",
-            "url": "/Users/freek/dev/code/laravel-medialibrary",
+            "url": "../laravel-medialibrary",
             "options": {
                 "symlink": false
             }
         },
         {
             "type": "path",
-            "url": "/Users/freek/dev/code/laravel-medialibrary-pro",
+            "url": "../laravel-medialibrary-pro",
             "options": {
                 "symlink": false
             }

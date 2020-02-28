@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "34294be2077d8b3381543b45abd972ee",
+    "content-hash": "a0a224be5579aa71e788897b37d7367c",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2570,8 +2570,9 @@
             "version": "dev-v8-pro",
             "dist": {
                 "type": "path",
-                "url": "/Users/freek/dev/code/laravel-medialibrary",
-                "reference": "2858d3734659822a7bdcb2e286f7182b46688c38"
+                "url": "../laravel-medialibrary",
+                "reference": "2858d3734659822a7bdcb2e286f7182b46688c38",
+                "shasum": null
             },
             "require": {
                 "ext-fileinfo": "*",
@@ -2661,8 +2662,9 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "/Users/freek/dev/code/laravel-medialibrary-pro",
-                "reference": "be4766d3b0c1e5dd00b9f22b92e86130bee6dc5d"
+                "url": "../laravel-medialibrary-pro",
+                "reference": "350086ea6d8db47e1b4dc6fc8757769adbfb0309",
+                "shasum": null
             },
             "require": {
                 "ext-json": "*",
