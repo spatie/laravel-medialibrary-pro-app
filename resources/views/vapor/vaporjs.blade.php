@@ -28,8 +28,8 @@ Welcome to Vapor JS
                 uuid: response.uuid,
                 key: response.key,
                 bucket: response.bucket,
-                name: this.$refs.file.files[0].name,
-                content_type: this.$refs.file.files[0].type,
+                name: firstFile.name,
+                content_type: firstFile.type,
             });
 
 
