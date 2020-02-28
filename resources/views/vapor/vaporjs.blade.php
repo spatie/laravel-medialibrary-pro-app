@@ -14,12 +14,14 @@ Welcome to Vapor JS
                 this.uploadProgress = Math.round(progress * 100);
             }
         }).then(response => {
+            let firstFile = document.getElementById('file').files[0];
+
             console.log({
                 uuid: response.uuid,
                 key: response.key,
                 bucket: response.bucket,
-                name: document.getElementById('file').files[0].name,
-                content_type: this.$refs.file.files[0].type,
+                name: firstFile.name,
+                content_type: firstFile.type,
             });
         }).catch(error => console.error(error));
     }
