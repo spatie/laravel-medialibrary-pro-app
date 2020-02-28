@@ -1,6 +1,6 @@
 <script src="{{ mix('js/vapor/app.js') }}" ></script>
 
-Welcome to Vapor JS
+Medialibrary on Vapor test
 
 
 
