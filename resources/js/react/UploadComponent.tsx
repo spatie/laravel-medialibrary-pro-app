@@ -39,9 +39,14 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
                             <input key={key} {...mediaHelpers.getInputProps(object, key)} type="hidden" />
                         ))}
 
+                        <img {...mediaHelpers.getImgProps(object)} style={{ height: '50px', width: '50px' }} />
+
                         <input placeholder="image name" {...mediaHelpers.getInputProps(object, 'name')} />
 
-                        <img {...mediaHelpers.getImgProps(object)} style={{ height: '50px', width: '50px' }} />
+                        <input
+                            placeholder="username (custom property)"
+                            {...mediaHelpers.getInputProps(object, 'custom_properties.username')}
+                        />
                     </div>
                 ))}
             </ul>
