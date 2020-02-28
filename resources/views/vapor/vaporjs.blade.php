@@ -9,7 +9,7 @@ Welcome to Vapor JS
 
 <script>
     function uploadToS3() {
-        Vapor.store(document.getElementById('file'), {
+        Vapor.store(document.getElementById('file').files[0], {
             progress: progress => {
                 this.uploadProgress = Math.round(progress * 100);
             }
