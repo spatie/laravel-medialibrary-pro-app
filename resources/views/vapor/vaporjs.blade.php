@@ -23,6 +23,16 @@ Welcome to Vapor JS
                 name: firstFile.name,
                 content_type: firstFile.type,
             });
+
+            axios.post('/post-s3-upload ', {
+                uuid: response.uuid,
+                key: response.key,
+                bucket: response.bucket,
+                name: this.$refs.file.files[0].name,
+                content_type: this.$refs.file.files[0].type,
+            });
+
+
         }).catch(error => console.error(error));
     }
 </script>
