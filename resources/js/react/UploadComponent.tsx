@@ -34,6 +34,7 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
                             x
                         </span>
 
+                        {/*  {{ mediaLibrary.getFormInputs(object) }} ? */}
                         {Object.keys(mediaLibrary.value[i]).map(key => (
                             <input key={key} {...mediaHelpers.getInputProps(object, key)} type="hidden" />
                         ))}
