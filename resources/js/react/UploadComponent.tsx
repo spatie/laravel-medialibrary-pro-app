@@ -25,17 +25,22 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
         <div>
             <input type="file" multiple {...mediaHelpers.getFileInputProps()} />
             <ul>
-                {mediaState.media.map((media: MediaLibrary.MediaObject, i: number) => (
-                    <div style={{ border: '1px solid black' }} key={media.uuid}>
-                        <span style={{ position: 'absolute', top: '5px', right: '5px' }}>x</span>
+                {mediaState.media.map((object: MediaLibrary.MediaObject, i: number) => (
+                    <div style={{ border: '1px solid black', position: 'relative' }} key={object.uuid}>
+                        <span
+                            style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
+                            onClick={() => mediaLibrary.removeMediaObject(object.uuid)}
+                        >
+                            x
+                        </span>
 
                         {Object.keys(mediaLibrary.value[i]).map(key => (
-                            <input key={key} {...mediaHelpers.getInputProps(media, key)} type="hidden" />
+                            <input key={key} {...mediaHelpers.getInputProps(object, key)} type="hidden" />
                         ))}
 
-                        <input placeholder="image name" {...mediaHelpers.getInputProps(media, 'name')} />
+                        <input placeholder="image name" {...mediaHelpers.getInputProps(object, 'name')} />
 
-                        <img {...mediaHelpers.getImgProps(media)} style={{ height: '50px', width: '50px' }} />
+                        <img {...mediaHelpers.getImgProps(object)} style={{ height: '50px', width: '50px' }} />
                     </div>
                 ))}
             </ul>
