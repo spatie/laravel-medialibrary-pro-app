@@ -18,7 +18,7 @@ Welcome to Vapor JS
                 uuid: response.uuid,
                 key: response.key,
                 bucket: response.bucket,
-                name: this.$refs.file.files[0].name,
+                name: document.getElementById('file').files[0].name,
                 content_type: this.$refs.file.files[0].type,
             });
         }).catch(error => console.error(error));
