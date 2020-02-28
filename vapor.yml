@@ -11,5 +11,6 @@ environments:
             - 'composer install --no-dev'
             - 'php artisan event:cache'
             - 'yarn setup && rm -rf node_modules'
+        deploy:
             - 'php artisan migrate --force'
 
