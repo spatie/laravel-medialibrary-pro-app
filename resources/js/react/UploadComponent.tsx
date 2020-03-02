@@ -11,7 +11,7 @@ type Props = {
     tempEndpoint: string;
 };
 
-export default function UploadComponent({ name, initialValue, errors, tempEndpoint }: Props) {
+export default function UploadComponent({ name, initialValue, /* errors, */ tempEndpoint }: Props) {
     const { getImgProps, getInputProps, getFileInputProps, mediaState, removeMediaObject } = useMediaLibrary({
         initialMedia: initialValue,
         endpoint: tempEndpoint,
@@ -32,7 +32,7 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
         <div>
             <input type="file" multiple {...getFileInputProps()} />
 
-            {mediaState.map((object: MediaLibrary.MediaObject, i: number) => (
+            {mediaState.map((object: MediaLibrary.MediaObject) => (
                 <div className="border relative my-2" key={object.uuid}>
                     <span
                         style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
@@ -54,7 +54,7 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
                 </div>
             ))}
 
-            <MediaFormValues name="media" mediaState={mediaState} />
+            <MediaFormValues name={name} mediaState={mediaState} />
         </div>
     );
 }
