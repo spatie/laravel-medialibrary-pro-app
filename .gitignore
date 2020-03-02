@@ -10,7 +10,8 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-public/js/app.js
 .vapor/
 .env.production
 .env.staging
+public/js/
+public/css/main.css

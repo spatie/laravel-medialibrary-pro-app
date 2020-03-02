@@ -26,7 +26,7 @@ export default function UploadComponent({ name, initialValue, errors, tempEndpoi
             <input type="file" multiple {...mediaHelpers.getFileInputProps()} />
             <ul>
                 {mediaState.media.map((object: MediaLibrary.MediaObject, i: number) => (
-                    <div style={{ border: '1px solid black', position: 'relative' }} key={object.uuid}>
+                    <div className="border relative my-2" key={object.uuid}>
                         <span
                             style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
                             onClick={() => mediaLibrary.removeMediaObject(object.uuid)}

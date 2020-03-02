@@ -13,6 +13,8 @@
 
 
     <!-- Styles -->
+    <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+
     <style>
         html,
         body {

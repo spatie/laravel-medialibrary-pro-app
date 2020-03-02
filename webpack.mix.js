@@ -11,8 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/sass/app.scss', 'public/css')
-    .js('resources/js/vue/app.js', 'public/js/vue')
+mix.js('resources/js/vue/app.js', 'public/js/vue')
     .ts('resources/js/react/app.tsx', 'public/js/react')
     .js('resources/js/vapor/app.js', 'public/js/vapor');
 
@@ -20,3 +19,5 @@ mix.sass('resources/sass/app.scss', 'public/css')
 mix.webpackConfig({
     resolve: { symlinks: false },
 });
+
+mix.postCss('resources/css/main.css', 'public/css', [require('tailwindcss')]);
