@@ -1,7 +1,8 @@
 import * as React from 'react';
-import useMediaLibrary from '@spatie/medialibrary-pro-react';
+import { useMediaLibrary, MediaFormValues } from '@spatie/medialibrary-pro-react';
 import MediaLibraryClass from '@spatie/medialibrary-pro-core';
 import { MediaLibrary } from '@spatie/medialibrary-pro-core/dist/Medialibrary';
+/* import Dragula from 'react-dragula'; */
 
 type Props = {
     name: string;
@@ -11,47 +12,49 @@ type Props = {
 };
 
 export default function UploadComponent({ name, initialValue, errors, tempEndpoint }: Props) {
-    const { mediaLibrary, mediaHelpers, mediaState } = useMediaLibrary({
+    const { getImgProps, getInputProps, getFileInputProps, mediaState, removeMediaObject } = useMediaLibrary({
         initialMedia: initialValue,
         endpoint: tempEndpoint,
-        resourceName: name,
     });
 
-    if (!mediaLibrary) {
+    if (!mediaState) {
         return null;
     }
 
+    /* const dragulaDecorator = componentBackingInstance => {
+        if (componentBackingInstance) {
+            let options = {};
+            Dragula([componentBackingInstance], options);
+        }
+    }; */
+
     return (
         <div>
-            <input type="file" multiple {...mediaHelpers.getFileInputProps()} />
-            <ul>
-                {mediaState.media.map((object: MediaLibrary.MediaObject, i: number) => (
-                    <div className="border relative my-2" key={object.uuid}>
-                        <span
-                            style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
-                            onClick={() => mediaLibrary.removeMediaObject(object.uuid)}
-                        >
-                            x
-                        </span>
+            <input type="file" multiple {...getFileInputProps()} />
 
-                        {/*  {{ mediaLibrary.getFormInputs(object) }} ? */}
-                        {Object.keys(mediaLibrary.value[i]).map(key => (
-                            <input key={key} {...mediaHelpers.getInputProps(object, key)} type="hidden" />
-                        ))}
+            {mediaState.map((object: MediaLibrary.MediaObject, i: number) => (
+                <div className="border relative my-2" key={object.uuid}>
+                    <span
+                        style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
+                        onClick={() => removeMediaObject(object.uuid)}
+                    >
+                        x
+                    </span>
 
-                        <img {...mediaHelpers.getImgProps(object)} style={{ height: '50px', width: '50px' }} />
+                    <img {...getImgProps(object)} style={{ height: '50px', width: '50px' }} />
 
-                        <progress max="100" value={object.upload.uploadProgress} />
+                    <progress max="100" value={object.upload.uploadProgress} />
 
-                        <input placeholder="image name" {...mediaHelpers.getInputProps(object, 'name')} />
+                    <input placeholder="image name" {...getInputProps(object, 'name')} />
 
-                        <input
-                            placeholder="username (custom property)"
-                            {...mediaHelpers.getInputProps(object, 'custom_properties.username')}
-                        />
-                    </div>
-                ))}
-            </ul>
+                    <input
+                        placeholder="username (custom property)"
+                        {...getInputProps(object, 'custom_properties.username')}
+                    />
+                </div>
+            ))}
+
+            <MediaFormValues name="media" mediaState={mediaState} />
         </div>
     );
 }

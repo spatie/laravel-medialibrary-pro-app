@@ -1,61 +1,73 @@
 <template>
-    <media-library :initial-media="initialValue" :endpoint="tempEndpoint" :resource-name="name">
-        <div slot-scope="{ mediaLibrary, mediaHelpers }">
-            <input type="file" :accept="accept" :multiple="multiple" v-on="mediaHelpers.getFileInputListeners()" />
+    <div>
+        <media-library :initial-media="initialValue" :endpoint="tempEndpoint">
+            <div
+                slot-scope="{
+                    state,
+                    removeMediaObject,
+                    setMediaObjectProperty,
+                    getImgProps,
+                    getCustomPropertyInputProps,
+                    getCustomPropertyInputListeners,
+                    getNameInputProps,
+                    getNameInputListeners,
+                    getFileInputProps,
+                    getFileInputListeners,
+                }"
+            >
+                <media-form-values :name="name" :media-state="state.media" />
 
-            <draggable v-model="mediaLibrary.state.media" @update="handleOrderChange(mediaLibrary)">
-                <div
-                    v-for="(object, i) in mediaLibrary.state.media"
-                    :key="object.uuid"
-                    style="border: 1px solid black; margin: 5px; padding: 3px; position: relative;"
-                >
-                    <span
-                        style="position: absolute; top: 5px; right: 5px; cursor: pointer;"
-                        @click="mediaLibrary.removeMediaObject(object.uuid)"
+                <input
+                    type="file"
+                    :accept="accept"
+                    :multiple="multiple"
+                    v-bind="getFileInputProps()"
+                    v-on="getFileInputListeners()"
+                />
+
+                <draggable v-model="state.media" @update="handleOrderChange(state.media, setMediaObjectProperty)">
+                    <div
+                        v-for="object in state.media"
+                        :key="object.uuid"
+                        style="border: 1px solid black; margin: 5px; padding: 3px; position: relative;"
                     >
-                        x
-                    </span>
+                        <span
+                            style="position: absolute; top: 5px; right: 5px; cursor: pointer;"
+                            @click="removeMediaObject(object.uuid)"
+                        >
+                            x
+                        </span>
 
-                    <!-- {{ mediaLibrary.getFormInputs(media) }} ? -->
-                    <input
-                        v-for="key in Object.keys(mediaLibrary.value[i])"
-                        :key="key"
-                        type="hidden"
-                        v-bind="mediaHelpers.getInputProps(object, key)"
-                    />
+                        <img v-bind="getImgProps(object)" style="height: 50px; width: 50px;" />
 
-                    <img v-bind="mediaHelpers.getImgProps(object)" style="height: 50px; width: 50px;" />
+                        <progress max="100" :value="object.upload.uploadProgress" />
 
-                    <progress max="100" :value="object.upload.uploadProgress" />
+                        <input
+                            placeholder="image name"
+                            v-bind="getNameInputProps(object)"
+                            v-on="getNameInputListeners(object)"
+                        />
 
-                    <input
-                        placeholder="image name"
-                        v-bind="mediaHelpers.getInputProps(object, 'name')"
-                        v-on="mediaHelpers.getInputListeners(object, 'name')"
-                    />
+                        <input
+                            placeholder="username (custom property)"
+                            v-bind="getCustomPropertyInputProps(object, 'username')"
+                            v-on="getCustomPropertyInputListeners(object, 'username')"
+                        />
 
-                    <input
-                        placeholder="username (custom property)"
-                        v-bind="mediaHelpers.getInputProps(object, 'custom_properties.username')"
-                        v-on="mediaHelpers.getInputListeners(object, 'custom_properties.username')"
-                    />
-
-                    <input
-                        placeholder="last name (custom property)"
-                        v-bind="mediaHelpers.getInputProps(object, 'custom_properties.lastname')"
-                        v-on="mediaHelpers.getInputListeners(object, 'custom_properties.lastname')"
-                    />
-
-                    <!-- Figure out a good way to get an object's error (below code depends on the index, which changes when changing the order of the objects) -->
-                    <!-- <p style="color: red;">{{ errors[`${name}.${i}.name`] }}</p> -->
-                </div>
-            </draggable>
-        </div>
-    </media-library>
+                        <input
+                            placeholder="last name (custom property)"
+                            v-bind="getCustomPropertyInputProps(object, 'lastname')"
+                            v-on="getCustomPropertyInputListeners(object, 'lastname')"
+                        />
+                    </div>
+                </draggable>
+            </div>
+        </media-library>
+    </div>
 </template>
 
 <script>
-import MediaLibrary from '@spatie/medialibrary-pro-vue';
+import { MediaLibrary, MediaFormValues } from '@spatie/medialibrary-pro-vue';
 import Draggable from 'vuedraggable';
 
 export default {
@@ -66,7 +78,7 @@ export default {
         tempEndpoint: { required: true, type: String },
     },
 
-    components: { MediaLibrary, Draggable },
+    components: { MediaLibrary, MediaFormValues, Draggable },
 
     data: () => ({
         accept: '',
@@ -74,11 +86,10 @@ export default {
     }),
 
     methods: {
-        handleOrderChange(mediaLibrary) {
-            mediaLibrary.state.media = mediaLibrary.state.media.map((object, i) => ({
-                ...object,
-                order: i,
-            }));
+        handleOrderChange(mediaState, setMediaObjectProperty) {
+            mediaState.forEach((object, i) => {
+                setMediaObjectProperty(object.uuid, 'order', i);
+            });
         },
     },
 };
