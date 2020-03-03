@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { useMediaLibrary, MediaFormValues } from '@spatie/medialibrary-pro-react';
-import MediaLibraryClass from '@spatie/medialibrary-pro-core';
-import { MediaLibrary } from '@spatie/medialibrary-pro-core/dist/Medialibrary';
+import { useMedialibrary, MediaFormValues } from '@spatie/medialibrary-pro-react';
+import MedialibraryClass from '@spatie/medialibrary-pro-core';
+import { Medialibrary } from '@spatie/medialibrary-pro-core/dist/Medialibrary';
 import useDragula from './useDragula';
 
 type Props = {
     name: string;
-    initialValue: MediaLibraryClass['state']['media'];
+    initialValue: MedialibraryClass['state']['media'];
     errors: { [key: string]: any };
     tempEndpoint: string;
 };
@@ -20,7 +20,7 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
         getFileInputProps,
         removeMediaObject,
         setMediaOrder,
-    } = useMediaLibrary({
+    } = useMedialibrary({
         initialMedia: initialValue,
         endpoint: tempEndpoint,
     });
@@ -48,8 +48,8 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
             <input type="file" multiple {...getFileInputProps()} />
 
             <div ref={dragulaDecorator}>
-                {state.media.map((object: MediaLibrary.MediaObject) => (
-                    <div className="border relative my-2" key={object.uuid} data-medialibrary-uuid={object.uuid}>
+                {state.media.map((object: Medialibrary.MediaObject) => (
+                    <div className="border m-2 p-2 relative" key={object.uuid} data-medialibrary-uuid={object.uuid}>
                         <span
                             style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
                             onClick={() => removeMediaObject(object)}

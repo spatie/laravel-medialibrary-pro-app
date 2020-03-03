@@ -1,6 +1,6 @@
 <template>
     <div>
-        <media-library :initial-media="initialValue" :endpoint="tempEndpoint">
+        <medialibrary :initial-media="initialValue" :endpoint="tempEndpoint" ref="medialibrary">
             <div
                 slot-scope="{
                     state,
@@ -25,11 +25,12 @@
                     v-on="getFileInputListeners()"
                 />
 
-                <draggable v-model="state.media" @update="handleOrderChange(state.media, setMediaObjectProperty)">
+                <div v-dragula="state.media" bag="dragula-bag">
                     <div
                         v-for="object in state.media"
                         :key="object.uuid"
-                        style="border: 1px solid black; margin: 5px; padding: 3px; position: relative;"
+                        class="border m-2 p-2 relative"
+                        :data-medialibrary-uuid="object.uuid"
                     >
                         <span
                             style="position: absolute; top: 5px; right: 5px; cursor: pointer;"
@@ -60,15 +61,15 @@
                             v-on="getCustomPropertyInputListeners(object, 'lastname')"
                         />
                     </div>
-                </draggable>
+                </div>
             </div>
-        </media-library>
+        </medialibrary>
     </div>
 </template>
 
 <script>
-import { MediaLibrary, MediaFormValues } from '@spatie/medialibrary-pro-vue';
-import Draggable from 'vuedraggable';
+import { Medialibrary, MediaFormValues } from '@spatie/medialibrary-pro-vue';
+import Vue from 'vue';
 
 export default {
     props: {
@@ -78,19 +79,23 @@ export default {
         tempEndpoint: { required: true, type: String },
     },
 
-    components: { MediaLibrary, MediaFormValues, Draggable },
+    components: { Medialibrary, MediaFormValues },
 
     data: () => ({
         accept: '',
         multiple: true,
+        medialibrary: null,
     }),
 
-    methods: {
-        handleOrderChange(mediaState, setMediaObjectProperty) {
-            mediaState.forEach((object, i) => {
-                setMediaObjectProperty(object, 'order', i);
-            });
-        },
+    created() {
+        Vue.vueDragula.eventBus.$on('dragend', e => {
+            this.$refs.medialibrary.setMediaOrder(
+                Array.from(e[1].parentElement?.children || []).map(object => {
+                    return object.getAttribute('data-medialibrary-uuid');
+                }),
+                false
+            );
+        });
     },
 };
 </script>
