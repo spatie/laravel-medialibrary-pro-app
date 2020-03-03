@@ -11,8 +11,19 @@
         "link-js": "yarn link @spatie/medialibrary-pro-core @spatie/medialibrary-pro-vue @spatie/medialibrary-pro-react",
         "setup": "yarn && yarn link-js && yarn dev"
     },
+    "dependencies": {
+        "laravel-vapor": "^0.4.0",
+        "lodash": "^4.17.13",
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0",
+        "react-dragula": "^1.1.17",
+        "tailwindcss": "^1.2.0",
+        "vue": "^2.6.11",
+        "vuedraggable": "^2.23.2"
+    },
     "devDependencies": {
         "@babel/preset-react": "^7.8.3",
+        "@types/dragula": "^3.7.0",
         "@types/react": "^16.9.22",
         "@types/react-dom": "^16.9.5",
         "axios": "^0.19",
@@ -24,15 +35,5 @@
         "ts-loader": "^6.2.1",
         "typescript": "^3.8.2",
         "vue-template-compiler": "^2.6.11"
-    },
-    "dependencies": {
-        "laravel-vapor": "^0.4.0",
-        "lodash": "^4.17.13",
-        "react": "^16.12.0",
-        "react-dom": "^16.12.0",
-        "react-dragula": "^1.1.17",
-        "tailwindcss": "^1.2.0",
-        "vue": "^2.6.11",
-        "vuedraggable": "^2.23.2"
     }
 }
