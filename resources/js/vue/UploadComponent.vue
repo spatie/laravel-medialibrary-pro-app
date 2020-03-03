@@ -33,7 +33,7 @@
                     >
                         <span
                             style="position: absolute; top: 5px; right: 5px; cursor: pointer;"
-                            @click="removeMediaObject(object.uuid)"
+                            @click="removeMediaObject(object)"
                         >
                             x
                         </span>
@@ -88,7 +88,7 @@ export default {
     methods: {
         handleOrderChange(mediaState, setMediaObjectProperty) {
             mediaState.forEach((object, i) => {
-                setMediaObjectProperty(object.uuid, 'order', i);
+                setMediaObjectProperty(object, 'order', i);
             });
         },
     },

@@ -43,7 +43,7 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
                 <div className="border relative my-2" key={object.uuid}>
                     <span
                         style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
-                        onClick={() => removeMediaObject(object.uuid)}
+                        onClick={() => removeMediaObject(object)}
                     >
                         x
                     </span>
