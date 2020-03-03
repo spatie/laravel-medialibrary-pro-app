@@ -12,12 +12,19 @@ type Props = {
 };
 
 export default function UploadComponent({ name, initialValue, /* errors, */ tempEndpoint }: Props) {
-    const { getImgProps, getInputProps, getFileInputProps, mediaState, removeMediaObject } = useMediaLibrary({
+    const {
+        state,
+        getImgProps,
+        getNameInputProps,
+        getCustomPropertyInputProps,
+        getFileInputProps,
+        removeMediaObject,
+    } = useMediaLibrary({
         initialMedia: initialValue,
         endpoint: tempEndpoint,
     });
 
-    if (!mediaState) {
+    if (!state.media) {
         return null;
     }
 
@@ -32,7 +39,7 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
         <div>
             <input type="file" multiple {...getFileInputProps()} />
 
-            {mediaState.map((object: MediaLibrary.MediaObject) => (
+            {state.media.map((object: MediaLibrary.MediaObject) => (
                 <div className="border relative my-2" key={object.uuid}>
                     <span
                         style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
@@ -45,16 +52,16 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
 
                     <progress max="100" value={object.upload.uploadProgress} />
 
-                    <input placeholder="image name" {...getInputProps(object, 'name')} />
+                    <input placeholder="image name" {...getNameInputProps(object)} />
 
                     <input
                         placeholder="username (custom property)"
-                        {...getInputProps(object, 'custom_properties.username')}
+                        {...getCustomPropertyInputProps(object, 'username')}
                     />
                 </div>
             ))}
 
-            <MediaFormValues name={name} mediaState={mediaState} />
+            <MediaFormValues name={name} mediaState={state.media} />
         </div>
     );
 }
