@@ -17,7 +17,12 @@ mix.js('resources/js/vue/app.js', 'public/js/vue')
 
 // Needed for local development with React as external library in @spatie/medialibrary-pro-react
 mix.webpackConfig({
-    resolve: { symlinks: false },
+    resolve: {
+        symlinks: false,
+        alias: {
+            react: path.resolve('./node_modules/react'),
+        },
+    },
 });
 
 mix.postCss('resources/css/main.css', 'public/css', [require('tailwindcss')]);

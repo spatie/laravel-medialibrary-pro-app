@@ -1,7 +1,8 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 import MedialibraryClass from '@spatie/medialibrary-pro-core';
-import UploadComponent from './UploadComponent';
+
+import TableComponent from '@spatie/medialibrary-pro-react-table'
 
 declare const window: {
     oldValues: { name: string; media: MedialibraryClass['state']['media'] };
@@ -11,12 +12,12 @@ declare const window: {
 
 ReactDOM.render(
     <div>
-        <UploadComponent
+        <TableComponent
             name="media"
             initialValue={window.oldValues.media}
             errors={window.errors}
-            tempEndpoint={window.tempEndpoint} /* Get from blade */
-        ></UploadComponent>
+            tempEndpoint={window.tempEndpoint}
+        ></TableComponent>
     </div>,
     document.getElementById('app')
 );

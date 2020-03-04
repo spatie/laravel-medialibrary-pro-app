@@ -82,7 +82,7 @@
 <script>
 import Vue from 'vue';
 import VueDragula from 'vue-dragula';
-import 'react-dragula/dist/dragula.min.css';
+import 'dragula/dist/dragula.min.css';
 import { Medialibrary, MediaFormValues } from '@spatie/medialibrary-pro-vue';
 import PreviewImage from './PreviewImage';
 

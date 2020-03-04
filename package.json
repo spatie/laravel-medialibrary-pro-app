@@ -8,7 +8,7 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "link-js": "yarn link @spatie/medialibrary-pro-core @spatie/medialibrary-pro-vue @spatie/medialibrary-pro-react",
+        "link-js": "yarn link @spatie/medialibrary-pro-core @spatie/medialibrary-pro-vue @spatie/medialibrary-pro-react @spatie/medialibrary-pro-vue-table @spatie/medialibrary-pro-react-table @spatie/medialibrary-pro-vue-list @spatie/medialibrary-pro-react-list @spatie/medialibrary-pro-vue-single @spatie/medialibrary-pro-react-single",
         "setup": "yarn && yarn link-js && yarn dev"
     },
     "dependencies": {
@@ -16,14 +16,12 @@
         "lodash": "^4.17.13",
         "react": "^16.12.0",
         "react-dom": "^16.12.0",
-        "react-dragula": "^1.1.17",
         "tailwindcss": "^1.2.0",
         "vue": "^2.6.11",
         "vue-dragula": "^1.3.1"
     },
     "devDependencies": {
         "@babel/preset-react": "^7.8.3",
-        "@types/dragula": "^3.7.0",
         "@types/react": "^16.9.22",
         "@types/react-dom": "^16.9.5",
         "axios": "^0.19",
