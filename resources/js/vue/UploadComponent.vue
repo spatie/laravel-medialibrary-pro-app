@@ -17,8 +17,15 @@
             >
                 <media-form-values :name="name" :media-state="state.media" />
 
+                <div class="cursor-pointer p-4 border border-dashed" @click="$refs.fileInputRef.click()">
+                    <!-- TODO: dropzone -->
+                    <p class="text-center">Click here or drag a file to add media…</p>
+                </div>
+
                 <input
+                    ref="fileInputRef"
                     type="file"
+                    class="hidden"
                     :accept="accept"
                     :multiple="multiple"
                     v-bind="getFileInputProps()"
@@ -33,13 +40,19 @@
                         :data-medialibrary-uuid="object.uuid"
                     >
                         <span
-                            style="position: absolute; top: 5px; right: 5px; cursor: pointer;"
+                            style="top: 5px; right: 5px;"
+                            class="absolute cursor-pointer"
                             @click="removeMediaObject(object)"
                         >
                             x
                         </span>
 
-                        <img v-bind="getImgProps(object)" style="height: 50px; width: 50px;" />
+                        <div class="relative w-32 h-32 cursor-pointer overflow-hidden" @click="() => {}">
+                            <img v-bind="getImgProps(object)" class="h-full w-full object-cover" />
+                            <div class="absolute inset-0 opacity-0 hover:opacity-50 hover:bg-red-500 duration-150">
+                                <p class="text-center m-auto text-white">Click here or drag a file to add media…</p>
+                            </div>
+                        </div>
 
                         <progress max="100" :value="object.upload.uploadProgress" />
 
@@ -68,6 +81,7 @@
 </template>
 
 <script>
+import 'react-dragula/dist/dragula.min.css';
 import { Medialibrary, MediaFormValues } from '@spatie/medialibrary-pro-vue';
 import Vue from 'vue';
 

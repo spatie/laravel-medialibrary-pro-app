@@ -27,6 +27,8 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
 
     const { dragulaDecorator, drake } = useDragula();
 
+    const fileInputRef = React.useRef<null | HTMLInputElement>(null);
+
     React.useEffect(() => {
         if (drake) {
             drake.on('dragend', e => {
@@ -45,19 +47,30 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
 
     return (
         <div>
-            <input type="file" multiple {...getFileInputProps()} />
+            <input type="file" className="hidden" multiple {...getFileInputProps()} ref={fileInputRef} />
+
+            <div className="cursor-pointer p-4 border border-dashed" onClick={() => fileInputRef.current?.click()}>
+                {/* TODO: dropzone */}
+                <p className="text-center">Click here or drag a file to add media…</p>
+            </div>
 
             <div ref={dragulaDecorator}>
                 {state.media.map((object: Medialibrary.MediaObject) => (
                     <div className="border m-2 p-2 relative" key={object.uuid} data-medialibrary-uuid={object.uuid}>
                         <span
-                            style={{ position: 'absolute', top: '5px', right: '5px', cursor: 'pointer' }}
+                            style={{ top: '5px', right: '5px' }}
+                            className="absolute cursor-pointer"
                             onClick={() => removeMediaObject(object)}
                         >
                             x
                         </span>
 
-                        <img {...getImgProps(object)} style={{ height: '50px', width: '50px' }} />
+                        <div className="relative w-32 h-32 cursor-pointer overflow-hidden" onClick={() => {}}>
+                            <img {...getImgProps(object)} className="h-full w-full object-cover" />
+                            <div className="absolute inset-0 opacity-0 hover:opacity-50 hover:bg-red-500 duration-150">
+                                <p className="text-center m-auto text-white">Click here or drag a file to add media…</p>
+                            </div>
+                        </div>
 
                         <progress max="100" value={object.upload.uploadProgress} />
 
