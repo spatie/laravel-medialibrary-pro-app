@@ -3,6 +3,7 @@ import { useMedialibrary, MediaFormValues } from '@spatie/medialibrary-pro-react
 import MedialibraryClass from '@spatie/medialibrary-pro-core';
 import { Medialibrary } from '@spatie/medialibrary-pro-core/dist/Medialibrary';
 import useDragula from './useDragula';
+import PreviewImage from './PreviewImage';
 
 type Props = {
     name: string;
@@ -20,6 +21,7 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
         getFileInputProps,
         removeMediaObject,
         setMediaOrder,
+        replaceObjectMedia,
     } = useMedialibrary({
         initialMedia: initialValue,
         endpoint: tempEndpoint,
@@ -65,12 +67,10 @@ export default function UploadComponent({ name, initialValue, /* errors, */ temp
                             x
                         </span>
 
-                        <div className="relative w-32 h-32 cursor-pointer overflow-hidden" onClick={() => {}}>
-                            <img {...getImgProps(object)} className="h-full w-full object-cover" />
-                            <div className="absolute inset-0 opacity-0 hover:opacity-50 hover:bg-red-500 duration-150">
-                                <p className="text-center m-auto text-white">Click here or drag a file to add media…</p>
-                            </div>
-                        </div>
+                        <PreviewImage
+                            getImgProps={() => getImgProps(object)}
+                            onReplace={(file: File) => replaceObjectMedia(object, file)}
+                        />
 
                         <progress max="100" value={object.upload.uploadProgress} />
 

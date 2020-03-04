@@ -13,6 +13,7 @@
                     getNameInputListeners,
                     getFileInputProps,
                     getFileInputListeners,
+                    replaceObjectMedia,
                 }"
             >
                 <media-form-values :name="name" :media-state="state.media" />
@@ -47,12 +48,10 @@
                             x
                         </span>
 
-                        <div class="relative w-32 h-32 cursor-pointer overflow-hidden" @click="() => {}">
-                            <img v-bind="getImgProps(object)" class="h-full w-full object-cover" />
-                            <div class="absolute inset-0 opacity-0 hover:opacity-50 hover:bg-red-500 duration-150">
-                                <p class="text-center m-auto text-white">Click here or drag a file to add media…</p>
-                            </div>
-                        </div>
+                        <preview-image
+                            :getImgProps="() => getImgProps(object)"
+                            @replace="replaceObjectMedia(object, $event)"
+                        ></preview-image>
 
                         <progress max="100" :value="object.upload.uploadProgress" />
 
@@ -81,9 +80,10 @@
 </template>
 
 <script>
+import Vue from 'vue';
 import 'react-dragula/dist/dragula.min.css';
 import { Medialibrary, MediaFormValues } from '@spatie/medialibrary-pro-vue';
-import Vue from 'vue';
+import PreviewImage from './PreviewImage';
 
 export default {
     props: {
@@ -93,7 +93,7 @@ export default {
         tempEndpoint: { required: true, type: String },
     },
 
-    components: { Medialibrary, MediaFormValues },
+    components: { Medialibrary, MediaFormValues, PreviewImage },
 
     data: () => ({
         accept: '',
