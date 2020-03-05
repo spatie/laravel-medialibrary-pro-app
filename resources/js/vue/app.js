@@ -2,10 +2,10 @@ require('../bootstrap');
 
 import Vue from 'vue';
 
-import UploadComponent from './UploadComponent.vue';
+import TableComponent from '@spatie/medialibrary-pro-vue-table'
 
 var app = new Vue({
-    components: { UploadComponent },
+    components: { TableComponent },
 
     el: '#app',
 });

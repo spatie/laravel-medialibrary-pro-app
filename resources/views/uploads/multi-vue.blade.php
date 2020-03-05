@@ -29,7 +29,7 @@
                 </p>
 
                 <p>
-                    <upload-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></upload-component>
+                    <table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></table-component>
                 </p>
 
                 <p>
