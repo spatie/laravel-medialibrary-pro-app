@@ -1,11 +1,11 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
-import MedialibraryClass from '@spatie/medialibrary-pro-core';
+import MediaLibraryClass from '@spatie/medialibrary-pro-core';
 
 import TableComponent from '@spatie/medialibrary-pro-react-table'
 
 declare const window: {
-    oldValues: { name: string; media: MedialibraryClass['state']['media'] };
+    oldValues: { name: string; media: MediaLibraryClass['state']['media'] };
     errors: { [key: string]: string };
     tempEndpoint: string;
 };
