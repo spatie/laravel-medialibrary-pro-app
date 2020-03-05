@@ -30,7 +30,7 @@
 
                 <p>
                     </p>
-                    <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></table-component>
+                    <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></media-table-component>
 
                 <p>
                     <button>Submit</button>
