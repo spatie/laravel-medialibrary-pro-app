@@ -29,8 +29,8 @@
                 </p>
 
                 <p>
-                    <table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></table-component>
-                </p>
+                    </p>
+                    <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></table-component>
 
                 <p>
                     <button>Submit</button>

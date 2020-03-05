@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 import MediaLibraryClass from '@spatie/medialibrary-pro-core';
 
-import TableComponent from '@spatie/medialibrary-pro-react-table'
+import MediaTableComponent from '@spatie/medialibrary-pro-react-table'
 
 declare const window: {
     oldValues: { name: string; media: MediaLibraryClass['state']['media'] };
@@ -12,12 +12,12 @@ declare const window: {
 
 ReactDOM.render(
     <div>
-        <TableComponent
+        <MediaTableComponent
             name="media"
             initialValue={window.oldValues.media}
             errors={window.errors}
             tempEndpoint={window.tempEndpoint}
-        ></TableComponent>
+        ></MediaTableComponent>
     </div>,
     document.getElementById('app')
 );

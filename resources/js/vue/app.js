@@ -2,10 +2,10 @@ require('../bootstrap');
 
 import Vue from 'vue';
 
-import TableComponent from '@spatie/medialibrary-pro-vue-table'
+import MediaTableComponent from '@spatie/medialibrary-pro-vue-table'
 
 var app = new Vue({
-    components: { TableComponent },
+    components: { MediaTableComponent },
 
     el: '#app',
 });
