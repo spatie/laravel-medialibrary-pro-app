@@ -11,12 +11,18 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/sass/app.scss', 'public/css')
-    .js('resources/js/vue/app.js', 'public/js/vue')
+mix.js('resources/js/vue/app.js', 'public/js/vue')
     .ts('resources/js/react/app.tsx', 'public/js/react')
     .js('resources/js/vapor/app.js', 'public/js/vapor');
 
 // Needed for local development with React as external library in @spatie/medialibrary-pro-react
 mix.webpackConfig({
-    resolve: { symlinks: false },
+    resolve: {
+        symlinks: false,
+        alias: {
+            react: path.resolve('./node_modules/react'),
+        },
+    },
 });
+
+mix.postCss('resources/css/main.css', 'public/css', [require('tailwindcss')]);
