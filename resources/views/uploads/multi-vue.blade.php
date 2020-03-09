@@ -29,8 +29,24 @@
                 </p>
 
                 <p>
-                    </p>
-                    <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></media-table-component>
+                </p>
+                <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload">
+                    <template slot-scope="{ getCustomPropertyInputProps, getCustomPropertyInputListeners }">
+                        <input
+                            placeholder="caption (custom property)"
+                            class="border rounded p-1 mx-2"
+                            v-bind="getCustomPropertyInputProps('caption')"
+                            v-on="getCustomPropertyInputListeners('caption')"
+                        />
+
+                        <input
+                            placeholder="caption (custom property)"
+                            class="border rounded p-1 mx-2"
+                            v-bind="getCustomPropertyInputProps('tags')"
+                            v-on="getCustomPropertyInputListeners('tags')"
+                        />
+                    </template>
+                </media-table-component>
 
                 <p>
                     <button>Submit</button>
