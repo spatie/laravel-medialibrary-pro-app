@@ -36,15 +36,7 @@
                     <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
                 </p>
 
-                <!--  <p>
-                    <upload-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></upload-component>
-                </p> -->
-
                 <div id="app"></div>
-
-                <p>
-                    <button>Submit</button>
-                </p>
             </form>
         </div>
     </div>
