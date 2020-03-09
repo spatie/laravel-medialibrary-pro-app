@@ -28,8 +28,6 @@
                     <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
                 </p>
 
-                <p>
-                </p>
                 <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload">
                     <template slot-scope="{ getCustomPropertyInputProps, getCustomPropertyInputListeners }">
                         <input
@@ -40,7 +38,7 @@
                         />
 
                         <input
-                            placeholder="caption (custom property)"
+                            placeholder="tags (custom property)"
                             class="border rounded p-1 mx-2"
                             v-bind="getCustomPropertyInputProps('tags')"
                             v-on="getCustomPropertyInputListeners('tags')"

@@ -22,7 +22,7 @@ ReactDOM.render(
                     <div className="mb-2">
                         <input
                             className="border rounded"
-                            placeholder="tags"
+                            placeholder="caption"
                             {...getCustomPropertyInputProps('caption')}
                         />
                     </div>
