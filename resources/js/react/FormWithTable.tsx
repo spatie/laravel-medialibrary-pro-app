@@ -9,6 +9,7 @@ export default function() {
                 initialValue={window.oldValues.media}
                 tempEndpoint={window.tempEndpoint}
                 strings={{ hint: 'Add some files!', replace: 'drag or click to replace' }}
+                validation={{ accept: ['image/png'], maxSize: 5000 }}
             >
                 {({ getCustomPropertyInputProps }) => (
                     <>
