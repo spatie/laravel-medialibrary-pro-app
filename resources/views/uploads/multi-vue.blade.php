@@ -28,21 +28,11 @@
                     <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
                 </p>
 
-                <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload">
+                <media-table-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload" :strings="{hint: 'Add files please!', replace: 'Click or drag to replace'}">
                     <template slot-scope="{ getCustomPropertyInputProps, getCustomPropertyInputListeners }">
-                        <input
-                            placeholder="caption (custom property)"
-                            class="border rounded p-1 mx-2"
-                            v-bind="getCustomPropertyInputProps('caption')"
-                            v-on="getCustomPropertyInputListeners('caption')"
-                        />
+                        <input placeholder="caption (custom property)" class="border rounded p-1 mx-2" v-bind="getCustomPropertyInputProps('caption')" v-on="getCustomPropertyInputListeners('caption')" />
 
-                        <input
-                            placeholder="tags (custom property)"
-                            class="border rounded p-1 mx-2"
-                            v-bind="getCustomPropertyInputProps('tags')"
-                            v-on="getCustomPropertyInputListeners('tags')"
-                        />
+                        <input placeholder="tags (custom property)" class="border rounded p-1 mx-2" v-bind="getCustomPropertyInputProps('tags')" v-on="getCustomPropertyInputListeners('tags')" />
                     </template>
                 </media-table-component>
 

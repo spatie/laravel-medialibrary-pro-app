@@ -4,7 +4,12 @@ import MediaTableComponent from '@spatie/medialibrary-pro-react-table';
 export default function() {
     return (
         <>
-            <MediaTableComponent name="media" initialValue={window.oldValues.media} tempEndpoint={window.tempEndpoint}>
+            <MediaTableComponent
+                name="media"
+                initialValue={window.oldValues.media}
+                tempEndpoint={window.tempEndpoint}
+                strings={{ hint: 'Add some files!', replace: 'drag or click to replace' }}
+            >
                 {({ getCustomPropertyInputProps }) => (
                     <>
                         <div className="mb-2">
