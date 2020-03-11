@@ -11,6 +11,7 @@ export default function() {
                 strings={{ hint: 'Add some files!', replace: 'drag or click to replace' }}
                 validation={{ accept: ['image/png'], maxSize: 1024000 }}
                 initialErrors={window.errors}
+                beforeUpload={() => new Promise(resolve => resolve())}
             >
                 {({ getCustomPropertyInputProps, getCustomPropertyInputErrors }) => (
                     <>
