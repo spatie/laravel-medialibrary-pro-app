@@ -28,11 +28,21 @@
                     <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
                 </p>
 
-                <media-table-component :validation="{ accept: ['image/png'], maxSize: 1024000 }" name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload" :strings="{hint: 'Add files please!', replace: 'Click or drag to replace'}">
-                    <template slot-scope="{ getCustomPropertyInputProps, getCustomPropertyInputListeners }">
-                        <input placeholder="caption (custom property)" class="border rounded p-1 mx-2" v-bind="getCustomPropertyInputProps('caption')" v-on="getCustomPropertyInputListeners('caption')" />
+                <media-table-component :validation="{ accept: ['image/png'], maxSize: 1024000 }" name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :initial-errors="{{ $errors }}" temp-endpoint="temp-upload" :strings="{hint: 'Add files please!', replace: 'Click or drag to replace'}">
+                    <template slot-scope="{ getCustomPropertyInputProps, getCustomPropertyInputListeners, getCustomPropertyInputErrors }">
+                        <div class="mb-2">
+                            <input placeholder="tags (custom property)" class="border rounded p-1 mb-1" v-bind="getCustomPropertyInputProps('tags')" v-on="getCustomPropertyInputListeners('tags')" />
+                            <p v-for="error in getCustomPropertyInputErrors('tags')" :key="error" class="text-red-500">
+                                @{{ error }}
+                            </p>
+                        </div>
 
-                        <input placeholder="tags (custom property)" class="border rounded p-1 mx-2" v-bind="getCustomPropertyInputProps('tags')" v-on="getCustomPropertyInputListeners('tags')" />
+                        <div class="mb-2">
+                            <input placeholder="caption (custom property)" class="border rounded p-1 mb-1" v-bind="getCustomPropertyInputProps('caption')" v-on="getCustomPropertyInputListeners('caption')" />
+                            <p v-for="error in getCustomPropertyInputErrors('caption')" :key="error" class="text-red-500">
+                                @{{ error }}
+                            </p>
+                        </div>
                     </template>
                 </media-table-component>
 

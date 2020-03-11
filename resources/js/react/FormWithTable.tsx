@@ -9,9 +9,10 @@ export default function() {
                 initialValue={window.oldValues.media}
                 tempEndpoint={window.tempEndpoint}
                 strings={{ hint: 'Add some files!', replace: 'drag or click to replace' }}
-                validation={{ accept: ['image/png'], maxSize: 5000 }}
+                validation={{ accept: ['image/png'], maxSize: 1024000 }}
+                initialErrors={window.errors}
             >
-                {({ getCustomPropertyInputProps }) => (
+                {({ getCustomPropertyInputProps, getCustomPropertyInputErrors }) => (
                     <>
                         <div className="mb-2">
                             <input
@@ -19,6 +20,11 @@ export default function() {
                                 placeholder="tags"
                                 {...getCustomPropertyInputProps('tags')}
                             />
+                            {getCustomPropertyInputErrors('tags').map(error => (
+                                <p key={error} className="text-red-500">
+                                    {error}
+                                </p>
+                            ))}
                         </div>
 
                         <div className="mb-2">
@@ -27,6 +33,11 @@ export default function() {
                                 placeholder="caption"
                                 {...getCustomPropertyInputProps('caption')}
                             />
+                            {getCustomPropertyInputErrors('caption').map(error => (
+                                <p key={error} className="text-red-500">
+                                    {error}
+                                </p>
+                            ))}
                         </div>
                     </>
                 )}

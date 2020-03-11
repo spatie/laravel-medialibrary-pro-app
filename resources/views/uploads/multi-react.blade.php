@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     <script>
         window.oldValues = {!! json_encode(Session::getOldInput()) !!};
         window.errors = {!! $errors !!};

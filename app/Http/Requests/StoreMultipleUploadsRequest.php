@@ -15,7 +15,10 @@ class StoreMultipleUploadsRequest extends FormRequest
             'media.*.order' => 'required|numeric',
             'media.*.name' => 'required|string',
             'media.*.thumbnail' => 'required|string',
-            'media.*.custom_properties' => 'required|string',
+            'media.*.custom_properties' => 'required|array',
+            /* Custom validation rules. These should probably be configurable by the user from somewhere else */
+            'media.*.custom_properties.tags' => 'required',
+            'media.*.custom_properties.caption' => 'required',
         ];
     }
 }
