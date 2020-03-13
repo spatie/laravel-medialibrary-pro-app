@@ -2,10 +2,10 @@ require('../bootstrap');
 
 import Vue from 'vue';
 
-import MediaTableComponent from '@spatie/medialibrary-pro-vue-table'
+import FormWithTable from './FormWithTable.vue';
 
 var app = new Vue({
-    components: { MediaTableComponent },
+    components: { FormWithTable },
 
     el: '#app',
 });

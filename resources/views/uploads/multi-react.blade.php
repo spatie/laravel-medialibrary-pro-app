@@ -17,17 +17,15 @@
 </head>
 
 <body>
-
     <script>
-        window.oldValues = {!! json_encode(Session::getOldInput()) !!};
-        window.errors = {!! $errors !!};
+        window.oldValues = @json(Session::getOldInput());
+        window.errors = {!! $errors->isEmpty() ? '{}' : $errors !!};
         window.tempEndpoint = 'temp-upload';
     </script>
 
     <div class="p-4">
         <div>
-            <p>errors: {{ $errors }}</p>
-            <p>old values: {{ json_encode(Session::getOldInput()) }}</p>
+            <p>errors:{!! $errors->isEmpty() ? '{}' : $errors !!}</p>
 
             <form action="multi-upload" method="POST">
                 @csrf
@@ -36,15 +34,7 @@
                     <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
                 </p>
 
-                <!--  <p>
-                    <upload-component name="media" :initial-value="{{ json_encode(old('media') ?? []) }}" :errors="{{ $errors }}" temp-endpoint="temp-upload"></upload-component>
-                </p> -->
-
                 <div id="app"></div>
-
-                <p>
-                    <button>Submit</button>
-                </p>
             </form>
         </div>
     </div>
