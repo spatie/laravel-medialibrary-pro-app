@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\FormSubmissionController;
-use Spatie\MedialibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
-use Spatie\MedialibraryPro\Http\Controllers\UploadController;
+use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
+use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('welcome');
