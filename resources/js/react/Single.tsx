@@ -16,7 +16,7 @@ export default function() {
                     hint: { singular: 'Add a file!', plural: 'Add some files!' },
                     replace: 'drag or click to replace',
                 }}
-                validation={{ accept: ['image/png'], maxSize: 1024000 }}
+                validation={{ accept: ['image/png'], maxSize: 1048576 }}
                 initialErrors={window.errors}
                 beforeUpload={() => new Promise(resolve => resolve())}
             ></MediaSingleComponent>

@@ -10,7 +10,7 @@
 
         <media-table-component
             :before-upload="beforeUpload"
-            :validation="{ accept: ['image/png'], maxSize: 1024000 }"
+            :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             name="media"
             :initial-value="initialValue"
             :initial-errors="initialErrors"

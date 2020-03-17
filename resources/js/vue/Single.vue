@@ -7,7 +7,7 @@
         <media-single-component
             name="singleMedia"
             :before-upload="beforeUpload"
-            :validation="{ accept: ['image/png'], maxSize: 1024000 }"
+            :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             :initial-value="initialValue"
             :initial-errors="initialErrors"
             :temp-endpoint="tempEndpoint"

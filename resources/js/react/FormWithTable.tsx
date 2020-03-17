@@ -20,7 +20,7 @@ export default function() {
                     hint: { plural: 'Add some files!', singular: 'Add a file!' },
                     replace: 'drag or click to replace',
                 }}
-                validation={{ accept: ['image/png'], maxSize: 1024000 }}
+                validation={{ accept: ['image/png'], maxSize: 1048576 }}
                 initialErrors={window.errors}
                 dragEnabled
                 beforeUpload={() => new Promise(resolve => resolve())}
