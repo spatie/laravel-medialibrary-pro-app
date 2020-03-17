@@ -3,7 +3,15 @@ import MediaTableComponent from '@spatie/medialibrary-pro-react-table';
 
 export default function() {
     return (
-        <>
+        <form action="multi-upload" method="POST">
+            <h1 className="h1">Form with Table</h1>
+
+            <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
+
+            <p>
+                <input name="name" type="text" placeholder="name" defaultValue={window.oldValues.name} />
+            </p>
+
             <MediaTableComponent
                 name="media"
                 initialValue={window.oldValues.media}
@@ -11,8 +19,9 @@ export default function() {
                 strings={{ hint: 'Add some files!', replace: 'drag or click to replace' }}
                 validation={{ accept: ['image/png'], maxSize: 1024000 }}
                 initialErrors={window.errors}
+                dragEnabled
                 beforeUpload={() => new Promise(resolve => resolve())}
-            >
+                >
                 {({ getCustomPropertyInputProps, getCustomPropertyInputErrors }) => (
                     <>
                         <div className="mb-2">
@@ -47,6 +56,6 @@ export default function() {
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
                 Submit
             </button>
-        </>
+        </form>
     );
 }

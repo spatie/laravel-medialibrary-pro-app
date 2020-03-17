@@ -21,25 +21,16 @@
         window.oldValues = @json(Session::getOldInput());
         window.errors = {!! $errors->isEmpty() ? '{}' : $errors !!};
         window.tempEndpoint = 'temp-upload';
+        window.csrfToken = '{{ csrf_token() }}';
     </script>
 
     <div class="p-4">
         <div id="app">
             <p>errors: {!! $errors->isEmpty() ? '{}' : $errors !!}</p>
 
-            <form action="multi-upload" method="POST">
-                @csrf
+            <form-with-table></form-with-table>
 
-                <p>
-                    <input name="name" type="text" placeholder="name" value="{{ old('name', '') }}" />
-                </p>
-
-                <form-with-table></form-with-table>
-
-                <p>
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Submit</button>
-                </p>
-            </form>
+            <single></single>
         </div>
     </div>
 </body>

@@ -10,12 +10,12 @@ class FormSubmissionController
 {
     public function showVue()
     {
-        return view('uploads.multi-vue');
+        return view('uploads.vue');
     }
 
     public function showReact()
     {
-        return view('uploads.multi-react');
+        return view('uploads.react');
     }
 
     public function store(StoreMultipleUploadsRequest $request)

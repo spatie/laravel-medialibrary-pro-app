@@ -8,8 +8,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('multi-vue', [FormSubmissionController::class, 'showVue']);
-Route::get('multi-react', [FormSubmissionController::class, 'showReact']);
+Route::get('vue', [FormSubmissionController::class, 'showVue']);
+
+Route::get('react', [FormSubmissionController::class, 'showReact']);
 
 Route::post('temp-upload', UploadController::class);
 Route::post('post-s3-upload', CreateTemporaryUploadFromDirectS3UploadController::class);
