@@ -16,12 +16,15 @@ export default function() {
                 name="media"
                 initialValue={window.oldValues.media}
                 tempEndpoint={window.tempEndpoint}
-                strings={{ hint: 'Add some files!', replace: 'drag or click to replace' }}
+                strings={{
+                    hint: { plural: 'Add some files!', singular: 'Add a file!' },
+                    replace: 'drag or click to replace',
+                }}
                 validation={{ accept: ['image/png'], maxSize: 1024000 }}
                 initialErrors={window.errors}
                 dragEnabled
                 beforeUpload={() => new Promise(resolve => resolve())}
-                >
+            >
                 {({ getCustomPropertyInputProps, getCustomPropertyInputErrors }) => (
                     <>
                         <div className="mb-2">

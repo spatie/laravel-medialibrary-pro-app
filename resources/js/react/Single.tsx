@@ -12,7 +12,10 @@ export default function() {
                 name="single-media"
                 initialValue={window.oldValues.singleMedia}
                 tempEndpoint={window.tempEndpoint}
-                strings={{ hint: 'Add a file!', replace: 'drag or click to replace' }}
+                strings={{
+                    hint: { singular: 'Add a file!', plural: 'Add some files!' },
+                    replace: 'drag or click to replace',
+                }}
                 validation={{ accept: ['image/png'], maxSize: 1024000 }}
                 initialErrors={window.errors}
                 beforeUpload={() => new Promise(resolve => resolve())}
