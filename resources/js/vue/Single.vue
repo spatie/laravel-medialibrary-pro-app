@@ -11,9 +11,8 @@
             :initial-value="initialValue"
             :initial-errors="initialErrors"
             :temp-endpoint="tempEndpoint"
-            :strings="{ hint: 'Add a file please!', replace: 'Click or drag to replace' }"
-        >
-        </media-single-component>
+            :translations="{ hint: 'Add a file please!', replace: 'Click or drag to replace' }"
+        ></media-single-component>
 
         <p>
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Submit</button>

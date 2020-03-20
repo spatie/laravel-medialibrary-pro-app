@@ -16,7 +16,7 @@ export default function() {
                 name="media"
                 initialValue={window.oldValues.media}
                 tempEndpoint={window.tempEndpoint}
-                strings={{
+                translations={{
                     hint: { plural: 'Add some files!', singular: 'Add a file!' },
                     replace: 'drag or click to replace',
                 }}

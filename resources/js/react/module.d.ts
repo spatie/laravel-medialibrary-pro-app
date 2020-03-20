@@ -1,8 +1,8 @@
 interface Window {
     oldValues: {
         name: string;
-        singleMedia: import('@spatie/medialibrary-pro-core/dist/index').default['state']['media'];
-        media: import('@spatie/medialibrary-pro-core/dist/index').default['state']['media'];
+        singleMedia: ReadonlyArray<import('@spatie/medialibrary-pro-core/src/types').MediaLibrary.MediaAttributes>;
+        media: ReadonlyArray<import('@spatie/medialibrary-pro-core/src/types').MediaLibrary.MediaAttributes>;
     };
     errors: { [key: string]: Array<string> };
     tempEndpoint: string;

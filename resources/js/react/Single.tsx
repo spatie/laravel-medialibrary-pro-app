@@ -12,7 +12,7 @@ export default function() {
                 name="single-media"
                 initialValue={window.oldValues.singleMedia}
                 tempEndpoint={window.tempEndpoint}
-                strings={{
+                translations={{
                     hint: { singular: 'Add a file!', plural: 'Add some files!' },
                     replace: 'drag or click to replace',
                 }}

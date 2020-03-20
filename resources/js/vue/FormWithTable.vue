@@ -15,7 +15,7 @@
             :initial-value="initialValue"
             :initial-errors="initialErrors"
             :temp-endpoint="tempEndpoint"
-            :strings="{
+            :translations="{
                 hint: { plural: 'Add files please!', singular: 'Add a file please!' },
                 replace: 'Click or drag to replace',
             }"
