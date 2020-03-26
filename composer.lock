@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a366773835e4519f4e6267fb83346ff2",
+    "content-hash": "68fc28d8a4ac6a075c4953a36b4be5b8",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3094,6 +3094,53 @@
                 "spatie"
             ],
             "time": "2019-11-25T12:29:24+00:00"
+        },
+        {
+            "name": "spatie/laravel-flash",
+            "version": "1.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-flash.git",
+                "reference": "78f5474aff15da3943d6911271da3adca7692940"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-flash/zipball/78f5474aff15da3943d6911271da3adca7692940",
+                "reference": "78f5474aff15da3943d6911271da3adca7692940",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/session": "^5.8|^6.0|^7.0",
+                "php": "^7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Flash\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A lightweight package to flash messages",
+            "homepage": "https://github.com/spatie/laravel-flash",
+            "keywords": [
+                "laravel-flash",
+                "spatie"
+            ],
+            "time": "2020-03-18T09:23:45+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary",

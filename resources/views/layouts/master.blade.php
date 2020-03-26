@@ -24,6 +24,11 @@
 
 <div class="p-4">
     <div>
+        @if(flash()->message)
+            <div class="flash()->class">
+                {{ flash()->message }}
+            </div>
+        @endif
         <div id="app">
             @yield('content')
         </div>

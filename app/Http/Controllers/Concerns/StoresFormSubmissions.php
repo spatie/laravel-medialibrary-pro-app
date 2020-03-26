@@ -18,6 +18,8 @@ trait StoresFormSubmissions
             ->addMultipleMediaFromTemporaryUploads($request->$fieldName)
             ->each->toMediaCollection('images');
 
+        flash()->success('Your form has been submitted');
+
         return back();
     }
 }
