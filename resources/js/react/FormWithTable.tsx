@@ -3,7 +3,7 @@ import MediaTableComponent from '@spatie/medialibrary-pro-react-table';
 
 export default function() {
     return (
-        <form action="multi-upload" method="POST">
+        <form method="POST">
             <h1 className="h1">Form with Table</h1>
 
             <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>

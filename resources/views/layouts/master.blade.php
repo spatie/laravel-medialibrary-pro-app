@@ -5,22 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Media library pro test app</title>
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     @stack('scripts')
 
-
-    <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">
 </head>
 
 <body>
+
 <script>
     window.oldValues = @json(Session::getOldInput());
     window.errors = {!! $errors->isEmpty() ? '{}' : $errors !!};
-    window.tempEndpoint = 'temp-upload';
+    window.tempEndpoint = '/temp-upload';
     window.csrfToken = '{{ csrf_token() }}';
 </script>
 

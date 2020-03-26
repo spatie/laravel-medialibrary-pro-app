@@ -1,5 +1,5 @@
 <template>
-    <form action="multi-upload" method="POST">
+    <form method="POST">
         <h1 class="h1 mt-16">Single image (avatar, …)</h1>
 
         <input type="hidden" name="_token" :value="csrfToken" />

@@ -1,14 +1,20 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
-import FormWithTable from './FormWithTable';
 import Single from './Single';
+import FormWithTable from './FormWithTable';
+
+ReactDOM.render(
+    <div>
+        <Single />
+    </div>,
+    document.getElementById('single')
+);
+
 
 ReactDOM.render(
     <div>
         <FormWithTable />
-
-        <Single />
     </div>,
-    document.getElementById('app')
+    document.getElementById('multiple')
 );

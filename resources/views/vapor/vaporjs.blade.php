@@ -2,8 +2,6 @@
 
 Medialibrary on Vapor test
 
-
-
     <input type="file" id="file" ref="file">
     <button onclick="uploadToS3()" type="button">Upload</button>
 

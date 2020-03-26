@@ -3,7 +3,7 @@ import MediaSingleComponent from '@spatie/medialibrary-pro-react-single';
 
 export default function() {
     return (
-        <form action="multi-upload" method="POST">
+        <form method="POST">
             <h1 className="h1 mt-16">Single image (avatar, …)</h1>
 
             <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
