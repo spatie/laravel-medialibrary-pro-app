@@ -20,9 +20,12 @@ class FormSubmissionController
 
     public function store(StoreMultipleUploadsRequest $request)
     {
+        dd($request->all());
+        $fieldName = $request->fieldName();
+
         /** @var FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create(['name' => $request->name ?? 'nothing'])
-            ->addMultipleMediaFromTemporaryUploads($request->media)->each->toMediaCollection('images');
+            ->addMultipleMediaFromTemporaryUploads($request->$fieldName)->each->toMediaCollection('images');
 
         return back();
     }

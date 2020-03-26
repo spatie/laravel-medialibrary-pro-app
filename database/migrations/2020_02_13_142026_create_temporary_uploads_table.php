@@ -11,7 +11,6 @@ class CreateTemporaryUploadsTable extends Migration
         Schema::create('temporary_uploads', function (Blueprint $table) {
             $table->increments('id');
             $table->string('session_id');
-            $table->uuid('uuid')->nullable();
             $table->timestamps();
         });
     }

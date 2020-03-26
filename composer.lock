@@ -3098,16 +3098,10 @@
         {
             "name": "spatie/laravel-medialibrary",
             "version": "dev-pro",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "c945f16e692590e76a31ace72cbea65efaf474b4"
-            },
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/c945f16e692590e76a31ace72cbea65efaf474b4",
-                "reference": "c945f16e692590e76a31ace72cbea65efaf474b4",
-                "shasum": ""
+                "type": "path",
+                "url": "../laravel-medialibrary",
+                "reference": "d8ab97da5c0614ef03a47bfa719b2ccc1a58e798"
             },
             "require": {
                 "ext-fileinfo": "*",
@@ -3136,7 +3130,7 @@
                 "league/flysystem-aws-s3-v3": "^1.0.23",
                 "mockery/mockery": "^1.3",
                 "orchestra/testbench": "^4.0|^5.0",
-                "php-ffmpeg/php-ffmpeg": "^0.14.0",
+                "php-ffmpeg/php-ffmpeg": "^0.15.0",
                 "phpunit/phpunit": "^8.0|^9.0",
                 "spatie/laravel-medialibrary-pro": "dev-master",
                 "spatie/pdf-to-image": "^2.0",
@@ -3160,7 +3154,11 @@
                     "Spatie\\MediaLibrary\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\MediaLibrary\\Tests\\": "tests"
+                }
+            },
             "license": [
                 "MIT"
             ],
@@ -3184,7 +3182,9 @@
                 "media",
                 "spatie"
             ],
-            "time": "2020-03-14T16:35:40+00:00"
+            "transport-options": {
+                "symlink": false
+            }
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
@@ -3192,7 +3192,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-medialibrary-pro",
-                "reference": "3e77d709eb159251198c77a7b32819b22a7d178b"
+                "reference": "3418c967c49842d62f5527cef834c5194907376c"
             },
             "require": {
                 "ext-json": "*",
