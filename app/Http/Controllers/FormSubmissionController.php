@@ -20,7 +20,6 @@ class FormSubmissionController
 
     public function store(StoreMultipleUploadsRequest $request)
     {
-        dd($request->all());
         $fieldName = $request->fieldName();
 
         /** @var FormSubmission $formSubmission */

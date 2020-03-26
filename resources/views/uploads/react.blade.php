@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    session: {{ session()->getId() }}
     <script>
         window.oldValues = @json(Session::getOldInput());
         window.errors = {!! $errors->isEmpty() ? '{}' : $errors !!};
