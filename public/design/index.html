@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medialibrary Dummy Design</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#c42543">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="https://unpkg.com/tailwindcss@^1.2/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="px-8 py-16 text-gray-800 bg-gray-100">
+    <aside class="max-w-3xl mx-auto mb-16 px-4 sm:px-6">
+        <p class="text-2xl leading-snug font-semibold">
+            Static <br>Medialibrary.pro <br>Components
+        </p>
+    </aside>
+
+    <article class="max-w-3xl mx-auto">
+        <section class="bg-white overflow-hidden shadow-md rounded-lg">
+            <header class="border-b border-gray-200 px-4 py-5 sm:px-6">
+                <h2 class="font-black uppercase tracking-widest">Single file</h2>
+            </header>
+            <main class="px-4 py-5 sm:p-6">
+                <code class="inline-block mb-4 px-4 py-2 text-xs text-gray-400 bg-gray-800 rounded-sm">
+                    media: w-16 h-16
+                </code>
+                <div class="relative w-16 h-16 cursor-wait">
+                    <img class="w-full h-full object-cover" src="https://source.unsplash.com/random/400x400">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <div class="absolute inset-0 px-3 flex items-center justify-center">
+                        <div class="h-1 w-full bg-white rounded-full shadow-inner overflow-hidden">
+                            <div class="h-full bg-green-400" style="width:66%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-2 text-xs text-gray-500">
+                    PNG, JPG or GIF <span class="text-gray-400">•</span> Max. 7Mb
+                </div>
+
+                <code class="inline-block mt-8 mb-4 px-4 py-2 text-xs text-gray-400 bg-gray-800 rounded-sm">
+                    media: w-64 h-32 rounded overflow-hidden
+                </code>
+                <div class="relative w-64 h-32 rounded overflow-hidden cursor-wait">
+                    <img class="w-full h-full object-cover" src="https://source.unsplash.com/random/400x400">
+                    <div class="absolute inset-0 bg-black opacity-50"></div>
+                    <div class="absolute inset-0 p-2 flex items-center justify-center">
+                        <div class="absolute inset-0 px-3 flex items-center justify-center">
+                            <div class="h-1 w-full bg-white rounded-full shadow-inner overflow-hidden">
+                                <div class="h-full bg-green-400" style="width:66%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="py-2 text-xs text-gray-500">
+                    <span class="text-red-500 font-semibold">
+                        <span class="mr-1 inline-flex items-center justify-center w-4 h-4 rounded-full bg-red-200 text-red-600 font-semibold">!</span>
+                        File is bigger than 7Mb
+                    </span>
+                </div>
+
+                <code class="inline-block mt-8 mb-4 px-4 py-2 text-xs text-gray-400 bg-gray-800 rounded-sm">
+                    wrapper: flex items-center
+                    <br>
+                    media: mr-4 w-32 h-32 rounded-full overflow-hidden shadow-md
+                </code>
+
+                <div class="flex items-center">
+                    <div class="relative mr-4 w-32 h-32 rounded-full overflow-hidden shadow-md cursor-pointer" style="-webkit-mask-image: -webkit-radial-gradient(white, black);">
+                        <img class="w-full h-full object-cover" src="https://source.unsplash.com/random/400x400">
+                        <button class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300 transition-opacity">
+                            <div class="absolute inset-0 bg-black opacity-25"></div>
+                            <span class="z-10 inline-flex text-5xl text-white font-black leading-none">
+                                ＋
+                            </span>
+                        </button>
+                    </div>
+                    <div class="py-2 text-xs text-gray-500">
+                        PDF <span class="text-gray-400">•</span> Max. 7Mb
+                    </div>
+                </div>
+
+                <div class="mt-4 flex items-center">
+                    <div class="relative mr-4 w-32 h-32 rounded-full overflow-hidden shadow-md cursor-wait">
+                        <img class="w-full h-full object-cover" src="https://source.unsplash.com/random/400x400">
+                        <div class="absolute inset-0 bg-black opacity-50"></div>
+                        <div class="absolute inset-0 px-3 flex items-center justify-center">
+                            <div class="h-1 w-full bg-white rounded-full shadow-inner overflow-hidden">
+                                <div class="h-full bg-green-400" style="width:66%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="py-2 text-xs text-gray-500">
+                        <span class="text-red-500 font-semibold">
+                            <span class="mr-1 inline-flex items-center justify-center w-4 h-4 rounded-full bg-red-200 text-red-600 font-semibold">!</span>
+                            File type should be PDF
+                        </span>
+                    </div>
+                </div>
+            </main>
+        </section>
+    </article>
+</body>
+</html>
