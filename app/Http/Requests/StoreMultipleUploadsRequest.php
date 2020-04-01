@@ -14,6 +14,7 @@ class StoreMultipleUploadsRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required',
             "{$this->fieldName()}.*.uuid" => 'required|uuid',
             "{$this->fieldName()}.*.order" => "required|numeric",
             "{$this->fieldName()}.*.name" => "required|string",

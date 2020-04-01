@@ -8,6 +8,10 @@ export default function() {
 
             <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
 
+            <p>
+                <input type="text" name="name"/>
+            </p>
+
             <MediaSingleComponent
                 name="media"
                 initialValue={window.oldValues.singleMedia}

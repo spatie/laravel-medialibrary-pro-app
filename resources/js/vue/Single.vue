@@ -2,7 +2,11 @@
     <form method="POST">
         <h1 class="h1 mt-16">Single image (avatar, …)</h1>
 
-        <input type="hidden" name="_token" :value="csrfToken" />
+        <input type="hidden" name="_token" :value="csrfToken"/>
+
+        <p>
+            <input type="text" name="name"/>
+        </p>
 
         <media-single-component
             name="media"
@@ -21,26 +25,26 @@
 </template>
 
 <script>
-import MediaSingleComponent from '@spatie/medialibrary-pro-vue-single';
+    import MediaSingleComponent from '@spatie/medialibrary-pro-vue-single';
 
-export default {
-    components: { MediaSingleComponent },
+    export default {
+        components: {MediaSingleComponent},
 
-    methods: {
-        beforeUpload() {
-            return new Promise(resolve => {
-                resolve();
-            });
+        methods: {
+            beforeUpload() {
+                return new Promise(resolve => {
+                    resolve();
+                });
+            },
         },
-    },
 
-    data() {
-        return {
-            initialValue: window.oldValues.singleMedia,
-            initialErrors: window.errors,
-            tempEndpoint: window.tempEndpoint,
-            csrfToken: window.csrfToken,
-        };
-    },
-};
+        data() {
+            return {
+                initialValue: window.oldValues.singleMedia,
+                initialErrors: window.errors,
+                tempEndpoint: window.tempEndpoint,
+                csrfToken: window.csrfToken,
+            };
+        },
+    };
 </script>
