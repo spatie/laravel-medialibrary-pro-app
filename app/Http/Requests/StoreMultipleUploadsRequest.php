@@ -8,7 +8,7 @@ class StoreMultipleUploadsRequest extends FormRequest
 {
     public function fieldName()
     {
-        return 'single-media';
+        return 'media';
     }
 
     public function rules()
