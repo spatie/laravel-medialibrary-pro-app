@@ -5,7 +5,7 @@ use App\Http\Controllers\ReactUploadSingleController;
 use App\Http\Controllers\VueUploadMultipleController;
 use App\Http\Controllers\VueUploadSingleController;
 use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
-use Spatie\MediaLibraryPro\Http\Controllers\TemporaryUploadController;
+use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
 
 Route::get('/', function () {
     return view('home');
@@ -30,5 +30,5 @@ Route::prefix('react')->group(function() {
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
 // medialibrary pro
-Route::post('temp-upload', TemporaryUploadController::class);
+Route::post('temp-upload', UploadController::class);
 Route::post('post-s3-upload', CreateTemporaryUploadFromDirectS3UploadController::class);
