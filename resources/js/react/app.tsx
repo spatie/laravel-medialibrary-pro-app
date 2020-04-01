@@ -4,17 +4,22 @@ import ReactDOM from 'react-dom';
 import Single from './Single';
 import FormWithTable from './FormWithTable';
 
-ReactDOM.render(
-    <div>
-        <Single />
-    </div>,
-    document.getElementById('single')
-);
+const single = document.getElementById('single');
+if (single) {
+    ReactDOM.render(
+        <div>
+            <Single />
+        </div>,
+        single
+    );
+}
 
-
-ReactDOM.render(
-    <div>
-        <FormWithTable />
-    </div>,
-    document.getElementById('multiple')
-);
+const multiple = document.getElementById('multiple');
+if (multiple) {
+    ReactDOM.render(
+        <div>
+            <FormWithTable />
+        </div>,
+        multiple
+    );
+}
