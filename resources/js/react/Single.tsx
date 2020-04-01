@@ -9,7 +9,7 @@ export default function() {
             <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
 
             <MediaSingleComponent
-                name="single-media"
+                name="media"
                 initialValue={window.oldValues.singleMedia}
                 tempEndpoint={window.tempEndpoint}
                 translations={{

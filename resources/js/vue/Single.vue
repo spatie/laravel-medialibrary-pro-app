@@ -5,7 +5,7 @@
         <input type="hidden" name="_token" :value="csrfToken" />
 
         <media-single-component
-            name="singleMedia"
+            name="media"
             :before-upload="beforeUpload"
             :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             :initial-value="initialValue"
