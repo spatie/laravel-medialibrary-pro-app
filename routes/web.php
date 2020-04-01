@@ -30,5 +30,8 @@ Route::prefix('react')->group(function() {
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
 // medialibrary pro
-Route::post('temp-upload', TemporaryUploadController::class);
-Route::post('post-s3-upload', CreateTemporaryUploadFromDirectS3UploadController::class);
+// Route::post('temp-upload', TemporaryUploadController::class);
+// Route::post('post-s3-upload', CreateTemporaryUploadFromDirectS3UploadController::class);
+
+// Dummy designs
+Route::view('dummy/single', 'dummy.single');
