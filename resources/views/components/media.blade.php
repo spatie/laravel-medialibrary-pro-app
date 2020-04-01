@@ -7,7 +7,8 @@
     @if($attributes["src"])
         <img class="w-full h-full object-cover" src="{{ $attributes["src"] }}">
     @else
-        <div class="w-full h-full bg-gray-100 border-2 border-dashed border-gray-300" style="border-radius: inherit;" src="{{ $attributes["src"] }}">
+        <div class="flex items-center justify-center w-full h-full bg-gray-100 border-2 border-dashed border-gray-300" style="border-radius: inherit;" src="{{ $attributes["src"] }}">
+            <span class="text-xs truncate px-3 text-gray-500 underline">Add or drop file</span>
         </div>
     @endif
 
