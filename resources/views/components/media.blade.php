@@ -11,8 +11,8 @@
 
     {{-- colored layer image --}}
     <div class="absolute inset-0
-        {{ $attributes["hover"] ? ($attributes["not-allowed"] ? 'bg-red-400 opacity-50' : 'bg-blue-400 opacity-50') : '' }}
-        {{ $attributes["approaching"] ? ($attributes["not-allowed"] ? 'bg-red-400 opacity-25' : 'bg-blue-400 opacity-25') : '' }}
+        {{ $attributes["hover"] ? ($attributes["not-allowed"] ? 'bg-red-400 opacity-50' : 'bg-indigo-400 opacity-50') : '' }}
+        {{ $attributes["approaching"] ? ($attributes["not-allowed"] ? 'bg-red-400 opacity-25' : 'bg-indigo-400 opacity-25') : '' }}
         {{ $attributes["server-error"] ? 'bg-red-400 opacity-50' : '' }}
     "></div>
 
@@ -21,7 +21,7 @@
         <div class="absolute inset-0 px-3 flex items-center justify-center">
             <div class="rounded-full w-full shadow">
                 <div class="h-1 w-full bg-white rounded-full shadow-inner overflow-hidden">
-                    <div class="h-full bg-blue-500" style="width:66%">
+                    <div class="h-full bg-indigo-500" style="width:66%">
                     </div>
                 </div>
             </div>
@@ -32,8 +32,8 @@
     @if($attributes["inset"])
     <div class="absolute flex justify-center w-full bottom-0 px-2 pb-3">
         <div class="relative text-xs text-center">
-            <div style="opacity: {{ $attributes["src"] ? '.5' : '.075' }}" class="absolute rounded-full inset-0 shadow-inner bg-black"></div>
-            <div class="relative px-3 py-1  {{ $attributes["src"] ? 'text-white' : 'text-gray-900 opacity-50' }}">
+            <div style="opacity: {{ $attributes["src"] ? '.65' : '.085' }}" class="absolute rounded-full inset-0 shadow-inner {{ $attributes["src"] ? 'bg-gray-900' : 'bg-gray-900' }} "></div>
+            <div class="relative px-3 py-1  {{ $attributes["src"] ? 'text-gray-100' : 'text-gray-800 opacity-75' }}">
 
                 @if(!$attributes["src"]  && !$attributes["not-allowed"])
                     Pick or drag
@@ -56,14 +56,14 @@
     {{-- border --}}
     <div style="border-radius: inherit" class="absolute inset-0 opacity-25 border-2
         {{ $attributes["server-error"] ? 'border-red-600' : '' }}
-        {{ $attributes["approaching"] ? ($attributes["not-allowed"] ? 'border-red-600' : 'border-blue-600') : 'border-gray-500' }}
+        {{ $attributes["approaching"] ? ($attributes["not-allowed"] ? 'border-red-600' : 'border-indigo-600') : 'border-gray-500' }}
         {{ $attributes["src"] ? '' : 'border-dashed' }}
     "></div>
 
     {{-- icons --}}
     <div class="z-10 absolute inset-0 flex items-center justify-center">
         @if($attributes["empty"])
-            <span class="{{ $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8' }} flex items-center justify-center rounded-full shadow bg-white text-gray-500 text-lg font-mono leading-none">＋</span>
+            <span class="{{ $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8' }} flex items-center justify-center rounded-full shadow bg-white text-indigo-500 text-lg font-mono leading-none">＋</span>
         @endif
 
         @if($attributes["approaching"])
@@ -74,7 +74,7 @@
                     </span>
                 </span>
             @else
-                <span class="{{ $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8 text-xl' }} flex items-center justify-center rounded-full {{ $attributes["hover"] ? 'shadow-inner' : 'shadow' }} bg-blue-500 text-blue-100 font-mono leading-none">
+                <span class="{{ $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8 text-xl' }} flex items-center justify-center rounded-full {{ $attributes["hover"] ? 'shadow-inner bg-indigo-500 text-indigo-100' : 'shadow bg-white text-indigo-500' }}  font-mono leading-none">
                     {{ $attributes["src"] ? '⥂' : '＋'  }}
                 </span>
             @endif
@@ -95,7 +95,7 @@
 
 @if(! $attributes["inset"])
 <div class="py-2 text-xs text-center">
-    <span class="{{ $attributes["server-error"] ? 'text-red-600' : 'text-gray-600' }}">
+    <span class="{{ $attributes["server-error"] ? 'text-red-700 opacity-75' : 'text-gray-800 opacity-75' }}">
 
         @if(!$attributes["src"]  && !$attributes["not-allowed"])
             Pick or drag
