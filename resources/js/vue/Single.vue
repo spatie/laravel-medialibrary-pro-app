@@ -2,15 +2,16 @@
     <form method="POST">
         <h1 class="h1 mt-16">Single image (avatar, …)</h1>
 
-        <input type="hidden" name="_token" :value="csrfToken"/>
+        <input type="hidden" name="_token" :value="csrfToken" />
 
         <p>
-            <input type="text" name="name"/>
+            <input type="text" name="name" />
         </p>
 
         <media-single-component
             name="media"
             :before-upload="beforeUpload"
+            :after-upload="afterUpload"
             :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             :initial-value="initialValue"
             :initial-errors="initialErrors"
@@ -25,26 +26,32 @@
 </template>
 
 <script>
-    import MediaSingleComponent from '@spatie/medialibrary-pro-vue-single';
+import MediaSingleComponent from '@spatie/medialibrary-pro-vue-single';
 
-    export default {
-        components: {MediaSingleComponent},
+export default {
+    components: { MediaSingleComponent },
 
-        methods: {
-            beforeUpload() {
-                return new Promise(resolve => {
-                    resolve();
-                });
-            },
+    methods: {
+        beforeUpload() {
+            return new Promise(resolve => {
+                resolve();
+            });
         },
 
-        data() {
-            return {
-                initialValue: window.oldValues.singleMedia,
-                initialErrors: window.errors,
-                tempEndpoint: window.tempEndpoint,
-                csrfToken: window.csrfToken,
-            };
+        afterUpload({ success }) {
+            if (success) {
+                // TODO: form submit
+            }
         },
-    };
+    },
+
+    data() {
+        return {
+            initialValue: window.oldValues.singleMedia,
+            initialErrors: window.errors,
+            tempEndpoint: window.tempEndpoint,
+            csrfToken: window.csrfToken,
+        };
+    },
+};
 </script>
