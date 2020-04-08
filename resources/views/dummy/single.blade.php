@@ -28,11 +28,11 @@
                 <x-media class="w-16 h-16" :empty="true" :small="true" message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag outside">
+            <x-single-file class="" title="Drag outside or hover">
                 <x-media class="w-16 h-16" :approaching="true"  :small="true" message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag inside or hover">
+            <x-single-file class="" title="Drag inside or click">
                 <x-media class="w-16 h-16" :approaching="true" :hover="true"  :small="true" message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
@@ -60,11 +60,11 @@
                 <x-media class="w-16 h-16" src="https://source.unsplash.com/random/400x400" :small="true" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag outside">
+            <x-single-file class="" title="Drag outside or hover">
                 <x-media class="w-16 h-16" :approaching="true" src="https://source.unsplash.com/random/400x400" :small="true" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag inside or hover">
+            <x-single-file class="" title="Drag inside or click">
                 <x-media class="w-16 h-16" :approaching="true" :hover="true" src="https://source.unsplash.com/random/400x400" :small="true" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
@@ -77,16 +77,16 @@
             </x-single-file>
         </x-card>
 
-        <x-card class="mt-16" title="Small rounded, shadow (Parent has flex)">
+        <x-card class="mt-16" title="Small rounded, shadow — parent flex">
              <x-single-file class="flex items-center" title="Empty">
                 <x-media class="w-24 h-24 mr-4 rounded-full shadow-lg" :empty="true"   message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
-             <x-single-file class="flex items-center" title="Drag outside">
+             <x-single-file class="flex items-center" title="Drag outside or hover">
                 <x-media class="w-24 h-24 mr-4 rounded-full shadow-lg" :approaching="true"    message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
-             <x-single-file class="flex items-center" title="Drag inside or hover">
+             <x-single-file class="flex items-center" title="Drag inside or click">
                 <x-media class="w-24 h-24 mr-4 rounded-full shadow-lg" :approaching="true" :hover="true"    message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
@@ -114,11 +114,11 @@
                 <x-media class="w-24 h-24 mr-4 rounded-full shadow-lg" src="https://source.unsplash.com/random/400x400"   message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
-             <x-single-file class="flex items-center" title="Drag outside">
+             <x-single-file class="flex items-center" title="Drag outside or hover">
                 <x-media class="w-24 h-24 mr-4 rounded-full shadow-lg" :approaching="true" src="https://source.unsplash.com/random/400x400"   message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
-             <x-single-file class="flex items-center" title="Drag inside or hover">
+             <x-single-file class="flex items-center" title="Drag inside or click">
                 <x-media class="w-24 h-24 mr-4 rounded-full shadow-lg" :approaching="true" :hover="true" src="https://source.unsplash.com/random/400x400"   message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
@@ -131,57 +131,57 @@
             </x-single-file>
         </x-card>
 
-        <x-card class="mt-16" title="Large rectangle, rounded, shadow">
+        <x-card class="mt-16" title="Large rectangle, rounded, shadow - Inset text">
             <x-single-file class="" title="Empty">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :empty="true" message="PNG, JPG or GIF" maxSize="7Mb"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :empty="true" message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag outside">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :approaching="true"  message="PNG, JPG or GIF" maxSize="7Mb"/>
+            <x-single-file class="" title="Drag outside or hover">
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :approaching="true"  message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag inside or hover">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :approaching="true" :hover="true"  message="PNG, JPG or GIF" maxSize="7Mb"/>
+            <x-single-file class="" title="Drag inside or click">
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :approaching="true" :hover="true"  message="PNG, JPG or GIF" maxSize="7Mb"/>
             </x-single-file>
 
             <x-single-file class="" title="Drag outside, not allowed">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :not-allowed="true" :approaching="true" message="Accepts PNG, JPG or GIF"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :not-allowed="true" :approaching="true" message="Accepts PNG, JPG or GIF"/>
             </x-single-file>
 
             <x-single-file class="" title="Drag inside, not allowed">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :not-allowed="true" :hover="true" :approaching="true" message="Accepts 7Mb max."/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :not-allowed="true" :hover="true" :approaching="true" message="Accepts 7Mb max."/>
             </x-single-file>
 
             <x-single-file class="" title="Progress">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :loading="true" src="https://source.unsplash.com/random/400x400" message="Uploading 6Mb…" action="Cancel"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :loading="true" src="https://source.unsplash.com/random/400x400" message="Uploading 6Mb…" action="Cancel"/>
             </x-single-file>
 
             <x-single-file class="" title="Server error">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :server-error="true" src="https://source.unsplash.com/random/400x400" message="Uploaded file is bigger than 7Mb" action="Clear"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :server-error="true" src="https://source.unsplash.com/random/400x400" message="Uploaded file is bigger than 7Mb" action="Clear"/>
             </x-single-file>
 
             <x-single-file class="" title="Upload succeeded">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :success="true" src="https://source.unsplash.com/random/400x400" message="Upload complete"  action="Remove"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :success="true" src="https://source.unsplash.com/random/400x400" message="Upload complete"  action="Remove"/>
             </x-single-file>
 
             <x-single-file class="" title="Idle">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" src="https://source.unsplash.com/random/400x400" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" src="https://source.unsplash.com/random/400x400" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag outside">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :approaching="true" src="https://source.unsplash.com/random/400x400" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
+            <x-single-file class="" title="Drag outside or hover">
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :approaching="true" src="https://source.unsplash.com/random/400x400" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
-            <x-single-file class="" title="Drag inside or hover">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :approaching="true" :hover="true" src="https://source.unsplash.com/random/400x400" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
+            <x-single-file class="" title="Drag inside or click">
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :approaching="true" :hover="true" src="https://source.unsplash.com/random/400x400" message="PNG, JPG or GIF" maxSize="7Mb"  action="Remove"/>
             </x-single-file>
 
             <x-single-file class="" title="Not allowed">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :approaching="true" :not-allowed="true" src="https://source.unsplash.com/random/400x400" message="Accepts PNG, JPG or GIF"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :approaching="true" :not-allowed="true" src="https://source.unsplash.com/random/400x400" message="Accepts PNG, JPG or GIF"/>
             </x-single-file>
 
             <x-single-file class="" title="Not allowed & hover">
-                <x-media class="w-64 h-32 rounded shadow" :inset="true" :approaching="true" :hover="true" :not-allowed="true" src="https://source.unsplash.com/random/400x400" message="Accepts PNG, JPG or GIF"/>
+                <x-media class="w-64 h-32 rounded shadow-xl" :inset="true" :approaching="true" :hover="true" :not-allowed="true" src="https://source.unsplash.com/random/400x400" message="Accepts PNG, JPG or GIF"/>
             </x-single-file>
         </x-card>
 
