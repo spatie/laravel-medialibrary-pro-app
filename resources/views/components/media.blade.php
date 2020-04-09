@@ -33,7 +33,7 @@
             @if($attributes["inset"])
             <div class="absolute flex justify-center w-full bottom-0 px-2 pb-3">
                 <div class="relative text-xs text-center">
-                    <div style="-webkit-mix-blend-mode: multiply; mix-blend-mode: multiply; opacity: {{ $attributes["src"] ? '.5' : '.075' }}" class="absolute rounded-full inset-0 shadow-inner {{ $attributes["server-error"] ? 'bg-red-600' : 'bg-gray-800' }} "></div>
+                    <div style="-webkit-mix-blend-mode: multiply; mix-blend-mode: multiply; opacity: {{ $attributes["src"] ? '.65' : '.075' }}" class="absolute rounded-full inset-0 shadow-inner {{ $attributes["server-error"] ? 'bg-red-600' : 'bg-gray-700' }} "></div>
                     <div class="relative px-3 py-1  {{ $attributes["src"] ? 'text-gray-100' : 'text-gray-700 opacity-75' }}">
 
                             {{ $attributes["message"] }}
