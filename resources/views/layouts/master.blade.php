@@ -29,6 +29,9 @@
                 {{ flash()->message }}
             </div>
         @endif
+        @if($errors->any())
+            {!! implode('', $errors->all('<li>:message</li>')) !!}
+        @endif
         <div id="app">
             @yield('content')
         </div>

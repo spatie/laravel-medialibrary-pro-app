@@ -2,25 +2,27 @@ import * as React from 'react';
 import MediaSingleComponent from '@spatie/medialibrary-pro-react-single';
 
 export default function() {
+    const formRef = React.useRef<HTMLFormElement>(null);
+
     function afterMediaUpload({ success }: { success: boolean }) {
         if (success) {
-            // TODO: form submit
+            formRef.current?.submit();
         }
     }
 
     return (
-        <form method="POST">
+        <form method="POST" ref={formRef}>
             <h1 className="h1 mt-16">Single image (avatar, …)</h1>
 
             <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
 
             <p>
-                <input type="text" name="name" />
+                <input type="text" name="name" placeholder="name" />
             </p>
 
             <MediaSingleComponent
                 name="media"
-                initialValue={window.oldValues.singleMedia}
+                initialValue={window.oldValues.media}
                 tempEndpoint={window.tempEndpoint}
                 translations={{
                     hint: { singular: 'Add a file!', plural: 'Add some files!' },

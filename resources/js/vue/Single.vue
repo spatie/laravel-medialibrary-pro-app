@@ -1,11 +1,11 @@
 <template>
-    <form method="POST">
+    <form method="POST" ref="form">
         <h1 class="h1 mt-16">Single image (avatar, …)</h1>
 
         <input type="hidden" name="_token" :value="csrfToken" />
 
         <p>
-            <input type="text" name="name" />
+            <input type="text" name="name" placeholder="name" />
         </p>
 
         <media-single-component
@@ -40,14 +40,17 @@ export default {
 
         afterUpload({ success }) {
             if (success) {
-                // TODO: form submit
+                // TODO: need nextTick because thumbnail field isn't updated in the DOM yet when this method is called
+                this.$nextTick(() => {
+                    this.$refs.form.submit();
+                });
             }
         },
     },
 
     data() {
         return {
-            initialValue: window.oldValues.singleMedia,
+            initialValue: window.oldValues.media,
             initialErrors: window.errors,
             tempEndpoint: window.tempEndpoint,
             csrfToken: window.csrfToken,
