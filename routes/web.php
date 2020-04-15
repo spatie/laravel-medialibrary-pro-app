@@ -35,3 +35,4 @@ Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
 // Dummy designs
 Route::view('dummy/single', 'dummy.single');
+Route::view('dummy/table', 'dummy.table');

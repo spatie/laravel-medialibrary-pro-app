@@ -12,7 +12,7 @@
 
             {{-- colored layer image --}}
             <div class="absolute inset-0
-                {{ $attributes["hover"] ? ($attributes["not-allowed"] ? 'bg-red-300 opacity-50' : 'bg-indigo-300 opacity-50') : '' }}
+                {{ $attributes["engage"] ? ($attributes["not-allowed"] ? 'bg-red-300 opacity-50' : 'bg-indigo-300 opacity-50') : '' }}
                 {{ $attributes["approaching"] ? ($attributes["not-allowed"] ? 'bg-red-300 opacity-25' : 'bg-indigo-300 opacity-25') : '' }}
                 {{ $attributes["server-error"] ? 'bg-red-400 opacity-50' : '' }}
             "></div>
@@ -33,14 +33,10 @@
             @if($attributes["inset"])
             <div class="absolute flex justify-center w-full bottom-0 px-2 pb-3">
                 <div class="relative text-xs text-center">
-                    <div style="-webkit-mix-blend-mode: multiply; mix-blend-mode: multiply; opacity: {{ $attributes["src"] ? '.65' : '.075' }}" class="absolute rounded-full inset-0 shadow-inner {{ $attributes["server-error"] ? 'bg-red-600' : 'bg-gray-700' }} "></div>
-                    <div class="relative px-3 py-1  {{ $attributes["src"] ? 'text-gray-100' : 'text-gray-700 opacity-75' }}">
+                    <div style="-webkit-mix-blend-mode: multiply; mix-blend-mode: multiply; opacity: {{ ( $attributes["src"] || $attributes["error"] ) ? '.7' : '.075' }}" class="absolute rounded-full inset-0 shadow-inner {{ ($attributes["server-error"] || $attributes["error"]) ? 'bg-red-600' : 'bg-gray-700' }} "></div>
+                    <div class="relative px-3 py-1  {{ ( $attributes["src"] || $attributes["error"] ) ? 'text-gray-100' : 'text-gray-700 opacity-75' }}">
 
                             {{ $attributes["message"] }}
-
-                            @if($attributes["maxSize"])
-                                < {{ $attributes["maxSize"] }}
-                            @endif
 
                             @if($attributes["action"])
                                 @if($attributes["message"])<span class="opacity-50">•</span> @endif<button class="underline">{{ $attributes["action"] }}</button>
@@ -71,7 +67,7 @@
                             </span>
                         </span>
                     @else
-                        <span class="{{ $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8 text-xl' }} flex items-center justify-center rounded-full {{ $attributes["hover"] ? 'shadow-inside text-white bg-indigo-500' : 'shadow-lg bg-white text-indigo-500' }}  font-mono leading-none">
+                        <span class="{{ $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8 text-xl' }} flex items-center justify-center rounded-full {{ $attributes["engage"] ? 'shadow-inside text-white bg-indigo-500' : 'shadow-lg bg-white text-indigo-500' }}  font-mono leading-none">
                             {{ $attributes["src"] ? '⥂' : '＋'  }}
                         </span>
                     @endif
@@ -103,14 +99,9 @@
 
 @if(! $attributes["inset"])
 <div class="py-1 text-xs text-center">
-    <span class="{{ $attributes["server-error"] ? 'text-red-600' : 'text-gray-500' }}">
+    <span class="{{ ($attributes["server-error"] || $attributes["error"]) ? 'text-red-600' : 'text-gray-500' }}">
 
         {{ $attributes["message"] }}
-
-
-        @if($attributes["maxSize"])
-            < {{ $attributes["maxSize"] }}
-        @endif
 
         @if($attributes["action"])
             @if($attributes["message"])<span class="opacity-50">•</span> @endif<button class="underline">{{ $attributes["action"] }}</button>
