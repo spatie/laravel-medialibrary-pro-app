@@ -39,7 +39,7 @@
                             {{ $attributes["message"] }}
 
                             @if($attributes["action"])
-                                @if($attributes["message"])<span class="opacity-50">•</span> @endif<button class="underline">{{ $attributes["action"] }}</button>
+                                @if($attributes["message"])<span class="opacity-50">•</span> @endif<button class="underline hover:opacity-75">{{ $attributes["action"] }}</button>
                             @endif
                     </div>
                 </div>
@@ -97,14 +97,14 @@
     </div>
 </div>
 
-@if(! $attributes["inset"])
+@if(! $attributes["inset"] && $attributes["message"])
 <div class="py-1 text-xs text-center">
     <span class="{{ ($attributes["server-error"] || $attributes["error"]) ? 'text-red-600' : 'text-gray-500' }}">
 
         {{ $attributes["message"] }}
 
         @if($attributes["action"])
-            @if($attributes["message"])<span class="opacity-50">•</span> @endif<button class="underline">{{ $attributes["action"] }}</button>
+            @if($attributes["message"])<span class="opacity-50">•</span> @endif<button class="underline hover:opacity-75">{{ $attributes["action"] }}</button>
         @endif
     </span>
 </div>

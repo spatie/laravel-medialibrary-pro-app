@@ -31,7 +31,7 @@
     <article class="max-w-3xl mx-auto">
         <x-card title="Table">
 
-            <div class="rounded border border-gray-200 p-4">
+            <div class="rounded bg-gray-100 border border-gray-200 p-4">
 
                 <div class="relative overflow-hidden bg-gray-100 w-full h-32 rounded cursor-pointer">
                     <div class="absolute flex justify-center w-full bottom-0 px-2 pb-3">
@@ -50,8 +50,8 @@
                     </div>
                 </div>
 
-                <table class="w-full my-4">
-                    <thead>
+                <section class="w-full my-4">
+                    <thead class=hidden>
                         <tr class="bg-gray-800">
                             <th class="w-8 py-1 text-center text-left text-xs text-gray-100 font-normal">
                                 <input type="checkbox">
@@ -62,40 +62,11 @@
                         </tr>
                     </thead>
 
-                    <tbody class="text-sm">
-                        <tr class="border-b border-gray-200">
-                            <td class="relative align-top bg-gray-100">
-                                <div class="w-8 h-full absolute py-4 flex flex-col items-center justify-between">
-                                    <input type="checkbox">
-                                    <div class="grid gap-1 cursor-move">
-                                        <span class="inline-block bg-gray-400 w-4 h-px shadow-sm rounded-full"></span>
-                                        <span class="inline-block bg-gray-400 w-4 h-px shadow-sm rounded-full"></span>
-                                        <span class="inline-block bg-gray-400 w-4 h-px shadow-sm rounded-full"></span>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="align-top px-4 py-4">
-                                <x-media class="w-16 h-16" src="https://source.unsplash.com/random/400x400" :small="true"/>
-                            </td>
-
-                            <td class="w-full align-top px-4 py-4 flex justify-start">
-                                <div class="grid gap-1 items-center" style="grid-template-columns: auto 1fr">
-                                    <label class="text-gray-500 pr-4">Filename</label>
-                                    <input type="text" class="px-3 h-8 text-sm border border-gray-300 rounded-sm shadow-inner" value="Random-file.jpg">
-
-                                    <label class="text-gray-500 pr-4">Taxonomy</label>
-                                    <input type="text" class="px-3 h-8 text-sm border border-gray-300 rounded-sm shadow-inner" placeholder="Tags…">
-                                </div>
-                            </td>
-
-                            <td class="align-top px-4 py-4 text-xs text-gray-500">
-                                Size: 1.56Mb <br>
-                                Type: PNG <br>
-                                <a href="#" class="underline">Download original</a>
-                            </td>
-                        </tr>
-                    <tbody>
-                </table>
+                    <x-tr :drag="true">
+                    </x-tr>
+                    <x-tr>
+                    </x-tr>
+                </section>
             </div>
 
 
