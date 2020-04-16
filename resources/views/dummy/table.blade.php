@@ -23,7 +23,7 @@
 
         <ul class="mt-4 list-disc leading-loose">
             <li>
-                Caption outside/inside
+                Drag or click to sort
             </li>
         </ul>
     </aside>
