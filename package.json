@@ -9,7 +9,8 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "link-js": "yarn link @spatie/medialibrary-pro-core @spatie/medialibrary-pro-vue @spatie/medialibrary-pro-react @spatie/medialibrary-pro-vue-table @spatie/medialibrary-pro-react-table @spatie/medialibrary-pro-vue-list @spatie/medialibrary-pro-react-list @spatie/medialibrary-pro-vue-single @spatie/medialibrary-pro-react-single",
-        "setup": "yarn && yarn link-js && yarn dev"
+        "setup": "yarn setup-js && yarn && yarn link-js && yarn watch",
+        "setup-js": "cd .. && git clone git@github.com:spatie/medialibrary-pro-js.git ; cd medialibrary-pro-js && git pull && yarn setup"
     },
     "dependencies": {
         "laravel-vapor": "^0.4.0",
