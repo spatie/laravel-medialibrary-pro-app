@@ -23,6 +23,9 @@
 
         <ul class="mt-4 list-disc leading-loose">
             <li>
+                Standard Tailwind
+            </li>
+            <li>
                 Caption outside/inside
             </li>
             <li>
@@ -53,6 +56,7 @@
                 <ul class="pl-8 text-sm">
                     <li>Upload complete? </li>
                     <li>Remove icon: rounded thumb, double hover action</li>
+                    <li>Icons: unicode?</li>
                 </ul>
             </li>
         </ul>

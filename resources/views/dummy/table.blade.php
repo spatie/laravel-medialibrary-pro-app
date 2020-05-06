@@ -25,6 +25,13 @@
             <li>
                 Drag or click to sort
             </li>
+            <li>
+                Questions
+                <ul class="pl-8 text-sm">
+                    <li>Checkboxes?</li>
+                    <li>List actions met check? Download? of: remove all</li>
+                </ul>
+            </li>
         </ul>
     </aside>
 
@@ -32,7 +39,6 @@
         <x-card title="Table">
 
             <div class="rounded bg-gray-100 border border-gray-200 p-4">
-
                 <div class="relative overflow-hidden bg-gray-100 w-full h-32 rounded cursor-pointer">
                     <div class="absolute flex justify-center w-full bottom-0 px-2 pb-3">
                         <div class="relative text-xs text-center">
@@ -51,16 +57,53 @@
                 </div>
 
                 <section class="w-full my-4">
-                    <thead class=hidden>
-                        <tr class="bg-gray-800">
-                            <th class="w-8 py-1 text-center text-left text-xs text-gray-100 font-normal">
-                                <input type="checkbox">
-                            </th>
-                            <th class="px-4 py-1 text-left text-xs text-gray-100 font-normal" colspan="3">
+                    <div class="relative w-full grid gap-4 items-center py-2 bg-gray-200 text-gray-500 text-xs" style="grid-template-columns: auto 1fr">
+                        <div class="flex items-center justify-between">
+                            <div style="margin-left: 1px;" class="px-2"><input type="checkbox"></div>
+                            <span>
                                 Select all
-                            </th>
-                        </tr>
-                    </thead>
+                            </span>
+                        </div>
+
+                        <div>
+                            <a class="underline" href="#">Remove (3)</a>
+                        </div>
+                    </div>
+
+                    <x-tr :drag="true">
+                    </x-tr>
+                    <x-tr>
+                    </x-tr>
+                </section>
+
+                <section class="w-full my-4">
+                    <div class="relative w-full grid px-4 gap-4 items-center justify-end py-2 bg-gray-200 text-gray-500 text-xs" style="grid-template-columns: auto auto">
+                        <div>
+                            <a class="underline" href="#">Download all</a>
+                        </div>
+                        <div>
+                            <a class="underline" href="#">Remove all</a>
+                        </div>
+                    </div>
+
+                    <x-tr :drag="true">
+                    </x-tr>
+                    <x-tr>
+                    </x-tr>
+                </section>
+
+                <section class="w-full my-4">
+                    <div class="relative w-full grid px-4 gap-4 items-center justify-end py-2 bg-gray-200 text-gray-500 text-xs" style="grid-template-columns: auto auto auto">
+                        <div>
+                            <a class="underline" href="#">Download all</a>
+                        </div>
+                        <div>
+                            <a class="underline" href="#">Remove all</a>
+                        </div>
+                        <div>
+                            <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 py-1 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-indigo-100 focus:border-indigo-500">
+                        </div>
+                    </div>
 
                     <x-tr :drag="true">
                     </x-tr>

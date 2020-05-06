@@ -80,13 +80,7 @@
                 @if($attributes["success"])
                 <span class="{{ $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8 text-xl' }} flex items-center justify-center rounded-full shadow-md bg-green-500 text-green-100 font-mono leading-none">✓</span>
                 @endif
-
-
             </div>
-
-
-
-
         </div>
 
         @if($attributes["delete"])
@@ -97,7 +91,7 @@
     </div>
 </div>
 
-@if(! $attributes["inset"] && $attributes["message"])
+@if(! $attributes["inset"] && ($attributes["message"] || $attributes["action"]))
 <div class="py-1 text-xs text-center">
     <span class="{{ ($attributes["server-error"] || $attributes["error"]) ? 'text-red-600' : 'text-gray-500' }}">
 
