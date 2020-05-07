@@ -10,7 +10,7 @@
     <div class="absolute inset-0 bg-indigo-300 opacity-50"></div>
     @endif
 
-    <div class="relative mr-4 py-2 flex items-center">
+    <div class="relative mr-4 py-4 flex items-center">
         <div class="absolute overflow-hidden {{ $attributes['engage'] ? 'bg-indigo-100' : 'bg-gray-300' }} mt-1 ml-1 w-16 h-16">
             <div class="absolute inset-0"></div>
             <div style="border-radius: inherit" class="absolute inset-0 opacity-25 border-2 border-gray-500"></div>
