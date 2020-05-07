@@ -29,15 +29,26 @@
     </div>
 
     <div class="mr-4 flex items-center py-6">
-        <x-media class="w-16 h-16 block" src="https://source.unsplash.com/random/400x400" :small="true"/>
+        <x-media class="w-16 h-16 block" src="https://source.unsplash.com/random/400x400" :server-error="$attributes['server-error']" :loading="$attributes['loading']" :approaching="$attributes['engage']" :engage="$attributes['engage']" :small="true"/>
     </div>
 
     <div class="mr-4 flex items-center py-6 text-xs text-gray-500">
         <div>
-            Size: 1.56Mb <br>
-            Type: PNG <br>
-            @if(!$attributes['mute'])
-                <a href="#" class="underline">Download original</a>
+            @if($attributes['engage'])
+                Drop image to replace
+            @elseif($attributes['loading'])
+                Uploading 6Mb…
+
+                <br><button class="underline hover:opacity-75">Cancel</button>
+            @elseif($attributes['server-error'])
+                <span class=text-red-600>Couldn't read file</span>
+            @else
+
+                Size: 1.56Mb <br>
+                Type: PNG <br>
+                @if(!$attributes['mute'])
+                    <a href="#" class="underline">Download original</a>
+                @endif
             @endif
         </div>
     </div>
@@ -57,4 +68,5 @@
         Remove
     </button>
     @endif
+
 </div>

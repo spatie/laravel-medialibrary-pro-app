@@ -1,9 +1,9 @@
-<div class="{{ $attributes['last'] ? '' : 'border-b border-gray-200' }} relative overflow-hidden w-full rounded cursor-pointer grid" style="grid-template-columns: 3rem auto 1fr 2fr">
+<div class="{{ $attributes['last'] ? '' : 'border-b border-gray-200' }} relative overflow-hidden w-full rounded cursor-pointer grid" style="grid-template-columns: auto auto 1fr 2fr">
 
     @if($attributes['chrome'])
-    <div class="mr-4 px-2 py-2 bg-gray-100 border-r border-200 flex flex-col items-center justify-between"></div>
+    <div class="w-8 mr-4 px-2 py-2 bg-gray-100 border-r border-200 flex flex-col items-center justify-between"></div>
     @else
-    <div></div>
+    <div class="w-4"></div>
     @endif
 
     @if($attributes['engage'])

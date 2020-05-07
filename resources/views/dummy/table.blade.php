@@ -32,6 +32,7 @@
                     <li>Filter?</li>
                     <li>Checkboxes?</li>
                     <li>List actions with checkbox? Download? Or only 'remove all'</li>
+                    <li>Uploading + other actions at the same time?</li>
                 </ul>
             </li>
         </ul>
@@ -228,7 +229,7 @@
                                         </span>
                                     </span>
                                 </span>
-                                <span>Requires PNG, JPG or GIF</span>
+                                <span>Pick or drag images < 7Mb</span>
                             </a>
                         </div>
                     </div>
@@ -237,6 +238,197 @@
                 <x-tr :drag="true" :select="false" :mute="true">
                 </x-tr>
                 <x-tr :drag="true" :select="false" :last="true" :mute="true">
+                </x-tr>
+            </x-table>
+
+            <x-table :engage=true>
+                <x-slot name="head">
+                    <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            <a class="flex items-center" href="#">
+                                <span class="w-8 flex justify-center mr-2">
+                                    <span class="w-6 h-6 flex items-center justify-center rounded-full shadow-inside text-white bg-indigo-500 text-lg font-mono leading-none">
+                                        ＋
+                                    </span>
+                                </span>
+                                <span>Drop images to add</span>
+                            </a>
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false" :mute="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :mute="true">
+                </x-tr>
+            </x-table>
+
+            <x-table>
+                <x-slot name="head">
+                    <div>&nbsp;</div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false" mute="true" :engage="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :mute="true">
+                </x-tr>
+            </x-table>
+        </x-card>
+
+        <x-card class="mt-8" title="Sticky header or scroll content">
+            <x-table :sticky="true">
+                <x-slot name="head">
+                    <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            <a class="flex items-center" href="#">
+                                <span class="w-8 flex justify-center mr-2">
+                                    <span class="w-6 h-6 flex items-center justify-center rounded-full shadow bg-white text-indigo-500 text-lg font-mono leading-none">＋</span>
+                                </span>
+                                <span class=underline>Pick or drag images < 7Mb</span>
+                            </a>
+                        </div>
+                        <div class="grid gap-4 items-center justify-end grid-flow-col">
+                            <div>
+                                <a class="underline" href="#">Download all</a>
+                            </div>
+                            <div>
+                                <a class="underline" href="#">Remove all</a>
+                            </div>
+                            <div>
+                                <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 h-6 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500">
+                            </div>
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+            </x-table>
+
+            <x-table :footer="true">
+                <x-slot name="head">
+                    <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            <a class="flex items-center" href="#">
+                                <span class="w-8 flex justify-center mr-2">
+                                    <span class="w-6 h-6 flex items-center justify-center rounded-full shadow bg-white text-indigo-500 text-lg font-mono leading-none">＋</span>
+                                </span>
+                                <span class=underline>Pick or drag images < 7Mb</span>
+                            </a>
+                        </div>
+                        <div class="grid gap-4 items-center justify-end grid-flow-col">
+                            <div>
+                                <a class="underline" href="#">Download all</a>
+                            </div>
+                            <div>
+                                <a class="underline" href="#">Remove all</a>
+                            </div>
+                            <div>
+                                <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 h-6 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500">
+                            </div>
+                        </div>
+                    </div>
+                </x-slot>
+
+                <div style="height: 20rem" class="overflow-x-scroll">
+                    <x-tr :drag="true" :select="false">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                    <x-tr :drag="true" :select="false" :last="true">
+                    </x-tr>
+                </div>
+            </x-table>
+        </x-card>
+
+        <x-card class="mt-8" title="Progress">
+            <x-table :loading="true">
+                <x-slot name="head">
+                    <div class="w-full px-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            Uploading 2 files (12 Mb)…
+                        </div>
+                        <div class="grid gap-4 items-center justify-end grid-flow-col">
+
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :loading="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :loading="true">
+                </x-tr>
+            </x-table>
+        </x-card>
+
+        <x-card class="mt-8" title="Errors">
+            <x-table :loading="true" :errors="true">
+                <x-slot name="head">
+                    <div class="w-full px-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            Uploading 2 files (12 Mb)…
+                        </div>
+                        <div class="grid gap-4 items-center justify-end grid-flow-col">
+
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :loading="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :loading="true">
+                </x-tr>
+            </x-table>
+
+            <x-table :loading="true">
+                <x-slot name="head">
+                    <div class="w-full px-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            Uploading 2 files (12 Mb)…
+                        </div>
+                        <div class="grid gap-4 items-center justify-end grid-flow-col">
+
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false" :server-error="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :loading="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :loading="true">
                 </x-tr>
             </x-table>
         </x-card>

@@ -121,7 +121,7 @@
             </x-single-file>
 
             <x-single-file class="" title="Selection not allowed">
-                <x-media class="w-16 h-16" :error="true" :empty="true" src="https://source.unsplash.com/random/400x400" :small="true" message="Requires < 7Mb"/>
+                <x-media class="w-16 h-16" :error="true" src="https://source.unsplash.com/random/400x400" :small="true" message="Requires < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="" title="Drag outside">
@@ -199,7 +199,7 @@
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Selection not allowed">
-                <x-media class="mr-4 w-24 h-24 shadow-xl rounded-full" :error="true" :empty="true" src="https://source.unsplash.com/random/400x400" :small="false" message="Requires < 7Mb"/>
+                <x-media class="mr-4 w-24 h-24 shadow-xl rounded-full" :error="true" src="https://source.unsplash.com/random/400x400" :small="false" message="Requires < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Drag outside">
@@ -277,7 +277,7 @@
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Selection not allowed">
-                <x-media class="mr-4 w-64 h-32 shadow-xl rounded-md" :error="true" :empty="true" src="https://source.unsplash.com/random/400x400" :small="false" :inset="true"  message="Requires < 7Mb"/>
+                <x-media class="mr-4 w-64 h-32 shadow-xl rounded-md" :error="true" src="https://source.unsplash.com/random/400x400" :small="false" :inset="true"  message="Requires < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Drag outside">
