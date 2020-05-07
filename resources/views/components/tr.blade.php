@@ -32,7 +32,7 @@
         <x-media class="w-16 h-16 block" src="https://source.unsplash.com/random/400x400" :server-error="$attributes['server-error']" :loading="$attributes['loading']" :approaching="$attributes['engage']" :engage="$attributes['engage']" :small="true"/>
     </div>
 
-    <div class="mr-4 flex items-center py-6 text-xs text-gray-500">
+    <div class="mr-4 flex items-center py-6 text-xs text-gray-600">
         <div>
             @if($attributes['engage'])
                 Drop image to replace
@@ -55,16 +55,16 @@
 
     <div class="pr-4 w-full align-top py-6 flex justify-start">
         <div class="w-full grid gap-1 items-center text-xs" style="grid-template-columns: auto 1fr">
-            <label class="text-gray-500 pr-4">Filename</label>
+            <label class="text-gray-600 pr-4">Filename</label>
             <input type="text" class="w-full px-3 h-6 bg-gray-100 rounded-sm border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500" value="Random-file.jpg">
 
-            <label class="text-gray-500 pr-4">Taxonomy</label>
+            <label class="text-gray-600 pr-4">Taxonomy</label>
             <input type="text" class="w-full px-3 h-6 bg-gray-100 rounded-sm border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500" placeholder="Tags…">
         </div>
     </div>
 
     @if(!$attributes['mute'])
-    <button class="mr-4 absolute right-0 top-0 text-xs text-gray-500 underline py-1">
+    <button class="mr-4 absolute right-0 top-0 text-xs text-gray-600 underline py-1">
         Remove
     </button>
     @endif

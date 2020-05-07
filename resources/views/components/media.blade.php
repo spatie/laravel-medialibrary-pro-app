@@ -93,7 +93,7 @@
 
 @if(! $attributes["inset"] && ($attributes["message"] || $attributes["action"]))
 <div class="py-1 text-xs text-center">
-    <span class="{{ ($attributes["server-error"] || $attributes["error"]) ? 'text-red-600' : 'text-gray-500' }}">
+    <span class="{{ ($attributes["server-error"] || $attributes["error"]) ? 'text-red-600' : 'text-gray-600' }}">
 
         {{ $attributes["message"] }}
 

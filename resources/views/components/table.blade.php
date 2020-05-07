@@ -2,11 +2,15 @@
 
 
     @isset($head)
-    <div class="{{ $attributes['sticky'] ? 'sticky top-0' : 'relative' }} w-full py-2
-    text-xs border-b border-gray-300 z-10 rounded-t-sm
-    {{ $attributes['not-allowed'] ? 'bg-red-200 text-gray-600' :
-            ($attributes['engage'] ? 'bg-indigo-200 text-gray-600' : 'bg-gray-200 text-gray-500') }}
-        ">
+    <div class="{{ $attributes['sticky'] ? 'sticky top-0' : 'relative' }} w-full py-2 bg-gray-200 text-gray-600 text-xs">
+
+        @if($attributes['engage'])
+            <div class="absolute inset-0 bg-indigo-300 opacity-50"></div>
+        @endif
+
+        @if($attributes['not-allowed'])
+            <div class="absolute inset-0 bg-red-300 opacity-50"></div>
+        @endif
 
         <div class=relative>
             {{ $head }}
@@ -80,7 +84,7 @@
 
     @if($attributes["footer"])
     <div>
-        <div class="w-full text-center py-1 text-xs text-gray-500  bg-gray-200 border-t border-gray-300">
+        <div class="w-full text-center py-1 text-xs text-gray-600  bg-gray-200 border-t border-gray-300">
             13 files • 21 Mb total
         </div>
     </div>
