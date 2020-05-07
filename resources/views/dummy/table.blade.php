@@ -28,38 +28,55 @@
             <li>
                 Questions
                 <ul class="pl-8 text-sm">
+                    <li>Max number of files?</li>
+                    <li>Filter?</li>
                     <li>Checkboxes?</li>
-                    <li>List actions met check? Download? of: remove all</li>
+                    <li>List actions with checkbox? Download? Or only 'remove all'</li>
                 </ul>
             </li>
         </ul>
     </aside>
 
     <article class="max-w-3xl mx-auto">
-        <x-card title="Table">
+        <x-card title="Empty">
+            <div class="relative overflow-hidden bg-gray-100 w-full rounded cursor-pointer">
+                <div style="border-radius: inherit" class="absolute inset-0 opacity-25 border-2 border-gray-500 border-dashed"></div>
 
-            <div class="rounded bg-gray-100 border border-gray-200 p-4">
-                <div class="relative overflow-hidden bg-gray-100 w-full h-32 rounded cursor-pointer">
-                    <div class="absolute flex justify-center w-full bottom-0 px-2 pb-3">
-                        <div class="relative text-xs text-center">
-                            <div style="-webkit-mix-blend-mode: multiply; mix-blend-mode: multiply; opacity: .075" class="absolute rounded-full inset-0 shadow-inner bg-gray-700 "></div>
-                            <div class="relative px-3 py-1  text-gray-700 opacity-75">
-                                Pick or drag images &lt; 7Mb each
-                            </div>
-                        </div>
-                    </div>
+                <x-tr-add :last="true">
+                </x-tr-add>
+            </div>
 
-                    <div style="border-radius: inherit" class="absolute inset-0 opacity-25 border-2 border-gray-500 border-dashed"></div>
+            <div class="mt-8 relative overflow-hidden bg-gray-100 w-full rounded cursor-pointer">
 
-                    <div class="z-10 absolute inset-0 flex items-center justify-center">
-                        <span class="w-8 h-8 flex items-center justify-center rounded-full shadow bg-white text-indigo-500 text-lg font-mono leading-none">＋</span>
-                    </div>
-                </div>
+                <x-tr-add :last="true" :engage="true">
+                </x-tr-add>
 
-                <section class="w-full my-4">
-                    <div class="relative w-full grid gap-4 items-center py-2 bg-gray-200 text-gray-500 text-xs" style="grid-template-columns: auto 1fr">
+                <div style="border-radius: inherit" class="absolute inset-0 opacity-25 border-2 border-blue-500 border-dashed"></div>
+            </div>
+        </x-card>
+
+        <x-card class="mt-8" title="Row">
+            <x-table>
+                <x-tr :select="false" :drag="true" :last="true">
+                </x-tr>
+            </x-table>
+        </x-card>
+
+        <x-card class="mt-8" title="Drag vs. move">
+            <x-table>
+                <x-tr :drag="true" :select="true">
+                </x-tr>
+                <x-tr :select="true" :last="true">
+                </x-tr>
+            </x-table>
+        </x-card>
+
+        <x-card class="mt-8" title="Selection">
+            <x-table>
+                <x-slot name="head">
+                    <div class="relative w-full grid gap-4 items-center justify-start grid-flow-col">
                         <div class="flex items-center justify-between">
-                            <div style="margin-left: 1px;" class="px-2"><input type="checkbox"></div>
+                            <div class="w-8 flex justify-center"><input type="checkbox"></div>
                             <span>
                                 Select all
                             </span>
@@ -69,15 +86,18 @@
                             <a class="underline" href="#">Remove (3)</a>
                         </div>
                     </div>
+                </x-slot>
 
-                    <x-tr :drag="true">
-                    </x-tr>
-                    <x-tr>
-                    </x-tr>
-                </section>
+                <x-tr :drag="true" :select="true">
+                </x-tr>
 
-                <section class="w-full my-4">
-                    <div class="relative w-full grid px-4 gap-4 items-center justify-end py-2 bg-gray-200 text-gray-500 text-xs" style="grid-template-columns: auto auto">
+                <x-tr :drag="true" :select="true" :last="true">
+                </x-tr>
+            </x-table>
+
+            <x-table>
+                <x-slot name="head">
+                    <div class="w-full px-4 grid gap-4 items-center justify-end grid-flow-col">
                         <div>
                             <a class="underline" href="#">Download all</a>
                         </div>
@@ -85,37 +105,141 @@
                             <a class="underline" href="#">Remove all</a>
                         </div>
                     </div>
+                </x-slot>
 
-                    <x-tr :drag="true">
-                    </x-tr>
-                    <x-tr>
-                    </x-tr>
-                </section>
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+            </x-table>
 
-                <section class="w-full my-4">
-                    <div class="relative w-full grid px-4 gap-4 items-center justify-end py-2 bg-gray-200 text-gray-500 text-xs" style="grid-template-columns: auto auto auto">
+            <x-table>
+                <x-slot name="head">
+                    <div class="w-full px-3 grid gap-4 items-center justify-end grid-flow-col">
                         <div>
-                            <a class="underline" href="#">Download all</a>
+                            <a class="underline" href="#">Download (2)</a>
                         </div>
                         <div>
-                            <a class="underline" href="#">Remove all</a>
+                            <a class="underline" href="#">Remove (2)</a>
                         </div>
                         <div>
-                            <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 py-1 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-indigo-100 focus:border-indigo-500">
+                            <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 h-6 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500">
                         </div>
                     </div>
+                </x-slot>
 
-                    <x-tr :drag="true">
-                    </x-tr>
-                    <x-tr>
-                    </x-tr>
-                </section>
-            </div>
-
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+            </x-table>
 
         </x-card>
 
+        <x-card class="mt-8" title="Add row">
+            <x-table>
+                <x-slot name="head">
+                    <div class="w-full px-3 grid gap-4 items-center justify-end grid-flow-col">
+                        <div>
+                            <a class="underline" href="#">Download all</a>
+                        </div>
+                        <div>
+                            <a class="underline" href="#">Remove all</a>
+                        </div>
+                        <div>
+                            <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 h-6 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500">
+                        </div>
+                    </div>
+                </x-slot>
 
+                <x-tr-add :chrome="true">
+                </x-tr-add>
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+            </x-table>
+
+            <x-table>
+                <x-slot name="head">
+                    <div class="w-full px-3 grid gap-4 items-center justify-end grid-flow-col">
+                        <div>
+                            <a class="underline" href="#">Download all</a>
+                        </div>
+                        <div>
+                            <a class="underline" href="#">Remove all</a>
+                        </div>
+                        <div>
+                            <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 h-6 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500">
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr-add :chrome="true" :engage="true">
+                </x-tr-add>
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+            </x-table>
+        </x-card>
+
+        <x-card class="mt-8" title="Add row compact">
+            <x-table>
+                <x-slot name="head">
+                    <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            <a class="flex items-center" href="#">
+                                <span class="w-8 flex justify-center mr-2">
+                                    <span class="w-6 h-6 flex items-center justify-center rounded-full shadow bg-white text-indigo-500 text-lg font-mono leading-none">＋</span>
+                                </span>
+                                <span class=underline>Pick or drag images < 7Mb</span>
+                            </a>
+                        </div>
+                        <div class="grid gap-4 items-center justify-end grid-flow-col">
+                            <div>
+                                <a class="underline" href="#">Download all</a>
+                            </div>
+                            <div>
+                                <a class="underline" href="#">Remove all</a>
+                            </div>
+                            <div>
+                                <input placeholder="Filter…" class="rounded-full text-gray-800 text-xs px-3 h-6 w-32 bg-gray-100 border border-transparent | focus:outline-none focus:bg-white focus:border-indigo-500">
+                            </div>
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true">
+                </x-tr>
+            </x-table>
+
+            <x-table :not-allowed=true>
+                <x-slot name="head">
+                    <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
+                        <div>
+                            <a class="flex items-center" href="#">
+                                <span class="w-8 flex justify-center mr-2">
+                                    <span class="overflow-hidden relative w-6 h-6 rounded-full flex items-center justify-center shadow bg-white">
+                                        <span class="w-4 h-4 overflow-hidden flex items-center justify-center inset-0 rounded-full border-2 border-red-500">
+                                            <span style="width:2px; transform: skewX(-15deg)" class="h-full bg-red-500"></span>
+                                        </span>
+                                    </span>
+                                </span>
+                                <span>Requires PNG, JPG or GIF</span>
+                            </a>
+                        </div>
+                    </div>
+                </x-slot>
+
+                <x-tr :drag="true" :select="false" :mute="true">
+                </x-tr>
+                <x-tr :drag="true" :select="false" :last="true" :mute="true">
+                </x-tr>
+            </x-table>
+        </x-card>
     </article>
 </body>
 </html>
