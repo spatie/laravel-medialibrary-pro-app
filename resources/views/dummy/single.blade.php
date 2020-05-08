@@ -65,27 +65,27 @@
     <article class="max-w-3xl mx-auto">
         <x-card title="Small square">
             <x-single-file class="" title="Empty">
-                <x-media class="w-16 h-16" :empty="true" :small="true" message="Pick or drag image < 7Mb"/>
+                <x-media class="w-16 h-16"  :small="true" message="Pick or drag image < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="" title="Hover">
-                <x-media class="w-16 h-16" :approaching="true"  :small="true" message="Pick PNG, JPG or GIF < 7Mb"/>
+                <x-media class="w-16 h-16"  :approaching="true"  :small="true" message="Pick PNG, JPG or GIF < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="" title="Click">
-                <x-media class="w-16 h-16" :approaching="true" :engage="true"  :small="true" message="Pick PNG, JPG or GIF < 7Mb"/>
+                <x-media class="w-16 h-16"  :approaching="true" :engage="true"  :small="true" message="Pick PNG, JPG or GIF < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="" title="Selection not allowed">
-                <x-media class="w-16 h-16" :error="true" :empty="true" :small="true" message="Requires < 7Mb"/>
+                <x-media class="w-16 h-16"  :error="true"  :small="true" message="Requires < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="" title="Drag outside">
-                <x-media class="w-16 h-16" :approaching="true"  :small="true" message="Drag image here"/>
+                <x-media class="w-16 h-16"  :approaching="true"  :small="true" message="Drag image here"/>
             </x-single-file>
 
             <x-single-file class="" title="Drag hover">
-                <x-media class="w-16 h-16" :approaching="true" :engage="true"  :small="true" message="Drop image to upload"/>
+                <x-media class="w-16 h-16"  :approaching="true" :engage="true"  :small="true" message="Drop image to upload"/>
             </x-single-file>
 
             <x-single-file class="" title="Drag outside, not allowed">
@@ -109,7 +109,7 @@
             </x-single-file>
 
             <x-single-file class="" title="Idle">
-                <x-media class="w-16 h-16" src="https://source.unsplash.com/random/400x400" :small="true" action="Remove"/>
+                <x-media class="w-16 h-16" :delete="true" src="https://source.unsplash.com/random/400x400" :small="true" action="Remove"/>
             </x-single-file>
 
             <x-single-file class="" title="Hover">
@@ -143,7 +143,7 @@
 
         <x-card class="mt-16" title="Small rounded, shadow — parent flex">
             <x-single-file class="flex items-center" title="Empty">
-                <x-media class="mr-4 w-24 h-24 shadow-xl rounded-full" :empty="true" :small="false" message="Pick or drag image < 7Mb"/>
+                <x-media class="mr-4 w-24 h-24 shadow-xl rounded-full"  :small="false" message="Pick or drag image < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Hover">
@@ -155,7 +155,7 @@
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Selection not allowed">
-                <x-media class="mr-4 w-24 h-24 shadow-xl rounded-full" :error="true" :empty="true" :small="false" message="Requires < 7Mb"/>
+                <x-media class="mr-4 w-24 h-24 shadow-xl rounded-full" :error="true"  :small="false" message="Requires < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Drag outside">
@@ -221,7 +221,7 @@
 
         <x-card class="mt-16" title="Large rectangle, rounded, shadow - Inset text">
             <x-single-file class="flex items-center" title="Empty">
-                <x-media class="mr-4 w-64 h-32 shadow-xl rounded-md" :empty="true" :small="false" :inset="true"  message="Pick or drag image < 7Mb"/>
+                <x-media class="mr-4 w-64 h-32 shadow-xl rounded-md"  :small="false" :inset="true"  message="Pick or drag image < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Hover">
@@ -233,7 +233,7 @@
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Selection not allowed">
-                <x-media class="mr-4 w-64 h-32 shadow-xl rounded-md" :error="true" :empty="true" :small="false" :inset="true"  message="Requires < 7Mb"/>
+                <x-media class="mr-4 w-64 h-32 shadow-xl rounded-md" :error="true"  :small="false" :inset="true"  message="Requires < 7Mb"/>
             </x-single-file>
 
             <x-single-file class="flex items-center" title="Drag outside">
