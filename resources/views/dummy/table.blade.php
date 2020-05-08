@@ -191,8 +191,8 @@
                     <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
                         <div>
                             <a class="flex items-center" href="#">
-                                <x-icon type="add" :small="true"/>
-                                <span class="ml-2 underline">Pick or drag images < 7Mb</span>
+                                <span class="w-8 flex justify-center mr-2"><x-icon type="add" :small="true"/></span>
+                                <span class="underline">Pick or drag images < 7Mb</span>
                             </a>
                         </div>
                         <div class="grid gap-4 items-center justify-end grid-flow-col">
@@ -220,8 +220,8 @@
                     <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
                         <div>
                             <a class="flex items-center" href="#">
-                                <x-icon type="not-allowed" :small="true"/>
-                                <span class="ml-2">Pick or drag images < 7Mb</span>
+                                <span class="w-8 flex justify-center mr-2"><x-icon type="not-allowed" :small="true"/></span>
+                                <span class="">Pick or drag images < 7Mb</span>
                             </a>
                         </div>
                     </div>
@@ -238,8 +238,8 @@
                     <div class="w-full pr-4 flex gap-4 items-center justify-between grid-flow-col">
                         <div>
                             <a class="flex items-center" href="#">
-                                 <x-icon type="add" :small="true" :engage="true"/>
-                                <span class="ml-2">Drop images to add</span>
+                                <span class="w-8 flex justify-center mr-2"><x-icon type="add" :small="true" :engage="true"/></span>
+                                <span class="">Drop images to add</span>
                             </a>
                         </div>
                     </div>
@@ -270,7 +270,7 @@
                         <div>
                             <a class="flex items-center" href="#">
                                 <span class="w-8 flex justify-center mr-2">
-                                    <span class="w-6 h-6 flex items-center justify-center rounded-full shadow bg-white text-indigo-500 text-lg font-mono leading-none">＋</span>
+                                    <x-icon type="add" :small=true />
                                 </span>
                                 <span class=underline>Pick or drag images < 7Mb</span>
                             </a>
@@ -315,7 +315,7 @@
                         <div>
                             <a class="flex items-center" href="#">
                                 <span class="w-8 flex justify-center mr-2">
-                                    <span class="w-6 h-6 flex items-center justify-center rounded-full shadow bg-white text-indigo-500 text-lg font-mono leading-none">＋</span>
+                                    <x-icon type="add" :small=true />
                                 </span>
                                 <span class=underline>Pick or drag images < 7Mb</span>
                             </a>
