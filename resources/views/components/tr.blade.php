@@ -5,16 +5,16 @@
                 @if($attributes['select'])
                     <input class="text-xs" type="checkbox">
                     <div class="flex-grow flex items-end cursor-move leading-none text-xl text-gray-400 hover:text-indigo-500">
-                        ≡
+                        <svg class="w-6 h-6"><use xlink:href="#icon-drag" /></svg>
                     </div>
                 @else
                 <div class="flex-grow flex items-center cursor-move leading-none text-xl text-gray-400 hover:text-indigo-500">
-                    ≡
+                    <svg class="w-6 h-6"><use xlink:href="#icon-drag" /></svg>
                 </div>
                 @endif
             @else
                 <div class="text-gray-400 cursor-pointer hover:text-indigo-500">
-                    ↑
+                    <svg class="w-6 h-6"><use xlink:href="#icon-up" /></svg>
                 </div>
                 @if($attributes['select'])
                     <input class="text-xs" type="checkbox">
@@ -22,7 +22,7 @@
                     <div></div>
                 @endif
                 <div class="text-gray-400 cursor-pointer hover:text-indigo-500">
-                    ↓
+                    <svg class="w-6 h-6"><use xlink:href="#icon-down" /></svg>
                 </div>
             @endif
         @endif

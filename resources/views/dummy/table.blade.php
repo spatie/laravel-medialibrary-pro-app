@@ -16,6 +16,9 @@
 
 </head>
 <body class="px-8 py-16 text-gray-800 bg-gray-100">
+
+@include('dummy.partials.icons')
+
     <aside class="max-w-3xl mx-auto mb-16 px-4 sm:px-6">
         <p class="text-2xl leading-snug font-bold">
             Medialibrary.pro <br>Table <br>Component
