@@ -1,5 +1,5 @@
 @php
-    $size =  $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8';
+    $size = $attributes["extra-small"] ? 'w-4 h-4' : ( $attributes["small"] ? 'w-6 h-6' : 'w-8 h-8');
     $style = "";
     $glyph = "";
     

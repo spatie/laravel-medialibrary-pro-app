@@ -19,7 +19,7 @@
             <div class="absolute inset-0"></div>
             <div style="border-radius: inherit" class="absolute inset-0 opacity-25 border-2 border-gray-500"></div>
             <div class="z-10 absolute inset-0 flex items-center justify-center">
-                <span class="w-6 h-6 flex items-center justify-center rounded-full {{ $attributes["engage"] ? 'shadow-inside text-white bg-indigo-500' : 'shadow bg-white text-indigo-500' }} text-lg font-mono leading-none">＋</span>
+                <x-icon type="add" :small="true" :approaching="$attributes['approaching']" :engage="$attributes['engage']"/>
             </div>
         </div>
     </div>
