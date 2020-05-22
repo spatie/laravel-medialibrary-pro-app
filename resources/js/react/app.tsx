@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import Single from './Single';
 import FormWithTable from './FormWithTable';
 import AsyncSingle from './AsyncSingle';
+import AsyncFormWithTable from './AsyncFormWithTable';
 
 const single = document.getElementById('single');
 if (single) {
@@ -27,6 +28,10 @@ if (multiple) {
     ReactDOM.render(
         <div>
             <FormWithTable />
+
+            <br />
+            <br />
+            <AsyncFormWithTable />
         </div>,
         multiple
     );
