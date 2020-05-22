@@ -1,7 +1,7 @@
 import * as React from 'react';
 import MediaSingleComponent from '@spatie/medialibrary-pro-react-single';
 
-export default function() {
+export default function Single() {
     const formRef = React.useRef<HTMLFormElement>(null);
 
     function afterMediaUpload({ success }: { success: boolean }) {
@@ -29,14 +29,10 @@ export default function() {
                     replace: 'drag or click to replace',
                 }}
                 validation={{ accept: ['image/png'], maxSize: 1048576 }}
-                initialErrors={window.errors}
-                beforeUpload={() => new Promise(resolve => resolve())}
+                validationErrors={window.errors}
+                beforeUpload={() => {}}
                 afterUpload={afterMediaUpload}
             ></MediaSingleComponent>
-
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
-                Submit
-            </button>
         </form>
     );
 }

@@ -21,7 +21,7 @@ export default function() {
                     replace: 'drag or click to replace',
                 }}
                 validation={{ accept: ['image/png'], maxSize: 1048576 }}
-                initialErrors={window.errors}
+                validationErrors={window.errors}
                 dragEnabled
                 beforeUpload={() => new Promise(resolve => resolve())}
             >

@@ -13,7 +13,7 @@
             :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             name="media"
             :initial-value="initialValue"
-            :initial-errors="initialErrors"
+            :validation-errors="validationErrors"
             :temp-endpoint="tempEndpoint"
             :translations="{
                 hint: { plural: 'Add files please!', singular: 'Add a file please!' },
@@ -77,7 +77,7 @@ export default {
     data() {
         return {
             initialValue: window.oldValues.media,
-            initialErrors: window.errors,
+            validationErrors: window.errors,
             tempEndpoint: window.tempEndpoint,
             csrfToken: window.csrfToken,
             oldValues: window.oldValues,
