@@ -9,7 +9,13 @@ export default function() {
             <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
 
             <p>
-                <input name="name" type="text" placeholder="name" defaultValue={window.oldValues.name} />
+                <input
+                    className="border"
+                    name="name"
+                    type="text"
+                    placeholder="name"
+                    defaultValue={window.oldValues.name}
+                />
             </p>
 
             <MediaTableComponent

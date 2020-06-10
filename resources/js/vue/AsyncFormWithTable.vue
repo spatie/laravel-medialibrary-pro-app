@@ -1,8 +1,6 @@
 <template>
-    <form method="POST">
-        <h1 class="h1">Form with Table</h1>
-
-        <input type="hidden" name="_token" :value="csrfToken" />
+    <div>
+        <h1 class="h1">Async</h1>
 
         <p>
             <input class="border" name="name" type="text" placeholder="name" :value="oldValues.name" />
@@ -12,7 +10,7 @@
             :before-upload="beforeUpload"
             :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             name="media"
-            :initial-value="initialValue"
+            :initial-value="value"
             :validation-errors="validationErrors"
             :temp-endpoint="tempEndpoint"
             :translations="{
@@ -20,6 +18,7 @@
                 replace: 'Click or drag to replace',
             }"
             :drag-enabled="true"
+            @change="onChange"
         >
             <template
                 slot-scope="{
@@ -54,10 +53,10 @@
             </template>
         </media-table-component>
 
-        <p>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Submit</button>
-        </p>
-    </form>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" @click="onSubmit">
+            Submit
+        </button>
+    </div>
 </template>
 
 <script>
@@ -72,11 +71,21 @@ export default {
                 resolve();
             });
         },
+
+        onChange(value) {
+            this.value = value;
+        },
+
+        onSubmit() {
+            console.log(this.value);
+            // TODO: axios.post().catch(errors => this.validationErrors = formattedErrors)
+            this.validationErrors = { [this.value[0].uuid]: 'error' };
+        },
     },
 
     data() {
         return {
-            initialValue: window.oldValues.media,
+            value: window.oldValues.media,
             validationErrors: window.errors,
             tempEndpoint: window.tempEndpoint,
             csrfToken: window.csrfToken,

@@ -10,7 +10,7 @@
             @change="onChange"
         ></media-single-component>
 
-        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" @click="submit">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2" @click="onSubmit">
             Submit
         </button>
     </div>
@@ -27,7 +27,7 @@ export default {
             this.value = value;
         },
 
-        submit() {
+        onSubmit() {
             // TODO: axios.post().catch(errors => this.validationErrors = formattedErrors)
             this.validationErrors = { [this.value[0].uuid]: 'error' };
         },

@@ -12,7 +12,7 @@ export default function Single() {
 
     return (
         <form method="POST" ref={formRef}>
-            <h1 className="h1 mt-16">Single image (avatar, …)</h1>
+            <h1 className="h1">Single image (avatar, …)</h1>
 
             <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
 

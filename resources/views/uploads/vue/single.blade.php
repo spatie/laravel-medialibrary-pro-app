@@ -7,11 +7,14 @@
 @section('content')
     <h1>Vue single</h1>
 
-    <h2>Sync (form submit)</h2>
-    <single></single>
+    <template v-if="window.location.search.includes('async=true')">
+        <h2>Async (axios)</h2>
+        <async-single></async-single>
+    </template>
 
-    <br /><br />
+    <template v-else>
+        <h2>Sync (form submit)</h2>
+        <single></single>
+    </template>
 
-    <h2>Async (axios)</h2>
-    <async-single></async-single>
 @endsection

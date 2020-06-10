@@ -4,13 +4,23 @@ import MediaTableComponent from '@spatie/medialibrary-pro-react-table';
 export default function() {
     const [value, setValue] = React.useState(window.oldValues.media);
 
-    function submit() {
+    function onSubmit() {
         console.log(value);
     }
 
     return (
         <div>
             <h1 className="h1">Async</h1>
+
+            <p>
+                <input
+                    className="border"
+                    name="name"
+                    type="text"
+                    placeholder="name"
+                    defaultValue={window.oldValues.name}
+                />
+            </p>
 
             <MediaTableComponent
                 name="media"
@@ -58,7 +68,7 @@ export default function() {
 
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
-                onClick={submit}
+                onClick={onSubmit}
             >
                 Submit
             </button>
