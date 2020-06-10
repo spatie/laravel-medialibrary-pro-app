@@ -35,8 +35,22 @@ export default function() {
                 dragEnabled
                 onChange={setValue}
             >
-                {({ getCustomPropertyInputProps, getCustomPropertyInputErrors }) => (
+                {({
+                    getCustomPropertyInputProps,
+                    getCustomPropertyInputErrors,
+                    getNameInputProps,
+                    getNameInputErrors,
+                }) => (
                     <>
+                        <div className="mb-2">
+                            <input className="border rounded" placeholder="image name" {...getNameInputProps()} />
+                            {getNameInputErrors().map(error => (
+                                <p key={error} className="text-red-500">
+                                    {error}
+                                </p>
+                            ))}
+                        </div>
+
                         <div className="mb-2">
                             <input
                                 className="border rounded"

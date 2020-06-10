@@ -26,8 +26,23 @@
                     getCustomPropertyInputProps,
                     getCustomPropertyInputListeners,
                     getCustomPropertyInputErrors,
+                    getNameInputProps,
+                    getNameInputListeners,
+                    getNameInputErrors,
                 }"
             >
+                <div class="mb-2">
+                    <input
+                        placeholder="image name"
+                        class="border rounded"
+                        v-bind="getNameInputProps()"
+                        v-on="getNameInputListeners()"
+                    />
+                    <p v-for="error in getNameInputErrors()" :key="error" class="text-red-500">
+                        {{ error }}
+                    </p>
+                </div>
+
                 <div class="mb-2">
                     <input
                         placeholder="tags (custom property)"
