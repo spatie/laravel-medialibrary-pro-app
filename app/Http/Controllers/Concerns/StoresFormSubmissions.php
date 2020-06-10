@@ -11,7 +11,7 @@ trait StoresFormSubmissions
     {
         $fieldName = $request->fieldName();
 
-        /** @var FormSubmission $formSubmission */
+        /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing'
         ])

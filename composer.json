@@ -12,14 +12,14 @@
             "type": "path",
             "url": "../laravel-medialibrary",
             "options": {
-                "symlink": false
+                "symlink": true
             }
         },
         {
             "type": "path",
             "url": "../laravel-medialibrary-pro",
             "options": {
-                "symlink": false
+                "symlink": true
             }
         }
     ],

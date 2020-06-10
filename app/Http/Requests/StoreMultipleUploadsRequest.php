@@ -1,8 +1,11 @@
 <?php
-
 namespace App\Http\Requests;
 
+use App\Rules\TestRule;
 use Illuminate\Foundation\Http\FormRequest;
+use Spatie\MediaLibraryPro\Rules\TemporaryUploadMediaFileSizeRule;
+use Spatie\MediaLibraryPro\Rules\TotalUploadSizeRule;
+use Spatie\MediaLibraryPro\Rules\UploadedMediaRule;
 
 class StoreMultipleUploadsRequest extends FormRequest
 {
@@ -15,11 +18,8 @@ class StoreMultipleUploadsRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            "{$this->fieldName()}.*.uuid" => 'required|uuid',
-            "{$this->fieldName()}.*.order" => "required|numeric",
-            "{$this->fieldName()}.*.name" => "required|string",
-            "{$this->fieldName()}.*.thumbnail" => "required|string",
-            "{$this->fieldName()}.*.custom_properties" => "array",
+            'media' => ['min:1', 'max:5', new TotalUploadSizeRule(123)],
+            'media.*' => [UploadedMediaRule::create()],
         ];
     }
 }
