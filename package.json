@@ -9,8 +9,8 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "link-js": "yarn link @spatie/medialibrary-pro-core @spatie/medialibrary-pro-vue @spatie/medialibrary-pro-react @spatie/medialibrary-pro-vue-table @spatie/medialibrary-pro-react-table @spatie/medialibrary-pro-vue-list @spatie/medialibrary-pro-react-list @spatie/medialibrary-pro-vue-single @spatie/medialibrary-pro-react-single",
-        "setup-js": "cd .. && git clone git@github.com:spatie/medialibrary-pro-js.git ; cd medialibrary-pro-js && git pull && yarn setup",
-        "setup-php": "cd .. && git clone git@github.com:spatie/laravel-medialibrary-pro.git ; cd laravel-medialibrary-pro && git pull && composer install && cd .. && git clone git@github.com:spatie/laravel-medialibrary.git ; cd laravel-medialibrary && git pull && composer install",
+        "setup-js": "cd .. && git clone git@github.com:spatie/medialibrary-pro-js.git ; cd medialibrary-pro-js && git pull origin master && yarn setup",
+        "setup-php": "cd .. && git clone git@github.com:spatie/laravel-medialibrary-pro.git ; cd laravel-medialibrary-pro && git pull origin master && composer install && cd .. && git clone git@github.com:spatie/laravel-medialibrary.git ; cd laravel-medialibrary && git pull origin master && composer install",
         "setup": "yarn setup-js && yarn setup-php && composer install && yarn && yarn link-js && yarn watch"
     },
     "dependencies": {
