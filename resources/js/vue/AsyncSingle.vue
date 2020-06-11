@@ -29,7 +29,7 @@ export default {
 
         onSubmit() {
             // TODO: axios.post().catch(errors => this.validationErrors = formattedErrors)
-            this.validationErrors = { [this.value[0].uuid]: 'error' };
+            /* this.validationErrors = { [this.value[0].uuid]: 'error' }; */
         },
     },
 
