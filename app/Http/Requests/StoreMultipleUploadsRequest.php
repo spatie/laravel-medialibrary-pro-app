@@ -17,9 +17,9 @@ class StoreMultipleUploadsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'media' => ['min:1', 'max:5', new TotalUploadSizeRule(123)],
-            'media.*' => [UploadedMediaRule::create()],
+           // 'name' => 'required',
+          //  'media' => ['min:1', 'max:5', new TotalUploadSizeRule(12345)],
+          //  'media.*' => [UploadedMediaRule::maxSizeInKb(1024), UploadedMediaRule::minSizeInKb(24)],
         ];
     }
 }
