@@ -1,9 +1,12 @@
 <?php
 
+use App\Http\Controllers\LivewireUploadMultipleController;
+use App\Http\Controllers\LivewireUploadSingleController;
 use App\Http\Controllers\ReactUploadMultipleController;
 use App\Http\Controllers\ReactUploadSingleController;
 use App\Http\Controllers\VueUploadMultipleController;
 use App\Http\Controllers\VueUploadSingleController;
+use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
 
@@ -28,6 +31,15 @@ Route::prefix('react')->group(function() {
 });
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
+
+Route::prefix('livewire')->group(function() {
+    Route::get('single', [LivewireUploadSingleController::class, 'create'])->name('livewire.single');
+    Route::post('single', [LivewireUploadSingleController::class, 'store']);
+
+    Route::get('multiple', [LivewireUploadMultipleController::class, 'create'])->name('livewire.multiple');
+
+});
+
 
 // medialibrary pro
 Route::post('temp-upload', UploadController::class);

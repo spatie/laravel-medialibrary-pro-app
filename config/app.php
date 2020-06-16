@@ -174,6 +174,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\BladeComponentsServiceProvider::class,
+        App\Providers\LivewireServiceProvider::class,
 
     ],
 

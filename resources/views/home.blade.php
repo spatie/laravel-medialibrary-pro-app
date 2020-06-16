@@ -22,6 +22,11 @@
 
         <br />
 
+        <li><a href="{{ route('livewire.single') }}">Livewire single</a></li>
+        <li><a href="{{ route('livewire.multiple') }}?async=true">Livewire multiple</a></li>
+
+        <br />
+
         <li><a href="{{ route('vapor') }}">Vapor</a></li>
     </ul>
 @endsection

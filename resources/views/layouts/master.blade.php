@@ -11,6 +11,7 @@
     @stack('scripts')
 
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+    <livewire:styles />
 </head>
 
 <body>
@@ -39,5 +40,5 @@
     </div>
 </div>
 </body>
-
+<livewire:scripts />
 </html>
