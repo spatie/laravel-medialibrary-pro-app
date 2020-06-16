@@ -15,3 +15,4 @@ yarn-error.log
 .env.staging
 public/js/
 public/css/main.css
+storage/media-library/temp/
