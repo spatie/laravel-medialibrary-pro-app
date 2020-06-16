@@ -33,6 +33,10 @@ class MediaLibraryUploadComponent extends Component
             ->map(function (array $mediaProperties) {
                 $temporaryUpload = TemporaryUpload::findByMediaUuidInCurrentSession($mediaProperties['uuid']);
 
+                if (! $temporaryUpload) {
+                    return;
+                }
+
                 if ($previewUrl = $temporaryUpload->getFirstMediaUrl('default', 'preview')) {
                     $mediaProperties['preview'] = $previewUrl;
                 }
