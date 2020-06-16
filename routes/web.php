@@ -37,6 +37,7 @@ Route::prefix('livewire')->group(function() {
     Route::post('single', [LivewireUploadSingleController::class, 'store']);
 
     Route::get('multiple', [LivewireUploadMultipleController::class, 'create'])->name('livewire.multiple');
+    Route::post('multiple', [LivewireUploadMultipleController::class, 'store']);
 
 });
 

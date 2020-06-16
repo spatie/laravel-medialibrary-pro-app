@@ -18,10 +18,10 @@ class UploadSingleComponent extends Component
     public $rules;
 
     /** @var string */
-    public $uuid;
+    public $mediaUuid;
 
     /** @var string */
-    public $preview;
+    public $previewUrl;
 
     /** @var string */
     public $uploadName;
@@ -33,21 +33,22 @@ class UploadSingleComponent extends Component
     public $path;
 
 
-    public function mount(string $name, string $rules, array $oldValue)
-    {
-        $this->formElementName = $name;
+    public function mount(
+        string $formElementName,
+        string $rules = '',
+        string $uploadName = '',
+        string $previewUrl = '',
+        string $mediaUuid = ''
+    ) {
+        $this->formElementName = $formElementName;
 
         $this->rules = $rules;
 
-        if (!count($oldValue)) {
-            return;
-        }
+        $this->uploadName = $uploadName;
 
-        $this->uploadName = $oldValue['name'];
+        $this->previewUrl = $previewUrl;
 
-        $this->preview = $oldValue['preview'];
-
-        $this->uuid = $oldValue['uuid'];
+        $this->mediaUuid = $mediaUuid;
     }
 
     public function updatedUpload()
@@ -71,11 +72,11 @@ class UploadSingleComponent extends Component
 
         $media = $temporaryUpload->getFirstMedia();
 
-        $this->uuid = $media->uuid;
+        $this->mediaUuid = $media->uuid;
 
         $this->uploadName = $media->name;
 
-        $this->preview = $temporaryUpload->getFirstMediaUrl('default', 'preview');
+        $this->previewUrl = $temporaryUpload->getFirstMediaUrl('default', 'preview');
     }
 
     public function render()

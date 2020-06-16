@@ -1,5 +1,7 @@
 <livewire:upload-single
-    :name="$name"
+    :form-element-name="$name"
     :rules="$rules"
-    :old-value="$oldValues[0] ?? []"
+    :upload-name="$oldValues[0]['name'] ?? ''"
+    :preview-url="$oldValues[0]['preview'] ?? ''"
+    :media-uuid="$oldValues[0]['uuid'] ?? ''"
 />

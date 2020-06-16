@@ -15,7 +15,7 @@ trait StoresFormSubmissions
         $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing'
         ])
-            ->addMultipleMediaFromTemporaryUploads($request->$fieldName)
+            ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
             ->each->toMediaCollection('images');
 
         flash()->success('Your form has been submitted');
