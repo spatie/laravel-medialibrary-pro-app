@@ -17,6 +17,8 @@ class LivewireUploadMultipleController
 
     public function store(StoreMultipleUploadsRequest $request)
     {
+        ld($request->all());
+
         $fieldName = $request->fieldName();
 
         /** @var \App\Models\FormSubmission $formSubmission */
