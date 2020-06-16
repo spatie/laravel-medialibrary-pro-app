@@ -30,7 +30,7 @@
             </div>
         @endif
         @if($errors->any())
-{{ dd($errors) }}
+{{ dump($errors) }}
             {!! implode('', $errors->all('<li>:message</li>')) !!}
         @endif
         <div id="app">
