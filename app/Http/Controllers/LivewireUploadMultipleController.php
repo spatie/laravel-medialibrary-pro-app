@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class LivewireUploadMultipleController
 {
     public function create()
     {
+        /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::firstOrCreate(['name' => 'livewire multiple']);
 
         return view('uploads.livewire.multiple', compact('formSubmission'));
@@ -17,13 +19,11 @@ class LivewireUploadMultipleController
 
     public function store(StoreMultipleUploadsRequest $request)
     {
-        ld($request->all());
-
         $fieldName = $request->fieldName();
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::whereName('livewire multiple')->first()
-            ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
+            ->syncCollection($request->$fieldName ?? [])
             ->each->toMediaCollection('images');
 
         flash()->success('Your form has been submitted');

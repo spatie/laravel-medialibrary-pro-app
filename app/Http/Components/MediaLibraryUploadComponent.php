@@ -43,6 +43,7 @@ class MediaLibraryUploadComponent extends Component
 
                 return $mediaProperties;
             })
-            ->toArray();
+            ->values()
+            ->first() ?? [];
     }
 }

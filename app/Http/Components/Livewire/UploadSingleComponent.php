@@ -40,6 +40,7 @@ class UploadSingleComponent extends Component
         string $previewUrl = '',
         string $mediaUuid = ''
     ) {
+        ld('mount values', func_get_args());
         $this->formElementName = $formElementName;
 
         $this->rules = $rules;

@@ -5,8 +5,10 @@
 
     <div wire:loading wire:target="upload">Uploading...</div>
 
-    <input type="hidden" name="{{ $this->formElementName }}[0][uuid]" value="{{ $this->mediaUuid }}"/>
-    <input type="hidden" name="{{ $this->formElementName }}[0][name]" value="{{ $this->uploadName }}"/>
+    @if($this->mediaUuid)
+        <input type="hidden" name="{{ $this->formElementName }}[{{ $this->mediaUuid }}][uuid]" value="{{ $this->mediaUuid }}"/>
+        <input type="hidden" name="{{ $this->formElementName }}[{{ $this->mediaUuid }}][name]" value="{{ $this->uploadName }}"/>
+    @endif
 
     @if($this->previewUrl)
         <img src="{{ $this->previewUrl }}" alt="{{ $this->uploadName }}">

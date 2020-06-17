@@ -17,6 +17,8 @@ class StoreMultipleUploadsRequest extends FormRequest
 
     public function rules()
     {
+        ld($this->all());
+
         return [
             'name' => 'required',
             'media' => ['min:1', 'max:5', UploadedMedia::maxTotalSizeInKb(12345)],
