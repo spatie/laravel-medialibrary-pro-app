@@ -16,6 +16,7 @@ class StoreMultipleUploadsRequest extends FormRequest implements MediaLibraryReq
 {
     public function fieldName()
     {
+        dd('fieldName used');
         return 'media';
     }
 

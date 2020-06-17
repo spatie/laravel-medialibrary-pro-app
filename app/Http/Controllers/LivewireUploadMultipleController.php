@@ -19,11 +19,9 @@ class LivewireUploadMultipleController
 
     public function store(StoreMultipleUploadsRequest $request)
     {
-        $fieldName = $request->fieldName();
-
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::whereName('livewire multiple')->first()
-            ->addFromMediaLibraryRequest('photos', $request)
+            ->addFromMediaLibraryRequest('media', $request)
             ->each->toMediaCollection('images');
 
         flash()->success('Your form has been submitted');
