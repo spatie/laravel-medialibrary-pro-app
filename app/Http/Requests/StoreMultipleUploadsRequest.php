@@ -12,14 +12,8 @@ use Spatie\MediaLibraryPro\Rules\TotalUploadMediaSizeRule;
 use Spatie\MediaLibraryPro\Rules\UploadedMedia;
 use Spatie\MediaLibraryPro\Rules\UploadedMediaRule;
 
-class StoreMultipleUploadsRequest extends FormRequest implements MediaLibraryRequest
+class StoreMultipleUploadsRequest extends FormRequest
 {
-    public function fieldName()
-    {
-        dd('fieldName used');
-        return 'media';
-    }
-
     public function rules()
     {
         return [
@@ -30,11 +24,5 @@ class StoreMultipleUploadsRequest extends FormRequest implements MediaLibraryReq
             ],
             'media.*.name' => 'required',
         ];
-    }
-
-    public function mediaLibraryRequestItems(string $key): Collection
-    {
-        return collect($this->get($key, []))
-            ->map(fn(array $properties) => MediaLibraryRequestItem::fromArray($properties));
     }
 }

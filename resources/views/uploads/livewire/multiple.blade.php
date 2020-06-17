@@ -7,10 +7,19 @@
 
         Name: <input type="text" name="name" value="{{ $formSubmission->name }}">
 
+        <h1 class="text-2xl">Images</h1>
         <x-media-library-collection
-            name="media"
+            name="images"
             :model="$formSubmission"
             collectionName="images"
+            collection-rules="max:3"
+        />
+
+        <h1 class="text-2xl">Downloads</h1>
+        <x-media-library-collection
+            name="downloads"
+            :model="$formSubmission"
+            collectionName="downloads"
             collection-rules="max:3"
         />
 
