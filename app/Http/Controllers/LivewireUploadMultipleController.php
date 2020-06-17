@@ -20,12 +20,13 @@ class LivewireUploadMultipleController
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::first();
 
+
         $formSubmission
             ->syncFromMediaLibraryRequest($request, 'images')
             ->toMediaCollection('images');
 
         $formSubmission
-            ->syncFromMediaLibraryRequest($request, $request)
+            ->syncFromMediaLibraryRequest($request, 'downloads')
             ->toMediaCollection('downloads');
 
         $formSubmission->name = $request->name;
