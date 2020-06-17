@@ -13,11 +13,15 @@ class MediaLibraryUploadComponent extends Component
 
     public array $oldValues;
 
-    public function __construct(string $name, string $rules = '')
+    public string $uuid;
+
+    public function __construct(string $name, string $rules = '', string $uuid = '')
     {
         $this->name = $name;
 
         $this->rules = $rules;
+
+        $this->uuid = $uuid;
 
         $this->oldValues = $this->oldValues();
     }
@@ -29,21 +33,26 @@ class MediaLibraryUploadComponent extends Component
 
     protected function oldValues(): array
     {
-        return collect(old($this->name))
-            ->map(function (array $mediaProperties) {
-                $temporaryUpload = TemporaryUpload::findByMediaUuidInCurrentSession($mediaProperties['uuid']);
+        $allOldValues = old($this->name);
 
-                if (! $temporaryUpload) {
-                    return;
-                }
+        if (is_null($allOldValues)) {
+            return [];
+        }
 
-                if ($previewUrl = $temporaryUpload->getFirstMediaUrl('default', 'preview')) {
-                    $mediaProperties['preview'] = $previewUrl;
-                }
+        $uuid = empty($this->uuid) ? array_key_first($allOldValues) : $this->uuid;
 
-                return $mediaProperties;
-            })
-            ->values()
-            ->first() ?? [];
+        $mediaProperties = $allOldValues[$uuid] ?? [];
+
+        $temporaryUpload = TemporaryUpload::findByMediaUuidInCurrentSession($uuid);
+
+        if (!$temporaryUpload) {
+            return [];
+        }
+
+        if ($previewUrl = $temporaryUpload->getFirstMediaUrl('default', 'preview')) {
+            $mediaProperties['preview'] = $previewUrl;
+        }
+
+        return $mediaProperties;
     }
 }
