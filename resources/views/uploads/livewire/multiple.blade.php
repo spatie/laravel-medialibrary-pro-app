@@ -8,6 +8,7 @@
         Name: <input type="text" name="name" value="{{ old('name', $formSubmission->name) }}">
 
         <h1 class="text-2xl">Images</h1>
+
         <x-media-library-collection
             name="images"
             :model="$formSubmission"
@@ -16,6 +17,7 @@
         />
 
         <h1 class="text-2xl">Downloads</h1>
+
         <x-media-library-collection
             name="downloads"
             :model="$formSubmission"
