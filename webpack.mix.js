@@ -15,7 +15,7 @@ mix.js('resources/js/vue/app.js', 'public/js/vue')
     .ts('resources/js/react/app.tsx', 'public/js/react')
     .js('resources/js/vapor/app.js', 'public/js/vapor');
 
-// Needed for local development with React as external library in @spatie/medialibrary-pro-react
+// Needed for local development with React as external library in medialibrary-pro-react
 mix.webpackConfig({
     resolve: {
         symlinks: false,

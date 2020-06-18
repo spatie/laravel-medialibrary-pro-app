@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import MediaTableComponent from '@spatie/medialibrary-pro-vue-table';
+import MediaTableComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-table';
 
 export default {
     components: { MediaTableComponent },
