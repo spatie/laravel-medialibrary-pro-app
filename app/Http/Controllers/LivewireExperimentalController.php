@@ -5,18 +5,19 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 
-class LivewireUploadMultipleController
+class LivewireExperimentalController
 {
     public function create()
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::firstOrCreate([]);
 
-        return view('uploads.livewire.multiple', compact('formSubmission'));
+        return view('uploads.livewire.experimental', compact('formSubmission'));
     }
 
     public function store(StoreMultipleUploadsRequest $request)
     {
+        ld($request->all());
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::first();
 

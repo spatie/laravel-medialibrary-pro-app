@@ -2,25 +2,23 @@
 
 @section('content')
 
-    <form method="POST" enctype="multipart/form-data">
+    <form method="POST">
         @csrf
 
         Name: <input type="text" name="name" value="{{ old('name', $formSubmission->name) }}">
 
         <h1 class="text-2xl">Images</h1>
-        <x-media-library-collection
-            name="images"
+        <livewire:media-library-livewire-experimental-collection
             :model="$formSubmission"
+            name="images"
             collectionName="images"
-            collection-rules="max:3"
         />
 
-        <h1 class="text-2xl">Downloads</h1>
-        <x-media-library-collection
-            name="downloads"
+        <h1>Downloads</h1>
+        <livewire:media-library-livewire-experimental-collection
             :model="$formSubmission"
+            name="downloads"
             collectionName="downloads"
-            collection-rules="max:3"
         />
 
         <button type="submit">Submit</button>
