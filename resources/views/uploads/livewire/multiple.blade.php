@@ -18,12 +18,14 @@
 
         <h1 class="text-2xl">Downloads</h1>
 
+        {{--
         <x-media-library-collection
             name="downloads"
             :model="$formSubmission"
             collectionName="downloads"
             collection-rules="max:3"
         />
+        --}}
 
         <button type="submit">Submit</button>
     </form>

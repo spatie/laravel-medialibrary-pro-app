@@ -18,8 +18,9 @@ class LivewireUploadSingleController
 
     public function store(StoreMultipleUploadsRequest $request)
     {
-        ld($request->all());
         $fieldName = $request->media;
+
+
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
