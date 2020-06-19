@@ -38,6 +38,7 @@
         "spatie/laravel-flash": "^1.6",
         "spatie/laravel-log-dumper": "^1.1",
         "spatie/laravel-medialibrary-pro": "dev-master",
+        "spatie/laravel-medialibrary": "dev-pro",
         "spatie/laravel-tail": "^4.2"
     },
     "require-dev": {

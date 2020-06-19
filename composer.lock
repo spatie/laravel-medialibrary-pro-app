@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42da28bab90ad8dc66d27c91d2c9347f",
+    "content-hash": "5a8ae995705243a9622ad76ae95345bd",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3080,12 +3080,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "f5d5494e9cde47b9962986d2c87a47219545ed16"
+                "reference": "f1ee9bee41afff6a78d92233c8dd1e0b9d844253"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/f5d5494e9cde47b9962986d2c87a47219545ed16",
-                "reference": "f5d5494e9cde47b9962986d2c87a47219545ed16",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/f1ee9bee41afff6a78d92233c8dd1e0b9d844253",
+                "reference": "f1ee9bee41afff6a78d92233c8dd1e0b9d844253",
                 "shasum": ""
             },
             "require": {
@@ -3139,11 +3139,7 @@
                     "Spatie\\MediaLibrary\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Spatie\\MediaLibrary\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3166,7 +3162,18 @@
                 "laravel-medialibrary",
                 "media",
                 "spatie"
-            ]
+            ],
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-06-18T21:19:41+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
@@ -7604,7 +7611,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spatie/laravel-medialibrary-pro": 20
+        "spatie/laravel-medialibrary-pro": 20,
+        "spatie/laravel-medialibrary": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
