@@ -22,6 +22,7 @@ mix.webpackConfig({
         alias: {
             react: path.resolve('./node_modules/react'),
         },
+        modules: [`${__dirname}/vendor/spatie/laravel-medialibrary-pro/ui`, 'node_modules'],
     },
 });
 
