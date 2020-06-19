@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MediaSingleComponent from '@spatie/medialibrary-pro-react-single';
+import MediaSingleComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-single';
 
 export default function Single() {
     const formRef = React.useRef<HTMLFormElement>(null);

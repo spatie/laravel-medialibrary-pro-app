@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MediaTableComponent from '@spatie/medialibrary-pro-react-table';
+import MediaTableComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-table';
 
 export default function() {
     return (
