@@ -48,14 +48,30 @@
 <script>
     dragula(querySelectorAllArray('.dragula-container'), {
         moves (el, source, handle) {
+            // Only allow dragging with the drag handle
             if (!handle) {
                     return false;
                 }
 
             return Boolean(handle.closest('.dragula-handle'));
-        }
-    });
+        },
+        accepts (el, target, source, sibling) {
+            // Only allow sorting in the same container
+            if (target !== source) {
+                return false;
+            }
 
+            // Don't allow sorting to before the file input
+            if (sibling === source.firstElementChild) {
+                return false;
+            }
+
+            return true;
+        }
+    }).on('drop', (el, target, source) => {
+        // Set the value of the order inputs
+        source.querySelectorAll('[data-order]').forEach((el, i) => el.value=i);
+    });
 
     function querySelectorAllArray(selector){
         return Array.prototype.slice.call(
