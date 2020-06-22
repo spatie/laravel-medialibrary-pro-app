@@ -26,7 +26,7 @@
             :model="$formSubmission"
             collectionName="downloads"
             collection-rules="max:3"
-            view="uploads.livewire.partials"
+            view="uploads.livewire.partials.custom-collection"
         />
 
         <button type="submit">Submit</button>
