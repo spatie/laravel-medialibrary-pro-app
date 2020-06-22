@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import MediaSingleComponent from '@spatie/medialibrary-pro-vue-single';
+import MediaSingleComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-single';
 
 export default {
     data() {

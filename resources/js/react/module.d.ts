@@ -1,8 +1,10 @@
+type MediaAttributes = import('../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-core/src/types').MediaLibrary.MediaAttributes;
+
 interface Window {
     oldValues: {
         name: string;
-        singleMedia: ReadonlyArray<import('@spatie/medialibrary-pro-core/src/types').MediaLibrary.MediaAttributes>;
-        media: ReadonlyArray<import('@spatie/medialibrary-pro-core/src/types').MediaLibrary.MediaAttributes>;
+        singleMedia: ReadonlyArray<MediaAttributes>;
+        media: ReadonlyArray<MediaAttributes> | { [uuid: string]: MediaAttributes };
     };
     errors: { [key: string]: Array<string> };
     tempEndpoint: string;

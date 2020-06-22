@@ -1,6 +1,6 @@
 import * as React from 'react';
-import MediaSingleComponent from '@spatie/medialibrary-pro-react-single';
-import MediaLibraryClass from '@spatie/medialibrary-pro-core';
+import MediaLibraryClass from '../../../vendor/spatie/laravel-medialibrary-pro/ui//medialibrary-pro-core';
+import MediaSingleComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-single';
 
 export default function AsyncSingle() {
     function submit() {
