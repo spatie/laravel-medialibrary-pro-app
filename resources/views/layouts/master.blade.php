@@ -74,6 +74,7 @@
     }).on('drop', (el, target, source) => {
         // Set the value of the order inputs
         source.querySelectorAll('[data-order]').forEach((el, i) => el.value=i);
+        //document.dispatchEvent('media-library-collection-order-changed', source)
     });
 
     function querySelectorAllArray(selector){
