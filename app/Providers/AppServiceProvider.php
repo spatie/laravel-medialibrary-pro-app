@@ -13,5 +13,6 @@ class AppServiceProvider extends ServiceProvider
             'success' => 'success',
             'error' => 'error',
         ]);
+
     }
 }

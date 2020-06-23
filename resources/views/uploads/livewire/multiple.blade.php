@@ -20,13 +20,11 @@
 
         <h1 class="text-2xl">Downloads</h1>
 
-
         <x-media-library-collection
             name="downloads"
             :model="$formSubmission"
-            collectionName="downloads"
-            collection-rules="max:3"
-            view="uploads.livewire.partials.custom-collection"
+            collection-name="downloads"
+            max-items="2"
         />
 
         <button type="submit">Submit</button>

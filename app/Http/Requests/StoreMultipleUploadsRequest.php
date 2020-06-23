@@ -2,10 +2,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Support\Collection;
-use Spatie\MediaLibrary\MediaCollections\Contracts\MediaLibraryRequest;
 use Spatie\MediaLibraryPro\Dto\CollectionResponse;
-use Spatie\MediaLibraryPro\Dto\MediaLibraryRequestItem;
 use Spatie\MediaLibraryPro\Rules\MaxTotalUploadMediaSizeRule;
 use Spatie\MediaLibraryPro\Rules\TemporaryUploadMediaFileSizeRule;
 use Spatie\MediaLibraryPro\Rules\TotalUploadMediaSizeRule;
