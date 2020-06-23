@@ -12,7 +12,6 @@ class LivewireUploadSingleController
 
     public function create()
     {
-
         return view('uploads.livewire.single');
     }
 
