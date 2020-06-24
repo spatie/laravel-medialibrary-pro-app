@@ -10,7 +10,7 @@ class LivewireUploadMultipleController
     public function create()
     {
         /** @var \App\Models\FormSubmission $formSubmission */
-        $formSubmission = FormSubmission::firstOrCreate([]);
+        $formSubmission = FormSubmission::firstOrCreate(['name' => 'test']);
 
         return view('uploads.livewire.multiple', compact('formSubmission'));
     }
