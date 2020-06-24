@@ -25,7 +25,9 @@
             :model="$formSubmission"
             collection-name="downloads"
             max-items="2"
-        />
+        >
+
+        </x-media-library-collection>
 
         <button type="submit">Submit</button>
     </form>
