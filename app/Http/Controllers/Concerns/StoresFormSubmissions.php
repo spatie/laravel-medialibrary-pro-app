@@ -9,7 +9,7 @@ trait StoresFormSubmissions
 {
     public function store(StoreMultipleUploadsRequest $request)
     {
-        $fieldName = $request->fieldName();
+        $fieldName = $request->media;
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([

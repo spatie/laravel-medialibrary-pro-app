@@ -6,7 +6,7 @@
 
 @section('content')
     <h1>Vue single</h1>
-
+{{-- --}}
     <template v-if="window.location.search.includes('async=true')">
         <h2>Async (axios)</h2>
         <async-single></async-single>
@@ -16,5 +16,13 @@
         <h2>Sync (form submit)</h2>
         <single></single>
     </template>
+
+    <media-single-component
+        name="media"
+        :validation="{ accept: ['image/png', 'image/jpeg'], maxSize: 500000 }"
+        :initial-value="user.avatar"
+        temp-endpoint="temp-upload"
+        :validation-errors="validationErrors"
+    ></media-single-component>
 
 @endsection
