@@ -23,7 +23,7 @@ export default function AsyncSingle() {
         <div>
             <MediaSingleComponent
                 name="media"
-                tempEndpoint={window.tempEndpoint}
+                uploadEndpoint={window.uploadEndpoint}
                 translations={{
                     hint: { singular: 'Add a file!', plural: 'Add some files!' },
                     replace: 'drag or click to replace',

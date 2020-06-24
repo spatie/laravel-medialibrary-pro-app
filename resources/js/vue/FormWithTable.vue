@@ -14,7 +14,7 @@
             name="media"
             :initial-value="initialValue"
             :validation-errors="validationErrors"
-            :temp-endpoint="tempEndpoint"
+            :upload-endpoint="uploadEndpoint"
             :translations="{
                 hint: { plural: 'Add files please!', singular: 'Add a file please!' },
                 replace: 'Click or drag to replace',
@@ -93,7 +93,7 @@ export default {
         return {
             initialValue: window.oldValues.media,
             validationErrors: window.errors,
-            tempEndpoint: window.tempEndpoint,
+            uploadEndpoint: window.uploadEndpoint,
             csrfToken: window.csrfToken,
             oldValues: window.oldValues,
         };

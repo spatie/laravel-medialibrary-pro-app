@@ -5,7 +5,7 @@
             :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             :initial-value="value"
             :validation-errors="validationErrors"
-            :temp-endpoint="tempEndpoint"
+            :upload-endpoint="uploadEndpoint"
             :translations="{ hint: 'Add a file please!', replace: 'Click or drag to replace' }"
             @change="onChange"
         ></media-single-component>
@@ -37,7 +37,7 @@ export default {
         return {
             value: window.oldValues.media,
             validationErrors: window.errors,
-            tempEndpoint: window.tempEndpoint,
+            uploadEndpoint: window.uploadEndpoint,
             csrfToken: window.csrfToken,
         };
     },
