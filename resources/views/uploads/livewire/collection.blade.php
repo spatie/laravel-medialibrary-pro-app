@@ -15,8 +15,10 @@
             :model="$formSubmission"
             collection="images"
             max-items="3"
+            :sortable="false"
         />
 
+        {{--
         <h1 class="text-2xl">Downloads</h1>
 
         <x-media-library-collection
@@ -28,6 +30,7 @@
         >
 
         </x-media-library-collection>
+        --}}
 
         <button type="submit">Submit</button>
     </form>
