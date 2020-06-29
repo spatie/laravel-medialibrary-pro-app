@@ -6,7 +6,12 @@
 
 @section('content')
     <h1>Vue single</h1>
-{{-- --}}
+
+    <!-- <media-single-component
+        name="media"
+        upload-endpoint="/temp-upload"
+    ></media-single-component> -->
+
     <template v-if="window.location.search.includes('async=true')">
         <h2>Async (axios)</h2>
         <async-single></async-single>

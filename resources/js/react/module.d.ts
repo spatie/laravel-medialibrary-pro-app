@@ -7,6 +7,6 @@ interface Window {
         media: ReadonlyArray<MediaAttributes> | { [uuid: string]: MediaAttributes };
     };
     errors: { [key: string]: Array<string> };
-    tempEndpoint: string;
+    uploadEndpoint: string;
     csrfToken: string;
 }

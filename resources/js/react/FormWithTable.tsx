@@ -21,7 +21,7 @@ export default function() {
             <MediaTableComponent
                 name="media"
                 initialValue={window.oldValues.media}
-                tempEndpoint={window.tempEndpoint}
+                uploadEndpoint={window.uploadEndpoint}
                 translations={{
                     hint: { plural: 'Add some files!', singular: 'Add a file!' },
                     replace: 'drag or click to replace',
