@@ -14,15 +14,15 @@
             name="images"
             :model="$formSubmission"
             collectionName="images"
-            collection-rules="max:3"
+            max-items="max:3"
         />
         --}}
 
         <h1 class="text-2xl">Downloads</h1>
 
         <x-media-library-collection
-            name="downloads"
             :model="$formSubmission"
+            name="downloads"
             collection-name="downloads"
             max-items="2"
         >

@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\LivewireExperimentalController;
+use App\Http\Controllers\LivewireMultipleAttachmentsController;
 use App\Http\Controllers\LivewireUploadMultipleController;
-use App\Http\Controllers\LivewireUploadSingleController;
+use App\Http\Controllers\LivewireSingleAttachmentController;
 use App\Http\Controllers\ReactUploadMultipleController;
 use App\Http\Controllers\ReactUploadSingleController;
 use App\Http\Controllers\VueUploadMultipleController;
@@ -34,11 +35,14 @@ Route::prefix('react')->group(function() {
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
 Route::prefix('livewire')->group(function() {
-    Route::get('single', [LivewireUploadSingleController::class, 'create'])->name('livewire.single');
-    Route::post('single', [LivewireUploadSingleController::class, 'store']);
+    Route::get('single', [LivewireSingleAttachmentController::class, 'create'])->name('livewire.attachment-single');
+    Route::post('single', [LivewireSingleAttachmentController::class, 'store']);
 
-    Route::get('multiple', [LivewireUploadMultipleController::class, 'create'])->name('livewire.multiple');
-    Route::post('multiple', [LivewireUploadMultipleController::class, 'store']);
+    Route::get('multiple', [LivewireMultipleAttachmentsController::class, 'create'])->name('livewire.attachment-multiple');
+    Route::post('multiple', [LivewireMultipleAttachmentsController::class, 'store']);
+
+    Route::get('collection', [LivewireUploadMultipleController::class, 'create'])->name('livewire.multiple');
+    Route::post('collection', [LivewireUploadMultipleController::class, 'store']);
 });
 
 
