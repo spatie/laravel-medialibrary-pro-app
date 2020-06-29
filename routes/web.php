@@ -1,13 +1,13 @@
 <?php
 
 use App\Http\Controllers\LivewireExperimentalController;
-use App\Http\Controllers\LivewireMultipleAttachmentsController;
-use App\Http\Controllers\LivewireUploadMultipleController;
-use App\Http\Controllers\LivewireSingleAttachmentController;
-use App\Http\Controllers\ReactUploadMultipleController;
-use App\Http\Controllers\ReactUploadSingleController;
-use App\Http\Controllers\VueUploadMultipleController;
-use App\Http\Controllers\VueUploadSingleController;
+use App\Http\Controllers\Livewire\LivewireMultipleAttachmentsController;
+use App\Http\Controllers\Livewire\LivewireCollectionComponent;
+use App\Http\Controllers\Livewire\LivewireSingleAttachmentController;
+use App\Http\Controllers\React\ReactUploadMultipleController;
+use App\Http\Controllers\React\ReactUploadSingleController;
+use App\Http\Controllers\Vue\VueUploadMultipleController;
+use App\Http\Controllers\Vue\VueUploadSingleController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
@@ -41,8 +41,8 @@ Route::prefix('livewire')->group(function() {
     Route::get('multiple', [LivewireMultipleAttachmentsController::class, 'create'])->name('livewire.attachment-multiple');
     Route::post('multiple', [LivewireMultipleAttachmentsController::class, 'store']);
 
-    Route::get('collection', [LivewireUploadMultipleController::class, 'create'])->name('livewire.multiple');
-    Route::post('collection', [LivewireUploadMultipleController::class, 'store']);
+    Route::get('collection', [LivewireCollectionComponent::class, 'create'])->name('livewire.collection');
+    Route::post('collection', [LivewireCollectionComponent::class, 'store']);
 });
 
 

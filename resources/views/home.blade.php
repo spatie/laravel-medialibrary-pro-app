@@ -28,7 +28,7 @@
         <li><a href="{{ route('livewire.attachment-single') }}">Single attachment</a></li>
         <li><a href="{{ route('livewire.attachment-multiple') }}">Multiple attachments</a></li>
 
-        <li><a href="{{ route('livewire.multiple') }}?async=true">Livewire multiple</a></li>
+        <li><a href="{{ route('livewire.collection') }}?async=true">Collection</a></li>
 
         <br />
 

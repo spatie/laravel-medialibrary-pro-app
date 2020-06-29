@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\React;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 

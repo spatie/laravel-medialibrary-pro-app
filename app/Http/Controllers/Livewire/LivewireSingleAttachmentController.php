@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Livewire;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\StoreMultipleUploadsRequest;

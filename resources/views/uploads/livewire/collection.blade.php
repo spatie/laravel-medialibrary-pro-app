@@ -7,16 +7,15 @@
 
         Name: <input type="text" name="name" value="{{ old('name', $formSubmission->name) }}">
 
-        {{--
+
         <h1 class="text-2xl">Images</h1>
 
         <x-media-library-collection
             name="images"
             :model="$formSubmission"
             collectionName="images"
-            max-items="max:3"
+            max-items="3"
         />
-        --}}
 
         <h1 class="text-2xl">Downloads</h1>
 

@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\React;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 
-class VueUploadMultipleController
+class ReactUploadMultipleController
 {
     use StoresFormSubmissions;
 
     public function create()
     {
-        return view('uploads.vue.multiple');
+        return view('uploads.react.multiple');
     }
 }
