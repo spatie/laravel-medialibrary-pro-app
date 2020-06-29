@@ -13,16 +13,17 @@
         <x-media-library-collection
             name="images"
             :model="$formSubmission"
-            collectionName="images"
+            collection="images"
             max-items="3"
         />
 
         <h1 class="text-2xl">Downloads</h1>
 
         <x-media-library-collection
-            :model="$formSubmission"
             name="downloads"
-            collection-name="downloads"
+            :model="$formSubmission"
+            collection="downloads"
+            rules="mimes:jpg"
             max-items="2"
         >
 
