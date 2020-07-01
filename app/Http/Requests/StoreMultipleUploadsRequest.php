@@ -19,7 +19,6 @@ class StoreMultipleUploadsRequest extends FormRequest
             'media.*' => [
                 UploadedMedia::minSizeInKb(20),
             ],
-            'media.*.name' => 'required',
         ];
     }
 }

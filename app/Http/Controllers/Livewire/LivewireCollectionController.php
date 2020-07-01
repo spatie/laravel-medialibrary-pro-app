@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Livewire;
 use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 
-class LivewireCollectionComponent
+class LivewireCollectionController
 {
     public function create()
     {
@@ -22,6 +22,7 @@ class LivewireCollectionComponent
 
         $formSubmission
             ->syncFromMediaLibraryRequest($request->images)
+            ->withCustomProperties('extra_field')
             ->toMediaCollection('images');
 
         $formSubmission
