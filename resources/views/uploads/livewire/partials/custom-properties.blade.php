@@ -4,6 +4,9 @@ Extra field:
 <input
     class="border"
     type="text"
-    name="{{ $name }}[{{ $mediaItem['uuid'] }}][custom_properties][extra_field]"
-    value="{{ $mediaItem['custom_properties']['extra_field'] ?? '' }}"
+    name="{{ $mediaItem->customPropertyFieldName('extra_field') }}"
+    value="{{ $mediaItem->customPropertyFieldValue('extra_field') }}"
 />
+@error($mediaItem->customPropertyErrorName('extra_field'))
+{{ $errors->first($mediaItem->customPropertyErrorName('extra_field')) }}
+@enderror

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Livewire;
 
+use App\Http\Requests\StoreLivewireCollectionRequest;
 use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 
@@ -15,7 +16,7 @@ class LivewireCollectionController
         return view('uploads.livewire.collection', compact('formSubmission'));
     }
 
-    public function store(StoreMultipleUploadsRequest $request)
+    public function store(StoreLivewireCollectionRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::first();
