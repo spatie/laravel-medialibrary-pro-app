@@ -3,3 +3,7 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.justify-items-start {
+    justify-items: start;
+}

@@ -23,7 +23,7 @@
     <livewire:scripts />
 </head>
 
-<body class="min-h-screen p-8 flex flex-col text-gray-700 bg-gray-200">
+<body class="min-h-screen p-8 pb-0 flex flex-col text-gray-700 bg-gray-200">
     <script>
         window.oldValues = @json(Session::getOldInput());
         window.errors = {!! $errors->isEmpty() ? '{}' : $errors !!};
@@ -53,21 +53,32 @@
         </a>
 
         <div>
+
+            @if($errors->any())
+                <div class="my-8 -mx-16 py-6 px-16 grid gap-4 text-xs bg-gray-900 text-gray-200">
+                    {{ dump($errors) }}
+                    
+                    <ul>
+                        {!! implode('', $errors->all('<li>:message</li>')) !!}
+                    </ul>
+                </div>
+            @endif
+            
             @if(flash()->message)
-                <div class="{{ flash()->class }}">
+                <div class="rounded-sm mb-8 px-4 py-2 {{ flash()->class =='error' ? 'bg-red-100 text-red-500' : '' }}">
                     {{ flash()->message }}
                 </div>
             @endif
 
-            @if($errors->any())
-                {{ dump($errors) }}
-                {!! implode('', $errors->all('<li>:message</li>')) !!}
-            @endif
             <div id="app">
                 @yield('content')
             </div>
         </div>
     </div>
+
+    <footer class="flex-none text-center py-8 text-xs">
+        Powered by <a href="https://medialibrary.pro" class="border-b border-gray-300">medialibrary.pro</a>
+    </footer>
 
     <!-- START MEDIALIBRARY SCRIPT -->
     <!-- TODO: it should be possible for users to include this script using something similar to the livewire include. Something like <medialibrary:scripts /> -->
