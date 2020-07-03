@@ -4,7 +4,7 @@ Extra field:
 <input
     class="border"
     type="text"
-    {{ $mediaItem->customPropertyFormFieldNameAndValue('extra_field') }}
+    {{ $mediaItem->customPropertyInputAttributes('extra_field') }}
 />
 
 @error($mediaItem->customPropertyErrorName('extra_field'))
