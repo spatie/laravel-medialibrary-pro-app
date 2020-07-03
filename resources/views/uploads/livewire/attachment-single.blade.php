@@ -8,7 +8,8 @@
 
             <input id="name" name="name" placeholder="Your first name">
 
-            <x-media-library-attachment name="media" rules="mimes:png,jpg,pdf" />
+            <x-media-library-attachment name="media"
+            />
 
             <button type="submit">Submit</button>
         </form>

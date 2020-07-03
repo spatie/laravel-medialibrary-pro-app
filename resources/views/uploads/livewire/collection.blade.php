@@ -17,6 +17,7 @@
             after-item-view="uploads.livewire.partials.custom-properties"
         />
 
+        {{--
         <h1 class="text-2xl">Downloads</h1>
 
         <x-media-library-collection
@@ -28,6 +29,7 @@
         >
 
         </x-media-library-collection>
+        --}}
 
         <button type="submit">Submit</button>
     </form>
