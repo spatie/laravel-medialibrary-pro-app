@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <x-h2>Livewire: attachment</x-h2>
+
     <div>
         <form method="POST">
             @csrf
