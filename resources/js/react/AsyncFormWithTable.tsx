@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MediaTableComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-table';
+import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection';
 
 export default function() {
     const [value, setValue] = React.useState(window.oldValues.media);
@@ -22,7 +22,7 @@ export default function() {
                 />
             </p>
 
-            <MediaTableComponent
+            <MediaLibraryCollection
                 name="media"
                 initialValue={value}
                 uploadEndpoint={window.uploadEndpoint}
@@ -78,7 +78,7 @@ export default function() {
                         </div>
                     </>
                 )}
-            </MediaTableComponent>
+            </MediaLibraryCollection>
 
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"

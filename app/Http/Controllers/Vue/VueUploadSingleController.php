@@ -10,6 +10,6 @@ class VueUploadSingleController
 
     public function create()
     {
-        return view('uploads.vue.single');
+        return view('uploads.vue.attachment');
     }
 }

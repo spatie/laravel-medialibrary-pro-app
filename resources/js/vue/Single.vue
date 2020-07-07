@@ -8,7 +8,7 @@
             <input type="text" name="name" placeholder="name" class="border" />
         </p>
 
-        <media-single-component
+        <media-library-attachment
             name="media"
             :before-upload="beforeUpload"
             :after-upload="afterUpload"
@@ -17,12 +17,12 @@
             :validation-errors="validationErrors"
             :upload-endpoint="uploadEndpoint"
             :translations="{ hint: 'Add a file please!', replace: 'Click or drag to replace' }"
-        ></media-single-component>
+        ></media-library-attachment>
     </form>
 </template>
 
 <script>
-import MediaSingleComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-single';
+import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-single';
 
 export default {
     data() {
@@ -34,7 +34,7 @@ export default {
         };
     },
 
-    components: { MediaSingleComponent },
+    components: { MediaLibraryAttachment },
 
     methods: {
         beforeUpload() {

@@ -7,14 +7,19 @@
 @section('content')
     <h1>Vue single</h1>
 
-    <!-- <media-single-component
+    <!-- <media-library-attachment
         name="media"
         upload-endpoint="/temp-upload"
-    ></media-single-component> -->
+    ></media-library-attachment> -->
 
     <template v-if="window.location.search.includes('async=true')">
         <h2>Async (axios)</h2>
         <async-single></async-single>
+    </template>
+
+    <template v-else-if="window.location.search.includes('multi=true')">
+        <h2>Multiple</h2>
+        <media-library-attachment name="media" multiple></media-library-attachment>
     </template>
 
     <template v-else>
@@ -22,12 +27,16 @@
         <single></single>
     </template>
 
-    <media-single-component
+    <!-- working minimal example
+    <media-library-attachment name="avatar" temp-endpoint="temp-upload"></media-library-attachment>
+    -->
+
+    <!-- <media-library-attachment
         name="media"
         :validation="{ accept: ['image/png', 'image/jpeg'], maxSize: 500000 }"
         :initial-value="user.avatar"
         temp-endpoint="temp-upload"
         :validation-errors="validationErrors"
-    ></media-single-component>
+    ></media-library-attachment> -->
 
 @endsection

@@ -10,6 +10,6 @@ class VueUploadMultipleController
 
     public function create()
     {
-        return view('uploads.vue.multiple');
+        return view('uploads.vue.collection');
     }
 }

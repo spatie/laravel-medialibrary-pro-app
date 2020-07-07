@@ -10,6 +10,6 @@ class ReactUploadMultipleController
 
     public function create()
     {
-        return view('uploads.react.multiple');
+        return view('uploads.react.collection');
     }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MediaLibraryClass from '../../../vendor/spatie/laravel-medialibrary-pro/ui//medialibrary-pro-core';
-import MediaSingleComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-single';
+import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment';
 
 export default function AsyncSingle() {
     function submit() {
@@ -21,7 +21,7 @@ export default function AsyncSingle() {
 
     return (
         <div>
-            <MediaSingleComponent
+            <MediaLibraryAttachment
                 name="media"
                 uploadEndpoint={window.uploadEndpoint}
                 translations={{
@@ -32,7 +32,7 @@ export default function AsyncSingle() {
                 validationErrors={validationErrors}
                 initialValue={value}
                 onChange={setValue}
-            ></MediaSingleComponent>
+            ></MediaLibraryAttachment>
 
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"

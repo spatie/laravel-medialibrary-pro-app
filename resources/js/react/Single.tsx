@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MediaSingleComponent from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-single';
+import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment';
 
 export default function Single() {
     const formRef = React.useRef<HTMLFormElement>(null);
@@ -20,7 +20,7 @@ export default function Single() {
                 <input type="text" name="name" placeholder="name" />
             </p>
 
-            <MediaSingleComponent
+            <MediaLibraryAttachment
                 name="media"
                 initialValue={window.oldValues.media}
                 uploadEndpoint={window.uploadEndpoint}
@@ -32,7 +32,7 @@ export default function Single() {
                 validationErrors={window.errors}
                 beforeUpload={() => {}}
                 afterUpload={afterMediaUpload}
-            ></MediaSingleComponent>
+            ></MediaLibraryAttachment>
         </form>
     );
 }

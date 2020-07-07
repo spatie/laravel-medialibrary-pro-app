@@ -10,6 +10,6 @@ class ReactUploadSingleController
 
     public function create()
     {
-        return view('uploads.react.single');
+        return view('uploads.react.attachment');
     }
 }

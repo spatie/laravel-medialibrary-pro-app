@@ -17,19 +17,19 @@ Route::get('/', function () {
 });
 
 Route::prefix('vue')->group(function() {
-    Route::get('single', [VueUploadSingleController::class, 'create'])->name('vue.single');
-    Route::post('single', [VueUploadSingleController::class, 'store']);
+    Route::get('attachment', [VueUploadSingleController::class, 'create'])->name('vue.attachment');
+    Route::post('attachment', [VueUploadSingleController::class, 'store']);
 
-    Route::get('multiple', [VueUploadMultipleController::class, 'create'])->name('vue.multiple');
-    Route::post('multiple', [VueUploadMultipleController::class, 'store']);
+    Route::get('collection', [VueUploadMultipleController::class, 'create'])->name('vue.collection');
+    Route::post('collection', [VueUploadMultipleController::class, 'store']);
 });
 
 Route::prefix('react')->group(function() {
-    Route::get('single', [ReactUploadSingleController::class, 'create'])->name('react.single');
-    Route::post('single', [ReactUploadSingleController::class, 'store']);
+    Route::get('attachment', [ReactUploadSingleController::class, 'create'])->name('react.attachment');
+    Route::post('attachment', [ReactUploadSingleController::class, 'store']);
 
-    Route::get('multiple', [ReactUploadMultipleController::class, 'create'])->name('react.multiple');
-    Route::post('multiple', [ReactUploadMultipleController::class, 'store']);
+    Route::get('collection', [ReactUploadMultipleController::class, 'create'])->name('react.collection');
+    Route::post('collection', [ReactUploadMultipleController::class, 'store']);
 });
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
