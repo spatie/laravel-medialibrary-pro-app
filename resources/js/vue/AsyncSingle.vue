@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-single';
+import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-attachment';
 
 export default {
     components: { MediaLibraryAttachment },

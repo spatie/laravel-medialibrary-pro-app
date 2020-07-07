@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-table';
+import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-collection';
 
 export default {
     components: { MediaLibraryCollection },
