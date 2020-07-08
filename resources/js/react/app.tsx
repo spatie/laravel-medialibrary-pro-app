@@ -25,7 +25,7 @@ if (single) {
             {isMulti && (
                 <>
                     <h2>multi attachment</h2>
-                    <MediaLibraryAttachment name="media" multiple />
+                    <MediaLibraryAttachment name="media" uploadEndpoint="/temp-upload" multiple />
                 </>
             )}
 
