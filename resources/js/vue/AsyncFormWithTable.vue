@@ -21,6 +21,7 @@
             @change="onChange"
         >
             <template
+                slot="afterItems"
                 slot-scope="{
                     getCustomPropertyInputProps,
                     getCustomPropertyInputListeners,

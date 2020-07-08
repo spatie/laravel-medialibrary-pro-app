@@ -34,8 +34,7 @@ export default function() {
                 validationErrors={window.errors}
                 sortable
                 onChange={setValue}
-            >
-                {({
+                afterItems={({
                     getCustomPropertyInputProps,
                     getCustomPropertyInputErrors,
                     getNameInputProps,
@@ -78,7 +77,7 @@ export default function() {
                         </div>
                     </>
                 )}
-            </MediaLibraryCollection>
+            ></MediaLibraryCollection>
 
             <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"

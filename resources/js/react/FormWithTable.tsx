@@ -2,6 +2,8 @@ import * as React from 'react';
 import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection';
 
 export default function() {
+    const [isReadyToSubmit, setIsReadyToSubmit] = React.useState(true);
+
     return (
         <form method="POST">
             <h1 className="h1">Form with Table</h1>
@@ -30,8 +32,8 @@ export default function() {
                 validationErrors={window.errors}
                 sortable
                 beforeUpload={() => new Promise(resolve => resolve())}
-            >
-                {({
+                onIsReadyToSubmitChange={setIsReadyToSubmit}
+                afterItems={({
                     getCustomPropertyInputProps,
                     getCustomPropertyInputErrors,
                     getNameInputProps,
@@ -74,9 +76,14 @@ export default function() {
                         </div>
                     </>
                 )}
-            </MediaLibraryCollection>
+            ></MediaLibraryCollection>
 
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">
+            <button
+                disabled={!isReadyToSubmit}
+                className={`text-white font-bold py-2 px-4 rounded mt-2 ${
+                    isReadyToSubmit ? 'bg-blue-500 hover:bg-blue-700' : 'bg-gray-500'
+                }`}
+            >
                 Submit
             </button>
         </form>

@@ -20,8 +20,10 @@
                 replace: 'Click or drag to replace',
             }"
             :drag-enabled="true"
+            @is-ready-to-submit-change="isReadyToSubmit = $event"
         >
             <template
+                slot="afterItems"
                 slot-scope="{
                     getCustomPropertyInputProps,
                     getCustomPropertyInputListeners,
@@ -70,7 +72,13 @@
         </media-library-collection>
 
         <p>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Submit</button>
+            <button
+                :disabled="!isReadyToSubmit"
+                :class="isReadyToSubmit ? 'bg-blue-500 hover:bg-blue-700' : 'bg-gray-500'"
+                class=" text-white font-bold py-2 px-4 rounded mt-2"
+            >
+                Submit
+            </button>
         </p>
     </form>
 </template>
@@ -96,6 +104,7 @@ export default {
             uploadEndpoint: window.uploadEndpoint,
             csrfToken: window.csrfToken,
             oldValues: window.oldValues,
+            isReadyToSubmit: true,
         };
     },
 };
