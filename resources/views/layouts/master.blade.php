@@ -21,6 +21,7 @@
 
     <livewire:styles />
     <livewire:scripts />
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="min-h-screen p-8 pb-0 flex flex-col text-gray-700 bg-gray-200">
@@ -57,13 +58,13 @@
             @if($errors->any())
                 <div class="my-8 -mx-16 py-6 px-16 grid gap-4 text-xs bg-gray-900 text-gray-200">
                     {{ dump($errors) }}
-                    
+
                     <ul>
                         {!! implode('', $errors->all('<li>:message</li>')) !!}
                     </ul>
                 </div>
             @endif
-            
+
             @if(flash()->message)
                 <div class="rounded-sm mb-8 px-4 py-2 {{ flash()->class =='error' ? 'bg-red-100 text-red-500' : '' }}">
                     {{ flash()->message }}
