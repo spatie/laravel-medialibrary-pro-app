@@ -28,7 +28,7 @@ export default function() {
                 }}
                 validation={{ accept: ['image/png'], maxSize: 1048576 }}
                 validationErrors={window.errors}
-                dragEnabled
+                sortable
                 beforeUpload={() => new Promise(resolve => resolve())}
             >
                 {({
