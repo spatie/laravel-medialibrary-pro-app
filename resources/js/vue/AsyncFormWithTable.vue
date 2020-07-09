@@ -94,8 +94,13 @@ export default {
 
         onSubmit() {
             console.log(this.value);
-            // TODO: axios.post().catch(errors => this.validationErrors = formattedErrors)
-            /* this.validationErrors = { [this.value[0].uuid]: 'error' }; */
+            // TODO: axios.post().catch(errors => this.validationErrors = errors)
+
+            this.validationErrors = {
+                [`media.${Object.keys(this.value)[0]}.custom_properties.tags`]: [
+                    'Field is required (this is a dummy error)',
+                ],
+            };
         },
     },
 

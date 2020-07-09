@@ -1,23 +1,21 @@
 import * as React from 'react';
 import MediaLibraryClass from '../../../vendor/spatie/laravel-medialibrary-pro/ui//medialibrary-pro-core';
 import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment';
+import { MediaLibrary } from 'medialibrary-pro-core/dist/types';
 
 export default function AsyncSingle() {
     function submit() {
         // This can also be placed in the `afterUpload` prop of the component
-
         /* TODO:
         axios.post(…)
         .catch(errors => {
-            // setValidationErrors({ [value[0].uuid]: ['kek'] });
-            // format errors to looks like this: { "uuid": ["error"]}
-            setValidationErrors(formattedErrors);
+            setValidationErrors(errors);
         });
         */
     }
 
     const [value, setValue] = React.useState(window.oldValues.media);
-    const [validationErrors, setValidationErrors] = React.useState<MediaLibraryClass['validationErrors']>();
+    const [validationErrors, setValidationErrors] = React.useState<MediaLibrary.State['validationErrors']>();
 
     return (
         <div>

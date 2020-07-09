@@ -3,9 +3,14 @@ import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-
 
 export default function() {
     const [value, setValue] = React.useState(window.oldValues.media);
+    const [validationErrors, setValidationErrors] = React.useState(window.errors);
 
     function onSubmit() {
         console.log(value);
+
+        setValidationErrors({
+            [`media.${Object.keys(value)[0]}.custom_properties.tags`]: ['Field is required (this is a dummy error)'],
+        });
     }
 
     return (
@@ -31,7 +36,7 @@ export default function() {
                     replace: 'drag or click to replace',
                 }}
                 validation={{ accept: ['image/png'], maxSize: 1048576 }}
-                validationErrors={window.errors}
+                validationErrors={validationErrors}
                 sortable
                 onChange={setValue}
                 afterItems={({
