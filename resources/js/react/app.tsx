@@ -15,6 +15,9 @@ const single = document.getElementById('single');
 if (single) {
     ReactDOM.render(
         <div>
+
+            {/* <MediaLibraryAttachment name="media" uploadEndpoint="/temp-upload" multiple={false} /> */}
+
             {isAsync && (
                 <>
                     <h2>Async (axios)</h2>

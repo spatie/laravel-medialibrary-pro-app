@@ -19,7 +19,7 @@
 
     <template v-else-if="window.location.search.includes('multi=true')">
         <h2>Multiple</h2>
-        <media-library-attachment name="media" multiple></media-library-attachment>
+        <media-library-attachment name="media" :multiple="true"></media-library-attachment>
     </template>
 
     <template v-else>
