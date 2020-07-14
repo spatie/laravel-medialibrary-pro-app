@@ -66,7 +66,7 @@
             @endif
 
             @if(flash()->message)
-                <div class="rounded-sm mb-8 px-4 py-2 {{ flash()->class =='error' ? 'bg-red-100 text-red-500' : '' }}">
+                <div class="rounded-sm mb-8 px-4 py-2 {{ flash()->class =='error' ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500' }}">
                     {{ flash()->message }}
                 </div>
             @endif
