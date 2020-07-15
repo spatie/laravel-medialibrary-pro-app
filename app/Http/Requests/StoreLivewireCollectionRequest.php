@@ -9,7 +9,7 @@ class StoreLivewireCollectionRequest extends FormRequest
     public function rules()
     {
         return [
-            'images.*.custom_properties.extra_field' => 'required|min:6',
+          //  'images.*.custom_properties.extra_field' => 'required|min:6',
         ];
     }
 }
