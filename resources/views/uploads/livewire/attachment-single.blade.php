@@ -7,10 +7,14 @@
     <x-form method="POST">
         @csrf
 
-        <x-input id="name" name="name" placeholder="Your first name" />
+        <x-field label="name">
+            <x-input id="name" name="name" placeholder="Your first name" />
+        </x-field>
 
-        <x-media-library-attachment name="media"
-        />
+        <x-field label="file">
+            <x-media-library-attachment name="media"
+            />
+        </x-field>
 
         <x-button>Submit</x-button>
     </x-form>
