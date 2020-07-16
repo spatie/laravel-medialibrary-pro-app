@@ -12,8 +12,7 @@
         </x-field>
 
         <x-field label="file">
-            <x-media-library-attachment name="media"
-            />
+            <x-media-library-attachment name="media" rules="mimes:png" />
         </x-field>
 
         <x-button data-testing-role="submit">Submit</x-button>
