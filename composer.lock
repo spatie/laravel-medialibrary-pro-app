@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "64af926161e0686a73c4bf0c58f9d525",
+    "content-hash": "6f7b99b98f308ff02c92eda5020cc4e7",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3202,7 +3202,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-medialibrary-pro",
-                "reference": "ea193b737e91e71cee25f7a679f277faf42cab5b"
+                "reference": "9409b853ae259fbbd2e44602263e82ea0cc933f7"
             },
             "require": {
                 "ext-json": "*",
@@ -7676,8 +7676,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spatie/laravel-medialibrary-pro": 20,
-        "spatie/laravel-medialibrary": 20
+        "spatie/laravel-medialibrary": 20,
+        "spatie/laravel-medialibrary-pro": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

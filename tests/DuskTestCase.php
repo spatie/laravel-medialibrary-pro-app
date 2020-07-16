@@ -11,6 +11,13 @@ abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
 
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->refreshTestDatabase();
+    }
+
     /**
      * Prepare for Dusk test execution.
      *
@@ -40,5 +47,10 @@ abstract class DuskTestCase extends BaseTestCase
                 ChromeOptions::CAPABILITY, $options
             )
         );
+    }
+
+    protected function refreshTestDatabase(): void
+    {
+             $this->artisan('migrate:fresh');
     }
 }
