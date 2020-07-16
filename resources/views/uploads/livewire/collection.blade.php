@@ -31,7 +31,7 @@
         </x-media-library-collection>
         --}}
 
-        <button type="submit">Submit</button>
+        <button type="submit" data-testing-role="submit">Submit</button>
     </form>
 
 @endsection

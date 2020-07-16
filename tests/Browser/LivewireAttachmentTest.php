@@ -15,7 +15,7 @@ class LivewireAttachmentTest extends DuskTestCase
             $browser
                 ->visit('/livewire/single')
                 ->type('name', 'My name')
-                ->attach('[data-testing-role="uploader"', $this->getStubPath('space.png'))
+                ->attach('[data-testing-role="main-uploader"', $this->getStubPath('space.png'))
                 ->waitUntilMissingText('Uploading')
                 ->press('[data-testing-role="submit"]')
                 ->assertSee('Your form has been submitted');
@@ -31,7 +31,7 @@ class LivewireAttachmentTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser
                 ->visit('/livewire/single')
-                ->attach('[data-testing-role="uploader"', $this->getStubPath('space.png'))
+                ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
                 ->waitUntilMissingText('Uploading')
                 ->press('[data-testing-role="submit"]');
 
@@ -49,8 +49,4 @@ class LivewireAttachmentTest extends DuskTestCase
         });
     }
 
-    protected function getStubPath(string $fileName)
-    {
-        return __DIR__ . "/stubs/{$fileName}";
-    }
 }

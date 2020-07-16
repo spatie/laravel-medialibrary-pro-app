@@ -10,7 +10,7 @@
 
             <x-media-library-attachment multiple name="media" rules="mimes:png,jpg,pdf" />
 
-            <button type="submit">Submit</button>
+            <button data-testing-role="submit" type="submit">Submit</button>
         </form>
     </div>
 

@@ -53,4 +53,10 @@ abstract class DuskTestCase extends BaseTestCase
     {
              $this->artisan('migrate:fresh');
     }
+
+
+    protected function getStubPath(string $fileName)
+    {
+        return __DIR__ . "/Browser/stubs/{$fileName}";
+    }
 }
