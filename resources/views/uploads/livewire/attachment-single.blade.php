@@ -16,7 +16,7 @@
             />
         </x-field>
 
-        <x-button>Submit</x-button>
+        <x-button data-testing-role="submit">Submit</x-button>
     </x-form>
 
 @endsection
