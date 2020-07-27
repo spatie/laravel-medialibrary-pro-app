@@ -1,8 +1,8 @@
-@extends('layouts.master')
+@extends('layouts.master', ['pageTitle' => 'Livewire: multiple attachments'])
 
 @section('content')
 
-    <x-h2>Livewire: attachment (multiple)</x-h2>
+    <x-h2>Livewire: multiple attachments</x-h2>
 
     <x-form method="POST">
         @csrf
