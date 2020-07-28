@@ -21,7 +21,7 @@ class LivewireSingleAttachmentController
         $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing'
         ]);
-
+ld('here', $request->media);
         $formSubmission
             ->addFromMediaLibraryRequest($request->media)
             ->toMediaCollection('images');

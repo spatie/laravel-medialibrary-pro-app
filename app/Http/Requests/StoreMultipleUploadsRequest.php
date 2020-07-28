@@ -15,7 +15,7 @@ class StoreMultipleUploadsRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'media' => ['min:1', 'max:5', UploadedMedia::maxTotalSizeInKb(12345)],
+            'media' => ['required', 'min:1', 'max:5', UploadedMedia::maxTotalSizeInKb(12345)],
             'media.*' => [
                 UploadedMedia::minSizeInKb(20),
             ],

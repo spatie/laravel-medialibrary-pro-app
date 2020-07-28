@@ -4,6 +4,7 @@ namespace Tests\Browser;
 
 use App\Models\FormSubmission;
 use Laravel\Dusk\Browser;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Tests\DuskTestCase;
 
 class LivewireAttachmentTest extends DuskTestCase
@@ -21,6 +22,7 @@ class LivewireAttachmentTest extends DuskTestCase
                 ->assertSee('Your form has been submitted');
 
             $this->assertCount(1, FormSubmission::get());
+
             $this->assertEquals('space.png', FormSubmission::first()->getFirstMedia('images')->file_name);
         });
     }
