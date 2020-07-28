@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Medialibrary.pro {{ $pageTitle ? '| ' . $pageTitle : '' }}</title>
+    <title>Medialibrary.pro {{ isset($pageTitle) ? '| ' . $pageTitle : '' }}</title>
 
     @stack('scripts')
 
