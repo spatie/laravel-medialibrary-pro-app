@@ -15,7 +15,7 @@
             collection="images"
             max-items="3"
             rules="mimes:png"
-            prop-view="uploads.livewire.partials.custom-properties"
+            props-view="uploads.livewire.partials.custom-properties"
         />
 
         {{--
