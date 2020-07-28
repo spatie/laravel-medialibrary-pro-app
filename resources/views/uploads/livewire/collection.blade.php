@@ -15,10 +15,9 @@
             collection="images"
             max-items="3"
             rules="mimes:png"
-            props-view="uploads.livewire.partials.custom-properties"
         />
 
-        {{--
+
         <h1 class="text-2xl">Downloads</h1>
 
         <x-media-library-collection
@@ -27,10 +26,10 @@
             collection="downloads"
             rules="mimes:jpg"
             max-items="2"
+            props-view="uploads.livewire.partials.custom-properties"
         >
 
         </x-media-library-collection>
-        --}}
 
         <button type="submit" data-testing-role="submit">Submit</button>
     </form>
