@@ -4,7 +4,6 @@ namespace Tests\Browser;
 
 use App\Models\FormSubmission;
 use Laravel\Dusk\Browser;
-use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Tests\DuskTestCase;
 
 class LivewireAttachmentTest extends DuskTestCase
