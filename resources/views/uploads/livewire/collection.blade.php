@@ -2,36 +2,37 @@
 
 @section('content')
 
-    <form method="POST" enctype="multipart/form-data">
+    <x-h2>Livewire: collection</x-h2>
+
+    <x-form method="POST">
         @csrf
 
-        Name: <input type="text" name="name" value="{{ old('name', $formSubmission->name) }}">
+        <x-field label="name">
+            <x-input id="name" name="name" placeholder="Name" value="{{ old('name', $formSubmission->name) }}"  />
+        </x-field>
 
-        <h1 class="text-2xl">Images</h1>
+        <x-field label="Images">
+            <x-media-library-collection
+                name="images"
+                :model="$formSubmission"
+                collection="images"
+                max-items="3"
+                rules="mimes:png"
+            />
+        </x-field>
 
-        <x-media-library-collection
-            name="images"
-            :model="$formSubmission"
-            collection="images"
-            max-items="3"
-            rules="mimes:png"
-        />
+        <x-field label="Downloads">
+            <x-media-library-collection
+                name="downloads"
+                :model="$formSubmission"
+                collection="downloads"
+                rules="mimes:jpg"
+                max-items="2"
+                props-view="uploads.livewire.partials.custom-properties"
+            />
+        </x-field>
 
-
-        <h1 class="text-2xl">Downloads</h1>
-
-        <x-media-library-collection
-            name="downloads"
-            :model="$formSubmission"
-            collection="downloads"
-            rules="mimes:jpg"
-            max-items="2"
-            props-view="uploads.livewire.partials.custom-properties"
-        >
-
-        </x-media-library-collection>
-
-        <button type="submit" data-testing-role="submit">Submit</button>
-    </form>
+        <x-button data-testing-role="submit" type="submit">Submit</x-button>
+    </x-form>
 
 @endsection
