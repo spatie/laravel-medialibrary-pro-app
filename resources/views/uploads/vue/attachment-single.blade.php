@@ -7,26 +7,7 @@
 @section('content')
     <h1>Vue single</h1>
 
-    <!-- <media-library-attachment
-        name="media"
-        upload-endpoint="/temp-upload"
-    ></media-library-attachment> -->
-
-    <template v-if="window.location.search.includes('async=true')">
-        <h2>Async (axios)</h2>
-        <async-single></async-single>
-    </template>
-
-    <template v-else-if="window.location.search.includes('multi=true')">
-        <h2>Multiple</h2>
-        <media-library-attachment
-            name="media"
-            :multiple="true">
-        </media-library-attachment>
-    </template>
-
-    <template v-else>
-        <h2>Sync (form submit)</h2>
+    <template>
         <single></single>
     </template>
 

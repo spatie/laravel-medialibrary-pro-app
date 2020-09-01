@@ -8,7 +8,8 @@ use App\Http\Controllers\Livewire\LivewireSingleAttachmentController;
 use App\Http\Controllers\React\ReactUploadMultipleController;
 use App\Http\Controllers\React\ReactUploadSingleController;
 use App\Http\Controllers\Vue\VueUploadMultipleController;
-use App\Http\Controllers\Vue\VueUploadSingleController;
+use App\Http\Controllers\Vue\VueSingleAttachmentController;
+use App\Http\Controllers\Vue\VueSingleAsyncAttachmentController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
@@ -18,8 +19,11 @@ Route::get('/', function () {
 });
 
 Route::prefix('vue')->group(function() {
-    Route::get('attachment', [VueUploadSingleController::class, 'create'])->name('vue.attachment');
-    Route::post('attachment', [VueUploadSingleController::class, 'store']);
+    Route::get('attachment', [VueSingleAttachmentController::class, 'create'])->name('vue.single-attachment');
+    Route::post('attachment', [VueSingleAttachmentController::class, 'store']);
+
+    Route::get('attachment-async', [VueSingleAsyncAttachmentController::class, 'create'])->name('vue.single-attachment-async');
+    Route::post('attachment-async', [VueSingleAsyncAttachmentController::class, 'store']);
 
     Route::get('collection', [VueUploadMultipleController::class, 'create'])->name('vue.collection');
     Route::post('collection', [VueUploadMultipleController::class, 'store']);

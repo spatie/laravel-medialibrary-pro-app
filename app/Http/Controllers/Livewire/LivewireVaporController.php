@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Livewire;
 
+use App\Http\Requests\StoreSingleAttachmentRequest;
 use App\Models\FormSubmission;
-use Illuminate\Http\Request;
 
 class LivewireVaporController
 {
@@ -12,7 +12,7 @@ class LivewireVaporController
         return view('uploads.livewire.attachment-single');
     }
 
-    public function store(Request $request)
+    public function store(StoreSingleAttachmentRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([

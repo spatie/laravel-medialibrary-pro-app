@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Livewire;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\StoreMultipleUploadsRequest;
+use App\Http\Requests\StoreSingleAttachmentRequest;
 use App\Models\FormSubmission;
 
 class LivewireSingleAttachmentController
@@ -21,7 +22,7 @@ class LivewireSingleAttachmentController
         $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing'
         ]);
-ld('here', $request->media);
+
         $formSubmission
             ->addFromMediaLibraryRequest($request->media)
             ->toMediaCollection('images');
