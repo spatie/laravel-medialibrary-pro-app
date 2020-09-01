@@ -18,7 +18,7 @@ class VueSingleAttachmentController
         $fieldName = $request->media;
 
         /** @var \App\Models\FormSubmission $formSubmission */
-        $formSubmission = FormSubmission::create([
+        FormSubmission::create([
             'name' => $request->name ?? 'nothing'
         ])
             ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
