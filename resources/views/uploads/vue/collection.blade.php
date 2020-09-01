@@ -7,8 +7,6 @@
 @section('content')
     <h1>Vue multiple</h1>
 
-
-
     <template v-if="window.location.search.includes('async=true')">
         <h2>Async (axios)</h2>
         <async-form-with-table></async-form-with-table>

@@ -6,8 +6,8 @@
 
     <ul class="list-disc list-inside">
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.attachment') }}">Attachment</a></li>
-        <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.attachment') }}?multi=true">Attachment (multiple)</a></li>
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.attachment') }}?async=true">Attachment (async)</a></li>
+        <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.attachment') }}?multi=true">Attachment (multiple)</a></li>
         <li class="mt-2"><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.collection') }}">Collection</a></li>
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.collection') }}?async=true">Collection (async)</a></li>
     </ul>
@@ -16,8 +16,8 @@
 
     <ul class="list-disc list-inside">
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('react.attachment') }}">Attachment</a></li>
-        <li><a class="text-red-500 hover:bg-red-100" href="{{ route('react.attachment') }}?multi=true">Attachment (multiple)</a></li>
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('react.attachment') }}?async=true">Attachment (async)</a></li>
+        <li><a class="text-red-500 hover:bg-red-100" href="{{ route('react.attachment') }}?multi=true">Attachment (multiple)</a></li>
         <li class="mt-2"><a class="text-red-500 hover:bg-red-100" href="{{ route('react.collection') }}">Collection</a></li>
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('react.collection') }}?async=true">Collection (async)</a></li>
     </ul>
