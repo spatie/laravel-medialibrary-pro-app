@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Livewire\LivewireVaporController;
 use App\Http\Controllers\LivewireExperimentalController;
 use App\Http\Controllers\Livewire\LivewireMultipleAttachmentsController;
 use App\Http\Controllers\Livewire\LivewireCollectionController;
@@ -43,6 +44,9 @@ Route::prefix('livewire')->group(function() {
 
     Route::get('collection', [LivewireCollectionController::class, 'create'])->name('livewire.collection');
     Route::post('collection', [LivewireCollectionController::class, 'store']);
+
+    Route::get('vapor', [LivewireVaporController::class, 'create'])->name('livewire.vapor');
+    Route::post('vapor', [LivewireVaporController::class, 'store']);
 });
 
 

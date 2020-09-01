@@ -17,7 +17,7 @@
                 :model="$formSubmission"
                 collection="images"
                 max-items="3"
-                rules="mimes:png"
+                rules="mimes:png,jpeg"
             />
         </x-field>
 
@@ -26,7 +26,7 @@
                 name="downloads"
                 :model="$formSubmission"
                 collection="downloads"
-                rules="mimes:jpg"
+                rules="mimes:pdf"
                 max-items="2"
                 props-view="uploads.livewire.partials.custom-properties"
             />

@@ -1,10 +1,7 @@
 <?php
 
 return [
-
-    /*
     'temporary_file_upload' => [
-        'disk' => 's3',
+        'disk' => env('LIVEWIRE_DISK', 'local'),
     ],
-    */
 ];

@@ -39,7 +39,8 @@
         "spatie/laravel-log-dumper": "dev-log-server",
         "spatie/laravel-medialibrary": "dev-pro",
         "spatie/laravel-medialibrary-pro": "dev-master",
-        "spatie/laravel-tail": "^4.2"
+        "spatie/laravel-tail": "^4.2",
+        "spatie/pdf-to-image": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
