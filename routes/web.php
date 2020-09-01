@@ -24,17 +24,17 @@ Route::prefix('vue')->group(function() {
     Route::get('attachment', [VueSingleAttachmentController::class, 'create'])->name('vue.single-attachment');
     Route::post('attachment', [VueSingleAttachmentController::class, 'store']);
 
-    Route::get('attachment-async', [VueSingleAsyncAttachmentController::class, 'create'])->name('vue.single-attachment-async');
-    Route::post('attachment-async', [VueSingleAsyncAttachmentController::class, 'store']);
+    Route::get('single-async-attachment', [VueSingleAsyncAttachmentController::class, 'create'])->name('vue.single-async-attachment');
+    Route::post('single-async-attachment', [VueSingleAsyncAttachmentController::class, 'store']);
 
-    Route::get('multiple', [VueMultipleAttachmentsController::class, 'create'])->name('vue.attachment-multiple');
-    Route::post('multiple', [VueMultipleAttachmentsController::class, 'store']);
+    Route::get('multiple-attachments', [VueMultipleAttachmentsController::class, 'create'])->name('vue.multiple-attachments');
+    Route::post('multiple-attachments', [VueMultipleAttachmentsController::class, 'store']);
 
     Route::get('collection', [VueCollectionController::class, 'create'])->name('vue.collection');
     Route::post('collection', [VueCollectionController::class, 'store']);
 
-    Route::get('collection-async', [VueAsyncCollectionController::class, 'create'])->name('vue.collection-async');
-    Route::post('collection-async', [VueAsyncCollectionController::class, 'store']);
+    Route::get('async-collection', [VueAsyncCollectionController::class, 'create'])->name('vue.async-collection');
+    Route::post('async-collection', [VueAsyncCollectionController::class, 'store']);
 });
 
 Route::prefix('react')->group(function() {

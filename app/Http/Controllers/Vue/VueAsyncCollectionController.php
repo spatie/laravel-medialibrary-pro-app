@@ -10,6 +10,6 @@ class VueAsyncCollectionController
 
     public function create()
     {
-        return view('uploads.vue.collection-async');
+        return view('uploads.vue.async-collection');
     }
 }

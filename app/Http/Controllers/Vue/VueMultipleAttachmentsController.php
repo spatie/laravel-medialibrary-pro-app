@@ -10,6 +10,6 @@ class VueMultipleAttachmentsController
 
     public function create()
     {
-        return view('uploads.vue.attachment-multiple');
+        return view('uploads.vue.multiple-attachments');
     }
 }

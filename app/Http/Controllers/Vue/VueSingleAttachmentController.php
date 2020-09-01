@@ -10,7 +10,7 @@ class VueSingleAttachmentController
 
     public function create()
     {
-        return view('uploads.vue.attachment-single');
+        return view('uploads.vue.single-attachment');
     }
 
     public function store($request)
