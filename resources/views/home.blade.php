@@ -25,7 +25,7 @@
     <x-h2 class="mt-12">Livewire</x-h2>
 
     <ul class="list-disc list-inside">
-        <li><a class="text-red-500 hover:bg-red-100" href="{{ route('livewire.attachment-single') }}">Attachment</a></li>
+        <li><a class="text-red-500 hover:bg-red-100" href="{{ route('livewire.attachment') }}">Attachment</a></li>
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('livewire.attachment-multiple') }}">Attachment (multiple)</a></li>
         <li class="mt-2"r><a class="text-red-500 hover:bg-red-100" href="{{ route('livewire.collection') }}?async=true">Collection</a></li>
         <li class="mt-2"><a class="text-red-500 hover:bg-red-100" href="{{ route('livewire.vapor') }}">Vapor</a></li>

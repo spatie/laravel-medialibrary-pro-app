@@ -1,49 +1,39 @@
 import * as React from 'react';
 import ReactDOM from 'react-dom';
 
-import Single from './Single';
-import FormWithTable from './FormWithTable';
-import AsyncSingle from './AsyncSingle';
-import AsyncFormWithTable from './AsyncFormWithTable';
-
-import MediaLibraryAttachment from 'medialibrary-pro-react-attachment';
+import Attachment from './Attachment';
+import AttachmentAsync from './AttachmentAsync';
+import AttachmentMultiple from './AttachmentMultiple';
+import Collection from './Collection';
+import CollectionAsync from './CollectionAsync';
 
 const isAsync = window.location.search.includes('async=true');
 const isMulti = window.location.search.includes('multi=true');
 
-const single = document.getElementById('single');
-if (single) {
+const attachment = document.getElementById('attachment');
+if (attachment) {
     ReactDOM.render(
         <div>
 
             {/* <MediaLibraryAttachment name="media" uploadEndpoint="/temp-upload" multiple={false} /> */}
 
             {isAsync && (
-                <>
-                    <h2>Async (axios)</h2>
-                    <AsyncSingle />
-                </>
+                <AttachmentAsync />
             )}
 
             {isMulti && (
-                <>
-                    <h2>multi attachment</h2>
-                    <MediaLibraryAttachment name="media" uploadEndpoint="/temp-upload" multiple />
-                </>
+                <AttachmentMultiple />
             )}
 
             {!isAsync && !isMulti && (
-                <>
-                    <h2>Sync (form submit, uploads automatically)</h2>
-                    <Single />
-                </>
+                <Attachment />
             )}
         </div>,
-        single
+        attachment
     );
 }
 
-const multiple = document.getElementById('multiple');
-if (multiple) {
-    ReactDOM.render(<div>{isAsync ? <AsyncFormWithTable /> : <FormWithTable />}</div>, multiple);
+const collection = document.getElementById('collection');
+if (collection) {
+    ReactDOM.render(<div>{isAsync ? <CollectionAsync /> : <Collection />}</div>, collection);
 }

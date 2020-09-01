@@ -1,14 +1,21 @@
 import * as React from 'react';
-import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection';
+import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection/dist';
 
 export default function() {
-    const [isReadyToSubmit, setIsReadyToSubmit] = React.useState(true);
+    const [value, setValue] = React.useState(window.oldValues.media);
+    const [validationErrors, setValidationErrors] = React.useState(window.errors);
+
+    function onSubmit() {
+        console.log(value);
+
+        setValidationErrors({
+            [`media.${Object.keys(value)[0]}.custom_properties.tags`]: ['Field is required (this is a dummy error)'],
+        });
+    }
 
     return (
-        <form method="POST">
-            <h1 className="h1">Form with Table</h1>
-
-            <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
+        <div>
+            <h1 className="h1">Async</h1>
 
             <p>
                 <input
@@ -22,17 +29,16 @@ export default function() {
 
             <MediaLibraryCollection
                 name="media"
-                initialValue={window.oldValues.media}
+                initialValue={value}
                 uploadEndpoint={window.uploadEndpoint}
                 translations={{
                     hint: { plural: 'Add some files!', singular: 'Add a file!' },
                     replace: 'drag or click to replace',
                 }}
                 validation={{ accept: ['image/png'], maxSize: 1048576 }}
-                validationErrors={window.errors}
+                validationErrors={validationErrors}
                 sortable
-                beforeUpload={() => new Promise(resolve => resolve())}
-                onIsReadyToSubmitChange={setIsReadyToSubmit}
+                onChange={setValue}
                 afterItems={({
                     getCustomPropertyInputProps,
                     getCustomPropertyInputErrors,
@@ -79,13 +85,11 @@ export default function() {
             ></MediaLibraryCollection>
 
             <button
-                disabled={!isReadyToSubmit}
-                className={`text-white font-bold py-2 px-4 rounded mt-2 ${
-                    isReadyToSubmit ? 'bg-blue-500 hover:bg-blue-700' : 'bg-gray-500'
-                }`}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
+                onClick={onSubmit}
             >
                 Submit
             </button>
-        </form>
+        </div>
     );
 }

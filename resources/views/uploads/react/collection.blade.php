@@ -1,11 +1,11 @@
-@extends('layouts.master')
+@extends('layouts.master', ['pageTitle' => 'React: collection'])
 
 @push('scripts')
     <script defer src="/js/react/app.js"></script>
 @endpush
 
 @section('content')
-    <h1>React multiple</h1>
+    <x-h2>React: Collection</x-h2>
 
-    <div id="multiple"></div>
+    <div id="collection"></div>
 @endsection
