@@ -5,7 +5,5 @@
 @endpush
 
 @section('content')
-    <x-h2>React: Collection</x-h2>
-
     <div id="collection"></div>
 @endsection

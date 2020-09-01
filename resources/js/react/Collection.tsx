@@ -1,26 +1,35 @@
 import * as React from 'react';
 import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection/dist';
+import H2 from './components/H2';
+import Grid from './components/Grid';
+import Csrf from './components/Csrf';
+import Field from './components/Field';
+import Input from './components/Input';
+import Button from './components/Button';
 
 export default function() {
     const [isReadyToSubmit, setIsReadyToSubmit] = React.useState(true);
 
     return (
-        <form method="POST">
-            <h1 className="h1">Form with Table</h1>
+        <>
+            <H2>React: collection</H2>
 
-            <input type="hidden" name="_token" defaultValue={window.csrfToken}></input>
+            <form method="POST">
+                <Grid>
 
-            <p>
-                <input
-                    className="border"
+                    <Csrf token={window.csrfToken}/>
+
+                    <Field label="Name">
+                <Input
                     name="name"
                     type="text"
                     placeholder="name"
                     defaultValue={window.oldValues.name}
                 />
-            </p>
+            </Field>
 
-            <MediaLibraryCollection
+            <Field label="Files">
+                <MediaLibraryCollection
                 name="media"
                 initialValue={window.oldValues.media}
                 uploadEndpoint={window.uploadEndpoint}
@@ -77,15 +86,13 @@ export default function() {
                     </>
                 )}
             ></MediaLibraryCollection>
+            </Field>
 
-            <button
-                disabled={!isReadyToSubmit}
-                className={`text-white font-bold py-2 px-4 rounded mt-2 ${
-                    isReadyToSubmit ? 'bg-blue-500 hover:bg-blue-700' : 'bg-gray-500'
-                }`}
-            >
+            <Button disabled={!isReadyToSubmit}>
                 Submit
-            </button>
+            </Button>
+            </Grid>
         </form>
+        </>
     );
 }

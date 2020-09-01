@@ -1,5 +1,10 @@
 import * as React from 'react';
 import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection/dist';
+import H2 from './components/H2';
+import Button from './components/Button';
+import Grid from './components/Grid';
+import Field from './components/Field';
+import Input from './components/Input';
 
 export default function() {
     const [value, setValue] = React.useState(window.oldValues.media);
@@ -15,18 +20,19 @@ export default function() {
 
     return (
         <div>
-            <h1 className="h1">Async</h1>
+            <H2>React: async collection</H2>
 
-            <p>
-                <input
-                    className="border"
+            <Grid>
+            <Field label="name">
+                <Input
                     name="name"
                     type="text"
                     placeholder="name"
                     defaultValue={window.oldValues.name}
                 />
-            </p>
+            </Field>
 
+            <Field label="files">
             <MediaLibraryCollection
                 name="media"
                 initialValue={value}
@@ -83,13 +89,12 @@ export default function() {
                     </>
                 )}
             ></MediaLibraryCollection>
+            </Field>
 
-            <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2"
-                onClick={onSubmit}
-            >
+            <Button onClick={onSubmit}>
                 Submit
-            </button>
+            </Button>
+            </Grid>
         </div>
     );
 }
