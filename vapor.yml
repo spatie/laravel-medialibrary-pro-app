@@ -10,7 +10,10 @@ environments:
         build:
             - 'composer install --no-dev'
             - 'php artisan event:cache'
-            - 'yarn setup && rm -rf node_modules'
+            - yarn
+            - yarn run production
+            - rm -rf node_modules
+            - rm -rf storage/media-library
         deploy:
             - 'php artisan migrate --force'
 

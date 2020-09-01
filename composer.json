@@ -12,14 +12,14 @@
             "type": "path",
             "url": "/Users/freek/dev/code/laravel-medialibrary",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         },
         {
             "type": "path",
             "url": "/Users/freek/dev/code/laravel-medialibrary-pro",
             "options": {
-                "symlink": true
+                "symlink": false
             }
         }
     ],
