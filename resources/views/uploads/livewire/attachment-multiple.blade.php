@@ -15,7 +15,7 @@
             <x-media-library-attachment multiple name="media" rules="mimes:png,jpg,pdf" />
         </x-field>
 
-        <x-button data-testing-role="submit" type="submit">Submit</x-button>
+        <x-button data-testing-role="submit">Submit</x-button>
     </x-form>
 
 @endsection

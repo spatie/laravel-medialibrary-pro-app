@@ -40,7 +40,7 @@ Route::prefix('react')->group(function() {
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
 Route::prefix('livewire')->group(function() {
-    Route::get('single', [LivewireSingleAttachmentController::class, 'create'])->name('livewire.attachment-single');
+    Route::get('single', [LivewireSingleAttachmentController::class, 'create'])->name('livewire.attachment');
     Route::post('single', [LivewireSingleAttachmentController::class, 'store']);
 
     Route::get('multiple', [LivewireMultipleAttachmentsController::class, 'create'])->name('livewire.attachment-multiple');
