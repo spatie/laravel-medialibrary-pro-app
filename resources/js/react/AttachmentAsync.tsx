@@ -2,7 +2,6 @@ import * as React from 'react';
 import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment/dist';
 import { MediaLibrary } from 'medialibrary-pro-core/dist/types';
 import H2 from './components/H2';
-import Info from './components/Info';
 import Button from './components/Button';
 import Field from './components/Field';
 import Grid from './components/Grid';
@@ -26,11 +25,12 @@ export default function AttachmentAsync() {
         <div>
             <H2>React: async attachment</H2>
 
-            <Info>
-                Axios
-            </Info>
 
             <Grid>
+                <p>
+                    Via Axios
+                </p>
+
                 <Field label="file">
                     <MediaLibraryAttachment
                         name="media"

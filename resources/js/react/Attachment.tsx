@@ -4,7 +4,6 @@ import H2 from './components/H2';
 import Field from './components/Field';
 import Input from './components/Input';
 import Csrf from './components/Csrf';
-import Info from './components/Info';
 import Grid from './components/Grid';
 
 export default function Attachment() {
@@ -20,12 +19,12 @@ export default function Attachment() {
         <>
             <H2>React: attachment</H2>
 
-            <Info>
-                Sync – form submit, uploads automatically
-            </Info>
-        
             <form method="POST" ref={formRef}>
                 <Grid>
+                    <p>
+                        Sync – form submit, uploads automatically
+                    </p>
+
                     <Csrf token={window.csrfToken}/>
 
                     <Field label="Name">
