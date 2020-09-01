@@ -21,7 +21,7 @@
 
     <livewire:styles />
     <livewire:scripts />
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.6.0/dist/alpine.min.js" defer></script>
 </head>
 
 <body class="min-h-screen p-8 pb-0 flex flex-col text-gray-700 bg-gray-200">
