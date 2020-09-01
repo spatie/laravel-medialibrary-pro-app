@@ -7,7 +7,8 @@ use App\Http\Controllers\Livewire\LivewireCollectionController;
 use App\Http\Controllers\Livewire\LivewireSingleAttachmentController;
 use App\Http\Controllers\React\ReactUploadMultipleController;
 use App\Http\Controllers\React\ReactUploadSingleController;
-use App\Http\Controllers\Vue\VueUploadMultipleController;
+use App\Http\Controllers\Vue\VueCollectionController;
+use App\Http\Controllers\Vue\VueMultipleAttachmentsController;
 use App\Http\Controllers\Vue\VueSingleAttachmentController;
 use App\Http\Controllers\Vue\VueSingleAsyncAttachmentController;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +26,11 @@ Route::prefix('vue')->group(function() {
     Route::get('attachment-async', [VueSingleAsyncAttachmentController::class, 'create'])->name('vue.single-attachment-async');
     Route::post('attachment-async', [VueSingleAsyncAttachmentController::class, 'store']);
 
-    Route::get('collection', [VueUploadMultipleController::class, 'create'])->name('vue.collection');
-    Route::post('collection', [VueUploadMultipleController::class, 'store']);
+    Route::get('multiple', [VueMultipleAttachmentsController::class, 'create'])->name('vue.attachment-multiple');
+    Route::post('multiple', [VueMultipleAttachmentsController::class, 'store']);
+
+    Route::get('collection', [VueCollectionController::class, 'create'])->name('vue.collection');
+    Route::post('collection', [VueCollectionController::class, 'store']);
 });
 
 Route::prefix('react')->group(function() {

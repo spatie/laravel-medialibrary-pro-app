@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Vue;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 
-class VueUploadMultipleController
+class VueCollectionController
 {
     use StoresFormSubmissions;
 
