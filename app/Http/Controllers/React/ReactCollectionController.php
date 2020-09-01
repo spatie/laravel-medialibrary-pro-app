@@ -4,7 +4,7 @@ namespace App\Http\Controllers\React;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 
-class ReactUploadMultipleController
+class ReactCollectionController
 {
     use StoresFormSubmissions;
 

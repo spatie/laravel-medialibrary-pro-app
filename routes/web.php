@@ -5,8 +5,11 @@ use App\Http\Controllers\LivewireExperimentalController;
 use App\Http\Controllers\Livewire\LivewireMultipleAttachmentsController;
 use App\Http\Controllers\Livewire\LivewireCollectionController;
 use App\Http\Controllers\Livewire\LivewireSingleAttachmentController;
-use App\Http\Controllers\React\ReactUploadMultipleController;
-use App\Http\Controllers\React\ReactUploadSingleController;
+use App\Http\Controllers\React\ReactAsyncCollectionController;
+use App\Http\Controllers\React\ReactCollectionController;
+use App\Http\Controllers\React\ReactMultipleAttachmentsController;
+use App\Http\Controllers\React\ReactSingleAsyncAttachmentController;
+use App\Http\Controllers\React\ReactSingleAttachmentController;
 use App\Http\Controllers\Vue\VueAsyncCollectionController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueMultipleAttachmentsController;
@@ -38,11 +41,21 @@ Route::prefix('vue')->group(function() {
 });
 
 Route::prefix('react')->group(function() {
-    Route::get('attachment', [ReactUploadSingleController::class, 'create'])->name('react.attachment');
-    Route::post('attachment', [ReactUploadSingleController::class, 'store']);
+    Route::get('single-attachment', [ReactSingleAttachmentController::class, 'create'])->name('react.single-attachment');
 
-    Route::get('collection', [ReactUploadMultipleController::class, 'create'])->name('react.collection');
-    Route::post('collection', [ReactUploadMultipleController::class, 'store']);
+    Route::post('single-attachment', [ReactSingleAttachmentController::class, 'store']);
+
+    Route::get('single-async-attachment', [ReactSingleAsyncAttachmentController::class, 'create'])->name('react.single-async-attachment');
+    Route::post('single-async-attachment', [ReactSingleAttachmentController::class, 'store']);
+
+    Route::get('multiple-attachments', [ReactMultipleAttachmentsController::class, 'create'])->name('react.multiple-attachments');
+    Route::post('multiple-attachments', [ReactMultipleAttachmentsController::class, 'store']);
+
+    Route::get('collection', [ReactCollectionController::class, 'create'])->name('react.collection');
+    Route::post('collection', [ReactCollectionController::class, 'store']);
+
+    Route::get('async-collection', [ReactAsyncCollectionController::class, 'create'])->name('react.async-collection');
+    Route::post('async-collection', [ReactAsyncCollectionController::class, 'store']);
 });
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
