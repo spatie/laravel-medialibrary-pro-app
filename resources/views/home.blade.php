@@ -9,6 +9,7 @@
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.single-attachment-async') }}">Attachment (async)</a></li>
         <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.attachment-multiple') }}?multi=true">Attachment (multiple)</a></li>
         <li class="mt-2"><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.collection') }}">Collection</a></li>
+        <li><a class="text-red-500 hover:bg-red-100" href="{{ route('vue.collection-async') }}">Collection (async)</a></li>
     </ul>
 
     <x-h2 class="mt-12">React</x-h2>

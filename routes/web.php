@@ -7,6 +7,7 @@ use App\Http\Controllers\Livewire\LivewireCollectionController;
 use App\Http\Controllers\Livewire\LivewireSingleAttachmentController;
 use App\Http\Controllers\React\ReactUploadMultipleController;
 use App\Http\Controllers\React\ReactUploadSingleController;
+use App\Http\Controllers\Vue\VueAsyncCollectionController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueMultipleAttachmentsController;
 use App\Http\Controllers\Vue\VueSingleAttachmentController;
@@ -31,6 +32,9 @@ Route::prefix('vue')->group(function() {
 
     Route::get('collection', [VueCollectionController::class, 'create'])->name('vue.collection');
     Route::post('collection', [VueCollectionController::class, 'store']);
+
+    Route::get('collection-async', [VueAsyncCollectionController::class, 'create'])->name('vue.collection-async');
+    Route::post('collection-async', [VueAsyncCollectionController::class, 'store']);
 });
 
 Route::prefix('react')->group(function() {
