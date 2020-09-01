@@ -28,7 +28,7 @@
         "ext-json": "*",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
-        "guzzlehttp/guzzle": "^6.3",
+        "guzzlehttp/guzzle": "^6.3|^7.0",
         "laravel/framework": "^7.3",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
@@ -36,7 +36,7 @@
         "laravel/vapor-core": "^2.5",
         "livewire/livewire": "^1.2",
         "spatie/laravel-flash": "^1.6",
-        "spatie/laravel-log-dumper": "^1.1",
+        "spatie/laravel-log-dumper": "dev-log-server",
         "spatie/laravel-medialibrary": "dev-pro",
         "spatie/laravel-medialibrary-pro": "dev-master",
         "spatie/laravel-tail": "^4.2"

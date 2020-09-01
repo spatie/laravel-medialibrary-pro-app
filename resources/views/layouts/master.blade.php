@@ -55,6 +55,7 @@
 
         <div>
 
+            {{--
             @if($errors->any())
                 <div class="my-8 -mx-16 py-6 px-16 grid gap-4 text-xs bg-gray-900 text-gray-200">
                     {{ dump($errors) }}
@@ -64,6 +65,7 @@
                     </ul>
                 </div>
             @endif
+             --}}
 
             @if(flash()->message)
                 <div class="rounded-sm mb-8 px-4 py-2 {{ flash()->class =='error' ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500' }}">
