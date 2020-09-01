@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Livewire;
 
-use App\Http\Requests\StoreLivewireCollectionRequest;
+use App\Http\Requests\Livewire\StoreLivewireCollectionRequest;
 use App\Models\FormSubmission;
 
 class LivewireCollectionController

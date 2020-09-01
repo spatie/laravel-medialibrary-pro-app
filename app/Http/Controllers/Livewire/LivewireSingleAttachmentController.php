@@ -13,7 +13,7 @@ class LivewireSingleAttachmentController
 
     public function create()
     {
-        return view('uploads.livewire.attachment');
+        return view('uploads.livewire.single-attachment');
     }
 
     public function store(StoreMultipleUploadsRequest $request)
