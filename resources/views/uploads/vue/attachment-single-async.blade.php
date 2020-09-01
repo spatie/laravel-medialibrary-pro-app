@@ -1,14 +1,12 @@
 @extends('layouts.master')
 
 @push('scripts')
-    <script defer src="/js/vue/app.js"></script>
+<script defer src="/js/vue/app.js"></script>
 @endpush
 
 @section('content')
-    <h1>Vue multiple attachments</h1>
+<x-h2>Vue: multiple attachments with asynchronous submit</x-h2>
 
-    <template>
-        <async-single></async-single>
-    </template>
+<async-single></async-single>
 
 @endsection

@@ -77,7 +77,7 @@
 
 <script>
 import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-collection';
-
+/* TODO: remove this file, it's basically the same as the normal FormWithTable, and the async upload is already covered in AsyncSingle */
 export default {
     components: { MediaLibraryCollection },
 

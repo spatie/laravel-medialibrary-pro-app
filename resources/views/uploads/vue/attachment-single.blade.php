@@ -1,26 +1,26 @@
 @extends('layouts.master')
 
 @push('scripts')
-    <script defer src="/js/vue/app.js"></script>
+<script defer src="/js/vue/app.js"></script>
 @endpush
 
 @section('content')
-    <h1>Vue single</h1>
 
-    <template>
-        <single></single>
-    </template>
+<x-h2>Vue: attachment (submits on upload)</x-h2>
 
-    <!-- working minimal example
-    <media-library-attachment name="avatar" temp-endpoint="temp-upload"></media-library-attachment>
-    -->
+<form method="POST" ref="form">
+    @csrf
 
-    <!-- <media-library-attachment
-        name="media"
-        :validation="{ accept: ['image/png', 'image/jpeg'], maxSize: 500000 }"
-        :initial-value="user.avatar"
-        temp-endpoint="temp-upload"
-        :validation-errors="validationErrors"
-    ></media-library-attachment> -->
+    <x-grid>
+        <x-field label="file">
+            <media-library-attachment
+                name="avatar"
+                upload-endpoint="/temp-upload"
+                :after-upload="() => $nextTick(() => $refs.form.submit())"
+                :validation="{ accept: ['image/png'], maxSize: 1048576 }"
+            ></media-library-attachment>
+        </x-field>
+    </x-grid>
+</form>
 
 @endsection

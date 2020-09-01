@@ -85,7 +85,8 @@
 
 <script>
 import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-collection';
-
+/* TODO: extract the code from this file to blade, it doesn't need to be a separate Vue file
+ */
 export default {
     components: { MediaLibraryCollection },
 
