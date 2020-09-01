@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c46805a4aa22260f3abb3d157f4f85a6",
+    "content-hash": "7d6f6d95aa3e26e5236087c27cddeca3",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3466,7 +3466,6 @@
                 "spatie"
             ],
             "transport-options": {
-                "symlink": true,
                 "relative": false
             }
         },
@@ -3544,7 +3543,6 @@
                 "spatie"
             ],
             "transport-options": {
-                "symlink": true,
                 "relative": false
             }
         },
