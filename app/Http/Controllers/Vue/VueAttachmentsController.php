@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\React;
+namespace App\Http\Controllers\Vue;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 
-class ReactMultipleAttachmentsController
+class VueAttachmentsController
 {
     use StoresFormSubmissions;
 
     public function create()
     {
-        return view('uploads.react.multiple-attachments');
+        return view('uploads.vue.attachments');
     }
 }

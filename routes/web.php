@@ -2,17 +2,17 @@
 
 use App\Http\Controllers\Livewire\LivewireVaporController;
 use App\Http\Controllers\LivewireExperimentalController;
-use App\Http\Controllers\Livewire\LivewireMultipleAttachmentsController;
+use App\Http\Controllers\Livewire\LivewireAttachmentsController;
 use App\Http\Controllers\Livewire\LivewireCollectionController;
 use App\Http\Controllers\Livewire\LivewireSingleAttachmentController;
 use App\Http\Controllers\React\ReactAsyncCollectionController;
 use App\Http\Controllers\React\ReactCollectionController;
-use App\Http\Controllers\React\ReactMultipleAttachmentsController;
+use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactSingleAsyncAttachmentController;
 use App\Http\Controllers\React\ReactSingleAttachmentController;
 use App\Http\Controllers\Vue\VueAsyncCollectionController;
 use App\Http\Controllers\Vue\VueCollectionController;
-use App\Http\Controllers\Vue\VueMultipleAttachmentsController;
+use App\Http\Controllers\Vue\VueAttachmentsController;
 use App\Http\Controllers\Vue\VueSingleAttachmentController;
 use App\Http\Controllers\Vue\VueSingleAsyncAttachmentController;
 use Illuminate\Support\Facades\Route;
@@ -30,8 +30,8 @@ Route::prefix('vue')->group(function() {
     Route::get('single-async-attachment', [VueSingleAsyncAttachmentController::class, 'create'])->name('vue.single-async-attachment');
     Route::post('single-async-attachment', [VueSingleAsyncAttachmentController::class, 'store']);
 
-    Route::get('multiple-attachments', [VueMultipleAttachmentsController::class, 'create'])->name('vue.multiple-attachments');
-    Route::post('multiple-attachments', [VueMultipleAttachmentsController::class, 'store']);
+    Route::get('attachments', [VueAttachmentsController::class, 'create'])->name('vue.attachments');
+    Route::post('attachments', [VueAttachmentsController::class, 'store']);
 
     Route::get('collection', [VueCollectionController::class, 'create'])->name('vue.collection');
     Route::post('collection', [VueCollectionController::class, 'store']);
@@ -48,8 +48,8 @@ Route::prefix('react')->group(function() {
     Route::get('single-async-attachment', [ReactSingleAsyncAttachmentController::class, 'create'])->name('react.single-async-attachment');
     Route::post('single-async-attachment', [ReactSingleAttachmentController::class, 'store']);
 
-    Route::get('multiple-attachments', [ReactMultipleAttachmentsController::class, 'create'])->name('react.multiple-attachments');
-    Route::post('multiple-attachments', [ReactMultipleAttachmentsController::class, 'store']);
+    Route::get('attachments', [ReactAttachmentsController::class, 'create'])->name('react.attachments');
+    Route::post('attachments', [ReactAttachmentsController::class, 'store']);
 
     Route::get('collection', [ReactCollectionController::class, 'create'])->name('react.collection');
     Route::post('collection', [ReactCollectionController::class, 'store']);
@@ -64,8 +64,8 @@ Route::prefix('livewire')->group(function() {
     Route::get('single', [LivewireSingleAttachmentController::class, 'create'])->name('livewire.single-attachment');
     Route::post('single', [LivewireSingleAttachmentController::class, 'store']);
 
-    Route::get('multiple', [LivewireMultipleAttachmentsController::class, 'create'])->name('livewire.multiple-attachments');
-    Route::post('multiple', [LivewireMultipleAttachmentsController::class, 'store']);
+    Route::get('multiple', [LivewireAttachmentsController::class, 'create'])->name('livewire.attachments');
+    Route::post('multiple', [LivewireAttachmentsController::class, 'store']);
 
     Route::get('collection', [LivewireCollectionController::class, 'create'])->name('livewire.collection');
     Route::post('collection', [LivewireCollectionController::class, 'store']);
