@@ -5,5 +5,5 @@
 @endpush
 
 @section('content')
-    <div id="attachment"></div>
+    <div id="async-attachment"></div>
 @endsection

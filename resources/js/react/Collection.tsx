@@ -7,7 +7,7 @@ import Field from './components/Field';
 import Input from './components/Input';
 import Button from './components/Button';
 
-export default function() {
+export default function Collection() {
     const [isReadyToSubmit, setIsReadyToSubmit] = React.useState(true);
 
     return (

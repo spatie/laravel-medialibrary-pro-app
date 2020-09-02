@@ -4,7 +4,7 @@ import H2 from './components/H2';
 import Field from './components/Field';
 import Grid from './components/Grid';
 
-export default function AttachmentMultiple() {
+export default function Attachments() {
 
     return (
         <>

@@ -5,5 +5,5 @@
 @endpush
 
 @section('content')
-    <div id="collection"></div>
+    <div id="async-collection"></div>
 @endsection

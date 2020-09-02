@@ -6,7 +6,7 @@ import Grid from './components/Grid';
 import Field from './components/Field';
 import Input from './components/Input';
 
-export default function() {
+export default function AsyncCollection() {
     const [value, setValue] = React.useState(window.oldValues.media);
     const [validationErrors, setValidationErrors] = React.useState(window.errors);
 

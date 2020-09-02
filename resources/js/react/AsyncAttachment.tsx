@@ -6,7 +6,7 @@ import Button from './components/Button';
 import Field from './components/Field';
 import Grid from './components/Grid';
 
-export default function AttachmentAsync() {
+export default function AsyncAttachment() {
     function submit() {
         // This can also be placed in the `afterUpload` prop of the component
         /* TODO:
