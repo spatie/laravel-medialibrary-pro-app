@@ -7,13 +7,13 @@ use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Http\Requests\StoreSingleAttachmentRequest;
 use App\Models\FormSubmission;
 
-class LivewireSingleAttachmentController
+class LivewireAttachmentController
 {
     use StoresFormSubmissions;
 
     public function create()
     {
-        return view('uploads.livewire.single-attachment');
+        return view('uploads.livewire.attachment');
     }
 
     public function store(StoreMultipleUploadsRequest $request)

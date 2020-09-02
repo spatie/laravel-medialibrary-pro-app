@@ -4,12 +4,12 @@ namespace App\Http\Controllers\React;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 
-class ReactSingleAsyncAttachmentController
+class ReactAttachmentController
 {
     use StoresFormSubmissions;
 
     public function create()
     {
-        return view('uploads.react.single-async-attachment');
+        return view('uploads.react.attachment');
     }
 }

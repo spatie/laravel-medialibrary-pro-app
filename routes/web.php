@@ -4,17 +4,17 @@ use App\Http\Controllers\Livewire\LivewireVaporController;
 use App\Http\Controllers\LivewireExperimentalController;
 use App\Http\Controllers\Livewire\LivewireAttachmentsController;
 use App\Http\Controllers\Livewire\LivewireCollectionController;
-use App\Http\Controllers\Livewire\LivewireSingleAttachmentController;
+use App\Http\Controllers\Livewire\LivewireAttachmentController;
 use App\Http\Controllers\React\ReactAsyncCollectionController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
-use App\Http\Controllers\React\ReactSingleAsyncAttachmentController;
-use App\Http\Controllers\React\ReactSingleAttachmentController;
+use App\Http\Controllers\React\ReactAsyncAttachmentController;
+use App\Http\Controllers\React\ReactAttachmentController;
 use App\Http\Controllers\Vue\VueAsyncCollectionController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueAttachmentsController;
-use App\Http\Controllers\Vue\VueSingleAttachmentController;
-use App\Http\Controllers\Vue\VueSingleAsyncAttachmentController;
+use App\Http\Controllers\Vue\VueAttachmentController;
+use App\Http\Controllers\Vue\VueAsyncAttachmentController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
@@ -24,11 +24,11 @@ Route::get('/', function () {
 });
 
 Route::prefix('vue')->group(function() {
-    Route::get('attachment', [VueSingleAttachmentController::class, 'create'])->name('vue.single-attachment');
-    Route::post('attachment', [VueSingleAttachmentController::class, 'store']);
+    Route::get('attachment', [VueAttachmentController::class, 'create'])->name('vue.attachment');
+    Route::post('attachment', [VueAttachmentController::class, 'store']);
 
-    Route::get('single-async-attachment', [VueSingleAsyncAttachmentController::class, 'create'])->name('vue.single-async-attachment');
-    Route::post('single-async-attachment', [VueSingleAsyncAttachmentController::class, 'store']);
+    Route::get('async-attachment', [VueAsyncAttachmentController::class, 'create'])->name('vue.async-attachment');
+    Route::post('async-attachment', [VueAsyncAttachmentController::class, 'store']);
 
     Route::get('attachments', [VueAttachmentsController::class, 'create'])->name('vue.attachments');
     Route::post('attachments', [VueAttachmentsController::class, 'store']);
@@ -41,12 +41,12 @@ Route::prefix('vue')->group(function() {
 });
 
 Route::prefix('react')->group(function() {
-    Route::get('single-attachment', [ReactSingleAttachmentController::class, 'create'])->name('react.single-attachment');
+    Route::get('attachment', [ReactAttachmentController::class, 'create'])->name('react.attachment');
 
-    Route::post('single-attachment', [ReactSingleAttachmentController::class, 'store']);
+    Route::post('attachment', [ReactAttachmentController::class, 'store']);
 
-    Route::get('single-async-attachment', [ReactSingleAsyncAttachmentController::class, 'create'])->name('react.single-async-attachment');
-    Route::post('single-async-attachment', [ReactSingleAttachmentController::class, 'store']);
+    Route::get('async-attachment', [ReactAsyncAttachmentController::class, 'create'])->name('react.async-attachment');
+    Route::post('async-attachment', [ReactAttachmentController::class, 'store']);
 
     Route::get('attachments', [ReactAttachmentsController::class, 'create'])->name('react.attachments');
     Route::post('attachments', [ReactAttachmentsController::class, 'store']);
@@ -61,8 +61,8 @@ Route::prefix('react')->group(function() {
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
 Route::prefix('livewire')->group(function() {
-    Route::get('single', [LivewireSingleAttachmentController::class, 'create'])->name('livewire.single-attachment');
-    Route::post('single', [LivewireSingleAttachmentController::class, 'store']);
+    Route::get('single', [LivewireAttachmentController::class, 'create'])->name('livewire.attachment');
+    Route::post('single', [LivewireAttachmentController::class, 'store']);
 
     Route::get('multiple', [LivewireAttachmentsController::class, 'create'])->name('livewire.attachments');
     Route::post('multiple', [LivewireAttachmentsController::class, 'store']);

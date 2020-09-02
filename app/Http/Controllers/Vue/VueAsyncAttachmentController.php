@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Vue;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
 
-class VueSingleAttachmentController
+class VueAsyncAttachmentController
 {
     use StoresFormSubmissions;
 
     public function create()
     {
-        return view('uploads.vue.single-attachment');
+        return view('uploads.vue.async-attachment');
     }
 
     public function store($request)
@@ -18,7 +18,7 @@ class VueSingleAttachmentController
         $fieldName = $request->media;
 
         /** @var \App\Models\FormSubmission $formSubmission */
-        FormSubmission::create([
+        $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing'
         ])
             ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])

@@ -9,7 +9,7 @@ class LivewireVaporController
 {
     public function create()
     {
-        return view('uploads.livewire.single-attachment');
+        return view('uploads.livewire.attachment');
     }
 
     public function store(StoreSingleAttachmentRequest $request)
