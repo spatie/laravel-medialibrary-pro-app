@@ -38,9 +38,6 @@ Route::prefix('vue')->group(function() {
     Route::get('collection', [VueCollectionController::class, 'create'])->name('vue.collection');
     Route::post('collection', [VueCollectionController::class, 'store']);
 
-    Route::get('async-collection', [VueAsyncCollectionController::class, 'create'])->name('vue.async-collection');
-    Route::post('async-collection', [VueAsyncCollectionController::class, 'store']);
-
     Route::get('vapor', [VueVaporController::class, 'create'])->name('vue.vapor');
 });
 

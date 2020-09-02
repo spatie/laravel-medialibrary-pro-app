@@ -8,9 +8,7 @@
         <li><x-list-link route="vue.async-attachment">Async attachment</x-list-link></li>
         <li><x-list-link route="vue.attachments">Attachments</x-list-link></li>
         <li><x-list-link route="vue.collection">Collection</x-list-link></li>
-        <li><x-list-link route="vue.async-collection">Async collection</x-list-link></li>
         <li><x-list-link route="vue.vapor">Vapor</x-list-link></li>
-
     </ul>
 
     <x-h2 class="mt-12">React</x-h2>

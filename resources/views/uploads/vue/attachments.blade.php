@@ -1,19 +1,31 @@
 @extends('layouts.master')
 
 @push('scripts')
-    <script defer src="/js/vue/app.js"></script>
+<script defer src="/js/vue/app.js"></script>
 @endpush
 
 @section('content')
-    <h1>Vue multiple</h1>
 
-    <template v-if="window.location.search.includes('async=true')">
-        <h2>Async (axios)</h2>
-        <async-form-with-table></async-form-with-table>
-    </template>
+<x-h2>Vue: multiple attachments</x-h2>
 
-    <template v-else>
-        <h2>Sync (form submit)</h2>
-        <form-with-table></form-with-table>
-    </template>
+<form method="POST" ref="form">
+    @csrf
+
+    <x-grid>
+        <x-field label="name">
+            <x-input id="name" name="name" placeholder="Your first name" />
+        </x-field>
+            
+        <x-field label="files">
+            <media-library-attachment
+                name="attachments"
+                upload-endpoint="/temp-upload"
+                multiple
+            ></media-library-attachment>
+        </x-field>
+
+        <x-button data-testing-role="submit">Submit</x-button>
+    </x-grid>
+</form>
+
 @endsection
