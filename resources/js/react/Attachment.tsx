@@ -21,10 +21,6 @@ export default function Attachment() {
 
             <form method="POST" ref={formRef}>
                 <Grid>
-                    <p>
-                        Sync – form submit, uploads automatically
-                    </p>
-
                     <Csrf token={window.csrfToken}/>
 
                     <Field label="Name">
