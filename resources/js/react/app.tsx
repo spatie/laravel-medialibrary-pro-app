@@ -13,7 +13,7 @@ if (attachment) {
 }
 
 const attachments = document.getElementById('attachments');
-if (attachment) {
+if (attachments) {
     ReactDOM.render(<Attachments />, attachments);
 }
 
@@ -28,6 +28,6 @@ if (collection) {
 }
 
 const asyncCollection = document.getElementById('async-collection');
-if (collection) {
+if (asyncCollection) {
     ReactDOM.render(<AsyncCollection />, asyncCollection);
 }
