@@ -10,11 +10,13 @@ use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactAsyncAttachmentController;
 use App\Http\Controllers\React\ReactAttachmentController;
+use App\Http\Controllers\React\ReactVaporController;
 use App\Http\Controllers\Vue\VueAsyncCollectionController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueAttachmentsController;
 use App\Http\Controllers\Vue\VueAttachmentController;
 use App\Http\Controllers\Vue\VueAsyncAttachmentController;
+use App\Http\Controllers\Vue\VueVaporController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
@@ -38,6 +40,8 @@ Route::prefix('vue')->group(function() {
 
     Route::get('async-collection', [VueAsyncCollectionController::class, 'create'])->name('vue.async-collection');
     Route::post('async-collection', [VueAsyncCollectionController::class, 'store']);
+
+    Route::get('vapor', [VueVaporController::class, 'create'])->name('vue.vapor');
 });
 
 Route::prefix('react')->group(function() {
@@ -56,6 +60,8 @@ Route::prefix('react')->group(function() {
 
     Route::get('async-collection', [ReactAsyncCollectionController::class, 'create'])->name('react.async-collection');
     Route::post('async-collection', [ReactAsyncCollectionController::class, 'store']);
+
+    Route::get('vapor', [ReactVaporController::class, 'create'])->name('react.vapor');
 });
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
