@@ -5,13 +5,11 @@ use App\Http\Controllers\LivewireExperimentalController;
 use App\Http\Controllers\Livewire\LivewireAttachmentsController;
 use App\Http\Controllers\Livewire\LivewireCollectionController;
 use App\Http\Controllers\Livewire\LivewireAttachmentController;
-use App\Http\Controllers\React\ReactAsyncCollectionController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactAsyncAttachmentController;
 use App\Http\Controllers\React\ReactAttachmentController;
 use App\Http\Controllers\React\ReactVaporController;
-use App\Http\Controllers\Vue\VueAsyncCollectionController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueAttachmentsController;
 use App\Http\Controllers\Vue\VueAttachmentController;
@@ -25,7 +23,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::prefix('vue')->group(function() {
+Route::prefix('vue')->group(function () {
     Route::get('attachment', [VueAttachmentController::class, 'create'])->name('vue.attachment');
     Route::post('attachment', [VueAttachmentController::class, 'store']);
 
@@ -41,7 +39,7 @@ Route::prefix('vue')->group(function() {
     Route::get('vapor', [VueVaporController::class, 'create'])->name('vue.vapor');
 });
 
-Route::prefix('react')->group(function() {
+Route::prefix('react')->group(function () {
     Route::get('attachment', [ReactAttachmentController::class, 'create'])->name('react.attachment');
 
     Route::post('attachment', [ReactAttachmentController::class, 'store']);
@@ -55,15 +53,12 @@ Route::prefix('react')->group(function() {
     Route::get('collection', [ReactCollectionController::class, 'create'])->name('react.collection');
     Route::post('collection', [ReactCollectionController::class, 'store']);
 
-    Route::get('async-collection', [ReactAsyncCollectionController::class, 'create'])->name('react.async-collection');
-    Route::post('async-collection', [ReactAsyncCollectionController::class, 'store']);
-
     Route::get('vapor', [ReactVaporController::class, 'create'])->name('react.vapor');
 });
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
-Route::prefix('livewire')->group(function() {
+Route::prefix('livewire')->group(function () {
     Route::get('single', [LivewireAttachmentController::class, 'create'])->name('livewire.attachment');
     Route::post('single', [LivewireAttachmentController::class, 'store']);
 
