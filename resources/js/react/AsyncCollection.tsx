@@ -23,77 +23,77 @@ export default function AsyncCollection() {
             <H2>React: async collection</H2>
 
             <Grid>
-            <Field label="name">
-                <Input
-                    name="name"
-                    type="text"
-                    placeholder="name"
-                    defaultValue={window.oldValues.name}
-                />
-            </Field>
+                <Field label="name">
+                    <Input
+                        name="name"
+                        type="text"
+                        placeholder="name"
+                        defaultValue={window.oldValues.name}
+                    />
+                </Field>
 
-            <Field label="files">
-            <MediaLibraryCollection
-                name="media"
-                initialValue={value}
-                uploadEndpoint={window.uploadEndpoint}
-                translations={{
-                    hint: { plural: 'Add some files!', singular: 'Add a file!' },
-                    replace: 'drag or click to replace',
-                }}
-                validation={{ accept: ['image/png'], maxSize: 1048576 }}
-                validationErrors={validationErrors}
-                sortable
-                onChange={setValue}
-                afterItems={({
-                    getCustomPropertyInputProps,
-                    getCustomPropertyInputErrors,
-                    getNameInputProps,
-                    getNameInputErrors,
-                }) => (
-                    <>
-                        <div className="mb-2">
-                            <input className="border rounded" placeholder="image name" {...getNameInputProps()} />
-                            {getNameInputErrors().map(error => (
-                                <p key={error} className="text-red-500">
-                                    {error}
-                                </p>
-                            ))}
-                        </div>
+                <Field label="files">
+                    <MediaLibraryCollection
+                    name="media"
+                    initialValue={value}
+                    uploadEndpoint={window.uploadEndpoint}
+                    translations={{
+                        hint: { plural: 'Add some files!', singular: 'Add a file!' },
+                        replace: 'drag or click to replace',
+                    }}
+                    validation={{ accept: ['image/png'], maxSize: 1048576 }}
+                    validationErrors={validationErrors}
+                    sortable
+                    onChange={setValue}
+                    afterItems={({
+                        getCustomPropertyInputProps,
+                        getCustomPropertyInputErrors,
+                        getNameInputProps,
+                        getNameInputErrors,
+                    }) => (
+                        <>
+                            <div className="mb-2">
+                                <input className="border rounded" placeholder="image name" {...getNameInputProps()} />
+                                {getNameInputErrors().map(error => (
+                                    <p key={error} className="text-red-500">
+                                        {error}
+                                    </p>
+                                ))}
+                            </div>
 
-                        <div className="mb-2">
-                            <input
-                                className="border rounded"
-                                placeholder="tags"
-                                {...getCustomPropertyInputProps('tags')}
-                            />
-                            {getCustomPropertyInputErrors('tags').map(error => (
-                                <p key={error} className="text-red-500">
-                                    {error}
-                                </p>
-                            ))}
-                        </div>
+                            <div className="mb-2">
+                                <input
+                                    className="border rounded"
+                                    placeholder="tags"
+                                    {...getCustomPropertyInputProps('tags')}
+                                />
+                                {getCustomPropertyInputErrors('tags').map(error => (
+                                    <p key={error} className="text-red-500">
+                                        {error}
+                                    </p>
+                                ))}
+                            </div>
 
-                        <div className="mb-2">
-                            <input
-                                className="border rounded"
-                                placeholder="caption"
-                                {...getCustomPropertyInputProps('caption')}
-                            />
-                            {getCustomPropertyInputErrors('caption').map(error => (
-                                <p key={error} className="text-red-500">
-                                    {error}
-                                </p>
-                            ))}
-                        </div>
-                    </>
-                )}
-            ></MediaLibraryCollection>
-            </Field>
+                            <div className="mb-2">
+                                <input
+                                    className="border rounded"
+                                    placeholder="caption"
+                                    {...getCustomPropertyInputProps('caption')}
+                                />
+                                {getCustomPropertyInputErrors('caption').map(error => (
+                                    <p key={error} className="text-red-500">
+                                        {error}
+                                    </p>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                ></MediaLibraryCollection>
+                </Field>
 
-            <Button onClick={onSubmit}>
-                Submit
-            </Button>
+                <Button onClick={onSubmit}>
+                    Submit
+                </Button>
             </Grid>
         </div>
     );

@@ -25,12 +25,7 @@ export default function AsyncAttachment() {
         <div>
             <H2>React: async attachment</H2>
 
-
             <Grid>
-                <p>
-                    Via Axios
-                </p>
-
                 <Field label="file">
                     <MediaLibraryAttachment
                         name="media"
