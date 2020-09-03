@@ -7,6 +7,6 @@
 @section('content')
 <x-h2>Vue: multiple attachments with asynchronous submit</x-h2>
 
-<async-single></async-single>
+<async-attachment></async-attachment>
 
 @endsection

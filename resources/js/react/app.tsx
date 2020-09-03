@@ -5,7 +5,6 @@ import Attachment from './Attachment';
 import AsyncAttachment from './AsyncAttachment';
 import Attachments from './Attachments';
 import Collection from './Collection';
-import AsyncCollection from './AsyncCollection';
 
 const attachment = document.getElementById('attachment');
 if (attachment) {
@@ -25,9 +24,4 @@ if (asyncAttachment) {
 const collection = document.getElementById('collection');
 if (collection) {
     ReactDOM.render(<Collection />, collection);
-}
-
-const asyncCollection = document.getElementById('async-collection');
-if (asyncCollection) {
-    ReactDOM.render(<AsyncCollection />, asyncCollection);
 }
