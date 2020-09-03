@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Livewire;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
+use App\Http\Requests\Livewire\StoreLivewireAttachmentsRequest;
 use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 
@@ -15,7 +16,7 @@ class LivewireAttachmentsController
         return view('uploads.livewire.attachments');
     }
 
-    public function store(StoreMultipleUploadsRequest $request)
+    public function store(StoreLivewireAttachmentsRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([

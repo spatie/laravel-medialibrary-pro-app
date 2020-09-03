@@ -4,7 +4,7 @@ namespace App\Http\Requests\Livewire;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreLivewireAttachmentRequest extends FormRequest
+class StoreLivewireAttachmentsRequest extends FormRequest
 {
     public function rules()
     {
