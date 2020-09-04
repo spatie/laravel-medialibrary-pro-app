@@ -3382,7 +3382,7 @@
             "version": "dev-pro",
             "dist": {
                 "type": "path",
-                "url": "/Users/freek/dev/code/laravel-medialibrary",
+                "url": "../laravel-medialibrary",
                 "reference": "0b9d96faefe5404f70d7299ac10a62a09764920a"
             },
             "require": {
@@ -3474,7 +3474,7 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "/Users/freek/dev/code/laravel-medialibrary-pro",
+                "url": "../laravel-medialibrary-pro",
                 "reference": "4a2023ee9d7b353cf9392ed13f35970d50ccb41c"
             },
             "require": {
