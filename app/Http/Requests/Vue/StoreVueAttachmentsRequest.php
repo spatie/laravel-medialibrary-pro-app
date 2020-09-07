@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Livewire;
+namespace App\Http\Requests\Vue;
 
 use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreLivewireAttachmentsRequest extends FormRequest
+class StoreVueAttachmentsRequest extends FormRequest
 {
     use ValidatesMedia;
 

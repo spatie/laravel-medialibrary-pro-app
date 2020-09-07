@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Livewire;
+namespace App\Http\Requests\Vue;
 
 use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreLivewireAttachmentsRequest extends FormRequest
+class StoreReactCollectionRequest extends FormRequest
 {
     use ValidatesMedia;
 
@@ -13,7 +13,12 @@ class StoreLivewireAttachmentsRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'media' => ['required', $this->validateMultipleMedia()
+            'images' => ['required', $this->validateMultipleMedia()
+                ->minItems(2)
+                ->maxItems(3)
+                ->maxTotalSizeInKb(2048)
+            ],
+            'downloads' => ['required', $this->validateMultipleMedia()
                 ->minItems(2)
                 ->maxItems(3)
                 ->maxTotalSizeInKb(2048)

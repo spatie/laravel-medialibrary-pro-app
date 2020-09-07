@@ -19,6 +19,8 @@ class LivewireAttachmentController
 
     public function store(StoreLivewireAttachmentRequest $request)
     {
+        ld('in controller');
+
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing'

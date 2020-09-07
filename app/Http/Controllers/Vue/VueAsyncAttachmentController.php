@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Vue;
 
 use App\Http\Controllers\Concerns\StoresFormSubmissions;
+use App\Http\Requests\Vue\StoreVueAttachmentRequest;
 
 class VueAsyncAttachmentController
 {
@@ -13,7 +14,7 @@ class VueAsyncAttachmentController
         return view('uploads.vue.async-attachment');
     }
 
-    public function store($request)
+    public function store(StoreVueAttachmentRequest $request)
     {
         $fieldName = $request->media;
 
@@ -21,7 +22,7 @@ class VueAsyncAttachmentController
         $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing'
         ])
-            ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
+            ->addFromMediaLibraryRequest($request->$fieldName ?? [])
             ->each->toMediaCollection('images');
 
         flash()->success('Your form has been submitted');
