@@ -14,8 +14,8 @@ class StoreReactAttachmentRequest extends FormRequest
         return [
             'name' => 'required',
             'media' => ['required', $this->validateSingleMedia()
-                ->minSizeInKb(50000)
-                ->maxAttachmentSizeInKb(1)
+                ->minSizeInKb(300)
+                ->maxItemSizeInKb(2000)
             ]
         ];
     }
