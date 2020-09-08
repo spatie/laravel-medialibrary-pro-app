@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Vue;
+namespace App\Http\Requests\React;
 
 use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 use Illuminate\Foundation\Http\FormRequest;

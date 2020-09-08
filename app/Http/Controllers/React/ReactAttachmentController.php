@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\React;
 
-use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\Vue\StoreReactAttachmentRequest;
 use App\Models\FormSubmission;
 

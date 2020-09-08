@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\Livewire;
 
-use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\Livewire\StoreLivewireAttachmentsRequest;
 use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 
 class LivewireAttachmentsController
 {
-    use StoresFormSubmissions;
-
     public function create()
     {
         return view('uploads.livewire.attachments');
