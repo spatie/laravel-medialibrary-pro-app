@@ -16,8 +16,8 @@ use App\Http\Controllers\Vue\VueAttachmentController;
 use App\Http\Controllers\Vue\VueAsyncAttachmentController;
 use App\Http\Controllers\Vue\VueVaporController;
 use Illuminate\Support\Facades\Route;
-use Spatie\MediaLibraryPro\Http\Controllers\CreateTemporaryUploadFromDirectS3UploadController;
-use Spatie\MediaLibraryPro\Http\Controllers\UploadController;
+use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryS3UploadController;
+use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryUploadController;
 
 Route::get('/', function () {
     return view('home');
@@ -74,5 +74,5 @@ Route::prefix('livewire')->group(function () {
 
 
 // medialibrary pro
-Route::post('temp-upload', UploadController::class);
-Route::post('post-s3-upload', CreateTemporaryUploadFromDirectS3UploadController::class);
+Route::post('temp-upload', MediaLibraryUploadController::class);
+Route::post('post-s3-upload', MediaLibraryS3UploadController::class);
