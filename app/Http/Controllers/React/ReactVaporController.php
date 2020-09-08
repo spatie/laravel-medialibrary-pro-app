@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\React;
 
-use App\Http\Requests\Vue\StoreReactCollectionRequest;
+use App\Http\Requests\React\StoreReactCollectionRequest;
 use App\Models\FormSubmission;
 
 class ReactVaporController
