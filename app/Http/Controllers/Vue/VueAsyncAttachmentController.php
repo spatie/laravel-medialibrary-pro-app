@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers\Vue;
 
-use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\Vue\StoreVueAttachmentRequest;
 
 class VueAsyncAttachmentController
 {
-    use StoresFormSubmissions;
-
     public function create()
     {
         return view('uploads.vue.async-attachment');

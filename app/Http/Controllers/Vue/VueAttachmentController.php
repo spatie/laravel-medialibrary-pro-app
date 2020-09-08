@@ -7,8 +7,6 @@ use App\Http\Requests\Vue\StoreVueAttachmentRequest;
 
 class VueAttachmentController
 {
-    use StoresFormSubmissions;
-
     public function create()
     {
         return view('uploads.vue.attachment');
