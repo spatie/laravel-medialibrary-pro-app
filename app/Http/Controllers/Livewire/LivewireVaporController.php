@@ -16,7 +16,7 @@ class LivewireVaporController
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing'
+            'name' => $request->name ?? 'nothing',
         ]);
 
         $formSubmission

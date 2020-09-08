@@ -18,7 +18,7 @@ class ReactAttachmentController
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing'
+            'name' => $request->name ?? 'nothing',
         ])
             ->add($request->$fieldName ?? [])
             ->each->toMediaCollection('images');

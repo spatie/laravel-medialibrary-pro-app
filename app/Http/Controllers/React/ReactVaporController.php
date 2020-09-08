@@ -18,7 +18,7 @@ class ReactVaporController
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing'
+            'name' => $request->name ?? 'nothing',
         ])
             ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
             ->each->toMediaCollection('images');

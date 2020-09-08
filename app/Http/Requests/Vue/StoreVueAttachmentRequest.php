@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests\Vue;
 
-use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 use Illuminate\Foundation\Http\FormRequest;
+use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class StoreVueAttachmentRequest extends FormRequest
 {
@@ -15,8 +15,8 @@ class StoreVueAttachmentRequest extends FormRequest
             'name' => 'required',
             'media' => ['required', $this->validateSingleMedia()
                 ->minSizeInKb(300)
-                ->maxItemSizeInKb(2000)
-            ]
+                ->maxItemSizeInKb(2000),
+            ],
         ];
     }
 }

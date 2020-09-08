@@ -20,7 +20,7 @@ class VueAttachmentController
 
         /** @var \App\Models\FormSubmission $formSubmission */
         FormSubmission::create([
-            'name' => $request->name ?? 'nothing'
+            'name' => $request->name ?? 'nothing',
         ])
             ->addFromMediaLibraryRequest($request->$fieldName ?? [])
             ->each->toMediaCollection('images');

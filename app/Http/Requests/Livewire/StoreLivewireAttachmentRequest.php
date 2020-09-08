@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests\Livewire;
 
-use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 use Illuminate\Foundation\Http\FormRequest;
+use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class StoreLivewireAttachmentRequest extends FormRequest
 {
@@ -15,8 +15,8 @@ class StoreLivewireAttachmentRequest extends FormRequest
             'name' => 'required',
             'media' => ['required', $this->validateSingleMedia()
                 ->minSizeInKb(300)
-                ->maxItemSizeInKb(2000)
-            ]
+                ->maxItemSizeInKb(2000),
+            ],
         ];
     }
 }

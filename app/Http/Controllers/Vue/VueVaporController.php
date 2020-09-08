@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Vue;
 
-use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\Vue\StoreVueCollectionRequest;
 use App\Models\FormSubmission;
 
@@ -19,7 +18,7 @@ class VueVaporController
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing'
+            'name' => $request->name ?? 'nothing',
         ])
             ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
             ->each->toMediaCollection('images');

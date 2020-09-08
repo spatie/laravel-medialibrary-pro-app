@@ -2,8 +2,8 @@
 
 namespace App\Http\Requests\React;
 
-use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 use Illuminate\Foundation\Http\FormRequest;
+use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class StoreReactAttachmentsRequest extends FormRequest
 {
@@ -16,8 +16,8 @@ class StoreReactAttachmentsRequest extends FormRequest
             'media' => ['required', $this->validateMultipleMedia()
                 ->minItems(2)
                 ->maxItems(3)
-                ->maxTotalSizeInKb(2048)
-            ]
+                ->maxTotalSizeInKb(2048),
+            ],
         ];
     }
 }

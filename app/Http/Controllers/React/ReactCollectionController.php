@@ -7,7 +7,6 @@ use App\Models\FormSubmission;
 
 class ReactCollectionController
 {
-
     public function create()
     {
         return view('uploads.react.collection');
@@ -19,7 +18,7 @@ class ReactCollectionController
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing'
+            'name' => $request->name ?? 'nothing',
         ])
             ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
             ->each->toMediaCollection('images');

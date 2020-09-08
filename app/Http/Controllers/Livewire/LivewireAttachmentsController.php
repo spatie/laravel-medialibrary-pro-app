@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Livewire;
 
 use App\Http\Requests\Livewire\StoreLivewireAttachmentsRequest;
-use App\Http\Requests\StoreMultipleUploadsRequest;
 use App\Models\FormSubmission;
 
 class LivewireAttachmentsController
@@ -17,7 +16,7 @@ class LivewireAttachmentsController
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing'
+            'name' => $request->name ?? 'nothing',
         ]);
 
         $formSubmission

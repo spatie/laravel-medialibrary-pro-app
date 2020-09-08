@@ -49,5 +49,4 @@ class LivewireAttachmentTest extends DuskTestCase
             $this->assertEquals('space.png', FormSubmission::first()->getFirstMedia('images')->file_name);
         });
     }
-
 }
