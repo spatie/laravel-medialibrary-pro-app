@@ -3452,7 +3452,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-medialibrary",
-                "reference": "c830202163af37c170640aeb2d5d3056b554b1d2"
+                "reference": "0b9d96faefe5404f70d7299ac10a62a09764920a"
             },
             "require": {
                 "ext-exif": "*",
@@ -3552,7 +3552,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-medialibrary-pro",
-                "reference": "fd753800eaf4671159eb9d4690f794d90dc099f4"
+                "reference": "4a2023ee9d7b353cf9392ed13f35970d50ccb41c"
             },
             "require": {
                 "ext-json": "*",

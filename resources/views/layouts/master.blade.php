@@ -82,55 +82,5 @@
     <footer class="flex-none text-center py-8 text-xs">
         Powered by <a href="https://medialibrary.pro" class="border-b border-gray-300">medialibrary.pro</a>
     </footer>
-
-    <!-- START MEDIALIBRARY SCRIPT -->
-    <!-- TODO: it should be possible for users to include this script using something similar to the livewire include. Something like <medialibrary:scripts /> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.7.2/dragula.min.js"></script>
-
-    <script>
-        // Helpers
-        function querySelectorAllArray(selector){
-            return Array.prototype.slice.call(
-                document.querySelectorAll(selector), 0
-            );
-        }
-
-        // Sort
-        dragula(querySelectorAllArray('.dragula-container'), {
-            moves (el, source, handle) {
-                // Only allow dragging with the drag handle
-                if (!handle) {
-                        return false;
-                    }
-
-                return Boolean(handle.closest('.dragula-handle'));
-            },
-            accepts (el, target, source, sibling) {
-                // Only allow sorting in the same container
-                if (target !== source) {
-                    return false;
-                }
-
-                // Don't allow sorting to before the file input
-                if (sibling === source.firstElementChild) {
-                    return false;
-                }
-
-                return true;
-            }
-        }).on('drop', (el, target, source) => {
-            // Set the value of the order inputs
-            source.querySelectorAll('[data-order]').forEach((el, i) => el.value=i);
-            //document.dispatchEvent('media-library-collection-order-changed', source)
-        });
-
-
-        // Dropzone
-        const dropzones = querySelectorAllArray('.medialibrary-dropzone');
-        if (dropzones.length) {
-
-        }
-    </script>
-    <!-- END MEDIALIBRARY SCRIPT -->
 </body>
 </html>
