@@ -16,6 +16,7 @@ class StoreLivewireAttachmentsRequest extends FormRequest
             'media' => ['required', $this->validateMultipleMedia()
                 ->minItems(2)
                 ->maxItems(3)
+                ->maxItemSizeInKb(10)
                 ->maxTotalSizeInKb(2048),
             ],
         ];
