@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Vue;
 
-use App\Http\Controllers\Concerns\StoresFormSubmissions;
 use App\Http\Requests\Vue\StoreVueAttachmentRequest;
 
 class VueAttachmentController
