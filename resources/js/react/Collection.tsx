@@ -36,7 +36,7 @@ export default function Collection() {
                             sortable
                             beforeUpload={() => new Promise(resolve => resolve())}
                             onIsReadyToSubmitChange={setIsReadyToSubmit}
-                            afterItems={({
+                            propertiesView={({
                                 getCustomPropertyInputProps,
                                 getCustomPropertyInputErrors,
                                 getNameInputProps,

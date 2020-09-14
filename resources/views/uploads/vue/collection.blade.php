@@ -29,7 +29,7 @@
                 drag-enabled
             >
                 <template
-                    slot="afterItems"
+                    slot="propertiesView"
                     slot-scope="{
                         getCustomPropertyInputProps,
                         getCustomPropertyInputListeners,
