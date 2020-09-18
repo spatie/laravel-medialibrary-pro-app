@@ -15,19 +15,17 @@ class StoreLivewireCollectionRequest extends FormRequest
             'name' => 'required',
             'images' => [$this->validateMultipleMedia()
                 //->minItems(2)
-                //->maxItems(3)
-                ->maxTotalSizeInKb(2048)
+                ->maxItems(3)
+                //->maxTotalSizeInKb(2048)
                 ->attribute('name', 'required'),
             ],
 
-            /*
+
             'downloads' => [$this->validateMultipleMedia()
-                ->minItems(2)
+                //->minItems(2)
                 ->maxItems(3)
                 ->maxTotalSizeInKb(2048),
             ],
-            */
-
         ];
     }
 }

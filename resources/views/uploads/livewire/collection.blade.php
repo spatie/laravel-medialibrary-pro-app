@@ -22,7 +22,6 @@
                 />
             </x-field>
 
-            {{--
             <x-field label="Downloads">
                 <x-media-library-collection
                     name="downloads"
@@ -33,7 +32,6 @@
                     props-view="uploads.livewire.partials.custom-properties"
                 />
             </x-field>
-            --}}
 
             <x-button data-testing-role="submit" type="submit">Submit</x-button>
         </x-grid>
