@@ -23,21 +23,40 @@ export default function Collection() {
                         <p className="text-red-500 text-sm">{window.errors.name}</p>
                     </Field>
 
-                    <Field label="Files">
+                    <Field label="Images">
                         <MediaLibraryCollection
-                            name="media"
-                            initialValue={window.oldValues.media}
+                            name="images"
+                            initialValue={window.oldValues.images}
                             uploadEndpoint={window.uploadEndpoint}
                             translations={{
                                 hint: { plural: 'Add some files!', singular: 'Add a file!' },
                                 replace: 'drag or click to replace',
                             }}
-                            validation={{ accept: ['image/png'], maxSize: 1048576 }}
+                            validation={{ accept: ['image/*'], maxSize: 1048576 }}
                             validationErrors={window.errors}
                             sortable
                             beforeUpload={() => new Promise(resolve => resolve())}
                             onIsReadyToSubmitChange={setIsReadyToSubmit}
-                            propertiesView={({
+                        ></MediaLibraryCollection>
+
+                        <p className="text-red-500 text-sm">{window.errors.images}</p>
+                    </Field>
+
+                    <Field label="Downloads">
+                        <MediaLibraryCollection
+                            name="downloads"
+                            initialValue={window.oldValues.downloads}
+                            uploadEndpoint={window.uploadEndpoint}
+                            translations={{
+                                hint: { plural: 'Add some files!', singular: 'Add a file!' },
+                                replace: 'drag or click to replace',
+                            }}
+                            validation={{ accept: ['image/*'], maxSize: 1048576 }}
+                            validationErrors={window.errors}
+                            sortable
+                            beforeUpload={() => new Promise(resolve => resolve())}
+                            onIsReadyToSubmitChange={setIsReadyToSubmit}
+                            fieldsView={({
                                 getCustomPropertyInputProps,
                                 getCustomPropertyInputErrors,
                                 getNameInputProps,
@@ -85,9 +104,9 @@ export default function Collection() {
                                 </>
                             )}
                         ></MediaLibraryCollection>
-                    </Field>
 
-                    <p className="text-red-500 text-sm">{window.errors.media}</p>
+                        <p className="text-red-500 text-sm">{window.errors.downloads}</p>
+                    </Field>
 
                     <Button disabled={!isReadyToSubmit}>Submit</Button>
                 </Grid>

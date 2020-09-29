@@ -5,6 +5,8 @@ interface Window {
         name: string;
         singleMedia: ReadonlyArray<MediaAttributes>;
         media: ReadonlyArray<MediaAttributes> | { [uuid: string]: MediaAttributes };
+        images: { [uuid: string]: MediaAttributes };
+        downloads: { [uuid: string]: MediaAttributes };
     };
     errors: { [key: string]: Array<string> };
     uploadEndpoint: string;

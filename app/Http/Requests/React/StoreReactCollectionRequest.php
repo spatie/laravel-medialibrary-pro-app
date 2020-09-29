@@ -18,6 +18,7 @@ class StoreReactCollectionRequest extends FormRequest
                 ->maxItems(3)
                 ->maxTotalSizeInKb(2048),
             ],
+            'images.*.name' => ['required'],
             'downloads' => ['required', $this->validateMultipleMedia()
                 ->minItems(2)
                 ->maxItems(3)
