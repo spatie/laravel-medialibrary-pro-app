@@ -20,6 +20,7 @@ export default function Collection() {
 
                     <Field label="Name">
                         <Input name="name" type="text" placeholder="name" defaultValue={window.oldValues.name} />
+                        <p className="text-red-500 text-sm">{window.errors.name}</p>
                     </Field>
 
                     <Field label="Files">
@@ -85,6 +86,8 @@ export default function Collection() {
                             )}
                         ></MediaLibraryCollection>
                     </Field>
+
+                    <p className="text-red-500 text-sm">{window.errors.media}</p>
 
                     <Button disabled={!isReadyToSubmit}>Submit</Button>
                 </Grid>

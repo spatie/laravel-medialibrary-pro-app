@@ -23,10 +23,6 @@ export default function Attachment() {
                 <Grid>
                     <Csrf token={window.csrfToken}/>
 
-                    <Field label="Name">
-                        <Input name="name" placeholder="name" />
-                    </Field>
-
                     <Field label="file">
                         <MediaLibraryAttachment
                             name="media"

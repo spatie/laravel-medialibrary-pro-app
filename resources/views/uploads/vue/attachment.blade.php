@@ -14,12 +14,13 @@
     <x-grid>
         <x-field label="file">
             <media-library-attachment
-                name="avatar"
+                name="media"
                 upload-endpoint="/temp-upload"
-                :after-upload="() => $nextTick(() => $refs.form.submit())"
                 :validation="{ accept: ['image/png'], maxSize: 1048576 }"
             ></media-library-attachment>
         </x-field>
+
+        <button type="submit">submit</button>
     </x-grid>
 </form>
 
