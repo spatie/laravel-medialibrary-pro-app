@@ -3,9 +3,10 @@
 @push('scripts')
     <script defer src="/js/react/app.js"></script>
     <script>
-        window.initialValues = {};
-        window.initialValues.images = {{ $images }}
-        window.name = '{{ old('name', $formSubmission->name) }}'
+        window.initialValues = {};;
+        window.initialValues.images = {{ $images }};
+        window.initialValues.downloads = {{ $downloads }};
+        window.name = '{{ old('name', $formSubmission->name) }}';
     </script>
 @endpush
 

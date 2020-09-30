@@ -13,8 +13,9 @@ class ReactCollectionController
         $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
 
         $images = $formSubmission->getMedia('images');
+        $downloads = $formSubmission->getMedia('downloads');
 
-        return view('uploads.react.collection', compact('images', 'formSubmission'));
+        return view('uploads.react.collection', compact('images', 'downloads', 'formSubmission'));
     }
 
     public function store(StoreReactCollectionRequest $request)
