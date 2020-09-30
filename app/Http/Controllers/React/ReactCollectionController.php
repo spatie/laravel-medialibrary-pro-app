@@ -14,7 +14,7 @@ class ReactCollectionController
 
         $images = $formSubmission->getMedia('images');
 
-        return view('uploads.react.collection', compact('images'));
+        return view('uploads.react.collection', compact('images', 'formSubmission'));
     }
 
     public function store(StoreReactCollectionRequest $request)

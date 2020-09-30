@@ -5,6 +5,7 @@
     <script>
         window.initialValues = {};
         window.initialValues.images = {{ $images }}
+        window.name = '{{ old('name', $formSubmission->name) }}'
     </script>
 @endpush
 
