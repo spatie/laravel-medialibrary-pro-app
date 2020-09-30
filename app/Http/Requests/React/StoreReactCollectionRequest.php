@@ -13,14 +13,12 @@ class StoreReactCollectionRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'images' => ['required', $this->validateMultipleMedia()
-                ->minItems(2)
+            'images' => [$this->validateMultipleMedia()
                 ->maxItems(3)
-                ->maxTotalSizeInKb(2048),
+                ->maxTotalSizeInKb(2048)
+                ->attribute('name', ['required', 'max:50']),
             ],
-            'images.*.name' => ['required'],
-            'downloads' => ['required', $this->validateMultipleMedia()
-                ->minItems(2)
+            'downloads' => [$this->validateMultipleMedia()
                 ->maxItems(3)
                 ->maxTotalSizeInKb(2048),
             ],

@@ -3,7 +3,8 @@
 @push('scripts')
     <script defer src="/js/react/app.js"></script>
     <script>
-        window.initialValues = @json($initialValues)
+        window.initialValues = {};
+        window.initialValues.images = {{ $images }}
     </script>
 @endpush
 
