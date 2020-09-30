@@ -19,7 +19,7 @@ export default function Collection() {
                     <Csrf token={window.csrfToken} />
 
                     <Field label="Name">
-                        <Input name="name" type="text" placeholder="name" defaultValue={window.oldValues.name} />
+                        <Input name="name" type="text" placeholder="name" defaultValue={window.oldValues.name || window.name} />
                         <p className="text-red-500 text-sm">{window.errors.name}</p>
                     </Field>
 
