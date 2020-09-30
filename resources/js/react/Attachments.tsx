@@ -3,23 +3,39 @@ import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-
 import H2 from './components/H2';
 import Field from './components/Field';
 import Grid from './components/Grid';
+import Button from './components/Button';
+import Csrf from './components/Csrf';
+import Input from './components/Input';
 
 export default function Attachments() {
     return (
-        <>
+        <form method="POST">
+            <Csrf token={window.csrfToken} />
+
             <H2>React: multiple attachment (max 3 items)</H2>
 
             <Grid>
+                <Field label="name">
+                    <Input name="name" placeholder="name" type="text" defaultValue={window.oldValues.name} />
+                    <p className="text-red-500 text-sm">{window.errors.name}</p>
+                </Field>
+
                 <Field label="files">
                     <MediaLibraryAttachment
+                        initialValue={window.oldValues.media}
                         name="media"
                         uploadEndpoint="/temp-upload"
                         validation={{ accept: ['image/png'], maxSize: 2048 }}
                         multiple
                         maxItems={3}
+                        validationErrors={window.errors}
                     />
                 </Field>
+
+                <p className="text-red-500 text-sm">{window.errors.media}</p>
+
+                <Button>Submit</Button>
             </Grid>
-        </>
+        </form>
     );
 }

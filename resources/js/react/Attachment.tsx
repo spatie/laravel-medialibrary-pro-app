@@ -5,26 +5,25 @@ import Field from './components/Field';
 import Input from './components/Input';
 import Csrf from './components/Csrf';
 import Grid from './components/Grid';
+import Button from './components/Button';
 
 export default function Attachment() {
-    const formRef = React.useRef<HTMLFormElement>(null);
-
-    function afterMediaUpload({ success }: { success: boolean }) {
-        if (success) {
-            formRef.current?.submit();
-        }
-    }
-
     return (
         <>
             <H2>React: attachment</H2>
 
-            <form method="POST" ref={formRef}>
+            <form method="POST">
                 <Grid>
-                    <Csrf token={window.csrfToken}/>
+                    <Csrf token={window.csrfToken} />
 
-                    <Field label="Name">
-                        <Input name="name" placeholder="name" />
+                    <Field label="name">
+                        <Input
+                            name="name"
+                            placeholder="Your first name"
+                            type="text"
+                            defaultValue={window.oldValues.name}
+                        />
+                        <p className="text-red-500 text-sm">{window.errors.name}</p>
                     </Field>
 
                     <Field label="file">
@@ -32,16 +31,14 @@ export default function Attachment() {
                             name="media"
                             initialValue={window.oldValues.media}
                             uploadEndpoint={window.uploadEndpoint}
-                            translations={{
-                                hint: { singular: 'Add a file!', plural: 'Add some files!' },
-                                replace: 'drag or click to replace',
-                            }}
-                            validation={{ accept: ['image/png'], maxSize: 1048576 }}
+                            validation={{ accept: ['image/png', 'image/jpeg', 'application/pdf'], maxSize: 1048576 }}
                             validationErrors={window.errors}
-                            beforeUpload={() => {}}
-                            afterUpload={afterMediaUpload}
                         ></MediaLibraryAttachment>
                     </Field>
+
+                    <p className="text-red-500 text-sm">{window.errors.media}</p>
+
+                    <Button>Submit</Button>
                 </Grid>
             </form>
         </>
