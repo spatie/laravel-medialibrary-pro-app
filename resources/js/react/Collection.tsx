@@ -56,53 +56,6 @@ export default function Collection() {
                             sortable
                             beforeUpload={() => new Promise(resolve => resolve())}
                             onIsReadyToSubmitChange={setIsReadyToSubmit}
-                            fieldsView={({
-                                getCustomPropertyInputProps,
-                                getCustomPropertyInputErrors,
-                                getNameInputProps,
-                                getNameInputErrors,
-                            }) => (
-                                <>
-                                    <div className="mb-2">
-                                        <input
-                                            className="border rounded"
-                                            placeholder="image name"
-                                            {...getNameInputProps()}
-                                        />
-                                        {getNameInputErrors().map(error => (
-                                            <p key={error} className="text-red-500">
-                                                {error}
-                                            </p>
-                                        ))}
-                                    </div>
-
-                                    <div className="mb-2">
-                                        <input
-                                            className="border rounded"
-                                            placeholder="tags"
-                                            {...getCustomPropertyInputProps('tags')}
-                                        />
-                                        {getCustomPropertyInputErrors('tags').map(error => (
-                                            <p key={error} className="text-red-500">
-                                                {error}
-                                            </p>
-                                        ))}
-                                    </div>
-
-                                    <div className="mb-2">
-                                        <input
-                                            className="border rounded"
-                                            placeholder="caption"
-                                            {...getCustomPropertyInputProps('caption')}
-                                        />
-                                        {getCustomPropertyInputErrors('caption').map(error => (
-                                            <p key={error} className="text-red-500">
-                                                {error}
-                                            </p>
-                                        ))}
-                                    </div>
-                                </>
-                            )}
                         ></MediaLibraryCollection>
 
                         <p className="text-red-500 text-sm">{window.errors.downloads}</p>
@@ -114,3 +67,51 @@ export default function Collection() {
         </>
     );
 }
+
+/* fieldsView={({
+    getCustomPropertyInputProps,
+    getCustomPropertyInputErrors,
+    getNameInputProps,
+    getNameInputErrors,
+}) => (
+    <>
+        <div className="mb-2">
+            <input
+                className="border rounded"
+                placeholder="image name"
+                {...getNameInputProps()}
+            />
+            {getNameInputErrors().map(error => (
+                <p key={error} className="text-red-500">
+                    {error}
+                </p>
+            ))}
+        </div>
+
+        <div className="mb-2">
+            <input
+                className="border rounded"
+                placeholder="tags"
+                {...getCustomPropertyInputProps('tags')}
+            />
+            {getCustomPropertyInputErrors('tags').map(error => (
+                <p key={error} className="text-red-500">
+                    {error}
+                </p>
+            ))}
+        </div>
+
+        <div className="mb-2">
+            <input
+                className="border rounded"
+                placeholder="caption"
+                {...getCustomPropertyInputProps('caption')}
+            />
+            {getCustomPropertyInputErrors('caption').map(error => (
+                <p key={error} className="text-red-500">
+                    {error}
+                </p>
+            ))}
+        </div>
+    </>
+)} */

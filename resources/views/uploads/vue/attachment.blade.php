@@ -6,7 +6,7 @@
 
 @section('content')
 
-<x-h2>Vue: attachment (submits on upload)</x-h2>
+<x-h2>Vue: attachment</x-h2>
 
 <form method="POST" ref="form">
     @csrf
@@ -17,7 +17,7 @@
                 name="media"
                 upload-endpoint="/temp-upload"
                 :validation="{ accept: ['image/png'], maxSize: 1048576 }"
-            ></media-library-attachment>
+            />
         </x-field>
 
         <button type="submit">submit</button>
