@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Livewire;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class StoreLivewireCollectionCustomPropertyRequest extends FormRequest
@@ -17,7 +18,7 @@ class StoreLivewireCollectionCustomPropertyRequest extends FormRequest
                 //->minItems(2)
                 ->maxItems(3)
                 //->maxTotalSizeInKb(2048)
-                ->attribute('name', 'required')
+                ->attribute('name', 'required|max:5')
                 ->customProperty('extra_field', 'required'),
             ],
         ];
