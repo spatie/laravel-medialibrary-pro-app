@@ -10,7 +10,7 @@ class ReactCollectionController
     public function create()
     {
         /** @var \App\Models\FormSubmission $formSubmission */
-        $formSubmission = FormSubmission::firstOrCreate(['name' => 'test']);
+        $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
 
         $images = $formSubmission->getMedia('images');
 

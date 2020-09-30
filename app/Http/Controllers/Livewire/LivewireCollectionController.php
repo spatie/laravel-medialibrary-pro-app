@@ -10,7 +10,7 @@ class LivewireCollectionController
     public function create()
     {
         /** @var \App\Models\FormSubmission $formSubmission */
-        $formSubmission = FormSubmission::firstOrCreate(['name' => 'test']);
+        $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
 
         return view('uploads.livewire.collection', compact('formSubmission'));
     }
