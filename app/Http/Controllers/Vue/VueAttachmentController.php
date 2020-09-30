@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Vue;
 
 use App\Http\Requests\Vue\StoreVueAttachmentRequest;
+use App\Models\FormSubmission;
 
 class VueAttachmentController
 {
@@ -13,14 +14,14 @@ class VueAttachmentController
 
     public function store(StoreVueAttachmentRequest $request)
     {
-        $fieldName = $request->media;
-
         /** @var \App\Models\FormSubmission $formSubmission */
-        FormSubmission::create([
+        $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing',
-        ])
-            ->addFromMediaLibraryRequest($request->$fieldName ?? [])
-            ->each->toMediaCollection('images');
+        ]);
+
+        $formSubmission
+            ->addFromMediaLibraryRequest($request->media)
+            ->toMediaCollection('images');
 
         flash()->success('Your form has been submitted');
 

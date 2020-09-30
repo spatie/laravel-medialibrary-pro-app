@@ -14,14 +14,19 @@ class VueCollectionController
 
     public function store(StoreVueCollectionRequest $request)
     {
-        $fieldName = $request->media;
-
         /** @var \App\Models\FormSubmission $formSubmission */
-        $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing',
-        ])
-            ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
-            ->each->toMediaCollection('images');
+        $formSubmission = FormSubmission::first();
+
+        $formSubmission
+            ->syncFromMediaLibraryRequest($request->images)
+            ->toMediaCollection('images');
+
+        $formSubmission
+            ->syncFromMediaLibraryRequest($request->downloads)
+            ->toMediaCollection('downloads');
+
+        $formSubmission->name = $request->name;
+        $formSubmission->save();
 
         flash()->success('Your form has been submitted');
 

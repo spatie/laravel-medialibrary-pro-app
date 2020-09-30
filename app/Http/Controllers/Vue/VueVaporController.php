@@ -14,14 +14,14 @@ class VueVaporController
 
     public function store(StoreVueCollectionRequest $request)
     {
-        $fieldName = $request->media;
-
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
             'name' => $request->name ?? 'nothing',
-        ])
-            ->addMultipleMediaFromTemporaryUploads($request->$fieldName ?? [])
-            ->each->toMediaCollection('images');
+        ]);
+
+        $formSubmission
+            ->addFromMediaLibraryRequest($request->media)
+            ->toMediaCollection('images', 's3');
 
         flash()->success('Your form has been submitted');
 
