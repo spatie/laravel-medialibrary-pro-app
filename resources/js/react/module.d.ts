@@ -8,6 +8,7 @@ interface Window {
         images: { [uuid: string]: MediaAttributes };
         downloads: { [uuid: string]: MediaAttributes };
     };
+    initialValues: { [key: string]: { [uuid: string]: MediaAttributes } };
     errors: { [key: string]: Array<string> };
     uploadEndpoint: string;
     csrfToken: string;
