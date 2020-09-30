@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
 use App\Http\Controllers\Livewire\LivewireVaporController;
 use App\Http\Controllers\LivewireExperimentalController;
 use App\Http\Controllers\Livewire\LivewireAttachmentsController;
@@ -67,6 +68,9 @@ Route::prefix('livewire')->group(function () {
 
     Route::get('collection', [LivewireCollectionController::class, 'create'])->name('livewire.collection');
     Route::post('collection', [LivewireCollectionController::class, 'store']);
+
+    Route::get('collection-custom-property', [LivewireCollectionCustomPropertyController::class, 'create'])->name('livewire.collection-custom-property');
+    Route::post('collection-custom-property', [LivewireCollectionCustomPropertyController::class, 'store']);
 
     Route::get('vapor', [LivewireVaporController::class, 'create'])->name('livewire.vapor');
     Route::post('vapor', [LivewireVaporController::class, 'store']);

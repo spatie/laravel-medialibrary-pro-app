@@ -1,12 +1,16 @@
-These are the custom properties:
+@include('media-library::livewire.partials.collection.fields')
 
-Extra field:
-<input
-    class="border"
-    type="text"
-    {{ $mediaItem->customPropertyAttributes('extra_field') }}
-/>
+<div class="medialibrary-field">
+    <label class="medialibrary-label">Extra field</label>
+    <input
+        class="medialibrary-input"
+        type="text"
+        {{ $mediaItem->customPropertyAttributes('extra_field')  }}
+    />
 
-@error($mediaItem->customPropertyAttributeName('extra_field'))
-{{ $errors->first($mediaItem->customPropertyAttributeValue('extra_field')) }}
-@enderror
+    @error($mediaItem->customPropertyErrorName('extra_field'))
+        <span class="medialibrary-text-error">
+               {{ $message }}
+        </span>
+    @enderror
+</div>
