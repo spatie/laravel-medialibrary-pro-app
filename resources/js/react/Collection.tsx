@@ -26,7 +26,7 @@ export default function Collection() {
                     <Field label="Images">
                         <MediaLibraryCollection
                             name="images"
-                            initialValue={window.initialValues.images ||  {}}
+                            initialValue={window.oldValues.images || window.initialValues.images || {}}
                             uploadEndpoint={window.uploadEndpoint}
                             translations={{
                                 hint: { plural: 'Add some files!', singular: 'Add a file!' },
@@ -45,7 +45,7 @@ export default function Collection() {
                     <Field label="Downloads">
                         <MediaLibraryCollection
                             name="downloads"
-                            initialValue={window.initialValues.downloads ||  {}}
+                            initialValue={window.oldValues.downloads || window.initialValues.downloads || {}}
                             uploadEndpoint={window.uploadEndpoint}
                             translations={{
                                 hint: { plural: 'Add some files!', singular: 'Add a file!' },
