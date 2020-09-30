@@ -15,9 +15,7 @@ class StoreLivewireCollectionCustomPropertyRequest extends FormRequest
         return [
             'name' => 'required',
             'images' => [$this->validateMultipleMedia()
-                //->minItems(2)
                 ->maxItems(3)
-                //->maxTotalSizeInKb(2048)
                 ->attribute('name', 'required|max:5')
                 ->customProperty('extra_field', 'required'),
             ],
