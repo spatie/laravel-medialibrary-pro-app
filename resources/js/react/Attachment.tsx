@@ -31,7 +31,7 @@ export default function Attachment() {
                             name="media"
                             initialValue={window.oldValues.media}
                             uploadEndpoint={window.uploadEndpoint}
-                            validation={{ accept: ['image/png', 'image/jpeg', 'application/pdf'], maxSize: 1048576 }}
+                            validation={{ accept: ['image/png', 'application/pdf'], maxSize: 1000 }}
                             validationErrors={window.errors}
                         ></MediaLibraryAttachment>
                     </Field>

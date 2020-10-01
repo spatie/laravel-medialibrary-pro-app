@@ -33,6 +33,7 @@
                 }"
                 upload-endpoint="/temp-upload"
                 drag-enabled
+                :validation-errors="window.errors"
             />
         </x-field>
         
@@ -47,6 +48,7 @@
                 }"
                 upload-endpoint="/temp-upload"
                 drag-enabled
+                :validation-errors="window.errors"
             />
         </x-field>
 

@@ -21,12 +21,9 @@
                 name="media"
                 upload-endpoint="/temp-upload"
                 :validation="{ accept: ['image/png'], maxSize: 1048576 }"
+                :validation-errors="window.errors"
             />
         </x-field>
-        
-        @error('media')
-            <p class="rounded-sm text-xs mb-8 px-4 py-2 bg-red-100 text-red-500">{{ $message }}</p>
-        @enderror
 
         <x-button data-testing-role="submit">Submit</x-button>
     </x-grid>
