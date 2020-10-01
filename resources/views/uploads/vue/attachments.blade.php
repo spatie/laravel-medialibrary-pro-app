@@ -13,13 +13,15 @@
 
     <x-grid>
         <x-field label="name">
-            <x-input id="name" name="name" placeholder="Your first name" />
+            <x-input id="name" name="name" placeholder="Your first name" value="{{ old('name') }}" />
         </x-field>
             
         <x-field label="files">
             <media-library-attachment
-                name="attachments"
+                name="media"
                 upload-endpoint="/temp-upload"
+                :initial-value="{{ json_encode(old('media')) }}"
+                :validation-errors="window.errors"
                 multiple
             ></media-library-attachment>
         </x-field>

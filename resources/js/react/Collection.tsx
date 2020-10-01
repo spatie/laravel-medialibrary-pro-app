@@ -6,6 +6,7 @@ import Csrf from './components/Csrf';
 import Field from './components/Field';
 import Input from './components/Input';
 import Button from './components/Button';
+import ErrorMessage from './components/ErrorMessage';
 
 export default function Collection() {
     const [isReadyToSubmit, setIsReadyToSubmit] = React.useState(true);
@@ -20,7 +21,7 @@ export default function Collection() {
 
                     <Field label="Name">
                         <Input name="name" type="text" placeholder="name" defaultValue={window.oldValues.name || window.name} />
-                        <p className="text-red-500 text-sm">{window.errors.name}</p>
+                        <ErrorMessage>{window.errors.name}</ErrorMessage>
                     </Field>
 
                     <Field label="Images">
@@ -38,8 +39,6 @@ export default function Collection() {
                             beforeUpload={() => new Promise(resolve => resolve())}
                             onIsReadyToSubmitChange={setIsReadyToSubmit}
                         ></MediaLibraryCollection>
-
-                        <p className="text-red-500 text-sm">{window.errors.images}</p>
                     </Field>
 
                     <Field label="Downloads">
@@ -57,8 +56,6 @@ export default function Collection() {
                             beforeUpload={() => new Promise(resolve => resolve())}
                             onIsReadyToSubmitChange={setIsReadyToSubmit}
                         ></MediaLibraryCollection>
-
-                        <p className="text-red-500 text-sm">{window.errors.downloads}</p>
                     </Field>
 
                     <Button disabled={!isReadyToSubmit}>Submit</Button>

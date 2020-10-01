@@ -3,10 +3,9 @@
 @push('scripts')
 <script defer src="/js/vue/app.js"></script>
 <script>
-    window.initialValues = {};;
+    window.initialValues = {};
     window.initialValues.images = {{ $images }};
     window.initialValues.downloads = {{ $downloads }};
-    window.name = '{{ old('name', $formSubmission->name) }}';
 </script>
 @endpush
 
@@ -19,13 +18,12 @@
 
     <x-grid>
         <x-field label="name">
-            <x-input id="name" name="name" placeholder="Your first name" />
+            <x-input id="name" name="name" placeholder="Your first name" value="{{ old('name', $formSubmission->name) }}" />
         </x-field>
             
         <x-field label="images">
             <media-library-collection
                 name="images"
-                :initial-value="window.oldValues.images || window.initialValues.images"
                 :validation="{ accept: ['image/png'], maxSize: 1048576 }"
                 :translations="{
                     hint: { plural: 'Add files please!', singular: 'Add a file please!' },
@@ -34,13 +32,14 @@
                 upload-endpoint="/temp-upload"
                 drag-enabled
                 :validation-errors="window.errors"
+                :initial-value="window.oldValues.images || window.initialValues.images"
             />
         </x-field>
         
         <x-field label="downloads">
             <media-library-collection
-                name="downloads"
                 :initial-value="window.oldValues.downloads || window.initialValues.downloads"
+                name="downloads"
                 :validation="{ accept: ['image/png'], maxSize: 1048576 }"
                 :translations="{
                     hint: { plural: 'Add files please!', singular: 'Add a file please!' },
