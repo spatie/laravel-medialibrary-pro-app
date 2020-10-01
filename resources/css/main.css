@@ -1,4 +1,11 @@
+/* Option 1: use default package styles */
 @import "./../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-styles/dist/styles.css";
+
+/* Option 2: use package styles but build with tailwin config from app */
+/* @import "./../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-styles/src/styles.css"; */
+
+/* Option 3: edit styles */
+/* @import "./medialibrary-pro/styles.css"; */
 
 @tailwind base;
 
