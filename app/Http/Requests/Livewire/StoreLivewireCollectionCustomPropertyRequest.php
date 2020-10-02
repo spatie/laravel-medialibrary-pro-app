@@ -3,7 +3,6 @@
 namespace App\Http\Requests\Livewire;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class StoreLivewireCollectionCustomPropertyRequest extends FormRequest
