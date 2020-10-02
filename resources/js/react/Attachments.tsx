@@ -6,6 +6,7 @@ import Grid from './components/Grid';
 import Button from './components/Button';
 import Csrf from './components/Csrf';
 import Input from './components/Input';
+import ErrorMessage from './components/ErrorMessage';
 
 export default function Attachments() {
     return (
@@ -17,7 +18,7 @@ export default function Attachments() {
             <Grid>
                 <Field label="name">
                     <Input name="name" placeholder="name" type="text" defaultValue={window.oldValues.name} />
-                    <p className="text-red-500 text-sm">{window.errors.name}</p>
+                    <ErrorMessage>{window.errors.name}</ErrorMessage>
                 </Field>
 
                 <Field label="files">
@@ -31,8 +32,6 @@ export default function Attachments() {
                         validationErrors={window.errors}
                     />
                 </Field>
-
-                <p className="text-red-500 text-sm">{window.errors.media}</p>
 
                 <Button>Submit</Button>
             </Grid>

@@ -9,7 +9,13 @@ class VueCollectionController
 {
     public function create()
     {
-        return view('uploads.vue.collection');
+        /** @var \App\Models\FormSubmission $formSubmission */
+        $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
+
+        $images = $formSubmission->getMedia('images');
+        $downloads = $formSubmission->getMedia('downloads');
+
+        return view('uploads.vue.collection', compact('images', 'downloads', 'formSubmission'));
     }
 
     public function store(StoreVueCollectionRequest $request)

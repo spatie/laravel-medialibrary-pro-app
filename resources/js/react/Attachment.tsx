@@ -6,6 +6,7 @@ import Input from './components/Input';
 import Csrf from './components/Csrf';
 import Grid from './components/Grid';
 import Button from './components/Button';
+import ErrorMessage from './components/ErrorMessage';
 
 export default function Attachment() {
     return (
@@ -23,7 +24,8 @@ export default function Attachment() {
                             type="text"
                             defaultValue={window.oldValues.name}
                         />
-                        <p className="text-red-500 text-sm">{window.errors.name}</p>
+
+                        <ErrorMessage>{window.errors.name}</ErrorMessage>
                     </Field>
 
                     <Field label="file">
@@ -31,12 +33,10 @@ export default function Attachment() {
                             name="media"
                             initialValue={window.oldValues.media}
                             uploadEndpoint={window.uploadEndpoint}
-                            validation={{ accept: ['image/png', 'image/jpeg', 'application/pdf'], maxSize: 1048576 }}
+                            validation={{ accept: ['image/png', 'application/pdf'], maxSize: 2000 }}
                             validationErrors={window.errors}
                         ></MediaLibraryAttachment>
                     </Field>
-
-                    <p className="text-red-500 text-sm">{window.errors.media}</p>
 
                     <Button>Submit</Button>
                 </Grid>

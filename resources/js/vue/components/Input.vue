@@ -6,12 +6,15 @@
             @input="$emit('input', $event.target.value)"
         />
 
-        <div v-if="error" class="rounded-sm text-xs mb-8 px-4 py-2 bg-red-100 text-red-500">{{ error }}</div>
+        <error-message v-if="error">{{ error }}</error-message>
     </div>
 </template>
 
 <script>
+import ErrorMessage from './ErrorMessage';
+
 export default {
     props: ['error'],
+    components: { ErrorMessage },
 };
 </script>
