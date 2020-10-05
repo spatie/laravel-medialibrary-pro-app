@@ -61,4 +61,20 @@ class LivewireCollectionTest extends DuskTestCase
                 ->assertSee('The name field is required');
         });
     }
+
+    /** @test */
+    public function it_will_not_display_the_main_uploader_when_the_maximum_amount_of_uploads_has_been_reached()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/livewire/collection')
+                ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
+                ->pause(200)
+                ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
+                ->pause(200)
+                ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
+                ->pause(200)
+                ->assertMissing('[data-testing-role="main-uploader"]');
+        });
+    }
 }
