@@ -47,6 +47,7 @@
                                 class="medialibrary-input"
                                 v-bind="getNameInputProps()"
                                 v-on="getNameInputListeners()"
+                                dusk="medialibrary-field-name"
                             />
                             <p v-for="error in getNameInputErrors()" :key="error" class="medialibrary-text-error">
                                 @{{ error }}
@@ -59,6 +60,7 @@
                                 class="medialibrary-input"
                                 v-bind="getCustomPropertyInputProps('extra_field')"
                                 v-on="getCustomPropertyInputListeners('extra_field')"
+                                dusk="medialibrary-extra-field"
                             />
                             <p v-for="error in getCustomPropertyInputErrors('extra_field')" :key="error" class="medialibrary-text-error">
                                 @{{ error }}

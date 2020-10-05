@@ -44,7 +44,11 @@ export default function CollectionCustomProperty() {
                                 <div className="medialibrary-properties">
                                     <div className="medialibrary-field">
                                         <label className="medialibrary-label">Name</label>
-                                        <input className="medialibrary-input" {...getNameInputProps()} />
+                                        <input
+                                            className="medialibrary-input"
+                                            {...getNameInputProps()}
+                                            {...{ dusk: 'medialibrary-field-name' }}
+                                        />
 
                                         {getNameInputErrors().map(error => (
                                             <p key={error} className="medialibrary-text-error">
@@ -58,6 +62,7 @@ export default function CollectionCustomProperty() {
                                         <input
                                             className="medialibrary-input"
                                             {...getCustomPropertyInputProps('extra_field')}
+                                            {...{dusk: 'medialibrary-extra-field'}}
                                         />
 
                                         {getCustomPropertyInputErrors('extra_field').map(error => (
