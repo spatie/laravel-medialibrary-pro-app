@@ -20,7 +20,7 @@
         <x-field label="name">
             <x-input id="name" name="name" placeholder="Your first name" value="{{ old('name', $formSubmission->name) }}" />
         </x-field>
-            
+
         <x-field label="images">
             <media-library-collection
                 name="images"
@@ -35,7 +35,7 @@
                 :initial-value="window.oldValues.images || window.initialValues.images"
             />
         </x-field>
-        
+
         <x-field label="downloads">
             <media-library-collection
                 :initial-value="window.oldValues.downloads || window.initialValues.downloads"
@@ -51,7 +51,7 @@
             />
         </x-field>
 
-        <x-button data-testing-role="submit">Submit</x-button>
+        <x-button dusk="submit">Submit</x-button>
     </x-grid>
 </form>
 

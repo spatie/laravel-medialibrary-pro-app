@@ -15,7 +15,7 @@
         <x-field label="name">
             <x-input id="name" name="name" placeholder="Your first name" value="{{ old('name') }}" />
         </x-field>
-            
+
         <x-field label="files">
             <media-library-attachment
                 name="media"
@@ -26,7 +26,7 @@
             ></media-library-attachment>
         </x-field>
 
-        <x-button data-testing-role="submit">Submit</x-button>
+        <x-button dusk="submit">Submit</x-button>
     </x-grid>
 </form>
 

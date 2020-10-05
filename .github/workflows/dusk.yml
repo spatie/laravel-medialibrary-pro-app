@@ -1,0 +1,56 @@
+name: Dusk
+
+on: [push]
+
+jobs:
+  dusk:
+    name: Dusk
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick
+          coverage: none
+
+      - name: Create database
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql  -u root -proot -e 'CREATE DATABASE IF NOT EXISTS medialibrary_test;'
+
+      - name: Cache composer dependencies
+        uses: actions/cache@v2
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.lock') }}
+
+      - name: Run composer install
+        run: composer install -n --prefer-dist
+        env:
+          COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
+
+      - name: Prepare Laravel Application
+        run: |
+          cp .env.ci .env
+          php artisan key:generate
+          php artisan dusk:chrome-driver 72
+
+      - name: Run Dusk
+        run: |
+          php artisan serve & php artisan dusk
+
+      - name: Upload dusk console
+        uses: actions/upload-artifact@v1
+        with:
+          name: dusk-console
+          path: tests/Browser/console
+
+      - name: Upload dusk screenshots
+        uses: actions/upload-artifact@v1
+        with:
+          name: dusk-console
+          path: tests/Browser/screenshots

@@ -23,7 +23,7 @@
                 />
             </x-field>
 
-            <x-button data-testing-role="submit" type="submit">Submit</x-button>
+            <x-button dusk="submit" type="submit">Submit</x-button>
         </x-grid>
     </form>
 
