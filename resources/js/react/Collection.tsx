@@ -49,7 +49,7 @@ export default function Collection() {
                         ></MediaLibraryCollection>
                     </Field>
 
-                    <Button>Submit</Button>
+                    <Button dusk="submit">Submit</Button>
                 </Grid>
             </form>
         </>

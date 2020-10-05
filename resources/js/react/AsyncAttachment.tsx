@@ -43,6 +43,7 @@ export default function AsyncAttachment() {
 
                 <Button
                     onClick={submit}
+                    dusk="submit"
                 >
                     Submit
                 </Button>

@@ -38,7 +38,7 @@ export default function Attachment() {
                         ></MediaLibraryAttachment>
                     </Field>
 
-                    <Button>Submit</Button>
+                    <Button dusk="submit">Submit</Button>
                 </Grid>
             </form>
         </>

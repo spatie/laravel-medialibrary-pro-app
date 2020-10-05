@@ -69,7 +69,7 @@
             </media-library-collection>
         </x-field>
 
-        <x-button data-testing-role="submit">Submit</x-button>
+        <x-button dusk="submit">Submit</x-button>
     </x-grid>
 </form>
 

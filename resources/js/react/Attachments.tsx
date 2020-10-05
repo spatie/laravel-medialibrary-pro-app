@@ -32,7 +32,7 @@ export default function Attachments() {
                     />
                 </Field>
 
-                <Button>Submit</Button>
+                <Button dusk="submit">Submit</Button>
             </Grid>
         </form>
     );

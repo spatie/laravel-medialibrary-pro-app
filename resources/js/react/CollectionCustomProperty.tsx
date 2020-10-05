@@ -71,7 +71,7 @@ export default function CollectionCustomProperty() {
                         ></MediaLibraryCollection>
                     </Field>
 
-                    <Button>Submit</Button>
+                    <Button dusk="submit">Submit</Button>
                 </Grid>
             </form>
         </>
