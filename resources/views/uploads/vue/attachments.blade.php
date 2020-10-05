@@ -19,9 +19,10 @@
         <x-field label="files">
             <media-library-attachment
                 name="media"
-                upload-endpoint="/temp-upload"
                 :initial-value="{{ json_encode(old('media')) }}"
+                upload-endpoint="/temp-upload"
                 :validation-errors="window.errors"
+                :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                 multiple
             ></media-library-attachment>
         </x-field>

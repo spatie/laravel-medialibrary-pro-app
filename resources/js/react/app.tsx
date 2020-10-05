@@ -5,6 +5,7 @@ import Attachment from './Attachment';
 import AsyncAttachment from './AsyncAttachment';
 import Attachments from './Attachments';
 import Collection from './Collection';
+import CollectionCustomProperty from './CollectionCustomProperty';
 
 const attachment = document.getElementById('attachment');
 if (attachment) {
@@ -24,4 +25,9 @@ if (asyncAttachment) {
 const collection = document.getElementById('collection');
 if (collection) {
     ReactDOM.render(<Collection />, collection);
+}
+
+const collectionWithCustomProperty = document.getElementById('collection-custom-property');
+if (collectionWithCustomProperty) {
+    ReactDOM.render(<CollectionCustomProperty />, collectionWithCustomProperty);
 }

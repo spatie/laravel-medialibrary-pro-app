@@ -17,6 +17,9 @@
         <x-list-link route="vue.collection">Collection</x-list-link>
     </li>
     <li>
+        <x-list-link route="vue.collection-custom-property">Collection with custom property</x-list-link>
+    </li>
+    <li>
         <x-list-link route="vue.vapor">Vapor</x-list-link>
     </li>
 </ul>
@@ -34,6 +37,9 @@
     </li>
     <li>
         <x-list-link route="react.collection">Collection</x-list-link>
+    </li>
+    <li>
+        <x-list-link route="react.collection-custom-property">Collection with custom property</x-list-link>
     </li>
     <li>
         <x-list-link route="react.vapor">Vapor</x-list-link>

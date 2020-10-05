@@ -9,8 +9,6 @@ import Button from './components/Button';
 import ErrorMessage from './components/ErrorMessage';
 
 export default function Collection() {
-    const [isReadyToSubmit, setIsReadyToSubmit] = React.useState(true);
-
     return (
         <>
             <H2>React: collection</H2>
@@ -20,7 +18,12 @@ export default function Collection() {
                     <Csrf token={window.csrfToken} />
 
                     <Field label="Name">
-                        <Input name="name" type="text" placeholder="name" defaultValue={window.oldValues.name || window.name} />
+                        <Input
+                            name="name"
+                            type="text"
+                            placeholder="Your first name"
+                            defaultValue={window.oldValues.name || window.name}
+                        />
                         <ErrorMessage>{window.errors.name}</ErrorMessage>
                     </Field>
 
@@ -29,15 +32,9 @@ export default function Collection() {
                             name="images"
                             initialValue={window.oldValues.images || window.initialValues.images || {}}
                             uploadEndpoint={window.uploadEndpoint}
-                            translations={{
-                                hint: { plural: 'Add some files!', singular: 'Add a file!' },
-                                replace: 'drag or click to replace',
-                            }}
-                            validation={{ accept: ['image/*'], maxSize: 1048576 }}
+                            validation={{ accept: ['image/png', 'image/jpeg'] }}
                             validationErrors={window.errors}
-                            sortable
-                            beforeUpload={() => new Promise(resolve => resolve())}
-                            onIsReadyToSubmitChange={setIsReadyToSubmit}
+                            maxItems={3}
                         ></MediaLibraryCollection>
                     </Field>
 
@@ -46,69 +43,15 @@ export default function Collection() {
                             name="downloads"
                             initialValue={window.oldValues.downloads || window.initialValues.downloads || {}}
                             uploadEndpoint={window.uploadEndpoint}
-                            translations={{
-                                hint: { plural: 'Add some files!', singular: 'Add a file!' },
-                                replace: 'drag or click to replace',
-                            }}
-                            validation={{ accept: ['image/*'], maxSize: 1048576 }}
+                            validation={{ accept: ['application/pdf'] }}
                             validationErrors={window.errors}
-                            sortable
-                            beforeUpload={() => new Promise(resolve => resolve())}
-                            onIsReadyToSubmitChange={setIsReadyToSubmit}
+                            maxItems={2}
                         ></MediaLibraryCollection>
                     </Field>
 
-                    <Button disabled={!isReadyToSubmit}>Submit</Button>
+                    <Button>Submit</Button>
                 </Grid>
             </form>
         </>
     );
 }
-
-/* fieldsView={({
-    getCustomPropertyInputProps,
-    getCustomPropertyInputErrors,
-    getNameInputProps,
-    getNameInputErrors,
-}) => (
-    <>
-        <div className="mb-2">
-            <input
-                className="border rounded"
-                placeholder="image name"
-                {...getNameInputProps()}
-            />
-            {getNameInputErrors().map(error => (
-                <p key={error} className="text-red-500">
-                    {error}
-                </p>
-            ))}
-        </div>
-
-        <div className="mb-2">
-            <input
-                className="border rounded"
-                placeholder="tags"
-                {...getCustomPropertyInputProps('tags')}
-            />
-            {getCustomPropertyInputErrors('tags').map(error => (
-                <p key={error} className="text-red-500">
-                    {error}
-                </p>
-            ))}
-        </div>
-
-        <div className="mb-2">
-            <input
-                className="border rounded"
-                placeholder="caption"
-                {...getCustomPropertyInputProps('caption')}
-            />
-            {getCustomPropertyInputErrors('caption').map(error => (
-                <p key={error} className="text-red-500">
-                    {error}
-                </p>
-            ))}
-        </div>
-    </>
-)} */

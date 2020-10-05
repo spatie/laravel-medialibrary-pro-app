@@ -24,30 +24,22 @@
         <x-field label="images">
             <media-library-collection
                 name="images"
-                :validation="{ accept: ['image/png'], maxSize: 1048576 }"
-                :translations="{
-                    hint: { plural: 'Add files please!', singular: 'Add a file please!' },
-                    replace: 'Click or drag to replace',
-                }"
-                upload-endpoint="/temp-upload"
-                drag-enabled
-                :validation-errors="window.errors"
                 :initial-value="window.oldValues.images || window.initialValues.images"
+                upload-endpoint="/temp-upload"
+                :validation="{ accept: ['image/png', 'image/jpeg'] }"
+                :validation-errors="window.errors"
+                :max-items="3"
             />
         </x-field>
 
         <x-field label="downloads">
             <media-library-collection
-                :initial-value="window.oldValues.downloads || window.initialValues.downloads"
                 name="downloads"
-                :validation="{ accept: ['image/png'], maxSize: 1048576 }"
-                :translations="{
-                    hint: { plural: 'Add files please!', singular: 'Add a file please!' },
-                    replace: 'Click or drag to replace',
-                }"
+                :initial-value="window.oldValues.downloads || window.initialValues.downloads"
                 upload-endpoint="/temp-upload"
-                drag-enabled
+                :validation="{ accept: ['application/pdf'] }"
                 :validation-errors="window.errors"
+                :max-items="2"
             />
         </x-field>
 
