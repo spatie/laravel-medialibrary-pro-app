@@ -114,11 +114,11 @@ class CollectionTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(200)
+                ->pause(500)
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(200)
+                ->pause(500)
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(200)
+                ->pause(500)
                 ->assertMissing('@main-uploader');
         });
     }
