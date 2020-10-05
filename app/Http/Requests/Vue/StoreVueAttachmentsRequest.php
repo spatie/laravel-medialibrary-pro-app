@@ -16,6 +16,7 @@ class StoreVueAttachmentsRequest extends FormRequest
             'media' => ['required', $this->validateMultipleMedia()
                 ->minItems(2)
                 ->maxItems(3)
+                ->minSizeInKb(300)
                 ->maxTotalSizeInKb(2048),
             ],
         ];
