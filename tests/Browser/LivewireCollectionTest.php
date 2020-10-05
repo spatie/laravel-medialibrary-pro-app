@@ -46,4 +46,19 @@ class LivewireCollectionTest extends DuskTestCase
             $this->assertCount(0, FormSubmission::first()->getMedia('images'));
         });
     }
+
+    /** @test */
+    public function the_name_field_of_a_collection_item_is_required()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/livewire/collection')
+                ->type('name', 'My name')
+                ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
+                ->waitForText('Download')
+                ->type('[data-testing-role="medialibrary-field-name"]', '')
+                ->press('[data-testing-role="submit"]')
+                ->assertSee('The name field is required');
+        });
+    }
 }
