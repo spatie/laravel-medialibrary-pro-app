@@ -40,6 +40,8 @@ class CustomCollectionTest extends DuskTestCase
         });
     }
 
+
+
     public function routeNames(): array
     {
         return [
