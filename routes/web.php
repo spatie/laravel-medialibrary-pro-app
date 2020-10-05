@@ -1,21 +1,22 @@
 <?php
 
-use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
 use App\Http\Controllers\Livewire\LivewireVaporController;
-use App\Http\Controllers\LivewireExperimentalController;
 use App\Http\Controllers\Livewire\LivewireAttachmentsController;
 use App\Http\Controllers\Livewire\LivewireCollectionController;
 use App\Http\Controllers\Livewire\LivewireAttachmentController;
+use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactAsyncAttachmentController;
 use App\Http\Controllers\React\ReactAttachmentController;
 use App\Http\Controllers\React\ReactVaporController;
+use App\Http\Controllers\React\ReactCollectionCustomPropertyController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueAttachmentsController;
 use App\Http\Controllers\Vue\VueAttachmentController;
 use App\Http\Controllers\Vue\VueAsyncAttachmentController;
 use App\Http\Controllers\Vue\VueVaporController;
+use App\Http\Controllers\Vue\VueCollectionCustomPropertyController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryUploadController;
@@ -37,6 +38,9 @@ Route::prefix('vue')->group(function () {
     Route::get('collection', [VueCollectionController::class, 'create'])->name('vue.collection');
     Route::post('collection', [VueCollectionController::class, 'store']);
 
+    Route::get('collection-custom-property', [VueCollectionCustomPropertyController::class, 'create'])->name('vue.collection-custom-property');
+    Route::post('collection-custom-property', [VueCollectionCustomPropertyController::class, 'store']);
+
     Route::get('vapor', [VueVaporController::class, 'create'])->name('vue.vapor');
 });
 
@@ -53,6 +57,9 @@ Route::prefix('react')->group(function () {
 
     Route::get('collection', [ReactCollectionController::class, 'create'])->name('react.collection');
     Route::post('collection', [ReactCollectionController::class, 'store']);
+
+    Route::get('collection-custom-property', [ReactCollectionCustomPropertyController::class, 'create'])->name('react.collection-custom-property');
+    Route::post('collection-custom-property', [ReactCollectionCustomPropertyController::class, 'store']);
 
     Route::get('vapor', [ReactVaporController::class, 'create'])->name('react.vapor');
 });

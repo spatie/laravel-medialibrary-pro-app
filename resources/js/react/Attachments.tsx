@@ -13,23 +13,22 @@ export default function Attachments() {
         <form method="POST">
             <Csrf token={window.csrfToken} />
 
-            <H2>React: multiple attachment (max 3 items)</H2>
+            <H2>React: multiple attachment</H2>
 
             <Grid>
                 <Field label="name">
-                    <Input name="name" placeholder="name" type="text" defaultValue={window.oldValues.name} />
+                    <Input name="name" placeholder="Your first name" type="text" defaultValue={window.oldValues.name} />
                     <ErrorMessage>{window.errors.name}</ErrorMessage>
                 </Field>
 
                 <Field label="files">
                     <MediaLibraryAttachment
-                        initialValue={window.oldValues.media}
                         name="media"
+                        initialValue={window.oldValues.media}
                         uploadEndpoint="/temp-upload"
-                        validation={{ accept: ['image/png'], maxSize: 2048 }}
-                        multiple
-                        maxItems={3}
+                        validation={{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }}
                         validationErrors={window.errors}
+                        multiple
                     />
                 </Field>
 
