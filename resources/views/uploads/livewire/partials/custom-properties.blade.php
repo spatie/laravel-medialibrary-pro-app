@@ -3,6 +3,7 @@
 <div class="medialibrary-field">
     <label class="medialibrary-label">Extra field</label>
     <input
+        dusk="medialibrary-extra-field"
         class="medialibrary-input"
         type="text"
         {{ $mediaItem->customPropertyAttributes('extra_field')  }}
