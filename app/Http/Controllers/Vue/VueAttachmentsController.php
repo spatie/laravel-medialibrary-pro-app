@@ -12,7 +12,7 @@ class VueAttachmentsController
         return view('uploads.vue.attachments');
     }
 
-    public function store(StoreVueAttachmentsRequest$request)
+    public function store(StoreVueAttachmentsRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([

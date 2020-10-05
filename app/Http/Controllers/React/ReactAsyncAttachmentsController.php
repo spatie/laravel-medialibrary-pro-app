@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\React;
 
-use App\Http\Requests\React\StoreReactAttachmentRequest;
+use App\Http\Requests\React\StoreReactAttachmentsRequest;
 use App\Models\FormSubmission;
 
-class ReactAsyncAttachmentController
+class ReactAsyncAttachmentsController
 {
     public function create()
     {
-        return view('uploads.react.async-attachment');
+        return view('uploads.react.async-attachments');
     }
 
-    public function store(StoreReactAttachmentRequest $request)
+    public function store(StoreReactAttachmentsRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([

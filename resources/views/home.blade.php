@@ -8,10 +8,10 @@
         <x-list-link route="vue.attachment">Attachment</x-list-link>
     </li>
     <li>
-        <x-list-link route="vue.async-attachment">Async attachment</x-list-link>
+        <x-list-link route="vue.attachments">Attachments</x-list-link>
     </li>
     <li>
-        <x-list-link route="vue.attachments">Attachments</x-list-link>
+        <x-list-link route="vue.async-attachments">Async attachments</x-list-link>
     </li>
     <li>
         <x-list-link route="vue.collection">Collection</x-list-link>
@@ -30,10 +30,10 @@
         <x-list-link route="react.attachment">Attachment</x-list-link>
     </li>
     <li>
-        <x-list-link route="react.async-attachment">Async attachment</x-list-link>
+        <x-list-link route="react.attachments">Attachments</x-list-link>
     </li>
     <li>
-        <x-list-link route="react.attachments">Attachments</x-list-link>
+        <x-list-link route="react.async-attachments">Async attachment</x-list-link>
     </li>
     <li>
         <x-list-link route="react.collection">Collection</x-list-link>

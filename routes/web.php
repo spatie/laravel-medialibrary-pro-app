@@ -7,14 +7,14 @@ use App\Http\Controllers\Livewire\LivewireAttachmentController;
 use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
-use App\Http\Controllers\React\ReactAsyncAttachmentController;
+use App\Http\Controllers\React\ReactAsyncAttachmentsController;
 use App\Http\Controllers\React\ReactAttachmentController;
 use App\Http\Controllers\React\ReactVaporController;
 use App\Http\Controllers\React\ReactCollectionCustomPropertyController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueAttachmentsController;
 use App\Http\Controllers\Vue\VueAttachmentController;
-use App\Http\Controllers\Vue\VueAsyncAttachmentController;
+use App\Http\Controllers\Vue\VueAsyncAttachmentsController;
 use App\Http\Controllers\Vue\VueVaporController;
 use App\Http\Controllers\Vue\VueCollectionCustomPropertyController;
 use Illuminate\Support\Facades\Route;
@@ -29,8 +29,8 @@ Route::prefix('vue')->group(function () {
     Route::get('attachment', [VueAttachmentController::class, 'create'])->name('vue.attachment');
     Route::post('attachment', [VueAttachmentController::class, 'store']);
 
-    Route::get('async-attachment', [VueAsyncAttachmentController::class, 'create'])->name('vue.async-attachment');
-    Route::post('async-attachment', [VueAsyncAttachmentController::class, 'store']);
+    Route::get('async-attachments', [VueAsyncAttachmentsController::class, 'create'])->name('vue.async-attachments');
+    Route::post('async-attachments', [VueAsyncAttachmentsController::class, 'store']);
 
     Route::get('attachments', [VueAttachmentsController::class, 'create'])->name('vue.attachments');
     Route::post('attachments', [VueAttachmentsController::class, 'store']);
@@ -49,8 +49,8 @@ Route::prefix('react')->group(function () {
 
     Route::post('attachment', [ReactAttachmentController::class, 'store']);
 
-    Route::get('async-attachment', [ReactAsyncAttachmentController::class, 'create'])->name('react.async-attachment');
-    Route::post('async-attachment', [ReactAttachmentController::class, 'store']);
+    Route::get('async-attachments', [ReactAsyncAttachmentsController::class, 'create'])->name('react.async-attachments');
+    Route::post('async-attachments', [ReactAsyncAttachmentsController::class, 'store']);
 
     Route::get('attachments', [ReactAttachmentsController::class, 'create'])->name('react.attachments');
     Route::post('attachments', [ReactAttachmentsController::class, 'store']);
