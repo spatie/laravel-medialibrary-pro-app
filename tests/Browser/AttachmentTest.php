@@ -37,15 +37,6 @@ class AttachmentTest extends DuskTestCase
         });
     }
 
-    public function routeNames(): array
-    {
-        return [
-            ['vue.attachment'],
-            ['react.attachment'],
-            ['livewire.attachment'],
-        ];
-    }
-
     /**
      * @test
      *
@@ -74,5 +65,12 @@ class AttachmentTest extends DuskTestCase
         });
     }
 
-
+    public function routeNames(): array
+    {
+        return [
+            ['vue.attachment'],
+            ['react.attachment'],
+            ['livewire.attachment'],
+        ];
+    }
 }

@@ -15,8 +15,8 @@ class StoreReactCollectionCustomPropertyRequest extends FormRequest
             'name' => 'required',
             'images' => [$this->validateMultipleMedia()
                 ->maxItems(3)
-                ->attribute('name', 'required|max:5')
-                ->customProperty('extra_field', 'required'),
+                ->attribute('name', 'required|max:30')
+                ->customProperty('extra_field', 'required|max:30'),
             ],
         ];
     }
