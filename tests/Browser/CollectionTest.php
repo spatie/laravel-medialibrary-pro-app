@@ -8,12 +8,16 @@ use Tests\DuskTestCase;
 
 class CollectionTest extends DuskTestCase
 {
-    /** @test */
-    public function it_can_upload_and_display_a_single_file()
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function it_can_upload_and_display_a_single_file(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/collection')
+                ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Download')
@@ -25,12 +29,16 @@ class CollectionTest extends DuskTestCase
         });
     }
 
-    /** @test */
-    public function uploading_a_file_and_removing_it_before_submitting_the_form_will_not_attach_media_to_the_model()
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function uploading_a_file_and_removing_it_before_submitting_the_form_will_not_attach_media_to_the_model(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/collection')
+                ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Download')
@@ -45,12 +53,16 @@ class CollectionTest extends DuskTestCase
         });
     }
 
-    /** @test */
-    public function the_name_field_of_a_collection_item_is_required()
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function the_name_field_of_a_collection_item_is_required(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/collection')
+                ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Download')
@@ -104,5 +116,14 @@ class CollectionTest extends DuskTestCase
                 ->pause(200)
                 ->assertSee('You must upload a file of type');
         });
+    }
+
+    public function routeNames(): array
+    {
+        return [
+            ['vue.collection'],
+            ['react.collection'],
+            ['livewire.collection'],
+        ];
     }
 }
