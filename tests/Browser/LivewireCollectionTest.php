@@ -34,11 +34,9 @@ class LivewireCollectionTest extends DuskTestCase
                 ->type('name', 'My name')
                 ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
                 ->waitForText('Download')
-
                 ->assertVisible('[data-testing-role="thumb"]')
                 ->press('[data-testing-role="remove"]')
                 ->waitUntilMissing('[data-testing-role="thumb"]')
-                ->screenshot('missing')
                 ->press('[data-testing-role="submit"]')
                 ->assertSee('Your form has been submitted')
                 ->assertMissing('[data-testing-role="thumb"]');
@@ -68,6 +66,7 @@ class LivewireCollectionTest extends DuskTestCase
         $this->browse(function (Browser $browser) {
             $browser
                 ->visit('/livewire/collection')
+                ->type('name', 'My name')
                 ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
                 ->pause(200)
                 ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
@@ -76,5 +75,25 @@ class LivewireCollectionTest extends DuskTestCase
                 ->pause(200)
                 ->assertMissing('[data-testing-role="main-uploader"]');
         });
+
+
+    }
+
+    /** @test */
+    public function a_new_collection_item_can_be_replaced()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/livewire/collection')
+                ->type('name', 'My name')
+                ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
+                ->pause(500)
+                ->attach('[data-testing-role="uploader"]', $this->getStubPath('logo.png'))
+                ->pause(200)
+                ->press('[data-testing-role="submit"]');
+
+            $this->assertEquals('logo.png', FormSubmission::first()->getFirstMedia('images')->file_name);
+        });
+
     }
 }
