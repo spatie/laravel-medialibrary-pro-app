@@ -8,6 +8,13 @@ use Tests\DuskTestCase;
 
 class AttachmentTest extends DuskTestCase
 {
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        FormSubmission::truncate();
+    }
+
     /**
      * @test
      *
@@ -34,10 +41,6 @@ class AttachmentTest extends DuskTestCase
      * @test
      *
      * @dataProvider routeNames
-     *
-     * @param string $routeName
-     *
-     * @throws \Throwable
      */
     public function it_will_not_lose_the_uploaded_file_when_submitting_a_form_results_in_validation_errors(string $routeName)
     {
