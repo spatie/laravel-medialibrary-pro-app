@@ -11,6 +11,7 @@ class UserPolicy
 
     public function uploadFiles(?User $user)
     {
+        ld('in uploadFiles');
         return true;
     }
 }
