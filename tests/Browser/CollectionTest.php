@@ -8,6 +8,13 @@ use Tests\DuskTestCase;
 
 class CollectionTest extends DuskTestCase
 {
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        FormSubmission::truncate();
+    }
+
     /**
      * @test
      *
@@ -72,12 +79,15 @@ class CollectionTest extends DuskTestCase
         });
     }
 
-    /** @test */
-    public function it_will_not_display_the_main_uploader_when_the_maximum_amount_of_uploads_has_been_reached()
+    /** @test
+     *
+     * @dataProvider routeNames
+     */
+    public function it_will_not_display_the_main_uploader_when_the_maximum_amount_of_uploads_has_been_reached(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/collection')
+                ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->pause(200)
@@ -89,12 +99,16 @@ class CollectionTest extends DuskTestCase
         });
     }
 
-    /** @test */
-    public function a_new_collection_item_can_be_replaced()
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function a_new_collection_item_can_be_replaced(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/collection')
+                ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->pause(500)
@@ -106,12 +120,16 @@ class CollectionTest extends DuskTestCase
         });
     }
 
-    /** @test */
-    public function the_collection_will_only_allow_acceptable_files()
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function the_collection_will_only_allow_acceptable_files(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/collection')
+                ->visit(route($routeName))
                 ->attach('@main-uploader', $this->getStubPath('test.pdf'))
                 ->pause(200)
                 ->assertSee('You must upload a file of type');
