@@ -6,14 +6,18 @@ use App\Models\FormSubmission;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class LivewireAttachmentTest extends DuskTestCase
+class AttachmentTest extends DuskTestCase
 {
-    /** @test */
-    public function it_can_handle_a_successful_form_request()
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function it_can_handle_a_successful_form_request(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/single')
+                ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Remove')
@@ -26,12 +30,20 @@ class LivewireAttachmentTest extends DuskTestCase
         });
     }
 
-    /** @test */
-    public function it_will_not_lose_the_uploaded_file_when_submitting_a_form_results_in_validation_errors()
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     *
+     * @param string $routeName
+     *
+     * @throws \Throwable
+     */
+    public function it_will_not_lose_the_uploaded_file_when_submitting_a_form_results_in_validation_errors(string $routeName)
     {
-        $this->browse(function (Browser $browser) {
+        $this->browse(function (Browser $browser) use ($routeName) {
             $browser
-                ->visit('/livewire/single')
+                ->visit(route($routeName))
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Remove')
                 ->press('@submit');
@@ -48,5 +60,14 @@ class LivewireAttachmentTest extends DuskTestCase
             $this->assertCount(1, FormSubmission::all());
             $this->assertEquals('space.png', FormSubmission::first()->getFirstMedia('images')->file_name);
         });
+    }
+
+    public function routeNames(): array
+    {
+        return [
+            ['vue.attachment'],
+            ['react.attachment'],
+            ['livewire.attachment'],
+        ];
     }
 }

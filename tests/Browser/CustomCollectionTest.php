@@ -6,7 +6,7 @@ use App\Models\FormSubmission;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class LivewireCustomCollectionTest extends DuskTestCase
+class CustomCollectionTest extends DuskTestCase
 {
     /** @test */
     public function it_will_save_custom_properties()

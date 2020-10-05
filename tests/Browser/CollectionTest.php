@@ -6,7 +6,7 @@ use App\Models\FormSubmission;
 use Laravel\Dusk\Browser;
 use Tests\DuskTestCase;
 
-class LivewireCollectionTest extends DuskTestCase
+class CollectionTest extends DuskTestCase
 {
     /** @test */
     public function it_can_upload_and_display_a_single_file()
