@@ -20,7 +20,7 @@ class AttachmentTest extends DuskTestCase
      *
      * @dataProvider routeNames
      */
-    public function it_can_handle_a_successful_form_request(string $routeName)
+    public function it_can_handle_a_single_upload(string $routeName)
     {
         $this->browse(function (Browser $browser) use ($routeName) {
             $browser
@@ -35,6 +35,15 @@ class AttachmentTest extends DuskTestCase
 
             $this->assertEquals('space.png', FormSubmission::first()->getFirstMedia('images')->file_name);
         });
+    }
+
+    public function routeNames(): array
+    {
+        return [
+            ['vue.attachment'],
+            ['react.attachment'],
+            ['livewire.attachment'],
+        ];
     }
 
     /**
@@ -65,12 +74,5 @@ class AttachmentTest extends DuskTestCase
         });
     }
 
-    public function routeNames(): array
-    {
-        return [
-            ['vue.attachment'],
-            ['react.attachment'],
-            ['livewire.attachment'],
-        ];
-    }
+
 }
