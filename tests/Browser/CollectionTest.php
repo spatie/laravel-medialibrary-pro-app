@@ -20,6 +20,28 @@ class CollectionTest extends DuskTestCase
      *
      * @dataProvider routeNames
      */
+    public function an_existing_collection_can_be_displayed(string $routeName)
+    {
+        /** @var FormSubmission $formSubmission */
+        $formSubmission = FormSubmission::create(['name' => 'test']);
+
+        $formSubmission
+            ->addMedia($this->getStubPath('space.png'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $this->browse(function (Browser $browser) use ($routeName) {
+            $browser
+                ->visit(route($routeName))
+                ->assertValue('@medialibrary-field-name', 'space');
+        });
+    }
+
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
     public function it_can_upload_and_display_a_single_file(string $routeName)
     {
         $this->browse(function (Browser $browser) use ($routeName) {
