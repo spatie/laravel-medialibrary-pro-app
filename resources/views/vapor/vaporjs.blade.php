@@ -1,36 +1,44 @@
-<script src="{{ mix('js/vapor/app.js') }}" ></script>
+@extends('layouts.master')
 
-Medialibrary on Vapor test
+@push('scripts')
+    <script src="{{ mix('js/vapor/app.js') }}"></script>
 
-    <input type="file" id="file" ref="file">
-    <button onclick="uploadToS3()" type="button">Upload</button>
+    <script>
+        function uploadToS3() {
+            Vapor.store(document.getElementById('file').files[0], {
+                progress: progress => {
+                    this.uploadProgress = Math.round(progress * 100);
+                }
+            }).then(response => {
+                let firstFile = document.getElementById('file').files[0];
 
-<script>
-    function uploadToS3() {
-        Vapor.store(document.getElementById('file').files[0], {
-            progress: progress => {
-                this.uploadProgress = Math.round(progress * 100);
-            }
-        }).then(response => {
-            let firstFile = document.getElementById('file').files[0];
+                console.log({
+                    uuid: response.uuid,
+                    key: response.key,
+                    bucket: response.bucket,
+                    name: firstFile.name,
+                    content_type: firstFile.type,
+                });
 
-            console.log({
-                uuid: response.uuid,
-                key: response.key,
-                bucket: response.bucket,
-                name: firstFile.name,
-                content_type: firstFile.type,
-            });
+                axios.post('/post-s3-upload ', {
+                    uuid: response.uuid,
+                    key: response.key,
+                    bucket: response.bucket,
+                    name: firstFile.name,
+                    content_type: firstFile.type,
+                });
+            }).catch(error => console.error(error));
+        }
+    </script>
+@endpush
 
-            axios.post('/post-s3-upload ', {
-                uuid: response.uuid,
-                key: response.key,
-                bucket: response.bucket,
-                name: firstFile.name,
-                content_type: firstFile.type,
-            });
+@section('content')
+    <x-h2> Medialibrary on Vapor test</x-h2>
 
 
-        }).catch(error => console.error(error));
-    }
-</script>
+    <x-field label="file">
+        <input type="file" id="file" ref="file">
+    </x-field>
+
+    <x-button onclick="uploadToS3()" dusk="submit">Submit</x-button>
+@endsection
