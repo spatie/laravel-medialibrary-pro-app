@@ -16,7 +16,7 @@ class LivewireCollectionTest extends DuskTestCase
                 ->visit('/livewire/collection')
                 ->type('name', 'My name')
                 ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
-                ->waitForText('Download', 10)
+                ->waitForText('Download')
                 ->press('[data-testing-role="submit"]')
                 ->assertSee('Your form has been submitted')
                 ->assertVisible('[data-testing-role="thumb"]');
@@ -75,8 +75,6 @@ class LivewireCollectionTest extends DuskTestCase
                 ->pause(200)
                 ->assertMissing('[data-testing-role="main-uploader"]');
         });
-
-
     }
 
     /** @test */
@@ -94,6 +92,17 @@ class LivewireCollectionTest extends DuskTestCase
 
             $this->assertEquals('logo.png', FormSubmission::first()->getFirstMedia('images')->file_name);
         });
+    }
 
+    /** @test */
+    public function the_collection_will_only_allow_acceptable_files()
+    {
+        $this->browse(function (Browser $browser) {
+            $browser
+                ->visit('/livewire/collection')
+                ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('test.pdf'))
+                ->pause(200)
+                ->assertSee('You must upload a file of type');
+        });
     }
 }
