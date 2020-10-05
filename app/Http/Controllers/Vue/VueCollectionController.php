@@ -9,6 +9,8 @@ class VueCollectionController
 {
     public function create()
     {
+        FormSubmission::truncate();
+
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
 

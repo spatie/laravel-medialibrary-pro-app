@@ -73,7 +73,9 @@ class CollectionTest extends DuskTestCase
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Download')
+                ->type('@medialibrary-field-name', '   ') // needed to make test pass
                 ->type('@medialibrary-field-name', '')
+                ->screenshot('before submit')
                 ->press('@submit')
                 ->assertSee('The name field is required');
         });
