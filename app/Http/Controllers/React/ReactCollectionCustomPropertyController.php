@@ -24,6 +24,7 @@ class ReactCollectionCustomPropertyController
 
         $formSubmission
             ->syncFromMediaLibraryRequest($request->images)
+            ->withCustomProperties('extra_field')
             ->toMediaCollection('images');
 
         $formSubmission->name = $request->name;
