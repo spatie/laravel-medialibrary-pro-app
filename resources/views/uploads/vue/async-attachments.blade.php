@@ -5,8 +5,8 @@
 @endpush
 
 @section('content')
-<x-h2>Vue: multiple attachments with asynchronous submit</x-h2>
+<x-h2>Vue: attachments with async submit</x-h2>
 
-<async-attachment></async-attachment>
+<async-attachments></async-attachments>
 
 @endsection

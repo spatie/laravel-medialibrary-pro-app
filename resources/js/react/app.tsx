@@ -2,7 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom';
 
 import Attachment from './Attachment';
-import AsyncAttachment from './AsyncAttachment';
+import AsyncAttachments from './AsyncAttachments';
 import Attachments from './Attachments';
 import Collection from './Collection';
 import CollectionCustomProperty from './CollectionCustomProperty';
@@ -17,9 +17,9 @@ if (attachments) {
     ReactDOM.render(<Attachments />, attachments);
 }
 
-const asyncAttachment = document.getElementById('async-attachment');
-if (asyncAttachment) {
-    ReactDOM.render(<AsyncAttachment />, asyncAttachment);
+const asyncAttachments = document.getElementById('async-attachments');
+if (asyncAttachments) {
+    ReactDOM.render(<AsyncAttachments />, asyncAttachments);
 }
 
 const collection = document.getElementById('collection');

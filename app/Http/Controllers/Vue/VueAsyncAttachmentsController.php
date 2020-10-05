@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers\Vue;
 
-use App\Http\Requests\Vue\StoreVueAttachmentRequest;
+use App\Http\Requests\Vue\StoreVueAttachmentsRequest;
 use App\Models\FormSubmission;
 
-class VueAsyncAttachmentController
+class VueAsyncAttachmentsController
 {
     public function create()
     {
-        return view('uploads.vue.async-attachment');
+        return view('uploads.vue.async-attachments');
     }
 
-    public function store(StoreVueAttachmentRequest $request)
+    public function store(StoreVueAttachmentsRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
@@ -25,6 +25,8 @@ class VueAsyncAttachmentController
 
         flash()->success('Your form has been submitted');
 
-        return back();
+        return response()->json([
+            'success' => 'true'
+        ]);
     }
 }
