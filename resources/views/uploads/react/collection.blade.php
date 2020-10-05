@@ -11,5 +11,5 @@
 @endpush
 
 @section('content')
-    <div id="collection-with-custom-property"></div>
+    <div id="collection"></div>
 @endsection
