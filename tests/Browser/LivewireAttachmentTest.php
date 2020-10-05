@@ -16,7 +16,7 @@ class LivewireAttachmentTest extends DuskTestCase
                 ->visit('/livewire/single')
                 ->type('name', 'My name')
                 ->attach('[data-testing-role="main-uploader"', $this->getStubPath('space.png'))
-                ->waitUntilMissingText('Uploading')
+                ->waitForText('Remove')
                 ->press('[data-testing-role="submit"]')
                 ->assertSee('Your form has been submitted');
 
@@ -33,7 +33,7 @@ class LivewireAttachmentTest extends DuskTestCase
             $browser
                 ->visit('/livewire/single')
                 ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
-                ->waitUntilMissingText('Uploading')
+                ->waitForText('Remove')
                 ->press('[data-testing-role="submit"]');
 
             $this->assertCount(0, FormSubmission::all());

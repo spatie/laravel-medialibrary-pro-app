@@ -17,3 +17,4 @@ public/js/
 public/css/main.css
 storage/media-library/temp/
 .php_cs.cache
+.env.pull

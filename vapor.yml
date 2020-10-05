@@ -11,9 +11,11 @@ environments:
             - 'COMPOSER_MIRROR_PATH_REPOS=1 composer install --no-dev'
             - 'php artisan event:cache'
             - yarn
-            - yarn run production
-            - rm -rf node_modules
-            - rm -rf storage/media-library
+            - 'yarn run production'
+            - 'rm -rf node_modules'
+            - 'rm -rf storage/media-library'
         deploy:
             - 'php artisan migrate --force'
-
+    pull:
+        build:
+            - 'composer install --no-dev'

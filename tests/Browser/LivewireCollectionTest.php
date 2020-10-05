@@ -9,19 +9,20 @@ use Tests\DuskTestCase;
 class LivewireCollectionTest extends DuskTestCase
 {
     /** @test */
-    public function it_can_upload_an_display_a_single_file()
+    public function it_can_upload_and_display_a_single_file()
     {
         $this->browse(function (Browser $browser) {
             $browser
                 ->visit('/livewire/collection')
+                ->type('name', 'My name')
                 ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
-                ->waitUntilMissing('medialibrary-progress')
+                ->waitForText('Download', 10)
                 ->screenshot('before-submit')
                 ->press('[data-testing-role="submit"]')
                 ->assertSee('Your form has been submitted')
                 ->assertVisible('[data-testing-role="thumb"]');
 
-            //$this->assertCount(1, FormSubmission::getTestModel()->getMedia('images'));
+            $this->assertCount(1, FormSubmission::first()->getMedia('images'));
         });
     }
 
@@ -32,7 +33,7 @@ class LivewireCollectionTest extends DuskTestCase
             $browser
                 ->visit('/livewire/collection')
                 ->attach('[data-testing-role="main-uploader"]', $this->getStubPath('space.png'))
-                ->waitUntilMissingText('Uploading')
+                ->waitForText('Download')
 
                 ->assertVisible('[data-testing-role="thumb"]')
                 ->press('[data-testing-role="remove"]')
@@ -41,7 +42,7 @@ class LivewireCollectionTest extends DuskTestCase
                 ->assertSee('Your form has been submitted')
                 ->assertMissing('[data-testing-role="thumb"]');
 
-            $this->assertCount(1, FormSubmission::getTestModel()->getMedia('images'));
+            $this->assertCount(1, FormSubmission::first()->getMedia('images'));
         });
     }
 }
