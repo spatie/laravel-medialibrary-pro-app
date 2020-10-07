@@ -24,7 +24,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        ld('registering');
         $this->registerPolicies();
         //
     }
