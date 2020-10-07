@@ -65,6 +65,25 @@ class AttachmentTest extends DuskTestCase
         });
     }
 
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function it_can_show_a_validation_error_on_replacement(string $routeName)
+    {
+        $this->browse(function (Browser $browser) use ($routeName) {
+            $browser
+                ->visit(route($routeName))
+                ->type('name', 'My name')
+                ->attach('@main-uploader', $this->getStubPath('space.png'))
+                ->pause(500)
+                ->attach('@uploader', $this->getStubPath('data.json'))
+                ->pause(200)
+                ->assertSee('You must upload a file of type');
+        });
+    }
+
     public function routeNames(): array
     {
         return [

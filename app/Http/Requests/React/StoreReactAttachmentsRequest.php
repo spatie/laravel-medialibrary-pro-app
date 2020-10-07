@@ -17,7 +17,7 @@ class StoreReactAttachmentsRequest extends FormRequest
                 ->minItems(2)
                 ->maxItems(3)
                 ->minSizeInKb(300)
-                ->maxTotalSizeInKb(2048),
+                ->maxTotalSizeInKb(3072),
             ],
         ];
     }
