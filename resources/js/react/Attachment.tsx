@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment/dist';
-import H2 from './components/H2';
+import H2 from './components/PageTitle';
 import Field from './components/Field';
 import Input from './components/Input';
 import Csrf from './components/Csrf';

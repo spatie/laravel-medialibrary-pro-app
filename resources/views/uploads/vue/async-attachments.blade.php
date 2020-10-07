@@ -5,7 +5,6 @@
 @endpush
 
 @section('content')
-<x-h2>Vue: attachments with async submit</x-h2>
 
 <async-attachments></async-attachments>
 

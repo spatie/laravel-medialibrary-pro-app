@@ -1,36 +1,45 @@
 <template>
-    <Grid>
-        <div v-if="Object.keys(validationErrors).length" class="rounded-sm mb-8 px-4 py-2 bg-red-100 text-red-500">
-            Please correct the errors in the form
+    <div>
+        <page-title>Vue: attachments with async submit</page-title>
+
+        <div
+            v-if="Object.keys(validationErrors).length || isUploadSuccess"
+            class="rounded-sm mb-8 px-4 py-2"
+            :class="Object.keys(validationErrors).length ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500'"
+        >
+            <template v-if="Object.keys(validationErrors).length">
+                Please correct the errors in the form
+            </template>
+            <template v-else>
+                Your form has been submitted
+            </template>
         </div>
 
-        <div v-if="isUploadSuccess" class="rounded-sm mb-8 px-4 py-2 bg-green-100 text-green-500">
-            Your form has been submitted
-        </div>
+        <Grid>
+            <Field label="name">
+                <Input name="name" id="name" placeholder="Your first name" v-model="value.name" />
 
-        <Field label="name">
-            <Input name="name" id="name" placeholder="Your first name" v-model="value.name" />
+                <error-message v-if="validationErrors && validationErrors.name">{{
+                    validationErrors.name[0]
+                }}</error-message>
+            </Field>
 
-            <error-message v-if="validationErrors && validationErrors.name">{{
-                validationErrors.name[0]
-            }}</error-message>
-        </Field>
+            <Field label="file">
+                <media-library-attachment
+                    ref="mediaComponent"
+                    name="media"
+                    :initial-value="value.media"
+                    :upload-endpoint="uploadEndpoint"
+                    :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
+                    :validation-errors="validationErrors"
+                    multiple
+                    @change="onChange"
+                ></media-library-attachment>
+            </Field>
 
-        <Field label="file">
-            <media-library-attachment
-                ref="mediacomponent"
-                name="media"
-                :initial-value="value.media"
-                multiple
-                :upload-endpoint="uploadEndpoint"
-                :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
-                :validation-errors="validationErrors"
-                @change="onChange"
-            ></media-library-attachment>
-        </Field>
-
-        <Button type="button" @click="onSubmit">Submit</Button>
-    </Grid>
+            <Button type="button" @click="onSubmit">Submit</Button>
+        </Grid>
+    </div>
 </template>
 
 <script>
@@ -39,10 +48,11 @@ import Button from './components/Button';
 import Field from './components/Field';
 import Input from './components/Input';
 import Grid from './components/Grid';
+import PageTitle from './components/PageTitle';
 import ErrorMessage from './components/ErrorMessage';
 
 export default {
-    components: { MediaLibraryAttachment, Button, Field, Input, Grid, ErrorMessage },
+    components: { MediaLibraryAttachment, Button, Field, Input, Grid, ErrorMessage, PageTitle },
 
     methods: {
         onChange(media) {
@@ -60,14 +70,16 @@ export default {
                         this.isUploadSuccess = true;
                         this.value = { name: '', media: {} };
 
-                        this.$refs.mediacomponent.mediaLibrary.changeState(state => {
+                        this.$refs.mediaComponent.mediaLibrary.changeState(state => {
                             state.media = [];
                         });
                     }
                 })
                 .catch(error => {
+                    console.error(error);
+
                     if (error && error.response && error.response.data) {
-                        this.validationErrors = error.response.data.errors;
+                        this.validationErrors = error.response.data.errors || {};
                     }
                 });
         },

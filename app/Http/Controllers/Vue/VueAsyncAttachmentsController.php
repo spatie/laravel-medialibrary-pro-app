@@ -23,8 +23,6 @@ class VueAsyncAttachmentsController
             ->addFromMediaLibraryRequest($request->media)
             ->toMediaCollection('images');
 
-        flash()->success('Your form has been submitted');
-
         return response()->json([
             'success' => 'true'
         ]);
