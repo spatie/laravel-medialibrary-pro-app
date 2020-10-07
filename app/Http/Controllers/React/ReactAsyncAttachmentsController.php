@@ -23,8 +23,8 @@ class ReactAsyncAttachmentsController
             ->addFromMediaLibraryRequest($request->media)
             ->toMediaCollection('images');
 
-        flash()->success('Your form has been submitted');
-
-        return back();
+        return response()->json([
+            'success' => 'true'
+        ]);
     }
 }

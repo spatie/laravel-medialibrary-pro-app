@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection/dist';
-import H2 from './components/H2';
+import PageTitle from './components/PageTitle';
 import Grid from './components/Grid';
 import Csrf from './components/Csrf';
 import Field from './components/Field';
@@ -11,7 +11,7 @@ import ErrorMessage from './components/ErrorMessage';
 export default function CollectionCustomProperty() {
     return (
         <>
-            <H2>React: collection with custom property</H2>
+            <PageTitle>React: collection with custom property</PageTitle>
 
             <form method="POST">
                 <Grid>

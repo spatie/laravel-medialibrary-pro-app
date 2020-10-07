@@ -1,30 +1,71 @@
 import * as React from 'react';
 import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment/dist';
 import { MediaLibrary } from 'medialibrary-pro-core/dist/types';
-import H2 from './components/H2';
+import PageTitle from './components/PageTitle';
 import Button from './components/Button';
 import Field from './components/Field';
 import Grid from './components/Grid';
 import ErrorMessage from './components/ErrorMessage';
 import Input from './components/Input';
+import Axios from 'axios';
+import MediaLibraryClass from 'medialibrary-pro-core/dist';
 
 export default function AsyncAttachments() {
-    function submit() {
-        // This can also be placed in the `afterUpload` prop of the component
-        /* TODO:
-        axios.post(…)
-        .catch(errors => {
-            setValidationErrors(errors);
-        });
-        */
-    }
+    const [value, setValue] = React.useState<{
+        name: string;
+        media: {
+            [uuid: string]: MediaLibrary.MediaAttributes;
+        };
+    }>({
+        name: '',
+        media: {},
+    });
+    const [validationErrors, setValidationErrors] = React.useState<MediaLibrary.State['validationErrors']>({});
+    const [isUploadSuccess, setIsUploadSuccess] = React.useState(false);
 
-    const [value, setValue] = React.useState(window.oldValues.media);
-    const [validationErrors, setValidationErrors] = React.useState<MediaLibrary.State['validationErrors']>();
+    const mediaLibrary = React.useRef<MediaLibraryClass | null>(null);
+
+    function submit() {
+        setIsUploadSuccess(false);
+        setValidationErrors({});
+
+        Axios.post('', value)
+            .then(res => {
+                if (res.data.success) {
+                    setIsUploadSuccess(true);
+                    setValue({ name: '', media: {} });
+
+                    mediaLibrary.current?.changeState(state => {
+                        state.media = [];
+                    });
+                }
+            })
+            .catch(error => {
+                console.error(error);
+
+                if (error && error.response && error.response.data) {
+                    setValidationErrors(error.response.data.errors);
+                }
+            });
+    }
 
     return (
         <div>
-            <H2>React: attachments with async submit</H2>
+            {(Object.keys(validationErrors).length || isUploadSuccess) && (
+                <div
+                    className={`rounded-sm mb-8 px-4 py-2 ${
+                        Object.keys(validationErrors).length ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500'
+                    }`}
+                >
+                    {Object.keys(validationErrors).length ? (
+                        <>Please correct the errors in the form</>
+                    ) : (
+                        <>Your form has been submitted</>
+                    )}
+                </div>
+            )}
+
+            <PageTitle>React: attachments with async submit</PageTitle>
 
             <Grid>
                 <Field label="Name">
@@ -32,20 +73,22 @@ export default function AsyncAttachments() {
                         name="name"
                         type="text"
                         placeholder="Your first name"
-                        defaultValue={window.oldValues.name || window.name}
+                        value={value.name}
+                        onChange={name => setValue(value => ({ ...value, name }))}
                     />
-                    <ErrorMessage>{window.errors.name}</ErrorMessage>
+                    <ErrorMessage>{validationErrors.name}</ErrorMessage>
                 </Field>
 
                 <Field label="file">
                     <MediaLibraryAttachment
                         name="media"
-                        initialValue={value}
-                        multiple
+                        initialValue={value.media}
                         uploadEndpoint={window.uploadEndpoint}
-                        validation={{ accept: ['image/png', 'image/jpeg'] }}
+                        validation={{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }}
                         validationErrors={validationErrors}
-                        onChange={setValue}
+                        multiple
+                        setMediaLibrary={mediaLib => (mediaLibrary.current = mediaLib)}
+                        onChange={media => setValue(value => ({ ...value, media }))}
                     ></MediaLibraryAttachment>
                 </Field>
 

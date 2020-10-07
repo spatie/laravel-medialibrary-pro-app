@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment/dist';
-import H2 from './components/H2';
+import PageTitle from './components/PageTitle';
 import Field from './components/Field';
 import Grid from './components/Grid';
 import Button from './components/Button';
@@ -13,7 +13,7 @@ export default function Attachments() {
         <form method="POST">
             <Csrf token={window.csrfToken} />
 
-            <H2>React: multiple attachment</H2>
+            <PageTitle>React: multiple attachment</PageTitle>
 
             <Grid>
                 <Field label="name">

@@ -33,7 +33,7 @@
         <x-list-link route="react.attachments">Attachments</x-list-link>
     </li>
     <li>
-        <x-list-link route="react.async-attachments">Async attachment</x-list-link>
+        <x-list-link route="react.async-attachments">Async attachments</x-list-link>
     </li>
     <li>
         <x-list-link route="react.collection">Collection</x-list-link>
