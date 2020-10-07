@@ -1,5 +1,13 @@
 <template>
     <Grid>
+        <div v-if="Object.keys(validationErrors).length" class="rounded-sm mb-8 px-4 py-2 bg-red-100 text-red-500">
+            Please correct the errors in the form
+        </div>
+
+        <div v-if="isUploadSuccess" class="rounded-sm mb-8 px-4 py-2 bg-green-100 text-green-500">
+            Your form has been submitted
+        </div>
+
         <Field label="name">
             <Input name="name" id="name" placeholder="Your first name" v-model="value.name" />
 
@@ -10,11 +18,12 @@
 
         <Field label="file">
             <media-library-attachment
+                ref="mediacomponent"
                 name="media"
                 :initial-value="value.media"
                 multiple
                 :upload-endpoint="uploadEndpoint"
-                :validation="{ accept: ['image/png', 'image/jpeg'] }"
+                :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                 :validation-errors="validationErrors"
                 @change="onChange"
             ></media-library-attachment>
@@ -41,18 +50,25 @@ export default {
         },
 
         onSubmit() {
+            this.isUploadSuccess = false;
+            this.validationErrors = {};
+
             axios
                 .post('', this.value)
                 .then(res => {
                     if (res.data.success) {
-                        this.validationErrors = {};
-                        console.log('top!');
-                        // TODO: show flash message
+                        this.isUploadSuccess = true;
+                        this.value = { name: '', media: {} };
+
+                        this.$refs.mediacomponent.mediaLibrary.changeState(state => {
+                            state.media = [];
+                        });
                     }
                 })
-                .catch(errors => {
-                    this.validationErrors = errors.response.data.errors;
-                    // TODO: show flash message
+                .catch(error => {
+                    if (error && error.response && error.response.data) {
+                        this.validationErrors = error.response.data.errors;
+                    }
                 });
         },
     },
@@ -63,9 +79,9 @@ export default {
                 name: '',
                 media: {},
             },
-            validationErrors: window.errors,
+            validationErrors: {},
             uploadEndpoint: window.uploadEndpoint,
-            csrfToken: window.csrfToken,
+            isUploadSuccess: false,
         };
     },
 };
