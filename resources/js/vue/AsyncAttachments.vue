@@ -37,7 +37,7 @@
                 ></media-library-attachment>
             </Field>
 
-            <Button type="button" @click="onSubmit">Submit</Button>
+            <Button type="button" @click="onSubmit" dusk="submit">Submit</Button>
         </Grid>
     </div>
 </template>
