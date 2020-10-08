@@ -15,7 +15,7 @@ class StoreVueCollectionRequest extends FormRequest
             'name' => 'required',
             'images' => [$this->validateMultipleMedia()
                 ->maxItems(3)
-                ->attribute('name', 'required'),
+                ->itemName('required'),
             ],
             'downloads' => [$this->validateMultipleMedia()
                 ->maxItems(3)

@@ -15,7 +15,7 @@ class StoreVueCollectionCustomPropertyRequest extends FormRequest
             'name' => 'required',
             'images' => [$this->validateMultipleMedia()
                 ->maxItems(3)
-                ->attribute('name', 'required|max:30')
+                ->itemName('required|max:30')
                 ->customProperty('extra_field', 'required|max:30'),
             ],
         ];
