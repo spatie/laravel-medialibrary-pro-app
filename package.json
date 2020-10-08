@@ -8,7 +8,7 @@
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "setup-php": "cd .. && git clone git@github.com:spatie/laravel-medialibrary-pro.git ; cd laravel-medialibrary-pro && git pull origin master && composer install && cd .. && git clone git@github.com:spatie/laravel-medialibrary.git ; cd laravel-medialibrary && git pull origin pro && git checkout pro && composer install",
+        "setup-php": "cd .. && git clone git@github.com:spatie/laravel-medialibrary-pro.git ; cd laravel-medialibrary-pro && git pull origin master && composer install && cd .. && git clone git@github.com:spatie/laravel-medialibrary.git ; cd laravel-medialibrary && git pull origin v9 && git checkout v9 && composer install",
         "setup": "yarn setup-php && composer install && yarn && yarn watch"
     },
     "dependencies": {
