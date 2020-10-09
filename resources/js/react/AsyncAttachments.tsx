@@ -1,6 +1,7 @@
 import * as React from 'react';
-import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment/dist';
+import { MediaLibraryAttachment } from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment';
 import { MediaLibrary } from 'medialibrary-pro-core/dist/types';
+import { MediaLibrary as MediaLibraryClass } from 'medialibrary-pro-core/dist';
 import PageTitle from './components/PageTitle';
 import Button from './components/Button';
 import Field from './components/Field';
@@ -8,7 +9,6 @@ import Grid from './components/Grid';
 import ErrorMessage from './components/ErrorMessage';
 import Input from './components/Input';
 import Axios from 'axios';
-import MediaLibraryClass from 'medialibrary-pro-core/dist';
 
 export default function AsyncAttachments() {
     const [value, setValue] = React.useState<{

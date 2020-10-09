@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MediaLibraryCollection from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection/dist';
+import { MediaLibraryCollection } from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-collection';
 import PageTitle from './components/PageTitle';
 import Grid from './components/Grid';
 import Csrf from './components/Csrf';

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import MediaLibraryAttachment from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment/dist';
+import { MediaLibraryAttachment } from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-react-attachment';
 import PageTitle from './components/PageTitle';
 import Field from './components/Field';
 import Grid from './components/Grid';
