@@ -84,5 +84,5 @@ Route::prefix('livewire')->group(function () {
 });
 
 
-Route::mediaLibraryUploads('temp-upload');
+Route::temporaryUploads('temp-upload');
 Route::mediaLibraryS3Uploads('post-s3-upload');
