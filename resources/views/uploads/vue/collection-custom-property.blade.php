@@ -19,14 +19,14 @@
         <x-field label="name">
             <x-input id="name" name="name" placeholder="Your first name" value="{{ old('name', $formSubmission->name) }}" />
         </x-field>
-            
+
         <x-field label="images">
             <media-library-collection
                 name="images"
-                :initial-value="window.oldValues.images || window.initialValues.images"
-                upload-endpoint="/temp-upload"
+                :initial-value="{{ $images }}"
+                upload-endpoint="{{ route('media-library-temporary-uploads') }}"
                 :validation="{ accept: ['image/png', 'image/jpeg'] }"
-                :validation-errors="window.errors"
+                :validation-errors="{{ $errors }}"
                 :max-items="3"
             >
                 <template
@@ -76,5 +76,3 @@
 </form>
 
 @endsection
-
-<!--  -->

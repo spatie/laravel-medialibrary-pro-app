@@ -21,7 +21,7 @@
                 name="media"
                 upload-endpoint="/temp-upload"
                 :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
-                :validation-errors="window.errors"
+                :validation-errors="{{ $errors }}"
                 :initial-value="{{ json_encode(old('media')) }}"
             />
         </x-field>

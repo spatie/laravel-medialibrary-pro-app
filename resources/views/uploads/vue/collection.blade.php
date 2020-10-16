@@ -24,8 +24,8 @@
         <x-field label="images">
             <media-library-collection
                 name="images"
-                :initial-value="window.oldValues.images || window.initialValues.images"
-                upload-endpoint="/temp-upload"
+                :initial-value="{{ $images }}"
+                upload-endpoint="{{ route('media-library-temporary-uploads') }}"
                 :validation="{ accept: ['image/png', 'image/jpeg'] }"
                 :validation-errors="window.errors"
                 :max-items="3"
@@ -35,8 +35,8 @@
         <x-field label="downloads">
             <media-library-collection
                 name="downloads"
-                :initial-value="window.oldValues.downloads || window.initialValues.downloads"
-                upload-endpoint="/temp-upload"
+                :initial-value="{{ $downloads }}"
+                upload-endpoint="{{ route('media-library-temporary-uploads') }}"
                 :validation="{ accept: ['application/pdf'] }"
                 :validation-errors="window.errors"
                 :max-items="2"
