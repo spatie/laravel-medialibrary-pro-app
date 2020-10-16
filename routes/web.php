@@ -84,6 +84,5 @@ Route::prefix('livewire')->group(function () {
 });
 
 
-// medialibrary pro
-Route::post('temp-upload', MediaLibraryUploadController::class);
-Route::post('post-s3-upload', MediaLibraryS3UploadController::class);
+Route::mediaLibraryUploads('temp-upload');
+Route::mediaLibraryS3Uploads('post-s3-upload');
