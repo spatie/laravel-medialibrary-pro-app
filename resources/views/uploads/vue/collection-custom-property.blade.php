@@ -25,7 +25,7 @@
                 name="images"
                 :initial-value="{{ $images }}"
                 upload-endpoint="{{ route('media-library-temporary-uploads') }}"
-                :validation="{ accept: ['image/png', 'image/jpeg'] }"
+                :validation-rules="{ accept: ['image/png', 'image/jpeg'] }"
                 :validation-errors="{{ $errors }}"
                 :max-items="3"
             >

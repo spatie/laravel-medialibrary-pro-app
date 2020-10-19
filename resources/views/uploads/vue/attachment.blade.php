@@ -20,7 +20,7 @@
             <media-library-attachment
                 name="media"
                 upload-endpoint="/temp-upload"
-                :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
+                :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                 :validation-errors="{{ $errors }}"
                 :initial-value="{{ json_encode(old('media')) }}"
             />

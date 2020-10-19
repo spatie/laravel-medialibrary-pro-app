@@ -32,7 +32,7 @@ export default function CollectionCustomProperty() {
                             name="images"
                             initialValue={window.oldValues.images || window.initialValues.images || {}}
                             uploadEndpoint={window.uploadEndpoint}
-                            validation={{ accept: ['image/png', 'image/jpeg'] }}
+                            validationRules={{ accept: ['image/png', 'image/jpeg'] }}
                             validationErrors={window.errors}
                             maxItems={3}
                             fieldsView={({

@@ -30,7 +30,7 @@
                     name="media"
                     :initial-value="value.media"
                     :upload-endpoint="uploadEndpoint"
-                    :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
+                    :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                     :validation-errors="validationErrors"
                     multiple
                     @change="onChange"

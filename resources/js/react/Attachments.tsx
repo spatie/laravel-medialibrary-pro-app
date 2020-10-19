@@ -26,7 +26,7 @@ export default function Attachments() {
                         name="media"
                         initialValue={window.oldValues.media}
                         uploadEndpoint="/temp-upload"
-                        validation={{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }}
+                        validationRules={{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }}
                         validationErrors={window.errors}
                         multiple
                     />

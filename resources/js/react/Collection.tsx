@@ -32,7 +32,7 @@ export default function Collection() {
                             name="images"
                             initialValue={window.oldValues.images || window.initialValues.images || {}}
                             uploadEndpoint={window.uploadEndpoint}
-                            validation={{ accept: ['image/png', 'image/jpeg'] }}
+                            validationRules={{ accept: ['image/png', 'image/jpeg'] }}
                             validationErrors={window.errors}
                             maxItems={3}
                         ></MediaLibraryCollection>
@@ -43,7 +43,7 @@ export default function Collection() {
                             name="downloads"
                             initialValue={window.oldValues.downloads || window.initialValues.downloads || {}}
                             uploadEndpoint={window.uploadEndpoint}
-                            validation={{ accept: ['application/pdf'] }}
+                            validationRules={{ accept: ['application/pdf'] }}
                             validationErrors={window.errors}
                             maxItems={2}
                         ></MediaLibraryCollection>

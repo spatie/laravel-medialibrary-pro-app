@@ -26,7 +26,7 @@
                 name="images"
                 :initial-value="{{ $images }}"
                 upload-endpoint="{{ route('media-library-temporary-uploads') }}"
-                :validation="{ accept: ['image/png', 'image/jpeg'] }"
+                :validation-rules="{ accept: ['image/png', 'image/jpeg'] }"
                 :validation-errors="window.errors"
                 :max-items="3"
             />
@@ -37,7 +37,7 @@
                 name="downloads"
                 :initial-value="{{ $downloads }}"
                 upload-endpoint="{{ route('media-library-temporary-uploads') }}"
-                :validation="{ accept: ['application/pdf'] }"
+                :validation-rules="{ accept: ['application/pdf'] }"
                 :validation-errors="window.errors"
                 :max-items="2"
             />

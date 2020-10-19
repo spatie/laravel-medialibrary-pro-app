@@ -22,7 +22,7 @@
                 :initial-value="{{ $media }}"
                 upload-endpoint="{{ route('media-library-temporary-uploads') }}"
                 :validation-errors="{{ $errors }}"
-                :validation="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
+                :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                 multiple
             ></media-library-attachment>
         </x-field>
