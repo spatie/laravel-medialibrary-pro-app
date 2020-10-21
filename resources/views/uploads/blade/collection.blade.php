@@ -9,7 +9,8 @@
             @csrf
 
             <x-field label="name">
-                <x-input id="name" name="name" placeholder="Your first name" value="{{ old('name', $formSubmission->name) }}"  />
+                <x-input id="name" name="name" autocomplete="off" placeholder="Your name"
+                         value="{{ old('name', $formSubmission->name) }}"/>
             </x-field>
 
             <x-field label="Images">

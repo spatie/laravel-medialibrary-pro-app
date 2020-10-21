@@ -9,11 +9,11 @@
             @csrf
 
             <x-field label="name">
-                <x-input id="name" name="name" placeholder="Your first name" />
+                <x-input autocomplete="off" id="name" name="name" placeholder="Your first name"/>
             </x-field>
 
             <x-field label="file">
-                <x-media-library-attachment name="media" rules="mimes:png,jpeg,pdf" />
+                <x-media-library-attachment name="media" rules="mimes:png,jpeg,pdf"/>
             </x-field>
 
             <x-button dusk="submit">Submit</x-button>
