@@ -22,17 +22,6 @@
                 />
             </x-field>
 
-            <x-field label="Downloads">
-                <x-media-library-collection
-                    name="downloads"
-                    :model="$formSubmission"
-                    collection="downloads"
-                    rules="mimes:pdf"
-                    max-items="2"
-                    props-view="uploads.livewire.partials.custom-properties"
-                />
-            </x-field>
-
             <x-button dusk="submit" type="submit">Submit</x-button>
         </x-grid>
     </form>
