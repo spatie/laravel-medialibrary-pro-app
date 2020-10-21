@@ -24,10 +24,6 @@ class BladeCollectionController
             ->syncFromMediaLibraryRequest($request->images)
             ->toMediaCollection('images');
 
-        $formSubmission
-            ->syncFromMediaLibraryRequest($request->downloads)
-            ->toMediaCollection('downloads');
-
         $formSubmission->name = $request->name;
         $formSubmission->save();
 
