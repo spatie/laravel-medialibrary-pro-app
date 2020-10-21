@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -12,19 +13,37 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/vue/app.js', 'public/js/vue')
+    .vue({ version: 2 })
     .ts('resources/js/react/app.tsx', 'public/js/react')
+    .react()
     .js('resources/js/vapor/app.js', 'public/js/vapor');
 
-// Needed for local development with React as external library in medialibrary-pro-react
-mix.webpackConfig({
-    resolve: {
+mix.override((webpackConfig) => {
+    webpackConfig.watchOptions = {
+        ignored: [],
+    };
+
+    webpackConfig.resolve.symlinks = false;
+
+    webpackConfig.resolve.alias = {
+        ...webpackConfig.resolve.alias,
+        react: path.resolve('./node_modules/react'),
+        vue: path.resolve('./node_modules/vue'),
+    };
+
+    webpackConfig.resolve.modules = [`${__dirname}/vendor/spatie/laravel-medialibrary-pro/ui`, 'node_modules'];
+
+    /* webpackConfig.resolve = {
+        ...webpackConfig.resolve,
         symlinks: false,
         alias: {
             react: path.resolve('./node_modules/react'),
             vue: path.resolve('./node_modules/vue'),
         },
         modules: [`${__dirname}/vendor/spatie/laravel-medialibrary-pro/ui`, 'node_modules'],
-    },
+    }; */
+
+    webpackConfig.resolve.extensions.push('.ts', '.tsx');
 });
 
 mix.postCss('resources/css/main.css', 'public/css', [require('tailwindcss')]);

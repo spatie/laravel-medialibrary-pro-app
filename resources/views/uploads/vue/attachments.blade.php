@@ -19,7 +19,7 @@
         <x-field label="files">
             <media-library-attachment
                 name="media"
-                :initial-value="{{ $media }}"
+                :initial-value="{{ json_encode(old('media')) }}"
                 upload-endpoint="{{ route('media-library-temporary-uploads') }}"
                 :validation-errors="{{ $errors }}"
                 :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
