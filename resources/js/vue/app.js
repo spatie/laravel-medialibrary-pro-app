@@ -1,6 +1,7 @@
 require('../bootstrap');
 
-import Vue from 'vue';
+// Vue 2
+/* import Vue from 'vue';
 
 import AsyncAttachments from './AsyncAttachments.vue';
 
@@ -15,4 +16,19 @@ new Vue({
     data: () => ({
         window,
     }),
-});
+}); */
+
+import { createApp } from 'vue';
+import { MediaLibraryAttachment } from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-attachment';
+
+const App = {
+    components: { MediaLibraryAttachment },
+
+    data() {
+        return {
+            window,
+        };
+    },
+};
+
+createApp(App).mount('#app');
