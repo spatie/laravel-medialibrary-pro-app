@@ -15,7 +15,7 @@ class StoreBladeCollectionRequest extends FormRequest
             'name' => 'required',
             'images' => [$this->validateMultipleMedia()
                 ->maxItems(3)
-                ->itemName('required|max:3'),
+                ->itemName('required'),
             ],
 
             'downloads' => [$this->validateMultipleMedia()
