@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Livewire;
+namespace App\Http\Controllers\Blade;
 
-use App\Http\Requests\Livewire\StoreLivewireAttachmentRequest;
+use App\Http\Requests\StoreSingleAttachmentRequest;
 use App\Models\FormSubmission;
 
-class LivewireAttachmentController
+class BladeVaporController
 {
     public function create()
     {
-        return view('uploads.livewire.attachment');
+        return view('uploads.blade.attachment');
     }
 
-    public function store(StoreLivewireAttachmentRequest $request)
+    public function store(StoreSingleAttachmentRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
@@ -21,7 +21,7 @@ class LivewireAttachmentController
 
         $formSubmission
             ->addFromMediaLibraryRequest($request->media)
-            ->toMediaCollection('images');
+            ->toMediaCollection('images', 's3');
 
         flash()->success('Your form has been submitted');
 

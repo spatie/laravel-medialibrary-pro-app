@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Livewire\LivewireVaporController;
-use App\Http\Controllers\Livewire\LivewireAttachmentsController;
-use App\Http\Controllers\Livewire\LivewireCollectionController;
-use App\Http\Controllers\Livewire\LivewireAttachmentController;
-use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
+use App\Http\Controllers\Blade\BladeVaporController;
+use App\Http\Controllers\Blade\BladeAttachmentsController;
+use App\Http\Controllers\Blade\BladeCollectionController;
+use App\Http\Controllers\Blade\BladeAttachmentController;
+use App\Http\Controllers\Blade\BladeCollectionCustomPropertyController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactAsyncAttachmentsController;
@@ -66,21 +66,21 @@ Route::prefix('react')->group(function () {
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
-Route::prefix('livewire')->group(function () {
-    Route::get('single', [LivewireAttachmentController::class, 'create'])->name('livewire.attachment');
-    Route::post('single', [LivewireAttachmentController::class, 'store']);
+Route::prefix('blade')->group(function () {
+    Route::get('single', [BladeAttachmentController::class, 'create'])->name('blade.attachment');
+    Route::post('single', [BladeAttachmentController::class, 'store']);
 
-    Route::get('multiple', [LivewireAttachmentsController::class, 'create'])->name('livewire.attachments');
-    Route::post('multiple', [LivewireAttachmentsController::class, 'store']);
+    Route::get('multiple', [BladeAttachmentsController::class, 'create'])->name('blade.attachments');
+    Route::post('multiple', [BladeAttachmentsController::class, 'store']);
 
-    Route::get('collection', [LivewireCollectionController::class, 'create'])->name('livewire.collection');
-    Route::post('collection', [LivewireCollectionController::class, 'store']);
+    Route::get('collection', [BladeCollectionController::class, 'create'])->name('blade.collection');
+    Route::post('collection', [BladeCollectionController::class, 'store']);
 
-    Route::get('collection-custom-property', [LivewireCollectionCustomPropertyController::class, 'create'])->name('livewire.collection-custom-property');
-    Route::post('collection-custom-property', [LivewireCollectionCustomPropertyController::class, 'store']);
+    Route::get('collection-custom-property', [BladeCollectionCustomPropertyController::class, 'create'])->name('blade.collection-custom-property');
+    Route::post('collection-custom-property', [BladeCollectionCustomPropertyController::class, 'store']);
 
-    Route::get('vapor', [LivewireVaporController::class, 'create'])->name('livewire.vapor');
-    Route::post('vapor', [LivewireVaporController::class, 'store']);
+    Route::get('vapor', [BladeVaporController::class, 'create'])->name('blade.vapor');
+    Route::post('vapor', [BladeVaporController::class, 'store']);
 });
 
 

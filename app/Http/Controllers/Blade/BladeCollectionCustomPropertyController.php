@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Livewire;
+namespace App\Http\Controllers\Blade;
 
-use App\Http\Requests\Livewire\StoreLivewireCollectionCustomPropertyRequest;
+use App\Http\Requests\Blade\StoreBladeCollectionCustomPropertyRequest;
 use App\Models\FormSubmission;
 
-class LivewireCollectionCustomPropertyController
+class BladeCollectionCustomPropertyController
 {
     public function create()
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
 
-        return view('uploads.livewire.collection-custom-property', compact('formSubmission'));
+        return view('uploads.blade.collection-custom-property', compact('formSubmission'));
     }
 
-    public function store(StoreLivewireCollectionCustomPropertyRequest $request)
+    public function store(StoreBladeCollectionCustomPropertyRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::first();

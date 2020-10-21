@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Livewire;
+namespace App\Http\Requests\Blade;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
-class StoreLivewireAttachmentsRequest extends FormRequest
+class StoreBladeAttachmentRequest extends FormRequest
 {
     use ValidatesMedia;
 
@@ -13,11 +13,9 @@ class StoreLivewireAttachmentsRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'media' => ['required', $this->validateMultipleMedia()
-                ->minItems(2)
-                ->maxItems(3)
+            'media' => ['required', $this->validateSingleMedia()
                 ->minSizeInKb(300)
-                ->maxTotalSizeInKb(3072),
+                ->maxItemSizeInKb(2000),
             ],
         ];
     }

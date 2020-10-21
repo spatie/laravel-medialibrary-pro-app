@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Requests\Livewire;
+namespace App\Http\Requests\Blade;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
-class StoreLivewireCollectionRequest extends FormRequest
+class StoreBladeCollectionRequest extends FormRequest
 {
     use ValidatesMedia;
 

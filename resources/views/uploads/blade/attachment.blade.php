@@ -1,8 +1,8 @@
-@extends('layouts.master', ['pageTitle' => 'Livewire: attachment'])
+@extends('layouts.master', ['pageTitle' => 'Blade: attachment'])
 
 @section('content')
 
-    <x-h2>Livewire: attachment</x-h2>
+    <x-h2>Blade: attachment</x-h2>
 
     <form method="POST">
         <x-grid>

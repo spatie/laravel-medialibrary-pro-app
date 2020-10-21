@@ -1,8 +1,8 @@
-@extends('layouts.master', ['pageTitle' => 'Livewire: multiple attachments'])
+@extends('layouts.master', ['pageTitle' => 'Blade: multiple attachments'])
 
 @section('content')
 
-    <x-h2>Livewire: multiple attachments</x-h2>
+    <x-h2>Blade: multiple attachments</x-h2>
 
     <form method="POST">
         <x-grid>

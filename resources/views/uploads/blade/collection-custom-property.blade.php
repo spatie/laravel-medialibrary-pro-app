@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <x-h2>Livewire: collection with custom property</x-h2>
+    <x-h2>Blade: collection with custom property</x-h2>
 
     <form method="POST">
         <x-grid>
@@ -19,7 +19,7 @@
                     collection="images"
                     max-items="3"
                     rules="mimes:png,jpeg"
-                    fields-view="uploads.livewire.partials.custom-properties"
+                    fields-view="uploads.blade.partials.custom-properties"
                 />
             </x-field>
 

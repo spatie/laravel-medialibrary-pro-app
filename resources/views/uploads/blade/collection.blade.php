@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <x-h2>Livewire: collection</x-h2>
+    <x-h2>Blade: collection</x-h2>
 
     <form method="POST">
         <x-grid>

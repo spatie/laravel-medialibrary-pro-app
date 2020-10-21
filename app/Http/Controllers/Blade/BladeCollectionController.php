@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Livewire;
+namespace App\Http\Controllers\Blade;
 
-use App\Http\Requests\Livewire\StoreLivewireCollectionRequest;
+use App\Http\Requests\Blade\StoreBladeCollectionRequest;
 use App\Models\FormSubmission;
 
-class LivewireCollectionController
+class BladeCollectionController
 {
     public function create()
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
 
-        return view('uploads.livewire.collection', compact('formSubmission'));
+        return view('uploads.blade.collection', compact('formSubmission'));
     }
 
-    public function store(StoreLivewireCollectionRequest $request)
+    public function store(StoreBladeCollectionRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::first();
