@@ -17,11 +17,6 @@ class StoreBladeCollectionRequest extends FormRequest
                 ->maxItems(3)
                 ->itemName('required'),
             ],
-
-            'downloads' => [$this->validateMultipleMedia()
-                ->maxItems(3)
-                ->maxTotalSizeInKb(2048),
-            ],
         ];
     }
 }
