@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\Blade\BladeAttachmentController;
 use App\Http\Controllers\Blade\BladeVaporController;
 use App\Http\Controllers\Blade\BladeAttachmentsController;
 use App\Http\Controllers\Blade\BladeCollectionController;
-use App\Http\Controllers\Blade\BladeAttachmentController;
+use App\Http\Controllers\Blade\TraditionalAttachmentController;
 use App\Http\Controllers\Blade\BladeCollectionCustomPropertyController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
@@ -11,6 +12,7 @@ use App\Http\Controllers\React\ReactAsyncAttachmentsController;
 use App\Http\Controllers\React\ReactAttachmentController;
 use App\Http\Controllers\React\ReactVaporController;
 use App\Http\Controllers\React\ReactCollectionCustomPropertyController;
+use App\Http\Controllers\Traditional\TraditionalUploadController;
 use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueAttachmentsController;
 use App\Http\Controllers\Vue\VueAttachmentController;
@@ -65,6 +67,9 @@ Route::prefix('react')->group(function () {
 });
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
+
+Route::get('traditional-upload', [TraditionalUploadController::class, 'create']);
+Route::post('traditional-upload', [TraditionalUploadController::class, 'store']);
 
 Route::prefix('blade')->group(function () {
     Route::get('single', [BladeAttachmentController::class, 'create'])->name('blade.attachment');
