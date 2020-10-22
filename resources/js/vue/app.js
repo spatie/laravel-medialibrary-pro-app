@@ -19,10 +19,13 @@ new Vue({
 }); */
 
 import { createApp } from 'vue';
+
+import AsyncAttachments from './AsyncAttachments.vue';
 import { MediaLibraryAttachment } from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-attachment';
+import { MediaLibraryCollection } from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-collection';
 
 const App = {
-    components: { MediaLibraryAttachment },
+    components: { AsyncAttachments, MediaLibraryAttachment, MediaLibraryCollection },
 
     data() {
         return {

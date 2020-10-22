@@ -1,7 +1,6 @@
 <template>
     <button
         v-bind="$attrs"
-        v-on="$listeners"
         class="group flex items-center pl-6 h-10 bg-red-500 hover:bg-red-600 text-white font-bold text-xs uppercase tracking-widest shadow-md hover:shadow"
     >
         <slot></slot>

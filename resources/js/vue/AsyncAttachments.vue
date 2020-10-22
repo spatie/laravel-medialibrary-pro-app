@@ -17,7 +17,7 @@
 
         <Grid>
             <Field label="name">
-                <Input name="name" id="name" placeholder="Your first name" v-model="value.name" />
+                <Input name="name" id="name" placeholder="Your first name" :value="value.name" @input="value.name = $event.target.value" />
 
                 <error-message v-if="validationErrors && validationErrors.name">{{
                     validationErrors.name[0]
