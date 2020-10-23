@@ -12,10 +12,11 @@ const path = require('path');
  |
  */
 
-mix.js('resources/js/vue/app.js', 'public/js/vue')
-    .vue({ version: 2 })
-    .ts('resources/js/react/app.tsx', 'public/js/react')
-    .react()
+mix
+    //.js('resources/js/vue/app.js', 'public/js/vue')
+    //.vue({ version: 2 })
+    //.ts('resources/js/react/app.tsx', 'public/js/react')
+    //.react()
     .js('resources/js/vapor/app.js', 'public/js/vapor');
 
 mix.override((webpackConfig) => {
