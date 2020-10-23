@@ -35,7 +35,7 @@
 @endpush
 
 @section('content')
-    <x-h2> Medialibrary on Vapor test</x-h2>
+    <x-h2>Media Library on Vapor test</x-h2>
 
 
     <x-field label="file">
