@@ -5,6 +5,8 @@
 
     <script>
         function uploadToS3() {
+            console.log('uploading',document.getElementById('file').files[0])
+
             Vapor.store(document.getElementById('file').files[0], {
                 progress: progress => {
                     this.uploadProgress = Math.round(progress * 100);
