@@ -1,7 +1,7 @@
 @extends('layouts.master', ['pageTitle' => 'React: collection with custom property'])
 
 @push('scripts')
-    <script defer src="/js/react/app.js"></script>
+    <script defer src="{{ asset('js/react/app.js') }}"></script>
     <script>
         window.initialValues = {};
         window.initialValues.images = {{ $images }};

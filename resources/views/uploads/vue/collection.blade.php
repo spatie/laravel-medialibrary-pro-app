@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @push('scripts')
-<script defer src="/js/vue/app.js"></script>
+<script defer src="{{ asset('js/vue/app.js') }}"></script>
 <script>
     window.initialValues = {};
     window.initialValues.images = {{ $images }};
