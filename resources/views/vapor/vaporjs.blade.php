@@ -4,7 +4,8 @@
     <script src="{{ asset('js/vapor/app.js') }}"></script>
     <ul>
         <li>{{ auth()->check() ? 'logged in' : 'anon' }}</li>
-        <li>{{ config('media-library.disk_name') }}</li>
+        <li>Media Library Disk: {{ config('media-library.disk_name') }}</li>
+        <li>Filesystems default: {{ config('filesystems.default') }}</li>
     </ul>
     <script>
         function uploadToS3() {
