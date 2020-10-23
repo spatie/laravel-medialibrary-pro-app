@@ -2,7 +2,7 @@
 
 @push('scripts')
     <script src="{{ asset('js/vapor/app.js') }}"></script>
-
+{{ auth()->check() ? 'logged in' : 'anon' }}
     <script>
         function uploadToS3() {
             console.log('uploading',document.getElementById('file').files[0])

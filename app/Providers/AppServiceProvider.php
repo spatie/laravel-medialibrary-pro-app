@@ -10,9 +10,9 @@ class AppServiceProvider extends ServiceProvider
 {
     public function boot() {
 
-
+        //auth()->logout();
         if ($user = User::find(1)) {
-           // auth()->login($user);
+           //auth()->login($user);
         }
     }
 
