@@ -48,7 +48,7 @@
                     c7.6,0,13.8-6.2,13.8-13.8V346.1l-91.8-91.8C377.7,249.6,371.6,247.2,365.4,247.2"/>
             </svg>
             <h1 class="text-sm uppercase tracking-widest leading-tight font-medium">
-                Medialibrary
+                Media Library
                 <span class="text-red-500">Pro</span>
             </h1>
         </a>
