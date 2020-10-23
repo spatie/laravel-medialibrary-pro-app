@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @push('scripts')
-    <script src="{{ mix('js/vapor/app.js') }}"></script>
+    <script src="{{ asset('js/vapor/app.js') }}"></script>
 
     <script>
         function uploadToS3() {
