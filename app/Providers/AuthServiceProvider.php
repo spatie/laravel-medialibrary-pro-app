@@ -3,8 +3,9 @@
 namespace App\Providers;
 
 use App\Policies\UserPolicy;
-use App\User;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,6 +26,9 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        //
+
+        Gate::define('uploadFiles', function (User $user = null) {
+            return true;
+        });
     }
 }

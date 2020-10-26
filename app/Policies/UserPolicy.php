@@ -2,16 +2,13 @@
 
 namespace App\Policies;
 
-use App\User;
-use Illuminate\Auth\Access\HandlesAuthorization;
+use App\Models\User;
 
 class UserPolicy
 {
-    use HandlesAuthorization;
-
     public function uploadFiles(?User $user)
     {
-        ld('in uploadFiles');
+        ld('in uploadFiles method of policy');
         return true;
     }
 }

@@ -14,7 +14,6 @@ class StoreBladeAttachmentRequest extends FormRequest
         return [
             'name' => 'required',
             'media' => ['required', $this->validateSingleMedia()
-                ->minSizeInKb(300)
                 ->maxItemSizeInKb(3000),
             ],
         ];

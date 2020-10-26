@@ -10,7 +10,7 @@
     @stack('scripts')
 
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700" rel="stylesheet">
-    <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -48,7 +48,7 @@
                     c7.6,0,13.8-6.2,13.8-13.8V346.1l-91.8-91.8C377.7,249.6,371.6,247.2,365.4,247.2"/>
             </svg>
             <h1 class="text-sm uppercase tracking-widest leading-tight font-medium">
-                Medialibrary
+                Media Library
                 <span class="text-red-500">Pro</span>
             </h1>
         </a>

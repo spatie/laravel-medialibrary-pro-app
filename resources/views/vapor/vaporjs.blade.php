@@ -1,10 +1,16 @@
 @extends('layouts.master')
 
 @push('scripts')
-    <script src="{{ mix('js/vapor/app.js') }}"></script>
-
+    <script src="{{ asset('js/vapor/app.js') }}"></script>
+    <ul>
+        <li>{{ auth()->check() ? 'logged in' : 'anon' }}</li>
+        <li>Media Library Disk: {{ config('media-library.disk_name') }}</li>
+        <li>Filesystems default: {{ config('filesystems.default') }}</li>
+    </ul>
     <script>
         function uploadToS3() {
+            console.log('uploading', document.getElementById('file').files[0])
+
             Vapor.store(document.getElementById('file').files[0], {
                 progress: progress => {
                     this.uploadProgress = Math.round(progress * 100);
@@ -33,7 +39,7 @@
 @endpush
 
 @section('content')
-    <x-h2> Medialibrary on Vapor test</x-h2>
+    <x-h2>Media Library on Vapor test</x-h2>
 
 
     <x-field label="file">
