@@ -12,8 +12,7 @@ const path = require('path');
  |
  */
 
-mix
-    .js('resources/js/vue/app.js', 'public/js/vue')
+mix.js('resources/js/vue/app.js', 'public/js/vue')
     .vue({ version: 2 })
     .ts('resources/js/react/app.tsx', 'public/js/react')
     .react()
@@ -36,22 +35,20 @@ mix.override((webpackConfig) => {
 });
 
 if (mix.inProduction()) {
-    const ASSET_URL = process.env.ASSET_URL + "/";
+    const ASSET_URL = process.env.ASSET_URL + '/';
 
-    mix.webpackConfig(webpack => {
+    mix.webpackConfig((webpack) => {
         return {
             plugins: [
                 new webpack.DefinePlugin({
-                    "process.env.ASSET_PATH": JSON.stringify(ASSET_URL)
-                })
+                    'process.env.ASSET_PATH': JSON.stringify(ASSET_URL),
+                }),
             ],
             output: {
-                publicPath: ASSET_URL
-            }
+                publicPath: ASSET_URL,
+            },
         };
     });
-}
-else {
+} else {
     mix.postCss('resources/css/main.css', 'public/css', [require('tailwindcss')]);
 }
-
