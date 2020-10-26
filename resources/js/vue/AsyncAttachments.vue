@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { MediaLibraryAttachment } from '../../../vendor/spatie/laravel-medialibrary-pro/ui/medialibrary-pro-vue-attachment';
+import { MediaLibraryAttachment } from 'medialibrary-pro-vue3-attachment';
 import Button from './components/Button';
 import Field from './components/Field';
 import Input from './components/Input';
