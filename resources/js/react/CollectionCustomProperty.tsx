@@ -30,7 +30,7 @@ export default function CollectionCustomProperty() {
                     <Field label="Images">
                         <MediaLibraryCollection
                             name="images"
-                            initialValue={window.oldValues.images || window.initialValues.images || {}}
+                            initialValue={window.initialValues.images}
                             uploadEndpoint={window.uploadEndpoint}
                             validationRules={{ accept: ['image/png', 'image/jpeg'] }}
                             validationErrors={window.errors}

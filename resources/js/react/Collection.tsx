@@ -30,7 +30,7 @@ export default function Collection() {
                     <Field label="Images">
                         <MediaLibraryCollection
                             name="images"
-                            initialValue={window.oldValues.images || window.initialValues.images || {}}
+                            initialValue={window.initialValues.images}
                             uploadEndpoint={window.uploadEndpoint}
                             validationRules={{ accept: ['image/png', 'image/jpeg'] }}
                             validationErrors={window.errors}
@@ -41,7 +41,7 @@ export default function Collection() {
                     <Field label="Downloads">
                         <MediaLibraryCollection
                             name="downloads"
-                            initialValue={window.oldValues.downloads || window.initialValues.downloads || {}}
+                            initialValue={window.initialValues.downloads}
                             uploadEndpoint={window.uploadEndpoint}
                             validationRules={{ accept: ['application/pdf'] }}
                             validationErrors={window.errors}
