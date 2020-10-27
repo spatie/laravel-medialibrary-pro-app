@@ -32,10 +32,6 @@ jobs:
         run: composer install -n --prefer-dist
         env:
           COMPOSER_AUTH: ${{ secrets.COMPOSER_AUTH }}
-          DB_PASSWORD: root
-          DB_CONNECTION: mysql
-          DB_DATABASE: medialibrary_test
-          DB_HOST: 127.0.0.1
 
       - name: Prepare Laravel Application
         run: |
