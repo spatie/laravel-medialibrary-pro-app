@@ -1,5 +1,7 @@
 ## Laravel Media Library Pro Demo App
 
+![Dusk](https://github.com/spatie/laravel-medialibrary-pro-app/workflows/Dusk/badge.svg)
+
 This repo contains a Laravel project to demonstrate to possibilities of [Laravel Media Library Pro](https://medialibrary.pro).
 
 ## Getting started
