@@ -36,6 +36,8 @@ jobs:
       - name: Prepare Laravel Application
         run: |
           cp .env.example .env
+          rm phpunit.xml
+          cp phpunit.dusk.github.xml phpunit.xml
           cp phpunit.dusk.github.xml phpunit.dusk.xml
           php artisan key:generate
           php artisan dusk:chrome-driver 72
