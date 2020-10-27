@@ -27,9 +27,8 @@ class AttachmentsTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(800)
                 ->attach('@main-uploader', $this->getStubPath('purple.png'))
-                ->pause(800)
+                ->waitUntilMissing('.media-library-progress-wrap.media-library-progress-wrap-loading')
                 ->waitForText('Remove')
                 ->press('@submit')
                 ->waitForText('Your form has been submitted');

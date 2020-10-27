@@ -28,9 +28,8 @@ class AttachmentTest extends DuskTestCase
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Remove')
-                ->pause(50)
+                ->waitUntilMissing('.media-library-progress-wrap.media-library-progress-wrap-loading')
                 ->press('@submit')
-                ->pause(50)
                 ->assertSee('Your form has been submitted');
 
             $this->assertCount(1, FormSubmission::get());
@@ -51,14 +50,14 @@ class AttachmentTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Remove')
-                ->pause(100)
+                ->waitUntilMissing('.media-library-progress-wrap.media-library-progress-wrap-loading')
                 ->press('@submit');
 
             $this->assertCount(0, FormSubmission::all());
 
             $browser
                 ->assertSee('Please correct the errors in the form')
-                ->pause(200)
+                ->pause(100)
                 ->assertVisible('@thumb')
                 ->type('name', 'My name failing test')
                 ->press('@submit')
@@ -81,7 +80,7 @@ class AttachmentTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(800)
+                ->pause(200)
                 ->attach('@uploader', $this->getStubPath('data.json'))
                 ->pause(200)
                 ->assertSee('You must upload a file of type');
