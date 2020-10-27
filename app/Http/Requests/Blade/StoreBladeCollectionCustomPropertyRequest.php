@@ -11,8 +11,6 @@ class StoreBladeCollectionCustomPropertyRequest extends FormRequest
 
     public function rules()
     {
-        ld()->clear();
-
         return [
             'name' => 'required',
             'images' => [$this->validateMultipleMedia()
