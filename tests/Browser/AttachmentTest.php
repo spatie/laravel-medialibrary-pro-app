@@ -28,7 +28,9 @@ class AttachmentTest extends DuskTestCase
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Remove')
+                ->pause(50)
                 ->press('@submit')
+                ->pause(50)
                 ->assertSee('Your form has been submitted');
 
             $this->assertCount(1, FormSubmission::get());
@@ -49,12 +51,14 @@ class AttachmentTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Remove')
+                ->pause(100)
                 ->press('@submit');
 
             $this->assertCount(0, FormSubmission::all());
 
             $browser
                 ->assertSee('Please correct the errors in the form')
+                ->pause(200)
                 ->assertVisible('@thumb')
                 ->type('name', 'My name failing test')
                 ->press('@submit')
