@@ -80,7 +80,7 @@ class AttachmentTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(200)
+                ->pause(800)
                 ->attach('@uploader', $this->getStubPath('data.json'))
                 ->pause(200)
                 ->assertSee('You must upload a file of type');
