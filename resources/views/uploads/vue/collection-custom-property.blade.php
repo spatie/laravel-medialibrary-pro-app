@@ -2,10 +2,6 @@
 
 @push('scripts')
 <script defer src="{{ asset('js/vue/app.js') }}"></script>
-<script>
-    window.initialValues = {};
-    window.initialValues.images = {{ $images }};
-</script>
 @endpush
 
 @section('content')
@@ -29,17 +25,14 @@
                 :validation-errors="{{ $errors }}"
                 :max-items="3"
             >
-                <template
-                    slot="fieldsView"
-                    slot-scope="{
-                        getCustomPropertyInputProps,
-                        getCustomPropertyInputListeners,
-                        getCustomPropertyInputErrors,
-                        getNameInputProps,
-                        getNameInputListeners,
-                        getNameInputErrors,
-                    }"
-                >
+                <template #fields="{
+                    getCustomPropertyInputProps,
+                    getCustomPropertyInputListeners,
+                    getCustomPropertyInputErrors,
+                    getNameInputProps,
+                    getNameInputListeners,
+                    getNameInputErrors,
+                }">
                     <div class="media-library-properties">
                         <div class="media-library-field">
                             <label class="media-library-label">Name</label>

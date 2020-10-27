@@ -2,11 +2,6 @@
 
 @push('scripts')
 <script defer src="{{ asset('js/vue/app.js') }}"></script>
-<script>
-    window.initialValues = {};
-    window.initialValues.images = {{ $images }};
-    window.initialValues.downloads = {{ $downloads }};
-</script>
 @endpush
 
 @section('content')
