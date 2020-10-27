@@ -52,6 +52,8 @@ jobs:
       - name: Run Dusk
         run: |
           php artisan serve & php artisan dusk
+        env:
+          APP_URL: "http://127.0.0.1:8000"
 
       - name: Upload dusk console
         uses: actions/upload-artifact@v1
