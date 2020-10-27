@@ -3668,13 +3668,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "05a4a32217a785278cc136ed65c810253eadef37"
+                "reference": "e8b4774d02a5109aeb06ba2cef4d90cd698de5d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-05a4a32217a785278cc136ed65c810253eadef37-zip-4a4eb3.zip",
-                "reference": "05a4a32217a785278cc136ed65c810253eadef37",
-                "shasum": "8623c19019ef32620db336df02696f2be7728d24"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-e8b4774d02a5109aeb06ba2cef4d90cd698de5d9-zip-055c9d.zip",
+                "reference": "e8b4774d02a5109aeb06ba2cef4d90cd698de5d9",
+                "shasum": "d171b8dadafd37231498010fca9ed623fbadd5a3"
             },
             "require": {
                 "ext-json": "*",
@@ -3746,7 +3746,7 @@
                 "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/master",
                 "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
             },
-            "time": "2020-10-27T11:01:52+00:00"
+            "time": "2020-10-27T14:50:22+00:00"
         },
         {
             "name": "spatie/laravel-tail",
