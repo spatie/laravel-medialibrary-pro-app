@@ -113,11 +113,11 @@ class CollectionTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(500)
+                ->pause(800)
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(500)
+                ->pause(800)
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(500)
+                ->pause(800)
                 ->assertMissing('@main-uploader');
         });
     }
@@ -134,9 +134,9 @@ class CollectionTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->type('name', 'My name')
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
-                ->pause(500)
+                ->pause(800)
                 ->attach('@uploader', $this->getStubPath('logo.png'))
-                ->pause(200)
+                ->pause(800)
                 ->press('@submit');
 
             $this->assertEquals('logo.png', FormSubmission::first()->getFirstMedia('images')->file_name);
@@ -154,7 +154,7 @@ class CollectionTest extends DuskTestCase
             $browser
                 ->visit(route($routeName))
                 ->attach('@main-uploader', $this->getStubPath('test.pdf'))
-                ->pause(200)
+                ->pause(800)
                 ->assertSee('You must upload a file of type');
         });
     }
@@ -162,8 +162,8 @@ class CollectionTest extends DuskTestCase
     public function routeNames(): array
     {
         return [
-            ['vue.collection'],
-            ['react.collection'],
+           // ['vue.collection'],
+           // ['react.collection'],
             ['blade.collection'],
         ];
     }
