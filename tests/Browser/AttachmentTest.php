@@ -57,7 +57,7 @@ class AttachmentTest extends DuskTestCase
 
             $browser
                 ->assertSee('Please correct the errors in the form')
-                ->pause(100)
+                ->pause(800)
                 ->assertVisible('@thumb')
                 ->type('name', 'My name failing test')
                 ->press('@submit')
