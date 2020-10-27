@@ -40,13 +40,18 @@ jobs:
           cp phpunit.dusk.github.xml phpunit.xml
           cp phpunit.dusk.github.xml phpunit.dusk.xml
           php artisan key:generate
-          php artisan dusk:chrome-driver 72
           yarn
           yarn run dev
+
+      - name: Upgrade Chrome Driver
+        run: php artisan dusk:chrome-driver `/opt/google/chrome/chrome --version | cut -d " " -f3 | cut -d "." -f1`
 
       - name: Run Dusk
         run: |
           php artisan serve & php artisan dusk
+
+      - name: Start Chrome Driver
+        run: ./vendor/laravel/dusk/bin/chromedriver-linux &
 
       - name: Upload dusk console
         uses: actions/upload-artifact@v1
