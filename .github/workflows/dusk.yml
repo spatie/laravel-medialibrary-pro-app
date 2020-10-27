@@ -48,12 +48,14 @@ jobs:
 
       - name: Upload dusk console
         uses: actions/upload-artifact@v1
+        if: ${{ always() }}
         with:
           name: dusk-console
           path: tests/Browser/console
 
       - name: Upload dusk screenshots
         uses: actions/upload-artifact@v1
+        if: ${{ always() }}
         with:
           name: dusk-console
           path: tests/Browser/screenshots
