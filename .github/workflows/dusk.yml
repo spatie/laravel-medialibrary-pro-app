@@ -41,6 +41,8 @@ jobs:
           cp phpunit.dusk.github.xml phpunit.dusk.xml
           php artisan key:generate
           php artisan dusk:chrome-driver 72
+          yarn
+          yarn run dev
 
       - name: Run Dusk
         run: |
