@@ -164,7 +164,7 @@ class CollectionTest extends DuskTestCase
         return [
             ['vue.collection'],
             ['react.collection'],
-            ['livewire.collection'],
+            ['blade.collection'],
         ];
     }
 }

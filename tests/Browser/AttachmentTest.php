@@ -89,7 +89,7 @@ class AttachmentTest extends DuskTestCase
         return [
             ['vue.attachment'],
             ['react.attachment'],
-            ['livewire.attachment'],
+            ['blade.attachment'],
         ];
     }
 }

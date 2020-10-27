@@ -47,7 +47,7 @@ class CustomCollectionTest extends DuskTestCase
         return [
             ['vue.collection-custom-property'],
             ['react.collection-custom-property'],
-            ['livewire.collection-custom-property'],
+            ['blade.collection-custom-property'],
         ];
     }
 }
