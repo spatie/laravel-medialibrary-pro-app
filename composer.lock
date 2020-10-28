@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6108978e313cb1f7d2b49cfaa456e02e",
+    "content-hash": "de8c0e26892684840591ffeef47df2d6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3455,10 +3455,16 @@
         {
             "name": "spatie/laravel-medialibrary-pro",
             "version": "dev-master",
-            "dist": {
-                "type": "path",
-                "url": "../laravel-medialibrary-pro",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
                 "reference": "e3d78ed071b32f4cbc70a907e5f2dc8690c3bee0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-e3d78ed071b32f4cbc70a907e5f2dc8690c3bee0-zip-1b3274.zip",
+                "reference": "e3d78ed071b32f4cbc70a907e5f2dc8690c3bee0",
+                "shasum": "d20670e7cffcee73d43476ddffd0e5167c01dd64"
             },
             "require": {
                 "ext-json": "*",
@@ -3522,9 +3528,11 @@
                 "laravel-medialibrary-pro",
                 "spatie"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/master",
+                "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
+            },
+            "time": "2020-10-28T14:11:39+00:00"
         },
         {
             "name": "spatie/laravel-tail",
