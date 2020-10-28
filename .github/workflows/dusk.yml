@@ -36,7 +36,6 @@ jobs:
       - name: Prepare Laravel Application
         run: |
           cp .env.example .env
-          rm phpunit.xml
           php artisan key:generate
           yarn
           yarn run dev
