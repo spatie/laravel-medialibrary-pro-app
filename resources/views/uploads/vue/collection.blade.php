@@ -20,7 +20,7 @@
             <media-library-collection
                 name="images"
                 :initial-value="{{ $images }}"
-                upload-endpoint="{{ route('media-library-temporary-uploads') }}"
+                upload-endpoint="{{ route('media-library-uploads') }}"
                 :validation-rules="{ accept: ['image/png', 'image/jpeg'] }"
                 :validation-errors="window.errors"
                 :max-items="3"
@@ -31,7 +31,7 @@
             <media-library-collection
                 name="downloads"
                 :initial-value="{{ $downloads }}"
-                upload-endpoint="{{ route('media-library-temporary-uploads') }}"
+                upload-endpoint="{{ route('media-library-uploads') }}"
                 :validation-rules="{ accept: ['application/pdf'] }"
                 :validation-errors="window.errors"
                 :max-items="2"
