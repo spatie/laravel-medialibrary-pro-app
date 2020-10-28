@@ -20,7 +20,7 @@
             <media-library-attachment
                 name="media"
                 :initial-value="{{ json_encode(old('media')) }}"
-                upload-endpoint="{{ route('media-library-temporary-uploads') }}"
+                upload-endpoint="{{ route('media-library-uploads') }}"
                 :validation-errors="{{ $errors }}"
                 :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                 multiple
