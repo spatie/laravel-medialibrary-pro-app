@@ -60,7 +60,7 @@
         // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
         ,"baseUrl": "./",
         "paths" : {
-            "*" : ["vendor/spatie/laravel-medialibrary-pro/ui/*"]
+            "*" : ["vendor/spatie/laravel-medialibrary-pro/resources/js/*"]
         }
     },
     "exclude": ["vendor"],

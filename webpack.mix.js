@@ -18,7 +18,7 @@ mix.override((webpackConfig) => {
         vue: path.resolve('./node_modules/vue'),
     };
 
-    webpackConfig.resolve.modules = [`${__dirname}/vendor/spatie/laravel-medialibrary-pro/ui`, 'node_modules'];
+    webpackConfig.resolve.modules = [`${__dirname}/vendor/spatie/laravel-medialibrary-pro/resources/js`, 'node_modules'];
 
     webpackConfig.resolve.extensions.push('.ts', '.tsx');
 });
