@@ -37,7 +37,6 @@ jobs:
         run: |
           cp .env.example .env
           rm phpunit.xml
-          cp phpunit.dusk.github.xml phpunit.xml
           php artisan key:generate
           yarn
           yarn run dev
