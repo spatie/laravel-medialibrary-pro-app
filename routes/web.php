@@ -87,4 +87,4 @@ Route::prefix('blade')->group(function () {
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
 Route::temporaryUploads('temp-upload');
-Route::mediaLibraryS3Uploads('post-s3-upload');
+Route::mediaLibraryPostS3('post-s3-upload');
