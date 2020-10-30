@@ -83,7 +83,6 @@ export default function AsyncAttachments() {
                     <MediaLibraryAttachment
                         name="media"
                         initialValue={value.media}
-                        uploadEndpoint={window.uploadEndpoint}
                         validationRules={{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }}
                         validationErrors={validationErrors}
                         multiple

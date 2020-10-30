@@ -31,7 +31,6 @@ export default function Collection() {
                         <MediaLibraryCollection
                             name="images"
                             initialValue={window.initialValues.images}
-                            uploadEndpoint={window.uploadEndpoint}
                             validationRules={{ accept: ['image/png', 'image/jpeg'] }}
                             validationErrors={window.errors}
                             maxItems={3}
@@ -42,7 +41,6 @@ export default function Collection() {
                         <MediaLibraryCollection
                             name="downloads"
                             initialValue={window.initialValues.downloads}
-                            uploadEndpoint={window.uploadEndpoint}
                             validationRules={{ accept: ['application/pdf'] }}
                             validationErrors={window.errors}
                             maxItems={2}

@@ -32,7 +32,6 @@ export default function Attachment() {
                         <MediaLibraryAttachment
                             name="media"
                             initialValue={window.oldValues.media}
-                            uploadEndpoint={window.uploadEndpoint}
                             validationRules={{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }}
                             validationErrors={window.errors}
                         ></MediaLibraryAttachment>

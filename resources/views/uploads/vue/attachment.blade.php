@@ -19,7 +19,6 @@
         <x-field label="file">
             <media-library-attachment
                 name="media"
-                upload-endpoint="/temp-upload"
                 :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                 :validation-errors="{{ $errors }}"
                 :initial-value="{{ json_encode(old('media')) }}"

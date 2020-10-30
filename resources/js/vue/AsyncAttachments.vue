@@ -29,7 +29,6 @@
                     ref="mediaComponent"
                     name="media"
                     :initial-value="value.media"
-                    :upload-endpoint="uploadEndpoint"
                     :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                     :validation-errors="validationErrors"
                     multiple
@@ -92,7 +91,6 @@ export default {
                 media: {},
             },
             validationErrors: {},
-            uploadEndpoint: window.uploadEndpoint,
             isUploadSuccess: false,
         };
     },

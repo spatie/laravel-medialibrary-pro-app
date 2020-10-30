@@ -31,7 +31,6 @@ export default function CollectionCustomProperty() {
                         <MediaLibraryCollection
                             name="images"
                             initialValue={window.initialValues.images}
-                            uploadEndpoint={window.uploadEndpoint}
                             validationRules={{ accept: ['image/png', 'image/jpeg'] }}
                             validationErrors={window.errors}
                             maxItems={3}

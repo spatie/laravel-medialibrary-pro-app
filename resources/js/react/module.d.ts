@@ -10,6 +10,5 @@ interface Window {
     };
     initialValues: { [key: string]: { [uuid: string]: MediaAttributes } };
     errors: { [key: string]: Array<string> };
-    uploadEndpoint: string;
     csrfToken: string;
 }

@@ -20,7 +20,6 @@
             <media-library-collection
                 name="images"
                 :initial-value="{{ $images }}"
-                upload-endpoint="{{ route('media-library-uploads') }}"
                 :validation-rules="{ accept: ['image/png', 'image/jpeg'] }"
                 :validation-errors="{{ $errors }}"
                 :max-items="3"

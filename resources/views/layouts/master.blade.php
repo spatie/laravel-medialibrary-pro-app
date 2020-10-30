@@ -28,7 +28,6 @@
     <script>
         window.oldValues = @json(Session::getOldInput());
         window.errors = {!! $errors->isEmpty() ? '{}' : $errors !!};
-        window.uploadEndpoint = '/temp-upload';
         window.csrfToken = '{{ csrf_token() }}';
     </script>
 
