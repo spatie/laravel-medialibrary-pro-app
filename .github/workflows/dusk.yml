@@ -46,6 +46,9 @@ jobs:
       - name: Start Chrome Driver
         run: ./vendor/laravel/dusk/bin/chromedriver-linux &
 
+      - name: Install Dusk
+        run: php artisan dusk:install
+
       - name: Run Dusk
         run: |
           php artisan serve & php artisan dusk
