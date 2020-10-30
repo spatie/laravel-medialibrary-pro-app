@@ -168,4 +168,11 @@ return [
         'perform_conversions' => \Spatie\MediaLibrary\Conversions\Jobs\PerformConversionsJob::class,
         'generate_responsive_images' => \Spatie\MediaLibrary\ResponsiveImages\Jobs\GenerateResponsiveImagesJob::class,
     ],
+
+    /*
+     * When enabling this option, a route will be registered that will enable
+     * the Media Library Pro Vue and React components to move uploaded files
+     * in a S3 bucket to their right place.
+     */
+    'enable_vapor_uploads' => env('ENABLE_MEDIA_LIBRARY_VAPOR_UPLOADS', false),
 ];
