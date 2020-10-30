@@ -4,24 +4,24 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "de8c0e26892684840591ffeef47df2d6",
+    "content-hash": "9505ffd61d7647bbb8f916ba11abad88",
     "packages": [
         {
             "name": "asm89/stack-cors",
-            "version": "v2.0.1",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/asm89/stack-cors.git",
-                "reference": "23f469e81c65e2fb7fc7bce371fbdc363fe32adf"
+                "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/asm89/stack-cors/zipball/23f469e81c65e2fb7fc7bce371fbdc363fe32adf",
-                "reference": "23f469e81c65e2fb7fc7bce371fbdc363fe32adf",
+                "url": "https://api.github.com/repos/asm89/stack-cors/zipball/8d8f88b3b3830916be94292c1fbce84433efb1aa",
+                "reference": "8d8f88b3b3830916be94292c1fbce84433efb1aa",
                 "shasum": ""
             },
             "require": {
-                "php": "^7.0",
+                "php": "^7.0|^8.0",
                 "symfony/http-foundation": "~2.7|~3.0|~4.0|~5.0",
                 "symfony/http-kernel": "~2.7|~3.0|~4.0|~5.0"
             },
@@ -58,22 +58,22 @@
             ],
             "support": {
                 "issues": "https://github.com/asm89/stack-cors/issues",
-                "source": "https://github.com/asm89/stack-cors/tree/master"
+                "source": "https://github.com/asm89/stack-cors/tree/v2.0.2"
             },
-            "time": "2020-05-31T07:17:05+00:00"
+            "time": "2020-10-29T16:03:21+00:00"
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.158.16",
+            "version": "3.158.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "6e8fc20ff7bc21b28e80815a9818b6ca7928ae3a"
+                "reference": "086a504647f45d1166d18af2345684893ef43875"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/6e8fc20ff7bc21b28e80815a9818b6ca7928ae3a",
-                "reference": "6e8fc20ff7bc21b28e80815a9818b6ca7928ae3a",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/086a504647f45d1166d18af2345684893ef43875",
+                "reference": "086a504647f45d1166d18af2345684893ef43875",
                 "shasum": ""
             },
             "require": {
@@ -148,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.158.16"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.158.17"
             },
-            "time": "2020-10-28T20:19:05+00:00"
+            "time": "2020-10-29T18:16:24+00:00"
         },
         {
             "name": "brick/math",
@@ -1118,16 +1118,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.11.2",
+            "version": "v8.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "8d1f25fb8d124d5a24df9714ed8d481c43f9efe6"
+                "reference": "6707480c5f0db7aa07537f9ad93255b64b65b85e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/8d1f25fb8d124d5a24df9714ed8d481c43f9efe6",
-                "reference": "8d1f25fb8d124d5a24df9714ed8d481c43f9efe6",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/6707480c5f0db7aa07537f9ad93255b64b65b85e",
+                "reference": "6707480c5f0db7aa07537f9ad93255b64b65b85e",
                 "shasum": ""
             },
             "require": {
@@ -1142,7 +1142,7 @@
                 "monolog/monolog": "^2.0",
                 "nesbot/carbon": "^2.31",
                 "opis/closure": "^3.6",
-                "php": "^7.3",
+                "php": "^7.3|^8.0",
                 "psr/container": "^1.0",
                 "psr/simple-cache": "^1.0",
                 "ramsey/uuid": "^4.0",
@@ -1206,7 +1206,7 @@
                 "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
                 "league/flysystem-cached-adapter": "^1.0",
                 "mockery/mockery": "^1.4.2",
-                "orchestra/testbench-core": "^6.0",
+                "orchestra/testbench-core": "^6.5",
                 "pda/pheanstalk": "^4.0",
                 "phpunit/phpunit": "^8.5.8|^9.3.3",
                 "predis/predis": "^1.1.1",
@@ -1221,8 +1221,8 @@
                 "ext-pcntl": "Required to use all features of the queue worker.",
                 "ext-posix": "Required to use all features of the queue worker.",
                 "ext-redis": "Required to use the Redis cache and queue drivers (^4.0|^5.0).",
+                "fakerphp/faker": "Required to use the eloquent factory builder (^1.9.1).",
                 "filp/whoops": "Required for friendly error pages in development (^2.8).",
-                "fzaninotto/faker": "Required to use the eloquent factory builder (^1.9.1).",
                 "guzzlehttp/guzzle": "Required to use the HTTP Client, Mailgun mail driver and the ping methods on schedules (^6.5.5|^7.0.1).",
                 "laravel/tinker": "Required to use the tinker console command (^2.0).",
                 "league/flysystem-aws-s3-v3": "Required to use the Flysystem S3 driver (^1.0).",
@@ -1281,33 +1281,33 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-10-20T20:12:53+00:00"
+            "time": "2020-10-29T22:01:29+00:00"
         },
         {
             "name": "laravel/tinker",
-            "version": "v2.4.2",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/tinker.git",
-                "reference": "58424c24e8aec31c3a3ac54eb3adb15e8a0a067b"
+                "reference": "45884b526e10a88a1b179fa1a1a24d5468c668c2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/tinker/zipball/58424c24e8aec31c3a3ac54eb3adb15e8a0a067b",
-                "reference": "58424c24e8aec31c3a3ac54eb3adb15e8a0a067b",
+                "url": "https://api.github.com/repos/laravel/tinker/zipball/45884b526e10a88a1b179fa1a1a24d5468c668c2",
+                "reference": "45884b526e10a88a1b179fa1a1a24d5468c668c2",
                 "shasum": ""
             },
             "require": {
                 "illuminate/console": "^6.0|^7.0|^8.0",
                 "illuminate/contracts": "^6.0|^7.0|^8.0",
                 "illuminate/support": "^6.0|^7.0|^8.0",
-                "php": "^7.2",
-                "psy/psysh": "^0.10.3",
-                "symfony/var-dumper": "^4.3|^5.0"
+                "php": "^7.2.5|^8.0",
+                "psy/psysh": "^0.10.4",
+                "symfony/var-dumper": "^4.3.4|^5.0"
             },
             "require-dev": {
-                "mockery/mockery": "^1.3.1",
-                "phpunit/phpunit": "^8.4|^9.0"
+                "mockery/mockery": "~1.3.3|^1.4.2",
+                "phpunit/phpunit": "^8.5.8|^9.3.3"
             },
             "suggest": {
                 "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0)."
@@ -1347,9 +1347,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/tinker/issues",
-                "source": "https://github.com/laravel/tinker/tree/2.x"
+                "source": "https://github.com/laravel/tinker/tree/v2.5.0"
             },
-            "time": "2020-08-11T19:28:08+00:00"
+            "time": "2020-10-29T13:07:12+00:00"
         },
         {
             "name": "laravel/ui",
@@ -1412,16 +1412,16 @@
         },
         {
             "name": "laravel/vapor-cli",
-            "version": "v1.10.1",
+            "version": "v1.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/vapor-cli.git",
-                "reference": "b52af792d0a8d23c72021a37e4c165fc51cbe83b"
+                "reference": "af5720a702dba34b908d1cbc4cfc02f31847390a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/vapor-cli/zipball/b52af792d0a8d23c72021a37e4c165fc51cbe83b",
-                "reference": "b52af792d0a8d23c72021a37e4c165fc51cbe83b",
+                "url": "https://api.github.com/repos/laravel/vapor-cli/zipball/af5720a702dba34b908d1cbc4cfc02f31847390a",
+                "reference": "af5720a702dba34b908d1cbc4cfc02f31847390a",
                 "shasum": ""
             },
             "require": {
@@ -1473,22 +1473,22 @@
                 "vapor"
             ],
             "support": {
-                "source": "https://github.com/laravel/vapor-cli/tree/v1.10.1"
+                "source": "https://github.com/laravel/vapor-cli/tree/v1.10.2"
             },
-            "time": "2020-10-28T13:47:54+00:00"
+            "time": "2020-10-29T13:51:20+00:00"
         },
         {
             "name": "laravel/vapor-core",
-            "version": "v2.9.7",
+            "version": "v2.9.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/vapor-core.git",
-                "reference": "24bee0a7d72964145bc162a5f4f386affb5d56fb"
+                "reference": "b5d26feb0c7cc30fa2b6f402d4e91b5c93824819"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/vapor-core/zipball/24bee0a7d72964145bc162a5f4f386affb5d56fb",
-                "reference": "24bee0a7d72964145bc162a5f4f386affb5d56fb",
+                "url": "https://api.github.com/repos/laravel/vapor-core/zipball/b5d26feb0c7cc30fa2b6f402d4e91b5c93824819",
+                "reference": "b5d26feb0c7cc30fa2b6f402d4e91b5c93824819",
                 "shasum": ""
             },
             "require": {
@@ -1544,9 +1544,9 @@
                 "vapor"
             ],
             "support": {
-                "source": "https://github.com/laravel/vapor-core/tree/v2.9.7"
+                "source": "https://github.com/laravel/vapor-core/tree/v2.9.8"
             },
-            "time": "2020-10-22T13:41:44+00:00"
+            "time": "2020-10-29T14:10:41+00:00"
         },
         {
             "name": "league/commonmark",
@@ -3558,16 +3558,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "v9.x-dev",
+            "version": "9.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "4cffa1caf3c8ee3630e44eab51e54c0a0e465a7c"
+                "reference": "0ddacce06fbd33de321f01c1ad8c402cda9c6b10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/4cffa1caf3c8ee3630e44eab51e54c0a0e465a7c",
-                "reference": "4cffa1caf3c8ee3630e44eab51e54c0a0e465a7c",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/0ddacce06fbd33de321f01c1ad8c402cda9c6b10",
+                "reference": "0ddacce06fbd33de321f01c1ad8c402cda9c6b10",
                 "shasum": ""
             },
             "require": {
@@ -3581,7 +3581,7 @@
                 "illuminate/support": "^7.0|^8.0",
                 "league/flysystem": "^1.0.64",
                 "maennchen/zipstream-php": "^1.0|^2.0",
-                "php": "^7.4",
+                "php": "^7.4|^8.0",
                 "spatie/image": "^1.4.0",
                 "spatie/temporary-directory": "^1.1",
                 "symfony/console": "^4.4|^5.0"
@@ -3647,7 +3647,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/v9"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.0.0"
             },
             "funding": [
                 {
@@ -3659,7 +3659,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-28T15:21:21+00:00"
+            "time": "2020-10-30T09:53:18+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
@@ -3667,19 +3667,19 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "671a1f66a2ae877eca5f32601b9e4206710462ad"
+                "reference": "5e572ab208ddf8a6768aebbbf704a744df05aa8b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-671a1f66a2ae877eca5f32601b9e4206710462ad-zip-4c44d3.zip",
-                "reference": "671a1f66a2ae877eca5f32601b9e4206710462ad",
-                "shasum": "d898eb3ba5d60640b786abcd788672d4a8305f6a"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-5e572ab208ddf8a6768aebbbf704a744df05aa8b-zip-0f4b26.zip",
+                "reference": "5e572ab208ddf8a6768aebbbf704a744df05aa8b",
+                "shasum": "3e9223a349351632be05f5c54cccbf0e9dbc5b80"
             },
             "require": {
                 "ext-json": "*",
                 "illuminate/validation": "^7.25|^8.0",
                 "php": "^7.4",
-                "spatie/laravel-medialibrary": "v9.x-dev as v9",
+                "spatie/laravel-medialibrary": "^9.0",
                 "symfony/mime": "^5.1"
             },
             "require-dev": {
@@ -3738,10 +3738,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/0.9.2",
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/0.9.3",
                 "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
             },
-            "time": "2020-10-28T15:43:09+00:00"
+            "time": "2020-10-30T10:18:00+00:00"
         },
         {
             "name": "spatie/laravel-tail",
@@ -7533,22 +7533,22 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v5.0.2",
+            "version": "v5.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "4a343299054e9368d0db4a982a780cc4ffa12707"
+                "reference": "7c2b95589bf81e274e61e47f7672a1b2c3e06eaa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/4a343299054e9368d0db4a982a780cc4ffa12707",
-                "reference": "4a343299054e9368d0db4a982a780cc4ffa12707",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/7c2b95589bf81e274e61e47f7672a1b2c3e06eaa",
+                "reference": "7c2b95589bf81e274e61e47f7672a1b2c3e06eaa",
                 "shasum": ""
             },
             "require": {
                 "facade/ignition-contracts": "^1.0",
                 "filp/whoops": "^2.7.2",
-                "php": "^7.3",
+                "php": "^7.3 || ^8.0",
                 "symfony/console": "^5.0"
             },
             "require-dev": {
@@ -7617,7 +7617,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-08-27T18:58:22+00:00"
+            "time": "2020-10-29T14:50:40+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -9835,7 +9835,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "spatie/laravel-medialibrary": 20,
         "spatie/laravel-medialibrary-pro": 20
     },
     "prefer-stable": true,
