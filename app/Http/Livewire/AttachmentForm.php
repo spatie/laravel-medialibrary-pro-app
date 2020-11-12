@@ -4,14 +4,18 @@ namespace App\Http\Livewire;
 
 use App\Models\FormSubmission;
 use Livewire\Component;
+use Spatie\MediaLibraryPro\Http\Livewire\LivewireMediaLibraryComponent;
+use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class AttachmentForm extends Component
 {
+    use ValidatesMedia;
+
     public $name;
 
     public $message = '';
 
-    public $file;
+    public $file = [];
 
     protected $listeners = ['mediaChanged'];
 
@@ -20,11 +24,16 @@ class AttachmentForm extends Component
         $this->file = $media;
     }
 
+    public function rules()
+    {
+        return [
+            'name' => 'required',
+        ];
+    }
+
     public function submit()
     {
-        timber('here');
-        timber($this->file);
-
+        $this->validate();
 
         /** @var \App\Models\FormSubmission $formSubmission */
         $formSubmission = FormSubmission::create([
@@ -37,6 +46,9 @@ class AttachmentForm extends Component
 
         $this->message = 'Thank you for your submission';
 
+        $this->emit('clearMedia');
+
+        $this->file = [];
         $this->name = '';
     }
 
