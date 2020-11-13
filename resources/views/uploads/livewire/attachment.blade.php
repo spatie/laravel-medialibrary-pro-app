@@ -3,6 +3,5 @@
 @section('content')
 
     <x-h2>Livewire: attachment</x-h2>
-
     <livewire:attachment-form />
 @endsection
