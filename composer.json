@@ -31,7 +31,7 @@
         "livewire/livewire": "^2.0",
         "spatie/laravel-flash": "^1.7",
         "spatie/laravel-medialibrary": "^9.0",
-        "spatie/laravel-medialibrary-pro": "^1.0",
+        "spatie/laravel-medialibrary-pro": "dev-livewire-forms",
         "spatie/laravel-tail": "^4.2",
         "spatie/laravel-timber": "dev-master",
         "spatie/pdf-to-image": "^2.0"

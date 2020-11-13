@@ -13,13 +13,8 @@
             <x-field label="name">
                 <x-input autocomplete="off" id="name" wire:model.debounce.500ms="name" placeholder="Your first name" />
             </x-field>
-            {{-- @php(timber($file)) --}}
             <x-field label="file">
-                {{-- <x-media-library-attachment name="media" rules="mimes:png,jpeg,pdf" :media="$file"/> --}}
-                <livewire:media-library name="media" multiple="false" max-items="1"
-                    item-view="media-library::livewire.partials.attachment.item"
-                    list-view="media-library::livewire.partials.attachment.list"
-                    properties-view="media-library::livewire.partials.attachment.properties" />
+                 <x-media-library-attachment name="media" rules="mimes:png,jpeg,pdf" :media="$file" />
             </x-field>
 
             <x-button dusk="submit">Submit</x-button>
