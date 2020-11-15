@@ -12,8 +12,6 @@ use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class AttachmentForm extends Component
 {
-    use ValidatesMedia;
-
     use \Livewire\ComponentConcerns\ValidatesInput {
         validate as livewireValidate;
     }
@@ -55,21 +53,14 @@ class AttachmentForm extends Component
         $this->name = '';
     }
 
-    public function validate($rules = null, $messages = [], $attributes = [])
-    {
-        try {
-            $this->livewireValidate($rules, $messages, $attributes);
-        } catch (ValidationException $exception) {
-            foreach($exception->validator->errors()->messages() as $attribute => $messages) {
-                $this->emit('validationError', $attribute, $messages);
-            }
-
-            throw $exception;
-        }
-    }
-
     public function render()
     {
+        $errorBag = $this->getErrorBag();
+
+        if ($errorBag->has('media')) {
+            $this->emit('mediaValidationError', $errorBag->first('media'));
+        }
+
         return view('livewire.attachment-form');
     }
 }
