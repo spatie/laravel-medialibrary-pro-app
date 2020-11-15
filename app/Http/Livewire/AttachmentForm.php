@@ -33,7 +33,7 @@ class AttachmentForm extends Component
     {
         $this->validate([
             'name' => 'required',
-            'media' => 'required',
+            'media' => 'required|min:1',
         ]);
 
         /** @var \App\Models\FormSubmission $formSubmission */
@@ -55,12 +55,17 @@ class AttachmentForm extends Component
 
     public function render()
     {
-        $errorBag = $this->getErrorBag();
-
-        if ($errorBag->has('media')) {
-            $this->emit('mediaValidationError', $errorBag->first('media'));
-        }
+        $this->initializeMediaLibraryComponents('media');
 
         return view('livewire.attachment-form');
+    }
+
+    public function initializeMediaLibraryComponents(string $fieldName)
+    {
+        $errorBag = $this->getErrorBag();
+
+        if ($errorBag->has($fieldName)) {
+            $this->emit('mediaValidationError', $errorBag->first($fieldName));
+        }
     }
 }
