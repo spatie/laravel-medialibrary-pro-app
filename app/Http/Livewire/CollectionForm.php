@@ -31,44 +31,23 @@ class CollectionForm extends Component
 
     public function submit()
     {
-        timber()->clearScreen();
-        timber('submitting', $this->images)->color('green');
         $this->validate([
             'formSubmission.name' => 'required',
-            //'images' => 'required',
+            'images' => 'required|max:1',
           //  'downloads' => 'required',
         ]);
 
         $this->formSubmission->save();
-
         $this->formSubmission
             ->syncFromMediaLibraryRequest($this->images)
             ->toMediaCollection('images');
 
-        /*
-        $this->formSubmission
-            ->syncFromMediaLibraryRequest($this->downloads)
-            ->toMediaCollection('downloads');
-        */
 
         $this->message = 'Saved!';
     }
 
     public function render()
     {
-        $this->initializeMediaLibraryComponents('images', 'downloads');
-
         return view('livewire.collection-form');
-    }
-
-    public function initializeMediaLibraryComponents(...$mediaFieldNames)
-    {
-        foreach ($mediaFieldNames as $mediaFieldName) {
-            $errorBag = $this->getErrorBag();
-
-            if ($errorBag->has($mediaFieldName)) {
-                $this->emit('mediaValidationError', $errorBag->first($mediaFieldName));
-            }
-        }
     }
 }
