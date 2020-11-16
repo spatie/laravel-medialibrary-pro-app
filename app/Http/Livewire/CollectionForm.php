@@ -4,21 +4,21 @@ namespace App\Http\Livewire;
 
 use App\Models\FormSubmission;
 use Livewire\Component;
+use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
 
 class CollectionForm extends Component
 {
+    use WithMedia;
+
     public $message = '';
 
     public FormSubmission $formSubmission;
 
+    public $mediaComponentNames = ['images', 'downloads'];
+
     public $images = [];
 
     public $downloads = [];
-
-    protected $listeners = [
-        'imagesChanged',
-        //'downloadsChanged',
-    ];
 
     protected $rules = [
         'formSubmission.name' => 'required',
@@ -28,18 +28,6 @@ class CollectionForm extends Component
     {
         $this->formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
     }
-
-    public function imagesChanged($images)
-    {
-        $this->images = $images;
-    }
-
-    /*
-    public function downloadsChanged($media)
-    {
-        $this->media = $media;
-    }
-    */
 
     public function submit()
     {
