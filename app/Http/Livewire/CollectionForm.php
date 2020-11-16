@@ -17,7 +17,11 @@ class CollectionForm extends Component
 
     protected $listeners = [
         'imagesChanged',
-        'downloadsChanged',
+        //'downloadsChanged',
+    ];
+
+    protected $rules = [
+        'formSubmission.name' => 'required',
     ];
 
     public function mount()
@@ -25,22 +29,26 @@ class CollectionForm extends Component
         $this->formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
     }
 
-    public function imagesChanged($media)
+    public function imagesChanged($images)
     {
-        $this->media = $media;
+        $this->images = $images;
     }
 
+    /*
     public function downloadsChanged($media)
     {
         $this->media = $media;
     }
+    */
 
     public function submit()
     {
+        timber()->clearScreen();
+        timber('submitting', $this->images)->color('green');
         $this->validate([
             'formSubmission.name' => 'required',
-            'images' => 'required',
-            'downloads' => 'required',
+            //'images' => 'required',
+          //  'downloads' => 'required',
         ]);
 
         $this->formSubmission->save();
@@ -49,11 +57,13 @@ class CollectionForm extends Component
             ->syncFromMediaLibraryRequest($this->images)
             ->toMediaCollection('images');
 
+        /*
         $this->formSubmission
             ->syncFromMediaLibraryRequest($this->downloads)
-            ->toMediaCollection('images');
+            ->toMediaCollection('downloads');
+        */
 
-        $this->message = 'Thank you for your submission';
+        $this->message = 'Saved!';
     }
 
     public function render()

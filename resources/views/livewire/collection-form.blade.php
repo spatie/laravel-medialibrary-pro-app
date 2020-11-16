@@ -14,16 +14,10 @@
                 <x-input name="name" autocomplete="off" id="name" wire:model="formSubmission.name"
                          placeholder="Your first name"/>
             </x-field>
-            <div id="images">
-                <x-field label="Images">
-                    <x-media-library-collection name="images" :model="$formSubmission"/>
-                </x-field>
-            </div>
-            <div id="downloads">
-                <x-field label="Downloads">
-                    <x-media-library-collection name="downloads" :model="$formSubmission"/>
-                </x-field>
-            </div>
+
+            <x-field label="Images">
+                <x-media-library-collection key="images" name="images" collection="images" :model="$formSubmission"/>
+            </x-field>
 
             <x-button dusk="submit">Submit</x-button>
         </x-grid>

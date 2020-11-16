@@ -3,27 +3,20 @@
 namespace App\Http\Livewire;
 
 use App\Models\FormSubmission;
-use Illuminate\Support\Traits\Macroable;
-use Illuminate\Support\ViewErrorBag;
-use Illuminate\Validation\ValidationException;
 use Livewire\Component;
-use Spatie\MediaLibraryPro\Http\Livewire\LivewireMediaLibraryComponent;
-use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
+use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
 
 class AttachmentForm extends Component
 {
+    use WithMedia;
+
     public $name;
 
     public $message = '';
 
-    public $media = [];
+    public $mediaComponentNames = ['media'];
 
-    protected $listeners = ['mediaChanged'];
-
-    public function mediaChanged($media)
-    {
-        $this->media = $media;
-    }
+    public $media;
 
     public function submit()
     {
@@ -43,25 +36,13 @@ class AttachmentForm extends Component
 
         $this->message = 'Thank you for your submission';
 
-        $this->emit('clearMedia');
+        $this->clearMedia();
 
-        $this->media = [];
         $this->name = '';
     }
 
     public function render()
     {
-        $this->initializeMediaLibraryComponents('media');
-
         return view('livewire.attachment-form');
-    }
-
-    public function initializeMediaLibraryComponents(string $fieldName)
-    {
-        $errorBag = $this->getErrorBag();
-
-        if ($errorBag->has($fieldName)) {
-            $this->emit('mediaValidationError', $errorBag->first($fieldName));
-        }
     }
 }
