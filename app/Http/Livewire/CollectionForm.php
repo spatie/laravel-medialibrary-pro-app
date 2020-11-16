@@ -31,19 +31,24 @@ class CollectionForm extends Component
 
     public function submit()
     {
+        timber('images', $this->images);
+        timber('downloads', $this->downloads);
+
         $this->validate([
             'formSubmission.name' => 'required',
-            'images' => 'required|max:1',
-             'downloads' => 'required',
+            //'images' => 'required|max:1',
+            'downloads' => 'required',
         ]);
 
         $this->formSubmission->save();
 
-        $this->formSubmission
+        $this
+            ->formSubmission
             ->syncFromMediaLibraryRequest($this->images)
             ->toMediaCollection('images');
 
-        $this->formSubmission
+        $this
+            ->formSubmission
             ->syncFromMediaLibraryRequest($this->downloads)
             ->toMediaCollection('downloads');
 
