@@ -12,10 +12,6 @@ use Spatie\MediaLibraryPro\Rules\Concerns\ValidatesMedia;
 
 class AttachmentForm extends Component
 {
-    use \Livewire\ComponentConcerns\ValidatesInput {
-        validate as livewireValidate;
-    }
-
     public $name;
 
     public $message = '';

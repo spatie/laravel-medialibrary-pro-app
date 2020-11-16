@@ -23,6 +23,7 @@ use App\Http\Controllers\Vue\VueCollectionCustomPropertyController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryUploadController;
+use App\Http\Controllers\Livewire\LivewireCollectionController;
 
 Route::get('/', function () {
     return view('home');
@@ -68,7 +69,8 @@ Route::prefix('react')->group(function () {
 });
 
 Route::prefix('livewire')->group(function () {
-    Route::get('single', LivewireAttachmentController::class)->name('livewire.attachment');
+    Route::get('attachment', LivewireAttachmentController::class)->name('livewire.attachment');
+    Route::get('collection', LivewireCollectionController::class)->name('livewire.collection');
 });
 
 
