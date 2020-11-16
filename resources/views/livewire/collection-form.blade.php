@@ -16,7 +16,21 @@
             </x-field>
 
             <x-field label="Images">
-                <x-media-library-collection  key="images" name="images" collection="images" :model="$formSubmission"/>
+                <x-media-library-collection
+                    key="images"
+                    name="images"
+                    :model="$formSubmission"
+                    collection="images"
+                />
+            </x-field>
+
+            <x-field label="Downloads">
+                <x-media-library-collection
+                    key="downloads"
+                    name="downloads"
+                    :model="$formSubmission"
+                    collection="downloads"
+                />
             </x-field>
 
             <x-button dusk="submit">Submit</x-button>

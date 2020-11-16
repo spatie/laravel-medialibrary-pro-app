@@ -34,14 +34,18 @@ class CollectionForm extends Component
         $this->validate([
             'formSubmission.name' => 'required',
             'images' => 'required|max:1',
-          //  'downloads' => 'required',
+             'downloads' => 'required',
         ]);
 
         $this->formSubmission->save();
+
         $this->formSubmission
             ->syncFromMediaLibraryRequest($this->images)
             ->toMediaCollection('images');
 
+        $this->formSubmission
+            ->syncFromMediaLibraryRequest($this->downloads)
+            ->toMediaCollection('downloads');
 
         $this->message = 'Saved!';
     }
