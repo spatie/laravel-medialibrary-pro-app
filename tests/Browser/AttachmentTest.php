@@ -30,6 +30,7 @@ class AttachmentTest extends DuskTestCase
                 ->waitForText('Remove')
                 ->waitUntilMissing('.media-library-progress-wrap.media-library-progress-wrap-loading')
                 ->press('@submit')
+                ->waitForText('Your form has been submitted')
                 ->assertSee('Your form has been submitted');
 
             $this->assertCount(1, FormSubmission::get());
@@ -56,11 +57,13 @@ class AttachmentTest extends DuskTestCase
             $this->assertCount(0, FormSubmission::all());
 
             $browser
+                ->waitForText('Please correct the errors in the form')
                 ->assertSee('Please correct the errors in the form')
                 ->waitForText('KB')
                 ->assertVisible('@thumb')
                 ->type('name', 'My name failing test')
                 ->press('@submit')
+                ->waitForText('Your form has been submitted')
                 ->assertSee('Your form has been submitted');
 
             $this->assertCount(1, FormSubmission::all());
@@ -83,7 +86,9 @@ class AttachmentTest extends DuskTestCase
                 ->pause(800)
                 ->attach('@uploader', $this->getStubPath('data.json'))
                 ->pause(200)
+                ->waitForText('You must upload a file of type')
                 ->assertSee('You must upload a file of type');
+
         });
     }
 
@@ -93,6 +98,7 @@ class AttachmentTest extends DuskTestCase
             ['vue.attachment'],
             ['react.attachment'],
             ['blade.attachment'],
+            ['livewire.attachment'],
         ];
     }
 }

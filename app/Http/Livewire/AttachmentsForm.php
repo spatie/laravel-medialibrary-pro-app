@@ -33,7 +33,7 @@ class AttachmentsForm extends Component
             ->addFromMediaLibraryRequest($this->media)
             ->toMediaCollection('images');
 
-        $this->message = 'Thank you for your submission';
+        $this->message = 'Your form has been submitted';
 
         $this->clearMedia();
 

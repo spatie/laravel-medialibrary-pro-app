@@ -52,7 +52,7 @@ class CollectionForm extends Component
             ->syncFromMediaLibraryRequest($this->downloads)
             ->toMediaCollection('downloads');
 
-        $this->message = 'Saved!';
+        $this->message = 'Your form has been submitted';
     }
 
     public function render()
