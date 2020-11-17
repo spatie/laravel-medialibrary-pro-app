@@ -51,6 +51,7 @@ class CollectionTest extends DuskTestCase
                 ->attach('@main-uploader', $this->getStubPath('space.png'))
                 ->waitForText('Download')
                 ->press('@submit')
+                ->waitForText('Your form has been submitted')
                 ->assertSee('Your form has been submitted')
                 ->assertVisible('@thumb');
 
@@ -75,6 +76,7 @@ class CollectionTest extends DuskTestCase
                 ->press('@remove')
                 ->waitUntilMissing('@thumb')
                 ->press('@submit')
+                ->waitForText('Your form has been submitted')
                 ->assertSee('Your form has been submitted')
                 ->assertMissing('@thumb');
 
@@ -98,7 +100,8 @@ class CollectionTest extends DuskTestCase
                 ->type('@media-library-field-name', '   ') // needed to make test pass
                 ->type('@media-library-field-name', '')
                 ->press('@submit')
-                ->assertSee('The name field is required');
+                ->assertSee('The name field is required')
+                ->waitForText('The name field is required');
         });
     }
 
@@ -137,7 +140,8 @@ class CollectionTest extends DuskTestCase
                 ->pause(800)
                 ->attach('@uploader', $this->getStubPath('logo.png'))
                 ->pause(800)
-                ->press('@submit');
+                ->press('@submit')
+                ->pause(800);
 
             $this->assertEquals('logo.png', FormSubmission::first()->getFirstMedia('images')->file_name);
         });
@@ -155,6 +159,7 @@ class CollectionTest extends DuskTestCase
                 ->visit(route($routeName))
                 ->attach('@main-uploader', $this->getStubPath('test.pdf'))
                 ->pause(800)
+                ->waitForText('You must upload a file of type')
                 ->assertSee('You must upload a file of type');
         });
     }
@@ -162,9 +167,10 @@ class CollectionTest extends DuskTestCase
     public function routeNames(): array
     {
         return [
-            ['vue.collection'],
-            ['react.collection'],
-            ['blade.collection'],
+           // ['vue.collection'],
+           // ['react.collection'],
+           // ['blade.collection'],
+            ['livewire.collection'],
         ];
     }
 }

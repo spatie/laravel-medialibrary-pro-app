@@ -31,13 +31,8 @@ class CollectionForm extends Component
 
     public function submit()
     {
-        timber('images', $this->images);
-        timber('downloads', $this->downloads);
-
         $this->validate([
             'formSubmission.name' => 'required',
-            //'images' => 'required|max:1',
-            'downloads' => 'required',
         ]);
 
         $this->formSubmission->save();
@@ -53,6 +48,8 @@ class CollectionForm extends Component
             ->toMediaCollection('downloads');
 
         $this->message = 'Your form has been submitted';
+
+        timber('saved', $this->images);
     }
 
     public function render()
