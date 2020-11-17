@@ -25,6 +25,9 @@
             <x-list-link route="livewire.attachment">Attachment</x-list-link>
         </li>
         <li>
+            <x-list-link route="livewire.attachments">Attachments</x-list-link>
+        </li>
+        <li>
             <x-list-link route="livewire.collection">Collection</x-list-link>
         </li>
     </ul>
