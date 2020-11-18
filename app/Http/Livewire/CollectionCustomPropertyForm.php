@@ -20,10 +20,6 @@ class CollectionCustomPropertyForm extends Component
 
     public $downloads = [];
 
-    protected $rules = [
-        'formSubmission.name' => 'required',
-    ];
-
     public function mount()
     {
         $this->formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
@@ -31,8 +27,13 @@ class CollectionCustomPropertyForm extends Component
 
     public function submit()
     {
+        timber('validating', $this->images)->orange();
+
         $this->validate([
             'formSubmission.name' => 'required',
+            'images' => 'required',
+            'images.*.name' => 'required',
+            'images.*.custom_properties.extra_field' => 'required',
         ]);
 
         $this->formSubmission->save();
