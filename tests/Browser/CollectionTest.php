@@ -99,9 +99,10 @@ class CollectionTest extends DuskTestCase
                 ->waitForText('Download')
                 ->type('@media-library-field-name', '   ') // needed to make test pass
                 ->type('@media-library-field-name', '')
+                ->pause(300)
                 ->press('@submit')
-                ->assertSee('The name field is required')
-                ->waitForText('The name field is required');
+                ->waitForText('is required')
+                ->assertSee('is required');
         });
     }
 
@@ -167,9 +168,9 @@ class CollectionTest extends DuskTestCase
     public function routeNames(): array
     {
         return [
-           // ['vue.collection'],
-           // ['react.collection'],
-           // ['blade.collection'],
+            //['vue.collection'],
+            // ['react.collection'],
+            // ['blade.collection'],
             ['livewire.collection'],
         ];
     }

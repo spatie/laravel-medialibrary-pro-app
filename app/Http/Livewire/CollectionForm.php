@@ -31,9 +31,10 @@ class CollectionForm extends Component
 
     public function submit()
     {
+        timber($this->images);
         $this->validate([
-            'formSubmission.name' => 'required',
-        ]);
+            'images.*.name' => 'required',
+        ], ['required' => 'This field is required']);
 
         $this->formSubmission->save();
 

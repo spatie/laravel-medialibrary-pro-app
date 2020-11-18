@@ -15,6 +15,7 @@
                     name="images"
                     :model="$formSubmission"
                     collection="images"
+                    rules="mimes:png,jpeg"
                 />
             </x-field>
 
