@@ -7,8 +7,7 @@
         dusk="media-library-extra-field"
         class="media-library-input"
         type="text"
-        x-on:keyup.debounce="$wire.setCustomProperty('{{ $mediaItem->uuid }}', 'extra_field', document.getElementsByName('{{ $mediaItem->customPropertyAttributeName('extra_field') }}')[0].value)"
-        {{ $mediaItem->customPropertyAttributes('extra_field')  }}
+        {{ $mediaItem->livewireCustomPropertyAttributes('extra_field') }}
     />
 
     @error($mediaItem->customPropertyErrorName('extra_field'))
