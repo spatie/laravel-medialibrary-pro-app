@@ -3,7 +3,6 @@
 <div class="media-library-field">
     <label class="media-library-label">Extra field</label>
     <input
-        x-data
         dusk="media-library-extra-field"
         class="media-library-input"
         type="text"
