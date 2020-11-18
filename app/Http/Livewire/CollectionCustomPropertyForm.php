@@ -37,7 +37,6 @@ class CollectionCustomPropertyForm extends Component
 
         $this->formSubmission->save();
 
-        timber($this->images, 'submitting')->green();
         $this
             ->formSubmission
             ->syncFromMediaLibraryRequest($this->images)

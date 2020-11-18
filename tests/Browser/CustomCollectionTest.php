@@ -30,7 +30,10 @@ class CustomCollectionTest extends DuskTestCase
                 ->waitForText('Download')
                 ->type('@media-library-field-name', 'this is the name')
                 ->type('@media-library-extra-field', 'this is the extra field')
-                ->press('@submit');
+                ->pause(500)
+                ->press('@submit')
+                ->waitForText('Your form has been submitted');
+
 
             /** @var \Spatie\MediaLibrary\MediaCollections\Models\Media $media */
             $media = FormSubmission::first()->getFirstMedia('images');
@@ -40,14 +43,13 @@ class CustomCollectionTest extends DuskTestCase
         });
     }
 
-
-
     public function routeNames(): array
     {
         return [
             ['vue.collection-custom-property'],
             ['react.collection-custom-property'],
             ['blade.collection-custom-property'],
+            ['livewire.collection-custom-property'],
         ];
     }
 }
