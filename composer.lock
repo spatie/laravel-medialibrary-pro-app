@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c92edf528bbdc142e9d248a2290858ce",
+    "content-hash": "ee10e288c386fbcfdaa18e31f37c8c77",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -64,16 +64,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.161.1",
+            "version": "3.162.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "4c1852e9efaef18e15f2a6c914d8dc41fda2a052"
+                "reference": "64b0468417c4a84ff5cc51a69cf2ff9d899c2e8e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/4c1852e9efaef18e15f2a6c914d8dc41fda2a052",
-                "reference": "4c1852e9efaef18e15f2a6c914d8dc41fda2a052",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/64b0468417c4a84ff5cc51a69cf2ff9d899c2e8e",
+                "reference": "64b0468417c4a84ff5cc51a69cf2ff9d899c2e8e",
                 "shasum": ""
             },
             "require": {
@@ -148,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.161.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.162.0"
             },
-            "time": "2020-11-13T19:17:55+00:00"
+            "time": "2020-11-17T19:12:26+00:00"
         },
         {
             "name": "brick/math",
@@ -1193,16 +1193,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.14.0",
+            "version": "v8.15.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b60139c9d3b475d5b5dc261c5dcafe8ca49b4a13"
+                "reference": "22e4182fa0885dea3772106c3b6df705b7c7363e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b60139c9d3b475d5b5dc261c5dcafe8ca49b4a13",
-                "reference": "b60139c9d3b475d5b5dc261c5dcafe8ca49b4a13",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/22e4182fa0885dea3772106c3b6df705b7c7363e",
+                "reference": "22e4182fa0885dea3772106c3b6df705b7c7363e",
                 "shasum": ""
             },
             "require": {
@@ -1276,7 +1276,7 @@
             },
             "require-dev": {
                 "aws/aws-sdk-php": "^3.0",
-                "doctrine/dbal": "^2.6",
+                "doctrine/dbal": "^2.6|^3.0",
                 "filp/whoops": "^2.8",
                 "guzzlehttp/guzzle": "^6.5.5|^7.0.1",
                 "league/flysystem-cached-adapter": "^1.0",
@@ -1289,7 +1289,7 @@
             },
             "suggest": {
                 "aws/aws-sdk-php": "Required to use the SQS queue driver, DynamoDb failed job storage and SES mail driver (^3.0).",
-                "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6).",
+                "doctrine/dbal": "Required to rename columns and drop SQLite columns (^2.6|^3.0).",
                 "ext-ftp": "Required to use the Flysystem FTP driver.",
                 "ext-gd": "Required to use Illuminate\\Http\\Testing\\FileFactory::image().",
                 "ext-memcached": "Required to use the memcache cache driver.",
@@ -1356,7 +1356,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2020-11-10T14:47:10+00:00"
+            "time": "2020-11-17T14:53:20+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -1487,16 +1487,16 @@
         },
         {
             "name": "laravel/vapor-cli",
-            "version": "v1.10.4",
+            "version": "v1.10.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/vapor-cli.git",
-                "reference": "a2608446e37cdca263b036203ddeac5b29073fa9"
+                "reference": "b5d8db95f640cae6e5e377a4aebf138b12d6955f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/vapor-cli/zipball/a2608446e37cdca263b036203ddeac5b29073fa9",
-                "reference": "a2608446e37cdca263b036203ddeac5b29073fa9",
+                "url": "https://api.github.com/repos/laravel/vapor-cli/zipball/b5d8db95f640cae6e5e377a4aebf138b12d6955f",
+                "reference": "b5d8db95f640cae6e5e377a4aebf138b12d6955f",
                 "shasum": ""
             },
             "require": {
@@ -1549,9 +1549,9 @@
                 "vapor"
             ],
             "support": {
-                "source": "https://github.com/laravel/vapor-cli/tree/v1.10.4"
+                "source": "https://github.com/laravel/vapor-cli/tree/v1.10.5"
             },
-            "time": "2020-11-02T09:17:29+00:00"
+            "time": "2020-11-17T10:57:03+00:00"
         },
         {
             "name": "laravel/vapor-core",
@@ -1993,16 +1993,16 @@
         },
         {
             "name": "livewire/livewire",
-            "version": "v2.3.1",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/livewire/livewire.git",
-                "reference": "4dfc7752254eb316911dec13c57578768bd1b743"
+                "reference": "8aa271bc3af74d8fea8480b372ecaa0d5ae3f6d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/livewire/livewire/zipball/4dfc7752254eb316911dec13c57578768bd1b743",
-                "reference": "4dfc7752254eb316911dec13c57578768bd1b743",
+                "url": "https://api.github.com/repos/livewire/livewire/zipball/8aa271bc3af74d8fea8480b372ecaa0d5ae3f6d2",
+                "reference": "8aa271bc3af74d8fea8480b372ecaa0d5ae3f6d2",
                 "shasum": ""
             },
             "require": {
@@ -2053,7 +2053,7 @@
             "description": "A front-end framework for Laravel.",
             "support": {
                 "issues": "https://github.com/livewire/livewire/issues",
-                "source": "https://github.com/livewire/livewire/tree/v2.3.1"
+                "source": "https://github.com/livewire/livewire/tree/v2.3.2"
             },
             "funding": [
                 {
@@ -2061,7 +2061,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-27T19:08:41+00:00"
+            "time": "2020-11-17T14:58:56+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
@@ -5540,7 +5540,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-medialibrary-pro",
-                "reference": "2959a8b9aa4b6820f7b29e835face1536153187d"
+                "reference": "6a5ca5ab9cfb18033e0e681a5f3e353c17e2f81a"
             },
             "require": {
                 "ext-json": "*",
@@ -5685,13 +5685,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-timber.git",
-                "reference": "d0e512b0921731df2707b190d6073d4e4282bd78"
+                "reference": "cbc111f77a1fcc7b2ab0730f0138b165986fee1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-timber/spatie-laravel-timber-a6d0139a41f3f99d61b0b30b3cdab2aa85bfc5c5-zip-653e4b.zip",
-                "reference": "d0e512b0921731df2707b190d6073d4e4282bd78",
-                "shasum": "73fa81313bb4d9c7b218a5214446bb05e3567022"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-timber/spatie-laravel-timber-cbc111f77a1fcc7b2ab0730f0138b165986fee1a-zip-25d6c8.zip",
+                "reference": "cbc111f77a1fcc7b2ab0730f0138b165986fee1a",
+                "shasum": "75705a0ef12f49c26e0e44302b6b906f7c862348"
             },
             "require": {
                 "illuminate/contracts": "^8.0",
@@ -5771,7 +5771,7 @@
                     "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2020-11-06T23:23:30+00:00"
+            "time": "2020-11-18T10:14:12+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
@@ -9332,16 +9332,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.5.1",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "3b3403f18bbdc0aeadf1ffaddf11a1588b12ec7a"
+                "reference": "08668034beb185fa2ac6f09b1034eaa440952ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/3b3403f18bbdc0aeadf1ffaddf11a1588b12ec7a",
-                "reference": "3b3403f18bbdc0aeadf1ffaddf11a1588b12ec7a",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/08668034beb185fa2ac6f09b1034eaa440952ace",
+                "reference": "08668034beb185fa2ac6f09b1034eaa440952ace",
                 "shasum": ""
             },
             "require": {
@@ -9405,7 +9405,7 @@
                 "issues": "https://github.com/facade/ignition/issues",
                 "source": "https://github.com/facade/ignition"
             },
-            "time": "2020-11-13T13:36:24+00:00"
+            "time": "2020-11-17T09:18:51+00:00"
         },
         {
             "name": "facade/ignition-contracts",
@@ -9734,16 +9734,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v6.8.0",
+            "version": "v6.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "3dd0f1fc383a7fb93e4e0f02d83f9507d9a80a15"
+                "reference": "7c8f8b8b720cb455abc0ee1f018c996344ecb87e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/3dd0f1fc383a7fb93e4e0f02d83f9507d9a80a15",
-                "reference": "3dd0f1fc383a7fb93e4e0f02d83f9507d9a80a15",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/7c8f8b8b720cb455abc0ee1f018c996344ecb87e",
+                "reference": "7c8f8b8b720cb455abc0ee1f018c996344ecb87e",
                 "shasum": ""
             },
             "require": {
@@ -9800,9 +9800,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/dusk/issues",
-                "source": "https://github.com/laravel/dusk/tree/v6.8.0"
+                "source": "https://github.com/laravel/dusk/tree/v6.8.1"
             },
-            "time": "2020-10-06T15:32:20+00:00"
+            "time": "2020-11-17T16:06:04+00:00"
         },
         {
             "name": "mockery/mockery",

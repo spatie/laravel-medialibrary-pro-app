@@ -8,6 +8,7 @@ use App\Http\Controllers\Livewire\LivewireAttachmentController;
 use App\Http\Controllers\Blade\TraditionalAttachmentController;
 use App\Http\Controllers\Blade\BladeCollectionCustomPropertyController;
 use App\Http\Controllers\Livewire\LivewireAttachmentsController;
+use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactAsyncAttachmentsController;
@@ -73,8 +74,8 @@ Route::prefix('livewire')->group(function () {
     Route::get('attachment', LivewireAttachmentController::class)->name('livewire.attachment');
     Route::get('attachments', LivewireAttachmentsController::class)->name('livewire.attachments');
     Route::get('collection', LivewireCollectionController::class)->name('livewire.collection');
+    Route::get('collection-custom-property', LivewireCollectionCustomPropertyController::class)->name('livewire.collection-custom-property');
 });
-
 
 Route::prefix('blade')->group(function () {
     Route::get('single', [BladeAttachmentController::class, 'create'])->name('blade.attachment');

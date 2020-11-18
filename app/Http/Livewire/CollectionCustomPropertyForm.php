@@ -6,7 +6,7 @@ use App\Models\FormSubmission;
 use Livewire\Component;
 use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
 
-class CollectionForm extends Component
+class CollectionCustomPropertyForm extends Component
 {
     use WithMedia;
 
@@ -37,21 +37,18 @@ class CollectionForm extends Component
 
         $this->formSubmission->save();
 
+        timber($this->images, 'submitting')->green();
         $this
             ->formSubmission
             ->syncFromMediaLibraryRequest($this->images)
+            ->withCustomProperties('extra_field')
             ->toMediaCollection('images');
-
-        $this
-            ->formSubmission
-            ->syncFromMediaLibraryRequest($this->downloads)
-            ->toMediaCollection('downloads');
 
         $this->message = 'Your form has been submitted';
     }
 
     public function render()
     {
-        return view('livewire.collection-form');
+        return view('livewire.collection-custom-property-form');
     }
 }
