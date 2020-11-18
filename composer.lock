@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee10e288c386fbcfdaa18e31f37c8c77",
+    "content-hash": "4f14821b91d3912fe8f41874d6862faa",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -64,16 +64,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.162.0",
+            "version": "3.163.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "64b0468417c4a84ff5cc51a69cf2ff9d899c2e8e"
+                "reference": "d3f51c57f17581d79151c9b5265e131391bd191f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/64b0468417c4a84ff5cc51a69cf2ff9d899c2e8e",
-                "reference": "64b0468417c4a84ff5cc51a69cf2ff9d899c2e8e",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/d3f51c57f17581d79151c9b5265e131391bd191f",
+                "reference": "d3f51c57f17581d79151c9b5265e131391bd191f",
                 "shasum": ""
             },
             "require": {
@@ -148,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.162.0"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.163.0"
             },
-            "time": "2020-11-17T19:12:26+00:00"
+            "time": "2020-11-18T19:12:41+00:00"
         },
         {
             "name": "brick/math",
@@ -5537,10 +5537,16 @@
         {
             "name": "spatie/laravel-medialibrary-pro",
             "version": "dev-livewire-forms",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
+                "reference": "cd8a2aebdf1dbee1f83a8974fe5391a13c6c19c8"
+            },
             "dist": {
-                "type": "path",
-                "url": "../laravel-medialibrary-pro",
-                "reference": "6a5ca5ab9cfb18033e0e681a5f3e353c17e2f81a"
+                "type": "zip",
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-cd8a2aebdf1dbee1f83a8974fe5391a13c6c19c8-zip-b85a24.zip",
+                "reference": "cd8a2aebdf1dbee1f83a8974fe5391a13c6c19c8",
+                "shasum": "6d237b9f62f4f5a52dcf873b582b7ae88e6485f6"
             },
             "require": {
                 "ext-json": "*",
@@ -5604,9 +5610,11 @@
                 "laravel-medialibrary-pro",
                 "spatie"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/livewire-forms",
+                "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
+            },
+            "time": "2020-11-18T19:10:18+00:00"
         },
         {
             "name": "spatie/laravel-tail",
@@ -5685,13 +5693,13 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-timber.git",
-                "reference": "cbc111f77a1fcc7b2ab0730f0138b165986fee1a"
+                "reference": "830316e8891abde1fb467a3cce2533d32d4450fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-timber/spatie-laravel-timber-cbc111f77a1fcc7b2ab0730f0138b165986fee1a-zip-25d6c8.zip",
-                "reference": "cbc111f77a1fcc7b2ab0730f0138b165986fee1a",
-                "shasum": "75705a0ef12f49c26e0e44302b6b906f7c862348"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-timber/spatie-laravel-timber-830316e8891abde1fb467a3cce2533d32d4450fb-zip-789139.zip",
+                "reference": "830316e8891abde1fb467a3cce2533d32d4450fb",
+                "shasum": "00dc5ca0216edad229af9fd52a607aac832068ae"
             },
             "require": {
                 "illuminate/contracts": "^8.0",
@@ -5771,7 +5779,7 @@
                     "url": "https://spatie.be/open-source/support-us"
                 }
             ],
-            "time": "2020-11-18T10:14:12+00:00"
+            "time": "2020-11-18T12:54:27+00:00"
         },
         {
             "name": "spatie/pdf-to-image",
