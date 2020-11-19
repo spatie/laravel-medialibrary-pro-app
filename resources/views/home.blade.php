@@ -19,6 +19,22 @@
         </li>
     </ul>
 
+    <x-h2 class="mt-12">Livewire</x-h2>
+    <ul class="list-disc list-inside">
+        <li>
+            <x-list-link route="livewire.attachment">Attachment</x-list-link>
+        </li>
+        <li>
+            <x-list-link route="livewire.attachments">Attachments</x-list-link>
+        </li>
+        <li>
+            <x-list-link route="livewire.collection">Collection</x-list-link>
+        </li>
+        <li>
+            <x-list-link route="livewire.collection-custom-property">Collection with custom property</x-list-link>
+        </li>
+    </ul>
+
     <x-h2 class="mt-12">Vue</x-h2>
     <ul class="list-disc list-inside">
         <li>

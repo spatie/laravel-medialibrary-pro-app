@@ -47,6 +47,7 @@ class AttachmentsTest extends DuskTestCase
             ['vue.async-attachments'],
             ['react.async-attachments'],
             ['blade.attachments'],
+            ['livewire.attachments'],
         ];
     }
 }

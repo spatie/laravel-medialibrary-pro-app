@@ -4,8 +4,11 @@ use App\Http\Controllers\Blade\BladeAttachmentController;
 use App\Http\Controllers\Blade\BladeVaporController;
 use App\Http\Controllers\Blade\BladeAttachmentsController;
 use App\Http\Controllers\Blade\BladeCollectionController;
+use App\Http\Controllers\Livewire\LivewireAttachmentController;
 use App\Http\Controllers\Blade\TraditionalAttachmentController;
 use App\Http\Controllers\Blade\BladeCollectionCustomPropertyController;
+use App\Http\Controllers\Livewire\LivewireAttachmentsController;
+use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
 use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactAsyncAttachmentsController;
@@ -22,6 +25,7 @@ use App\Http\Controllers\Vue\VueCollectionCustomPropertyController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryUploadController;
+use App\Http\Controllers\Livewire\LivewireCollectionController;
 
 Route::get('/', function () {
     return view('home');
@@ -66,9 +70,12 @@ Route::prefix('react')->group(function () {
     Route::get('vapor', [ReactVaporController::class, 'create'])->name('react.vapor');
 });
 
-
-Route::get('traditional-upload', [TraditionalUploadController::class, 'create']);
-Route::post('traditional-upload', [TraditionalUploadController::class, 'store']);
+Route::prefix('livewire')->group(function () {
+    Route::get('attachment', LivewireAttachmentController::class)->name('livewire.attachment');
+    Route::get('attachments', LivewireAttachmentsController::class)->name('livewire.attachments');
+    Route::get('collection', LivewireCollectionController::class)->name('livewire.collection');
+    Route::get('collection-custom-property', LivewireCollectionCustomPropertyController::class)->name('livewire.collection-custom-property');
+});
 
 Route::prefix('blade')->group(function () {
     Route::get('single', [BladeAttachmentController::class, 'create'])->name('blade.attachment');
@@ -83,6 +90,9 @@ Route::prefix('blade')->group(function () {
     Route::get('collection-custom-property', [BladeCollectionCustomPropertyController::class, 'create'])->name('blade.collection-custom-property');
     Route::post('collection-custom-property', [BladeCollectionCustomPropertyController::class, 'store']);
 });
+
+Route::get('traditional-upload', [TraditionalUploadController::class, 'create']);
+Route::post('traditional-upload', [TraditionalUploadController::class, 'store']);
 
 Route::view('vapor-js', 'vapor.vaporjs')->name('vapor');
 
