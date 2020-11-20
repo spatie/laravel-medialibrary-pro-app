@@ -39,7 +39,13 @@ class CustomCollectionTest extends DuskTestCase
             $media = FormSubmission::first()->getFirstMedia('images');
 
             $this->assertEquals('this is the name', $media->name);
-            $this->assertEquals('this is the extra field', $media->getCustomProperty('extra_field'));
+            $this->assertEquals('this is the extra field', $media->refresh()->getCustomProperty('extra_field'));
+
+            $browser
+                ->pause(500)
+                ->press('@submit');
+
+            $this->assertEquals('this is the extra field', $media->refresh()->getCustomProperty('extra_field'));
         });
     }
 

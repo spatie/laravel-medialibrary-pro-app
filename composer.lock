@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9dae7f2b857e5ea2830480d17fa9f257",
+    "content-hash": "85b0121fb6ea3fb1eb6a556e7f22dd1a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3688,17 +3688,17 @@
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "ec781a6ad5ef9e91d0638f68a1015765173e02f7"
+                "reference": "c230a2f4762387e26294807066bdd3a2258a7f38"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-ec781a6ad5ef9e91d0638f68a1015765173e02f7-zip-a48356.zip",
-                "reference": "ec781a6ad5ef9e91d0638f68a1015765173e02f7",
-                "shasum": "6e9bead467097b56f4c55e47b1de05f4c4260fff"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-c230a2f4762387e26294807066bdd3a2258a7f38-zip-4af85d.zip",
+                "reference": "c230a2f4762387e26294807066bdd3a2258a7f38",
+                "shasum": "8eca3a35507d59b84a8bb261579378ac99998781"
             },
             "require": {
                 "ext-json": "*",
@@ -3763,10 +3763,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.3.2",
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.3.3",
                 "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
             },
-            "time": "2020-11-20T07:50:56+00:00"
+            "time": "2020-11-20T09:46:53+00:00"
         },
         {
             "name": "spatie/laravel-tail",
