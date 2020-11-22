@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85b0121fb6ea3fb1eb6a556e7f22dd1a",
+    "content-hash": "9dae7f2b857e5ea2830480d17fa9f257",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -64,16 +64,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.163.1",
+            "version": "3.163.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "7b6948915654f0f94847ccaf51172fa1a7f1cc59"
+                "reference": "ef46d2daf80f2a21809608ada7ba76dddfd103cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/7b6948915654f0f94847ccaf51172fa1a7f1cc59",
-                "reference": "7b6948915654f0f94847ccaf51172fa1a7f1cc59",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/ef46d2daf80f2a21809608ada7ba76dddfd103cd",
+                "reference": "ef46d2daf80f2a21809608ada7ba76dddfd103cd",
                 "shasum": ""
             },
             "require": {
@@ -148,9 +148,9 @@
             "support": {
                 "forum": "https://forums.aws.amazon.com/forum.jspa?forumID=80",
                 "issues": "https://github.com/aws/aws-sdk-php/issues",
-                "source": "https://github.com/aws/aws-sdk-php/tree/3.163.1"
+                "source": "https://github.com/aws/aws-sdk-php/tree/3.163.2"
             },
-            "time": "2020-11-19T19:26:10+00:00"
+            "time": "2020-11-20T19:13:16+00:00"
         },
         {
             "name": "brick/math",
@@ -1418,16 +1418,16 @@
         },
         {
             "name": "laravel/vapor-cli",
-            "version": "v1.10.5",
+            "version": "v1.10.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/vapor-cli.git",
-                "reference": "b5d8db95f640cae6e5e377a4aebf138b12d6955f"
+                "reference": "a161499c477c3bcd9e2036c491937b2a4f70fbb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/vapor-cli/zipball/b5d8db95f640cae6e5e377a4aebf138b12d6955f",
-                "reference": "b5d8db95f640cae6e5e377a4aebf138b12d6955f",
+                "url": "https://api.github.com/repos/laravel/vapor-cli/zipball/a161499c477c3bcd9e2036c491937b2a4f70fbb2",
+                "reference": "a161499c477c3bcd9e2036c491937b2a4f70fbb2",
                 "shasum": ""
             },
             "require": {
@@ -1480,22 +1480,22 @@
                 "vapor"
             ],
             "support": {
-                "source": "https://github.com/laravel/vapor-cli/tree/v1.10.5"
+                "source": "https://github.com/laravel/vapor-cli/tree/v1.10.6"
             },
-            "time": "2020-11-17T10:57:03+00:00"
+            "time": "2020-11-19T16:27:02+00:00"
         },
         {
             "name": "laravel/vapor-core",
-            "version": "v2.9.9",
+            "version": "v2.9.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/vapor-core.git",
-                "reference": "968fe9442dbd2e1e889183120f661d37ede97d01"
+                "reference": "5b03dd3994128684053c0c56a6c78c941fcc98f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/vapor-core/zipball/968fe9442dbd2e1e889183120f661d37ede97d01",
-                "reference": "968fe9442dbd2e1e889183120f661d37ede97d01",
+                "url": "https://api.github.com/repos/laravel/vapor-core/zipball/5b03dd3994128684053c0c56a6c78c941fcc98f4",
+                "reference": "5b03dd3994128684053c0c56a6c78c941fcc98f4",
                 "shasum": ""
             },
             "require": {
@@ -1551,9 +1551,9 @@
                 "vapor"
             ],
             "support": {
-                "source": "https://github.com/laravel/vapor-core/tree/v2.9.9"
+                "source": "https://github.com/laravel/vapor-core/tree/v2.9.11"
             },
-            "time": "2020-10-29T18:50:08+00:00"
+            "time": "2020-11-20T15:01:58+00:00"
         },
         {
             "name": "league/commonmark",
@@ -3469,16 +3469,16 @@
         },
         {
             "name": "spatie/image-optimizer",
-            "version": "1.3.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/image-optimizer.git",
-                "reference": "f87f8328ca5bfabb3811241f5d35f17e146f7f83"
+                "reference": "b622d0cf29f57d7735d49f2b62471e6b788cb291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/f87f8328ca5bfabb3811241f5d35f17e146f7f83",
-                "reference": "f87f8328ca5bfabb3811241f5d35f17e146f7f83",
+                "url": "https://api.github.com/repos/spatie/image-optimizer/zipball/b622d0cf29f57d7735d49f2b62471e6b788cb291",
+                "reference": "b622d0cf29f57d7735d49f2b62471e6b788cb291",
                 "shasum": ""
             },
             "require": {
@@ -3517,9 +3517,9 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/image-optimizer/issues",
-                "source": "https://github.com/spatie/image-optimizer/tree/1.3.0"
+                "source": "https://github.com/spatie/image-optimizer/tree/1.3.1"
             },
-            "time": "2020-11-10T13:45:49+00:00"
+            "time": "2020-11-20T11:36:11+00:00"
         },
         {
             "name": "spatie/laravel-flash",
@@ -3688,17 +3688,17 @@
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
-            "version": "1.3.3",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "c230a2f4762387e26294807066bdd3a2258a7f38"
+                "reference": "ccd7994efc6ed9054317a47e6c2398a76b61a08d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-c230a2f4762387e26294807066bdd3a2258a7f38-zip-4af85d.zip",
-                "reference": "c230a2f4762387e26294807066bdd3a2258a7f38",
-                "shasum": "8eca3a35507d59b84a8bb261579378ac99998781"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-ccd7994efc6ed9054317a47e6c2398a76b61a08d-zip-5c8d9b.zip",
+                "reference": "ccd7994efc6ed9054317a47e6c2398a76b61a08d",
+                "shasum": "5c351791d30353f9f069c8d9d9d13cea5590b4f1"
             },
             "require": {
                 "ext-json": "*",
@@ -3763,10 +3763,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.3.3",
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.3.5",
                 "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
             },
-            "time": "2020-11-20T09:46:53+00:00"
+            "time": "2020-11-22T19:33:03+00:00"
         },
         {
             "name": "spatie/laravel-tail",
