@@ -165,12 +165,70 @@ class CollectionTest extends DuskTestCase
         });
     }
 
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function an_existing_item_can_be_deleted(string $routeName)
+    {
+        /** @var FormSubmission $formSubmission */
+        $formSubmission = FormSubmission::create(['name' => 'test']);
+
+        $formSubmission
+            ->addMedia($this->getStubPath('space.png'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $this->browse(function (Browser $browser) use ($routeName) {
+            $browser
+                ->visit(route($routeName))
+                ->assertVisible('@thumb')
+                ->press('@remove')
+                ->waitUntilMissing('@thumb')
+                ->press('@submit')
+                ->waitForText('Your form has been submitted')
+                ->assertSee('Your form has been submitted')
+                ->assertMissing('@thumb');
+
+            $this->assertCount(0, FormSubmission::first()->getMedia('images'));
+        });
+    }
+
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function an_existing_item_can_be_replaced(string $routeName)
+    {
+        /** @var FormSubmission $formSubmission */
+        $formSubmission = FormSubmission::create(['name' => 'test']);
+
+        $formSubmission
+            ->addMedia($this->getStubPath('space.png'))
+            ->preservingOriginal()
+            ->toMediaCollection('images');
+
+        $this->browse(function (Browser $browser) use ($routeName) {
+            $browser
+                ->visit(route($routeName))
+                ->type('name', 'My name')
+                ->attach('@uploader', $this->getStubPath('logo.png'))
+                ->pause(800)
+                ->press('@submit')
+                ->pause(800);
+
+            $this->assertEquals('logo.png', FormSubmission::first()->getFirstMedia('images')->file_name);
+        });
+    }
+
     public function routeNames(): array
     {
         return [
-           // ['vue.collection'],
-           // ['react.collection'],
-           // ['blade.collection'],
+            ['vue.collection'],
+            ['react.collection'],
+            ['blade.collection'],
             ['livewire.collection'],
         ];
     }
