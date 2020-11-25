@@ -49,6 +49,38 @@ class CustomCollectionTest extends DuskTestCase
         });
     }
 
+    /**
+     * @test
+     *
+     * @dataProvider routeNames
+     */
+    public function it_will_use_the_initial_custom_properties(string $routeName)
+    {
+        /** @var FormSubmission $formSubmission */
+        $formSubmission = FormSubmission::create(['name' => 'test']);
+
+        $extraFieldValue = 'this is the extra field';
+
+        $formSubmission
+            ->addMedia($this->getStubPath('space.png'))
+            ->preservingOriginal()
+            ->withCustomProperties(['extra_field' => $extraFieldValue])
+            ->toMediaCollection('images');
+
+        $this->browse(function (Browser $browser) use ($formSubmission, $extraFieldValue, $routeName) {
+            $browser
+                ->visit(route($routeName))
+                ->pause(500)
+                ->press('@submit')
+                ->waitForText('Your form has been submitted');
+
+
+            $media = $formSubmission->refresh()->getFirstMedia('images');
+
+            $this->assertEquals($extraFieldValue, $media->refresh()->getCustomProperty('extra_field'));
+        });
+    }
+
     public function routeNames(): array
     {
         return [
