@@ -49,7 +49,7 @@ export default function CollectionCustomProperty() {
                                             {...{ dusk: 'media-library-field-name' }}
                                         />
 
-                                        {getNameInputErrors().map(error => (
+                                        {getNameInputErrors().map((error) => (
                                             <p key={error} className="media-library-text-error">
                                                 {error}
                                             </p>
@@ -64,7 +64,7 @@ export default function CollectionCustomProperty() {
                                             {...{ dusk: 'media-library-extra-field' }}
                                         />
 
-                                        {getCustomPropertyInputErrors('extra_field').map(error => (
+                                        {getCustomPropertyInputErrors('extra_field').map((error: string) => (
                                             <p key={error} className="media-library-text-error">
                                                 {error}
                                             </p>
