@@ -42,6 +42,7 @@
 </template>
 
 <script>
+import { MediaLibraryRenderless } from 'media-library-pro-vue3';
 import { MediaLibraryAttachment } from 'media-library-pro-vue3-attachment';
 import Button from './components/Button';
 import Field from './components/Field';
@@ -51,7 +52,7 @@ import PageTitle from './components/PageTitle';
 import ErrorMessage from './components/ErrorMessage';
 
 export default {
-    components: { MediaLibraryAttachment, Button, Field, Input, Grid, ErrorMessage, PageTitle },
+    components: { MediaLibraryAttachment, Button, Field, Input, Grid, ErrorMessage, PageTitle, MediaLibraryRenderless },
 
     methods: {
         onChange(media) {

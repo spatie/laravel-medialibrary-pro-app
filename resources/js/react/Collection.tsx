@@ -31,9 +31,9 @@ export default function Collection() {
                         <MediaLibraryCollection
                             name="images"
                             initialValue={window.initialValues.images}
-                            validationRules={{ accept: ['image/png', 'image/jpeg'] }}
+                            /* validationRules={{ accept: ['image/png', 'image/jpeg'] }} */
                             validationErrors={window.errors}
-                            maxItems={3}
+                            maxItems={4}
                         ></MediaLibraryCollection>
                     </Field>
 

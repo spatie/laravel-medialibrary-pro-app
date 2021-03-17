@@ -2,12 +2,12 @@ require('../bootstrap');
 
 import { createApp } from 'vue';
 
-import AsyncAttachments from './AsyncAttachments.vue';
-import { MediaLibraryAttachment } from 'media-library-pro-vue3-attachment';
-import { MediaLibraryCollection } from 'media-library-pro-vue3-collection';
+/* import AsyncAttachments from './AsyncAttachments.vue'; */
+import { MediaLibraryCollection } from '@spatie/media-library-pro-vue3-collection';
+/* import { MediaLibraryCollection } from '@spatie/media-library-pro-vue3-collection'; */
 
 const App = {
-    components: { AsyncAttachments, MediaLibraryAttachment, MediaLibraryCollection },
+    components: { MediaLibraryCollection },
 
     data() {
         return {

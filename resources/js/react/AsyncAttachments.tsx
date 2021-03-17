@@ -86,7 +86,7 @@ export default function AsyncAttachments() {
                         validationRules={{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }}
                         validationErrors={validationErrors}
                         multiple
-                        setMediaLibrary={mediaLib => (mediaLibrary.current = mediaLib)}
+                        setMediaLibrary={mediaLib => (mediaLibrary.current = mediaLib as any)}
                         onChange={media => setValue(value => ({ ...value, media }))}
                     ></MediaLibraryAttachment>
                 </Field>

@@ -12,6 +12,7 @@
         "setup": "yarn setup-php && composer install && yarn && yarn watch"
     },
     "dependencies": {
+        "@spatie/media-library-pro-vue3-collection": "^1.1.10",
         "@tailwindcss/ui": "^0.3.0",
         "laravel-vapor": "^0.4.0",
         "lodash": "^4.17.13",
@@ -22,12 +23,13 @@
     },
     "devDependencies": {
         "@babel/preset-react": "^7.8.3",
+        "@flareapp/flare-webpack-plugin-sourcemap": "^1.0.14",
         "@types/react": "^16.9.22",
         "@types/react-dom": "^16.9.5",
         "@vue/compiler-sfc": "^3.0.2",
         "axios": "^0.19",
         "cross-env": "^7.0",
-        "laravel-mix": "^6.0.0-beta.10",
+        "laravel-mix": "^6.0.13",
         "postcss": "^8.1.2",
         "postcss-loader": "^4.0.4",
         "resolve-url-loader": "^3.1.0",
