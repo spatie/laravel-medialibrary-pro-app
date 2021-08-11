@@ -78,6 +78,12 @@ Route::prefix('livewire')->group(function () {
 });
 
 Route::prefix('blade')->group(function () {
+    Route::get('single/{locale}', function($locale) {
+        App::setLocale($locale);
+
+        return view('uploads.blade.attachment');
+    });
+
     Route::get('single', [BladeAttachmentController::class, 'create'])->name('blade.attachment');
     Route::post('single', [BladeAttachmentController::class, 'store']);
 
