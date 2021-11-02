@@ -6,6 +6,6 @@
 
 @section('content')
 
-<async-attachments></async-attachments>
+<async-attachments :initial-value="{{ $images }}" name="{{ $name }}"></async-attachments>
 
 @endsection

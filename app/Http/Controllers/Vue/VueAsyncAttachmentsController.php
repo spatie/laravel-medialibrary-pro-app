@@ -9,19 +9,26 @@ class VueAsyncAttachmentsController
 {
     public function create()
     {
-        return view('uploads.vue.async-attachments');
+        /** @var \App\Models\FormSubmission $formSubmission */
+        $formSubmission = FormSubmission::firstOrCreate(['id' => 1]);
+        
+        $images = $formSubmission->getMedia('images');
+        $name = $formSubmission->name;
+
+        return view('uploads.vue.async-attachments', compact('images', 'name'));
     }
 
     public function store(StoreVueAttachmentsRequest $request)
     {
         /** @var \App\Models\FormSubmission $formSubmission */
-        $formSubmission = FormSubmission::create([
-            'name' => $request->name ?? 'nothing',
-        ]);
+        $formSubmission = FormSubmission::first();
 
         $formSubmission
-            ->addFromMediaLibraryRequest($request->media)
+            ->syncFromMediaLibraryRequest($request->media)
             ->toMediaCollection('images');
+
+        $formSubmission->name = $request->name;
+        $formSubmission->save();
 
         return response()->json([
             'success' => 'true'

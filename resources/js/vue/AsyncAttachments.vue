@@ -7,17 +7,19 @@
             class="rounded-sm mb-8 px-4 py-2"
             :class="Object.keys(validationErrors).length ? 'bg-red-100 text-red-500' : 'bg-green-100 text-green-500'"
         >
-            <template v-if="Object.keys(validationErrors).length">
-                Please correct the errors in the form
-            </template>
-            <template v-else>
-                Your form has been submitted
-            </template>
+            <template v-if="Object.keys(validationErrors).length"> Please correct the errors in the form </template>
+            <template v-else> Your form has been submitted </template>
         </div>
 
         <Grid>
             <Field label="name">
-                <Input name="name" id="name" placeholder="Your first name" :value="value.name" @input="value.name = $event.target.value" />
+                <Input
+                    name="name"
+                    id="name"
+                    placeholder="Your first name"
+                    :value="value.name"
+                    @input="value.name = $event.target.value"
+                />
 
                 <error-message v-if="validationErrors && validationErrors.name">{{
                     validationErrors.name[0]
@@ -28,7 +30,7 @@
                 <media-library-attachment
                     ref="mediaComponent"
                     name="media"
-                    :initial-value="value.media"
+                    :initial-value="initialValue"
                     :validation-rules="{ accept: ['image/png', 'image/jpeg', 'application/pdf'] }"
                     :validation-errors="validationErrors"
                     multiple
@@ -51,6 +53,12 @@ import PageTitle from './components/PageTitle';
 import ErrorMessage from './components/ErrorMessage';
 
 export default {
+    props: ['initialValue', 'name'],
+
+    mounted() {
+        this.value.media = this.initialValue;
+    },
+
     components: { MediaLibraryAttachment, Button, Field, Input, Grid, ErrorMessage, PageTitle },
 
     methods: {
@@ -64,17 +72,12 @@ export default {
 
             axios
                 .post('', this.value)
-                .then(res => {
+                .then((res) => {
                     if (res.data.success) {
                         this.isUploadSuccess = true;
-                        this.value = { name: '', media: {} };
-
-                        this.$refs.mediaComponent.mediaLibrary.changeState(state => {
-                            state.media = [];
-                        });
                     }
                 })
-                .catch(error => {
+                .catch((error) => {
                     console.error(error);
 
                     if (error && error.response && error.response.data) {
@@ -87,8 +90,8 @@ export default {
     data() {
         return {
             value: {
-                name: '',
-                media: {},
+                name: this.name,
+                media: this.initialValue,
             },
             validationErrors: {},
             isUploadSuccess: false,
