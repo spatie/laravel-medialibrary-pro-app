@@ -3714,16 +3714,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "9.4.4",
+            "version": "9.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "9d27d602351516dc09c8d6e01b1430c2d1c2a7df"
+                "reference": "687e769a7ba17e49d183947fe058e357ed3c615f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/9d27d602351516dc09c8d6e01b1430c2d1c2a7df",
-                "reference": "9d27d602351516dc09c8d6e01b1430c2d1c2a7df",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/687e769a7ba17e49d183947fe058e357ed3c615f",
+                "reference": "687e769a7ba17e49d183947fe058e357ed3c615f",
                 "shasum": ""
             },
             "require": {
@@ -3738,8 +3738,8 @@
                 "league/flysystem": "^1.0.64",
                 "maennchen/zipstream-php": "^1.0|^2.0",
                 "php": "^7.4|^8.0",
-                "spatie/image": "^1.4.0",
-                "spatie/temporary-directory": "^1.1",
+                "spatie/image": "^1.4",
+                "spatie/temporary-directory": "^1.1|^2.0",
                 "symfony/console": "^4.4|^5.0"
             },
             "conflict": {
@@ -3747,14 +3747,15 @@
             },
             "require-dev": {
                 "aws/aws-sdk-php": "^3.133.11",
-                "doctrine/dbal": "^2.5.2",
+                "doctrine/dbal": "^2.12",
                 "ext-pdo_sqlite": "*",
                 "ext-zip": "*",
-                "guzzlehttp/guzzle": "^6.3|^7.0",
+                "guzzlehttp/guzzle": "^7.0",
                 "league/flysystem-aws-s3-v3": "^1.0.23",
-                "mockery/mockery": "^1.3",
+                "mockery/mockery": "^1.4",
                 "orchestra/testbench": "^5.0|^6.0",
-                "phpunit/phpunit": "^9.1",
+                "phpunit/phpunit": "^9.3",
+                "spatie/laravel-ray": "^1.24",
                 "spatie/pdf-to-image": "^2.0",
                 "spatie/phpunit-snapshot-assertions": "^4.0"
             },
@@ -3802,7 +3803,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-medialibrary/issues",
-                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.4.4"
+                "source": "https://github.com/spatie/laravel-medialibrary/tree/9.8.3"
             },
             "funding": [
                 {
@@ -3814,21 +3815,21 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-15T07:39:17+00:00"
+            "time": "2021-10-18T22:57:53+00:00"
         },
         {
             "name": "spatie/laravel-medialibrary-pro",
-            "version": "1.12.22",
+            "version": "1.17.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:spatie/laravel-medialibrary-pro.git",
-                "reference": "1be1dda89914ee7b77fa7181a937ee41e4e3b758"
+                "reference": "9632a2cd8bd43c6f74f23283c7fc7ab87679455c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-1be1dda89914ee7b77fa7181a937ee41e4e3b758-zip-380eda.zip",
-                "reference": "1be1dda89914ee7b77fa7181a937ee41e4e3b758",
-                "shasum": "ce239fb3a7f309880fc55bb5a98d8baece44a71c"
+                "url": "https://satis.spatie.be/dist/spatie/laravel-medialibrary-pro/spatie-laravel-medialibrary-pro-9632a2cd8bd43c6f74f23283c7fc7ab87679455c-zip-30f32d.zip",
+                "reference": "9632a2cd8bd43c6f74f23283c7fc7ab87679455c",
+                "shasum": "4d44114b853e70717a07079c90a63c2a214e20fd"
             },
             "require": {
                 "ext-json": "*",
@@ -3893,10 +3894,10 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.12.22",
+                "source": "https://github.com/spatie/laravel-medialibrary-pro/tree/1.17.4",
                 "issues": "https://github.com/spatie/laravel-medialibrary-pro/issues"
             },
-            "time": "2021-03-22T14:17:11+00:00"
+            "time": "2021-10-21T06:28:13+00:00"
         },
         {
             "name": "spatie/laravel-package-tools",
