@@ -8,7 +8,7 @@ use Tests\DuskTestCase;
 
 class CustomCollectionTest extends DuskTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
