@@ -24,7 +24,7 @@ class ReactAsyncAttachmentsController
             ->toMediaCollection('images');
 
         return response()->json([
-            'success' => 'true'
+            'success' => 'true',
         ]);
     }
 }

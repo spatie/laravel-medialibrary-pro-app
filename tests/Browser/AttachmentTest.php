@@ -8,7 +8,7 @@ use Tests\DuskTestCase;
 
 class AttachmentTest extends DuskTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -88,7 +88,6 @@ class AttachmentTest extends DuskTestCase
                 ->pause(200)
                 ->waitForText('You must upload a file of type')
                 ->assertSee('You must upload a file of type');
-
         });
     }
 

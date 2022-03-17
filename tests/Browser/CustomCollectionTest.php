@@ -8,7 +8,7 @@ use Tests\DuskTestCase;
 
 class CustomCollectionTest extends DuskTestCase
 {
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
@@ -33,7 +33,6 @@ class CustomCollectionTest extends DuskTestCase
                 ->pause(500)
                 ->press('@submit')
                 ->waitForText('Your form has been submitted');
-
 
             /** @var \Spatie\MediaLibrary\MediaCollections\Models\Media $media */
             $media = FormSubmission::first()->getFirstMedia('images');
@@ -73,7 +72,6 @@ class CustomCollectionTest extends DuskTestCase
                 ->pause(500)
                 ->press('@submit')
                 ->waitForText('Your form has been submitted');
-
 
             $media = $formSubmission->refresh()->getFirstMedia('images');
 
