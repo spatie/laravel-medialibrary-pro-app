@@ -88,7 +88,6 @@ class AttachmentTest extends DuskTestCase
                 ->pause(200)
                 ->waitForText('You must upload a file of type')
                 ->assertSee('You must upload a file of type');
-
         });
     }
 

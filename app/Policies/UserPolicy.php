@@ -9,6 +9,7 @@ class UserPolicy
     public function uploadFiles(?User $user)
     {
         ld('in uploadFiles method of policy');
+
         return true;
     }
 }
