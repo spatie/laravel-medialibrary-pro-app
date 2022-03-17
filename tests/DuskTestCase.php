@@ -58,6 +58,6 @@ abstract class DuskTestCase extends BaseTestCase
 
     protected function getStubPath(string $fileName)
     {
-        return __DIR__ . "/Browser/stubs/{$fileName}";
+        return __DIR__."/Browser/stubs/{$fileName}";
     }
 }

@@ -1,31 +1,31 @@
 <?php
 
 use App\Http\Controllers\Blade\BladeAttachmentController;
-use App\Http\Controllers\Blade\BladeVaporController;
 use App\Http\Controllers\Blade\BladeAttachmentsController;
 use App\Http\Controllers\Blade\BladeCollectionController;
-use App\Http\Controllers\Livewire\LivewireAttachmentController;
-use App\Http\Controllers\Blade\TraditionalAttachmentController;
 use App\Http\Controllers\Blade\BladeCollectionCustomPropertyController;
+use App\Http\Controllers\Blade\BladeVaporController;
+use App\Http\Controllers\Blade\TraditionalAttachmentController;
+use App\Http\Controllers\Livewire\LivewireAttachmentController;
 use App\Http\Controllers\Livewire\LivewireAttachmentsController;
+use App\Http\Controllers\Livewire\LivewireCollectionController;
 use App\Http\Controllers\Livewire\LivewireCollectionCustomPropertyController;
-use App\Http\Controllers\React\ReactCollectionController;
-use App\Http\Controllers\React\ReactAttachmentsController;
 use App\Http\Controllers\React\ReactAsyncAttachmentsController;
 use App\Http\Controllers\React\ReactAttachmentController;
-use App\Http\Controllers\React\ReactVaporController;
+use App\Http\Controllers\React\ReactAttachmentsController;
+use App\Http\Controllers\React\ReactCollectionController;
 use App\Http\Controllers\React\ReactCollectionCustomPropertyController;
+use App\Http\Controllers\React\ReactVaporController;
 use App\Http\Controllers\Traditional\TraditionalUploadController;
-use App\Http\Controllers\Vue\VueCollectionController;
-use App\Http\Controllers\Vue\VueAttachmentsController;
-use App\Http\Controllers\Vue\VueAttachmentController;
 use App\Http\Controllers\Vue\VueAsyncAttachmentsController;
-use App\Http\Controllers\Vue\VueVaporController;
+use App\Http\Controllers\Vue\VueAttachmentController;
+use App\Http\Controllers\Vue\VueAttachmentsController;
+use App\Http\Controllers\Vue\VueCollectionController;
 use App\Http\Controllers\Vue\VueCollectionCustomPropertyController;
+use App\Http\Controllers\Vue\VueVaporController;
 use Illuminate\Support\Facades\Route;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryS3UploadController;
 use Spatie\MediaLibraryPro\Http\Controllers\MediaLibraryUploadController;
-use App\Http\Controllers\Livewire\LivewireCollectionController;
 
 Route::get('/', function () {
     return view('home');
@@ -83,7 +83,6 @@ Route::prefix('blade')->group(function () {
 
     Route::get('multiple', [BladeAttachmentsController::class, 'create'])->name('blade.attachments');
     Route::post('multiple', [BladeAttachmentsController::class, 'store']);
-
     Route::get('collection', [BladeCollectionController::class, 'create'])->name('blade.collection');
     Route::post('collection', [BladeCollectionController::class, 'store']);
 
