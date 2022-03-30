@@ -29,7 +29,7 @@
         "livewire/livewire": "^2.0",
         "spatie/laravel-flash": "^1.9",
         "spatie/laravel-medialibrary": "^10.1",
-        "spatie/laravel-medialibrary-pro": "3.x-dev",
+        "spatie/laravel-medialibrary-pro": "dev-main",
         "spatie/laravel-tail": "^4.4",
         "spatie/pdf-to-image": "^2.2",
         "league/flysystem-aws-s3-v3": "^3.0"

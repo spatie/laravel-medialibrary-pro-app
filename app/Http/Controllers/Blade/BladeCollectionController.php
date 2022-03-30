@@ -22,7 +22,7 @@ class BladeCollectionController
 
         $formSubmission
             ->syncFromMediaLibraryRequest($request->images)
-            ->toMediaCollection('images');
+            ->toMediaCollection('images', 's3');
 
         $formSubmission->name = $request->name;
         $formSubmission->save();
