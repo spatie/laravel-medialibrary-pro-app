@@ -1,5 +1,5 @@
 /* Option 1: use default package styles */
-@import "media-library-pro-styles";
+@import "./medialibrary-pro/styles";
 
 /* Option 2: use package styles but build with tailwind config from app */
 /* @import "./../../vendor/spatie/laravel-media-library-pro/resources/js/medialibrary-pro-styles/src/styles.css"; */
