@@ -6,20 +6,22 @@
             @csrf
 
             <x-field label="name">
-                <x-input name="name" autocomplete="off" id="name" wire:model="formSubmission.name"
+                <x-input name="name" autocomplete="off" id="name" wire:model="name"
                          placeholder="Your first name"/>
             </x-field>
 
             <x-field label="Images">
-                <x-media-library-collection
-                    name="images"
+                <livewire:media-library
                     :model="$formSubmission"
                     collection="images"
+                    wire:model="images"
                     fields-view="livewire.partials.custom-properties"
                 />
             </x-field>
 
             <x-button dusk="submit">Submit</x-button>
+
+            <x-button wire:click.prevent="clearImages">Clear</x-button>
         </x-grid>
     </form>
 </div>

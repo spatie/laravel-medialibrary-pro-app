@@ -4,7 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\FormSubmission;
 use Livewire\Component;
-use Spatie\MediaLibraryPro\Http\Livewire\Concerns\WithMedia;
+use Spatie\MediaLibraryPro\Livewire\Concerns\WithMedia;
 
 class AttachmentsForm extends Component
 {
@@ -14,9 +14,7 @@ class AttachmentsForm extends Component
 
     public $message = '';
 
-    public $mediaComponentNames = ['media'];
-
-    public $media;
+    public $media = [];
 
     public function submit()
     {
@@ -35,8 +33,7 @@ class AttachmentsForm extends Component
 
         $this->message = 'Your form has been submitted';
 
-        $this->clearMedia();
-
+        $this->media = [];
         $this->name = '';
     }
 
