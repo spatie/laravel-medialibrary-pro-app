@@ -10,7 +10,7 @@
                          placeholder="Your first name"/>
             </x-field>
             <x-field label="file">
-                <x-media-library-attachment name="media" rules="mimes:png,jpeg,pdf"/>
+                <livewire:media-library wire:model="media" rules="mimes:png,jpeg,pdf" />
             </x-field>
 
             <x-button dusk="submit">Submit</x-button>
