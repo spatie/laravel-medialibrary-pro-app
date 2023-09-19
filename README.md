@@ -1,4 +1,4 @@
-## Laravel Media Library Pro Demo App
+## Laravel Media Library Pro v3 Demo App
 
 This repo contains a Laravel project to demonstrate to possibilities of [Laravel Media Library Pro](https://medialibrary.pro).
 
