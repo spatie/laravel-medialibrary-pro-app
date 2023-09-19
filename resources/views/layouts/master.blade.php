@@ -19,9 +19,7 @@
     <meta name="msapplication-TileColor" content="#c42543">
     <meta name="theme-color" content="#ffffff">
 
-    <livewire:styles />
-    <livewire:scripts />
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    @mediaLibraryStyles
 </head>
 
 <body class="min-h-screen p-8 pb-0 flex flex-col text-gray-700 bg-gray-200">
@@ -81,5 +79,7 @@
     <footer class="flex-none text-center py-8 text-xs">
         Powered by <a href="https://media-library.pro" class="border-b border-gray-300">media-library.pro</a>
     </footer>
+
+    @mediaLibraryScripts
 </body>
 </html>

@@ -6,24 +6,24 @@
             @csrf
 
             <x-field label="name">
-                <x-input name="name" autocomplete="off" id="name" wire:model="formSubmission.name"
+                <x-input name="name" autocomplete="off" id="name" wire:model="name"
                          placeholder="Your first name"/>
             </x-field>
 
             <x-field label="Images">
-                <x-media-library-collection
-                    name="images"
-                    :model="$formSubmission"
+                <livewire:media-library
                     collection="images"
+                    :model="$formSubmission"
+                    wire:model="images"
                     rules="mimes:png,jpeg"
                 />
             </x-field>
 
             <x-field label="Downloads">
-                <x-media-library-collection
-                    name="downloads"
-                    :model="$formSubmission"
+                <livewire:media-library
                     collection="downloads"
+                    :model="$formSubmission"
+                    wire:model="downloads"
                 />
             </x-field>
 
