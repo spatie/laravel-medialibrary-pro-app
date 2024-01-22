@@ -34,7 +34,7 @@
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "ts-loader": "^6.2.1",
-        "typescript": "^3.8.2",
+        "typescript": "^5.3.3",
         "vue-loader": "^16.0.0-beta.9"
     }
 }
