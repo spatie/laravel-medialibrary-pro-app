@@ -14,8 +14,6 @@ module.exports = {
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
     },
-
-
     colors: {
       transparent: "transparent",
       white: "#fff",
