@@ -1,6 +1,15 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+   mode: 'jit',
+   important: true,
+   purge: [
+       './resources/**/*.blade.php',
+       './resources/**/*.js',
+       './resources/**/*.vue',
+       './resources/**/*.tsx',
+       './vendor/spatie/laravel-medialibrary-pro/resources/js/**/*.js',
+   ],
   theme: {
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],

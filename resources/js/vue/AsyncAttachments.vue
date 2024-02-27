@@ -43,12 +43,12 @@
 
 <script>
 import { MediaLibraryAttachment } from 'media-library-pro-vue3-attachment';
-import Button from './components/Button';
-import Field from './components/Field';
-import Input from './components/Input';
-import Grid from './components/Grid';
-import PageTitle from './components/PageTitle';
-import ErrorMessage from './components/ErrorMessage';
+import Button from './components/Button.vue';
+import Field from './components/Field.vue';
+import Input from './components/Input.vue';
+import Grid from './components/Grid.vue';
+import PageTitle from './components/PageTitle.vue';
+import ErrorMessage from './components/ErrorMessage.vue';
 
 export default {
     components: { MediaLibraryAttachment, Button, Field, Input, Grid, ErrorMessage, PageTitle },
