@@ -1,11 +1,16 @@
 /* Option 1: use default package styles */
-@import "~laravel-medialibrary-pro/media-library-pro-styles/dist/styles.css";
+@import "./medialibrary-pro/styles";
 
 /* Option 2: use package styles but build with tailwind config from app */
-/* @import "~laravel-medialibrary-pro/media-library-pro-styles/src/styles.css";*/
+/* @import "./../../vendor/spatie/laravel-media-library-pro/resources/js/medialibrary-pro-styles/src/styles.css"; */
+
+/* Option 3: edit styles */
+/* @import "./media-library-pro/styles.css"; */
 
 @tailwind base;
+
 @tailwind components;
+
 @tailwind utilities;
 
 .justify-items-start {
