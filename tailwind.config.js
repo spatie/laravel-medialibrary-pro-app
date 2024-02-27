@@ -1,6 +1,12 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+   mode: 'jit',
+   important: true,
+   purge: [
+       './resources/**/*.blade.php',
+       './resources/**/*.js',
+   ],
   theme: {
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
