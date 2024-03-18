@@ -1,7 +1,8 @@
 @extends('layouts.master', ['pageTitle' => 'React: collection on vapor'])
 
 @push('scripts')
-    <script defer src="{{ asset('js/react/app.js') }}"></script>
+    @viteReactRefresh
+    @vite(['resources/js/react/app.tsx'])
 @endpush
 
 @section('content')
