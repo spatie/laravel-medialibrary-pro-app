@@ -194,10 +194,10 @@ class CollectionTest extends DuskTestCase
     public static function routeNames(): array
     {
         return [
-//            ['vue.collection'],
+            ['vue.collection'],
             ['react.collection'],
-//            ['blade.collection'],
-//            ['livewire.collection'],
+            ['blade.collection'],
+            ['livewire.collection'],
         ];
     }
 }
