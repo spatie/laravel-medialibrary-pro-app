@@ -4,6 +4,8 @@ namespace Tests\Browser;
 
 use App\Models\FormSubmission;
 use Laravel\Dusk\Browser;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\DuskTestCase;
 
 class AttachmentsTest extends DuskTestCase
@@ -15,11 +17,7 @@ class AttachmentsTest extends DuskTestCase
         FormSubmission::truncate();
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider routeNames
-     */
+    #[Test, DataProvider('routeNames')]
     public function it_can_submit_multiple_files(string $routeName)
     {
         $this->browse(function (Browser $browser) use ($routeName) {
@@ -39,7 +37,7 @@ class AttachmentsTest extends DuskTestCase
         });
     }
 
-    public function routeNames(): array
+    public static function routeNames(): array
     {
         return [
             ['vue.attachments'],

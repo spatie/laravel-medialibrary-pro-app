@@ -4,6 +4,8 @@ namespace Tests\Browser;
 
 use App\Models\FormSubmission;
 use Laravel\Dusk\Browser;
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\DuskTestCase;
 
 class CustomCollectionTest extends DuskTestCase
@@ -15,11 +17,7 @@ class CustomCollectionTest extends DuskTestCase
         FormSubmission::truncate();
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider routeNames
-     */
+    #[Test, DataProvider('routeNames')]
     public function it_will_save_custom_properties(string $routeName)
     {
         $this->browse(function (Browser $browser) use ($routeName) {
@@ -48,11 +46,7 @@ class CustomCollectionTest extends DuskTestCase
         });
     }
 
-    /**
-     * @test
-     *
-     * @dataProvider routeNames
-     */
+    #[Test, DataProvider('routeNames')]
     public function it_will_use_the_initial_custom_properties(string $routeName)
     {
         /** @var FormSubmission $formSubmission */
@@ -79,7 +73,7 @@ class CustomCollectionTest extends DuskTestCase
         });
     }
 
-    public function routeNames(): array
+    public static function routeNames(): array
     {
         return [
             ['vue.collection-custom-property'],
