@@ -9,15 +9,15 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "composer",
-            "url": "https://satis.spatie.be"
+            "type": "path",
+            "url": "../_packages/laravel-medialibrary-pro"
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^8.3",
         "ext-json": "*",
         "guzzlehttp/guzzle": "^7.2",
-        "laravel/framework": "^10.18",
+        "laravel/framework": "^v11.0.7",
         "laravel/tinker": "^2.7",
         "laravel/ui": "^v4.2.2",
         "laravel/vapor-cli": "^1.36",
@@ -25,7 +25,7 @@
         "livewire/livewire": "^v3.0",
         "spatie/laravel-flash": "^1.9",
         "spatie/laravel-medialibrary": "^11.0",
-        "spatie/laravel-medialibrary-pro": "^5.0",
+        "spatie/laravel-medialibrary-pro": "@dev",
         "spatie/laravel-tail": "^4.4",
         "spatie/pdf-to-image": "^2.2",
         "league/flysystem-aws-s3-v3": "^3.0"
@@ -33,10 +33,10 @@
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^3.7",
-        "laravel/dusk": "^v7.0",
+        "laravel/dusk": "^8.0",
         "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.5.10",
+        "nunomaduro/collision": "^8.1",
+        "phpunit/phpunit": "^11.0",
         "spatie/laravel-ignition": "^2.2",
         "spatie/laravel-ray": "^1.29"
     },
