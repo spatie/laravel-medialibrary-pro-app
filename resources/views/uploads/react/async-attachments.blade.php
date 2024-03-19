@@ -1,7 +1,7 @@
 @extends('layouts.master', ['pageTitle' => 'React: attachment'])
 
 @push('scripts')
-    <script defer src="{{ asset('js/react/app.js') }}"></script>
+    @vite(['resources/js/react/app.js'])
 @endpush
 
 @section('content')

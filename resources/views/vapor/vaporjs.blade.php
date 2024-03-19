@@ -1,7 +1,8 @@
 @extends('layouts.master')
 
 @push('scripts')
-    <script src="{{ asset('js/vapor/app.js') }}"></script>
+    @vite(['resources/js/vapor/app.js'])
+
     <ul>
         <li>{{ auth()->check() ? 'logged in' : 'anon' }}</li>
         <li>Media Library Disk: {{ config('media-library.disk_name') }}</li>
@@ -40,7 +41,6 @@
 
 @section('content')
     <x-h2>Media Library on Vapor test</x-h2>
-
 
     <x-field label="file">
         <input type="file" id="file" ref="file">

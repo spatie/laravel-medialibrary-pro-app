@@ -5,36 +5,28 @@ namespace Tests;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
+use Illuminate\Foundation\Testing\DatabaseTruncation;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Dusk\TestCase as BaseTestCase;
+use PHPUnit\Framework\Attributes\BeforeClass;
 
 abstract class DuskTestCase extends BaseTestCase
 {
     use CreatesApplication;
+    use DatabaseTruncation;
 
     protected function setUp(): void
     {
         parent::setUp();
-
-        $this->refreshTestDatabase();
     }
 
-    /**
-     * Prepare for Dusk test execution.
-     *
-     * @beforeClass
-     * @return void
-     */
-    public static function prepare()
+    #[BeforeClass]
+    public static function prepare(): void
     {
         static::startChromeDriver();
     }
 
-    /**
-     * Create the RemoteWebDriver instance.
-     *
-     * @return \Facebook\WebDriver\Remote\RemoteWebDriver
-     */
-    protected function driver()
+    protected function driver(): RemoteWebDriver
     {
         $options = (new ChromeOptions)->addArguments([
             '--disable-gpu',
@@ -49,11 +41,6 @@ abstract class DuskTestCase extends BaseTestCase
                 $options
             )
         );
-    }
-
-    protected function refreshTestDatabase(): void
-    {
-        $this->artisan('migrate:fresh');
     }
 
     protected function getStubPath(string $fileName)
