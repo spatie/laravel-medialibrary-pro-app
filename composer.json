@@ -9,8 +9,8 @@
     "license": "MIT",
     "repositories": [
         {
-            "type": "path",
-            "url": "../_packages/laravel-medialibrary-pro"
+            "type": "composer",
+            "url": "https://satis.spatie.be"
         }
     ],
     "require": {
