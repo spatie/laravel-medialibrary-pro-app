@@ -11,7 +11,6 @@
     @stack('scripts')
 
     <link href="https://fonts.googleapis.com/css?family=Inter:400,500,700" rel="stylesheet">
-    @vite(['resources/css/main.css'])
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -21,6 +20,7 @@
     <meta name="theme-color" content="#ffffff">
 
     @mediaLibraryStyles
+    @vite(['resources/css/main.css'])
 </head>
 
 <body class="min-h-screen p-8 pb-0 flex flex-col text-gray-700 bg-gray-200">
