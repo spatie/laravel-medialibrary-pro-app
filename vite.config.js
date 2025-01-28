@@ -19,6 +19,7 @@ export default defineConfig({
             'resources/css/main.css',
             'resources/js/react/app.tsx',
             'resources/js/vapor/app.js',
+            'resources/js/vue/app.js',
         ]),
         react(),
         vue({
