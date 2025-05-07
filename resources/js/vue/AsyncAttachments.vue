@@ -17,7 +17,7 @@
 
         <Grid>
             <Field label="name">
-                <Input name="name" id="name" placeholder="Your first name" :value="value.name" @input="value.name = $event.target.value" />
+                <Input name="name" id="name" placeholder="Your first name" :value="value.name" @input="value.name = event.target.value" />
 
                 <error-message v-if="validationErrors && validationErrors.name">{{
                     validationErrors.name[0]
@@ -65,9 +65,7 @@ export default {
 
             axios
                 .post('', this.value, {
-                    headers: {
-                        'X-CSRF-TOKEN': window.csrfToken,
-                    },
+                    withXSRFToken: true,
                 })
                 .then(res => {
                     if (res.data.success) {
