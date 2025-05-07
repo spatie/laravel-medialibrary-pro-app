@@ -49,6 +49,7 @@ import Input from './components/Input.vue';
 import Grid from './components/Grid.vue';
 import PageTitle from './components/PageTitle.vue';
 import ErrorMessage from './components/ErrorMessage.vue';
+import axios from 'axios';
 
 export default {
     components: { MediaLibraryAttachment, Button, Field, Input, Grid, ErrorMessage, PageTitle },
@@ -63,7 +64,11 @@ export default {
             this.validationErrors = {};
 
             axios
-                .post('', this.value)
+                .post('', this.value, {
+                    headers: {
+                        'X-CSRF-TOKEN': window.csrfToken,
+                    },
+                })
                 .then(res => {
                     if (res.data.success) {
                         this.isUploadSuccess = true;
