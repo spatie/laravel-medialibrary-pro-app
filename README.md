@@ -11,7 +11,7 @@ After you clone the repo, perform these steps:
 - copy `env.example` to `.env` and fill in values that makes sense for your environment
 - create a `auth.json` file in the root of the project and put your media library pro license in there (more info in the docs)
 - run `composer install`
-- run `yarn` and `yarn run dev` (or the npm equivalent)
+- run `npm install` and `npm run dev` (or the npm equivalent)
 - run `php artisan migrate`
 - browse to the project. (when using valet: visit `http://laravel-medialibrary-pro-app.test`)
 - enjoy!
